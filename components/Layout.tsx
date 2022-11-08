@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React, { ReactNode, Fragment } from "react";
+import React, { ReactNode } from "react";
 import Navbar from "./Navbar";
 import { Box } from "theme-ui";
 
@@ -9,7 +9,14 @@ type LayoutProps = {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <Fragment>
+    <Box
+      as="div"
+      sx={{
+        maxWidth: "1200px",
+        margin: "0 auto",
+        height: "100vh",
+      }}
+    >
       <Head>
         <title>Data Insights</title>
         <meta name="description" content="Maker DAO Data Insights" />
@@ -24,6 +31,6 @@ export default function Layout({ children }: LayoutProps) {
       >
         {children}
       </Box>
-    </Fragment>
+    </Box>
   );
 }

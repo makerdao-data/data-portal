@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Box, useColorMode, useThemeUI } from "theme-ui";
 import { MoonIcon, SunIcon, MakerIcon, Text } from "@makerdao-dicu/makerdao-ui";
 import NavbarLink from "./NavbarLink";
 
 export default function Navbar() {
   const { theme } = useThemeUI();
-  const [selectedColorMode, setColorMode] = useColorMode();
+  const [selectedColorMode = "light", setColorMode] = useColorMode();
 
   return (
     <Box
@@ -16,13 +16,13 @@ export default function Navbar() {
         display: "flex",
         justifyContent: "space-between",
         gap: "1rem",
-        paddingLeft: "1rem",
-        paddingRight: "1rem",
-        boxShadow:
-          selectedColorMode === "light"
-            ? "0 5px 5px -3px rgba(0,0,0,.2)"
-            : "0 5px 5px -3px rgba(255,255,255,.2)",
-        transition: "background-color 0.3s",
+        padding: "2rem 1rem",
+        top: 0,
+        // boxShadow:
+        //   selectedColorMode === "light"
+        //     ? "0 5px 5px -3px rgba(0,0,0,.2)"
+        //     : "0 5px 5px -3px rgba(255,255,255,.2)",
+        backgroundColor: "background",
       }}
     >
       <Box sx={{ display: "flex", gap: "0.3rem" }}>
