@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cypress": "cypress open"
   },
   "dependencies": {
     "@makerdao-dicu/makerdao-ui": "^0.0.12",
@@ -21,6 +22,8 @@
     "typescript": "4.8.4"
   },
   "devDependencies": {
-    "@types/theme-ui": "^0.6.0"
+    "@testing-library/cypress": "^8.0.3",
+    "@types/theme-ui": "^0.6.0",
+    "cypress": "^11.0.0"
   }
 }

@@ -11,7 +11,11 @@ export default function NavbarLink({ href, text }: NavbarLinkProps) {
   const router = useRouter();
 
   return (
-    <Box sx={{ alignSelf: "center", ["a"]: { textDecoration: "none" } }}>
+    <Box
+      role="link"
+      aria-label={"NavbarLink" + text}
+      sx={{ alignSelf: "center", ["a"]: { textDecoration: "none" } }}
+    >
       <Link href={href} passHref>
         <Box
           sx={{

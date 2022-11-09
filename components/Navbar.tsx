@@ -1,15 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, useColorMode, useThemeUI } from "theme-ui";
 import { MoonIcon, SunIcon, MakerIcon, Text } from "@makerdao-dicu/makerdao-ui";
 import NavbarLink from "./NavbarLink";
 
+function useColorMode2(
+  initialMode: string = "light"
+): [string, (mode: string) => void] {
+  const [themeUISelectedColorMode, setColorMode] = useColorMode();
+
+  useEffect(() => {
+    if (themeUISelectedColorMode === undefined) {
+      setColorMode(initialMode);
+    }
+  }, [initialMode, setColorMode, themeUISelectedColorMode]);
+
+  return [themeUISelectedColorMode, setColorMode];
+}
+
 export default function Navbar() {
   const { theme } = useThemeUI();
-  const [selectedColorMode = "light", setColorMode] = useColorMode();
+  const [selectedColorMode, setColorMode] = useColorMode2("light");
 
   return (
     <Box
       as="nav"
+      role="navigation"
+      aria-label="Navbar"
       sx={{
         position: "sticky",
         width: "100%",
