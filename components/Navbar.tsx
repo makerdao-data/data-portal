@@ -69,12 +69,16 @@ export default function Navbar() {
 
         {selectedColorMode === "light" ? (
           <MoonIcon
+            role="button"
+            aria-label="Dark mode button"
             width={24}
             height={24}
             onClick={() => setColorMode("dark")}
           />
         ) : (
           <SunIcon
+            role="button"
+            aria-label="Light mode button"
             width={24}
             height={24}
             onClick={() => setColorMode("light")}
