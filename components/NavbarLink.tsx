@@ -16,7 +16,7 @@ export default function NavbarLink({ href, text }: NavbarLinkProps) {
       aria-label={"NavbarLink" + text}
       sx={{ alignSelf: "center", ["a"]: { textDecoration: "none" } }}
     >
-      <Link href={href} passHref>
+      <Link href={href}>
         <Box
           sx={{
             color: router.pathname === href ? "primary" : "currentColor",

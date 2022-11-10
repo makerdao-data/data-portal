@@ -2,6 +2,7 @@ import Head from "next/head";
 import React, { ReactNode } from "react";
 import Navbar from "./Navbar";
 import { Box } from "theme-ui";
+import Footer from "./Footer";
 
 type LayoutProps = {
   children: ReactNode;
@@ -15,6 +16,10 @@ export default function Layout({ children }: LayoutProps) {
         maxWidth: "1200px",
         margin: "0 auto",
         height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        paddingLeft: "1rem",
+        paddingRight: "1rem",
       }}
     >
       <Head>
@@ -27,10 +32,15 @@ export default function Layout({ children }: LayoutProps) {
 
       <Box
         as="div"
-        sx={{ paddingLeft: "1rem", paddingRight: "1rem", marginTop: "3rem" }}
+        sx={{
+          marginTop: "3rem",
+          flex: 1,
+        }}
       >
         {children}
       </Box>
+
+      <Footer />
     </Box>
   );
 }
