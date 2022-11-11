@@ -1,6 +1,6 @@
-import { Text } from "@makerdao-dicu/makerdao-ui";
-import { Fragment } from "react";
-import { Box } from "theme-ui";
+import { Text } from '@makerdao-dicu/makerdao-ui';
+import { Fragment } from 'react';
+import { Box } from 'theme-ui';
 
 export default function Home() {
   return (

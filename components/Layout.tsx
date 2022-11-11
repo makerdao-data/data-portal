@@ -1,8 +1,8 @@
-import Head from "next/head";
-import React, { ReactNode } from "react";
-import Navbar from "./Navbar";
-import { Box } from "theme-ui";
-import Footer from "./Footer";
+import Head from 'next/head';
+import React, { ReactNode } from 'react';
+import Navbar from './Navbar';
+import { Box } from 'theme-ui';
+import Footer from './Footer';
 
 type LayoutProps = {
   children: ReactNode;
@@ -13,15 +13,14 @@ export default function Layout({ children }: LayoutProps) {
     <Box
       as="div"
       sx={{
-        maxWidth: "1200px",
-        margin: "0 auto",
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        paddingLeft: "1rem",
-        paddingRight: "1rem",
-      }}
-    >
+        maxWidth: '1200px',
+        margin: '0 auto',
+        height: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        paddingLeft: '1rem',
+        paddingRight: '1rem'
+      }}>
       <Head>
         <title>Data Insights</title>
         <meta name="description" content="Maker DAO Data Insights" />
@@ -33,10 +32,9 @@ export default function Layout({ children }: LayoutProps) {
       <Box
         as="div"
         sx={{
-          marginTop: "3rem",
-          flex: 1,
-        }}
-      >
+          marginTop: '3rem',
+          flex: 1
+        }}>
         {children}
       </Box>
 

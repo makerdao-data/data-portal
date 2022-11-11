@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { Box } from "theme-ui";
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { Box } from 'theme-ui';
 
 type NavbarLinkProps = {
   href: string;
@@ -13,20 +13,18 @@ export default function NavbarLink({ href, text }: NavbarLinkProps) {
   return (
     <Box
       role="link"
-      aria-label={"NavbarLink" + text}
-      sx={{ alignSelf: "center", ["a"]: { textDecoration: "none" } }}
-    >
+      aria-label={'NavbarLink' + text}
+      sx={{ alignSelf: 'center', ['a']: { textDecoration: 'none' } }}>
       <Link href={href}>
         <Box
           sx={{
-            color: router.pathname === href ? "primary" : "currentColor",
-            textDecoration: "none",
+            color: router.pathname === href ? 'primary' : 'currentColor',
+            textDecoration: 'none',
 
-            [":hover"]: {
-              textDecoration: "underline",
-            },
-          }}
-        >
+            [':hover']: {
+              textDecoration: 'underline'
+            }
+          }}>
           {text}
         </Box>
       </Link>

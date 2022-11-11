@@ -1,7 +1,7 @@
-import React from "react";
-import { Box, useColorMode, useThemeUI } from "theme-ui";
-import { MoonIcon, SunIcon, MakerIcon, Text } from "@makerdao-dicu/makerdao-ui";
-import NavbarLink from "./NavbarLink";
+import React from 'react';
+import { Box, useColorMode, useThemeUI } from 'theme-ui';
+import { MoonIcon, SunIcon, MakerIcon, Text } from '@makerdao-dicu/makerdao-ui';
+import NavbarLink from './NavbarLink';
 
 export default function Navbar() {
   const { theme } = useThemeUI();
@@ -13,24 +13,22 @@ export default function Navbar() {
       role="navigation"
       aria-label="Navbar"
       sx={{
-        position: "sticky",
-        width: "100%",
-        display: "flex",
-        justifyContent: "space-between",
-        gap: "1rem",
-        paddingTop: "2rem",
-        paddingBottom: "2rem",
+        position: 'sticky',
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'space-between',
+        gap: '1rem',
+        paddingTop: '2rem',
+        paddingBottom: '2rem',
         top: 0,
-        backgroundColor: "background",
-      }}
-    >
-      <Box sx={{ display: "flex", gap: "0.3rem" }}>
+        backgroundColor: 'background'
+      }}>
+      <Box sx={{ display: 'flex', gap: '0.3rem' }}>
         <MakerIcon color={theme.colors?.primary as string} />
 
         <Text
           variant="microHeading"
-          sx={{ alignSelf: "end", marginBottom: "11px" }}
-        >
+          sx={{ alignSelf: 'end', marginBottom: '11px' }}>
           Data Insights
         </Text>
       </Box>
@@ -38,25 +36,24 @@ export default function Navbar() {
       <Box
         as="div"
         sx={{
-          display: "flex",
-          gap: "1rem",
-          ["& > svg"]: {
-            cursor: "pointer",
-            alignSelf: "center",
-          },
-        }}
-      >
+          display: 'flex',
+          gap: '1rem',
+          ['& > svg']: {
+            cursor: 'pointer',
+            alignSelf: 'center'
+          }
+        }}>
         <NavbarLink href="/" text="Home" />
 
         {/* <NavbarLink href="/l2-metrics" text="L2s" /> */}
 
-        {selectedColorMode === "light" ? (
+        {selectedColorMode === 'light' ? (
           <MoonIcon
             role="button"
             aria-label="Dark mode button"
             width={24}
             height={24}
-            onClick={() => setColorMode("dark")}
+            onClick={() => setColorMode('dark')}
           />
         ) : (
           <SunIcon
@@ -64,7 +61,7 @@ export default function Navbar() {
             aria-label="Light mode button"
             width={24}
             height={24}
-            onClick={() => setColorMode("light")}
+            onClick={() => setColorMode('light')}
           />
         )}
       </Box>
