@@ -7,8 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "next lint --fix --dir .",
     "e2e": "playwright test"
   },
+  "pre-commit": [
+    "lint:fix"
+  ],
   "dependencies": {
     "@makerdao-dicu/makerdao-ui": "^0.0.14",
     "@types/node": "18.11.9",
@@ -25,6 +29,10 @@
     "@emotion/babel-plugin": "^11.10.5",
     "@playwright/test": "^1.27.1",
     "@testing-library/cypress": "^8.0.3",
-    "@types/theme-ui": "^0.6.0"
+    "@types/theme-ui": "^0.6.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "pre-commit": "^1.2.2",
+    "prettier": "^2.7.1"
   }
 }
