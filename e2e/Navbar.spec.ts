@@ -3,9 +3,6 @@ import { test, expect } from '@playwright/test';
 test.describe('navbar test', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('http://localhost:3000/');
-
-    // await page.getByRole("button", { name: "Close" }).click();
-    // await page.getByRole("button", { name: "Hide Errors" }).click();
   });
 
   test('render navbar', async ({ page }) => {
