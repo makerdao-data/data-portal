@@ -9,7 +9,7 @@ import {
   YoutubeIcon
 } from '@makerdao-dicu/makerdao-ui';
 import Link from 'next/link';
-import { Box, Flex, useColorMode } from 'theme-ui';
+import { Box, Flex, NavLink, useColorMode } from 'theme-ui';
 
 export default function Footer() {
   // const [colorMode] = useColorMode();
@@ -188,43 +188,28 @@ export default function Footer() {
             <Link
               role="link"
               aria-label="MakerDAO Data insights Discord link"
-              href="https://chat.makerdao.com"
+              href="https://discord.com/invite/RBRumCpEDH"
               target="_blank">
               <DiscordIcon width={20} height={20} />
             </Link>
 
             <Link
               role="link"
-              aria-label="MakerDAO Data insights Twitter link"
-              href="https://twitter.com/MakerDAO"
-              target="_blank">
-              <TwitterIcon width={20} height={20} />
-            </Link>
-
-            <Link
-              role="link"
-              aria-label="MakerDAO Data insights Reddit link"
-              href="https://www.reddit.com/r/MakerDAO/"
-              target="_blank">
-              <RedditIcon width={20} height={20} />
-            </Link>
-
-            <Link
-              role="link"
-              aria-label="MakerDAO Data insights Youtube link"
-              href="https://www.youtube.com/MakerDAO"
-              target="_blank">
-              <YoutubeIcon width={20} height={20} />
-            </Link>
-
-            <Link
-              role="link"
               aria-label="MakerDAO Data insights Github link"
-              href="https://github.com/makerdao-data/data-portal"
+              href="https://github.com/makerdao-data"
               target="_blank">
               <GithubIcon width={20} height={20} />
             </Link>
           </Flex>
+
+          <NavLink
+            as="a"
+            role="link"
+            aria-label="MakerDAO Data insights email link"
+            href="mailto:hello@data.makerdao.network?subject=MakerDAO%20DICU%20Inquiry"
+            sx={{ padding: 0, color: 'text', ['&:hover']: { color: 'text' } }}>
+            {'hello [at] data.makerdao.network'}
+          </NavLink>
 
           <Flex sx={{ gap: '0.3rem', marginTop: [0, 0, 4] }}>
             <MakerIcon width={32} height={32} />
