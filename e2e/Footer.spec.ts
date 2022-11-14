@@ -149,4 +149,25 @@ test.describe('footer test', () => {
       page.getByRole('heading', { name: 'Data insights channels' })
     ).toBeVisible();
   });
+
+  test('data insights channels section', async ({ page }) => {
+    await expect(
+      page.getByRole('heading', { name: 'Data Insights channels' })
+    ).toBeVisible();
+
+    await expect(
+      page.getByRole('link', { name: 'MakerDAO Data insights Discord link' })
+    ).toHaveAttribute('href', 'https://discord.com/invite/RBRumCpEDH');
+
+    await expect(
+      page.getByRole('link', { name: 'MakerDAO Data insights Github link' })
+    ).toHaveAttribute('href', 'https://github.com/makerdao-data');
+
+    await expect(
+      page.getByRole('link', { name: 'MakerDAO Data insights email link' })
+    ).toHaveAttribute(
+      'href',
+      'mailto:hello@data.makerdao.network?subject=MakerDAO%20DICU%20Inquiry'
+    );
+  });
 });
