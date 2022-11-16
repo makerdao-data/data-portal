@@ -32,7 +32,7 @@ export default function Layout({ children }: LayoutProps) {
       <Box
         as="div"
         sx={{
-          marginTop: '3rem',
+          marginTop: '8rem',
           flex: 1
         }}>
         {children}

@@ -13,14 +13,14 @@ export default function Navbar() {
       role="navigation"
       aria-label="Navbar"
       sx={{
-        position: 'sticky',
+        position: 'fixed',
         width: '100%',
         display: 'flex',
         justifyContent: 'space-between',
         gap: '1rem',
-        paddingTop: '2rem',
-        paddingBottom: '2rem',
+        padding: '2rem 1rem',
         top: 0,
+        left: 0,
         backgroundColor: 'background'
       }}>
       <Box sx={{ display: 'flex', gap: '0.3rem' }}>
@@ -43,7 +43,8 @@ export default function Navbar() {
             alignSelf: 'center'
           }
         }}>
-        <NavbarLink href="/" text="Home" />
+        {/* <NavbarLink href="/" text="Home" /> */}
+        <NavbarLink href="/l2s" text="L2s" />
 
         {/* <NavbarLink href="/l2-metrics" text="L2s" /> */}
 
