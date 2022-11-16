@@ -4,6 +4,15 @@ const nextConfig = {
   swcMinify: true,
   eslint: {
     dirs: ['.']
+  },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/l2s#overview',
+        permanent: false
+      }
+    ];
   }
 };
 
