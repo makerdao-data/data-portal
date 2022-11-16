@@ -12,8 +12,8 @@ test.describe('navbar test', () => {
   });
 
   test('navigation links', async ({ page }) => {
-    await page.getByRole('link', { name: 'Home' }).click();
-    await expect(page).toHaveURL('http://localhost:3000/');
+    await page.getByRole('link', { name: 'L2s' }).click();
+    await expect(page).toHaveURL('http://localhost:3000/l2s');
 
     await page.getByRole('button', { name: 'Dark mode button' }).click();
     await expect(
