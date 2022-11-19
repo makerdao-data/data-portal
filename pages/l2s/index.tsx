@@ -1,26 +1,31 @@
 import { RefObject, useEffect, useMemo, useRef, useState } from 'react';
-import { Box } from 'theme-ui';
+import { Box, Flex } from 'theme-ui';
 import { Text } from '@makerdao-dicu/makerdao-ui';
-import NavbarLink from '../components/NavbarLink';
+import NavbarLink from '../../components/NavbarLink';
 import useHighlightLinkOnScroll, {
   Link
-} from '../hooks/highlight-active-link-onscroll';
+} from '../../hooks/highlight-active-link-onscroll';
+import Overview from './components/Overview';
 
 export default function L2s() {
   const overviewRef = useRef<HTMLDivElement>(null);
-  const teleportRef = useRef<HTMLDivElement>(null);
+  const fastWithdrawalsRef = useRef<HTMLDivElement>(null);
   const arbitrumRef = useRef<HTMLDivElement>(null);
   const optimismRef = useRef<HTMLDivElement>(null);
   const starknetRef = useRef<HTMLDivElement>(null);
   const appendixRef = useRef<HTMLDivElement>(null);
   const links: Link[] = useMemo(
     () => [
-      { href: '/l2s#overview', text: 'Overview', ref: overviewRef },
-      { href: '/l2s#teleport', text: 'Teleport', ref: teleportRef },
-      { href: '/l2s#arbitrum', text: 'Arbitrum', ref: arbitrumRef },
-      { href: '/l2s#optimism', text: 'Optimism', ref: optimismRef },
-      { href: '/l2s#starknet', text: 'Starknet', ref: starknetRef },
-      { href: '/l2s#appendix', text: 'Appendix', ref: appendixRef }
+      { href: '/l2s#overview', text: 'Overview', ref: overviewRef }
+      // {
+      //   href: '/l2s#fast-withdrawals',
+      //   text: 'Fast Withdrawals',
+      //   ref: fastWithdrawalsRef
+      // },
+      // { href: '/l2s#arbitrum', text: 'Arbitrum', ref: arbitrumRef },
+      // { href: '/l2s#optimism', text: 'Optimism', ref: optimismRef },
+      // { href: '/l2s#starknet', text: 'Starknet', ref: starknetRef },
+      // { href: '/l2s#appendix', text: 'Appendix', ref: appendixRef }
     ],
     []
   );
@@ -28,7 +33,7 @@ export default function L2s() {
   const activeLinkIndex = useHighlightLinkOnScroll(links);
 
   return (
-    <Box>
+    <Flex sx={{ flexDirection: 'column' }}>
       <Box
         as="nav"
         role="navigation"
@@ -39,7 +44,7 @@ export default function L2s() {
           display: 'flex',
           justifyContent: 'center',
           gap: '2rem',
-          top: '90px',
+          top: '56px',
           left: 0,
           backgroundColor: 'background',
           borderBottom: '1px solid',
@@ -57,17 +62,13 @@ export default function L2s() {
         ))}
       </Box>
 
-      <Box
-        as="section"
-        id="overview"
-        ref={overviewRef}
-        sx={{ height: '700px' }}>
-        <Text variant="heading">Overview</Text>
+      <Box as="section" id="overview" ref={overviewRef}>
+        <Overview />
       </Box>
 
-      <Box as="section" id="teleport" ref={teleportRef}>
-        <Text variant="heading" id="teleport">
-          Teleport
+      {/* <Box as="section" id="fast-withdrawals" ref={fastWithdrawalsRef}>
+        <Text variant="heading" id="fast-withdrawals">
+          Fast Withdrawals
         </Text>
       </Box>
 
@@ -93,7 +94,7 @@ export default function L2s() {
         <Text variant="heading" id="appendix">
           Appendix
         </Text>
-      </Box>
-    </Box>
+      </Box> */}
+    </Flex>
   );
 }

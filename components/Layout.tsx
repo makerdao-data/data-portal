@@ -1,8 +1,9 @@
 import Head from 'next/head';
-import React, { ReactNode } from 'react';
+import React, { Fragment, ReactNode } from 'react';
 import Navbar from './Navbar';
 import { Box } from 'theme-ui';
 import Footer from './Footer';
+import { Alert } from '@makerdao-dicu/makerdao-ui';
 
 type LayoutProps = {
   children: ReactNode;
@@ -15,7 +16,8 @@ export default function Layout({ children }: LayoutProps) {
       sx={{
         maxWidth: '1200px',
         margin: '0 auto',
-        height: '100vh',
+        position: 'relative',
+        minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
         paddingLeft: '1rem',
@@ -33,7 +35,7 @@ export default function Layout({ children }: LayoutProps) {
         as="div"
         sx={{
           marginTop: '8rem',
-          flex: 1
+          paddingBottom: '10rem'
         }}>
         {children}
       </Box>

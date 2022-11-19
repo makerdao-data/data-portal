@@ -1,10 +1,16 @@
 import React from 'react';
-import { Box, useColorMode, useThemeUI } from 'theme-ui';
-import { MoonIcon, SunIcon, MakerIcon, Text } from '@makerdao-dicu/makerdao-ui';
+import { Box, useColorMode } from 'theme-ui';
+import {
+  MoonIcon,
+  SunIcon,
+  MakerIcon,
+  Text,
+  useTheme
+} from '@makerdao-dicu/makerdao-ui';
 import NavbarLink from './NavbarLink';
 
 export default function Navbar() {
-  const { theme } = useThemeUI();
+  const { theme } = useTheme();
   const [selectedColorMode, setColorMode] = useColorMode();
 
   return (
@@ -18,7 +24,7 @@ export default function Navbar() {
         display: 'flex',
         justifyContent: 'space-between',
         gap: '1rem',
-        padding: '2rem 1rem',
+        padding: '0 1rem',
         top: 0,
         left: 0,
         backgroundColor: 'background'
@@ -44,9 +50,11 @@ export default function Navbar() {
           }
         }}>
         {/* <NavbarLink href="/" text="Home" /> */}
-        <NavbarLink href="/l2s" text="L2s" />
-
-        {/* <NavbarLink href="/l2-metrics" text="L2s" /> */}
+        <NavbarLink
+          href="/l2s"
+          text="L2s"
+          sx={{ fontSize: theme.fontSizes?.[6] }}
+        />
 
         {selectedColorMode === 'light' ? (
           <MoonIcon

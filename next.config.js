@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  i18n: {
+    locales: ['en-US'],
+    defaultLocale: 'en-US'
+  },
   reactStrictMode: true,
   swcMinify: true,
   eslint: {
@@ -16,4 +20,10 @@ const nextConfig = {
   }
 };
 
-module.exports = nextConfig;
+const withTM = require('next-transpile-modules')([
+  'lightweight-charts',
+  'fancy-canvas',
+  '@makerdao-dicu/makerdao-ui'
+]);
+
+module.exports = withTM(nextConfig);
