@@ -1,9 +1,9 @@
-import { Box, Flex, useColorMode, __ThemeUIContext } from 'theme-ui';
+import { Box, Flex, useColorMode } from 'theme-ui';
 import { Text, AreaChart } from '@makerdao-dicu/makerdao-ui';
 import { ColorType } from 'lightweight-charts';
-import summaryData from '../../../fixtures/summary.json';
+import summaryData from '../../fixtures/summary.json';
 import { useIntl } from 'next-intl';
-import AmountCard from './AmountCard';
+import AmountCard from './components/AmountCard';
 
 export default function Overview() {
   const intl = useIntl();
@@ -17,22 +17,6 @@ export default function Overview() {
         Last refresh (delay): 15983125 block (107 blocks) / 2022-11-16 14:16:59
         UTC (21 mins)
       </Text>
-
-      {/* <Text variant="text" sx={{ marginTop: 2 }}>
-        {`This is app monitors the performance metrics of the bridges built by
-        Maker, collectively called Maker Teleport. As of now, this allows users
-        to send Dai between Ethereum L1 and the following L2 rollups: Arbitrum,
-        Optimism and StarkWare. For now we are only concerned by Dai bridged
-        through Maker Teleport, often refered to as "Canonical Dai". While Dai
-        can be permissionlessly bridged over to any chain by any bridge, the
-        bridged Dai is wrapped (it's a representation of L1 Dai), this creates
-        an associated risk with the bridge operator, we call this "Non-canonical
-        Dai". You can read more about the bridge design, the security learnings
-        and the oracles design. You can also get a better view of the design of
-        the different Layer 2 blockchains at ❤️L2Beat. As of October 2022 you
-        can do Fast Withdrawals, sending funds from Arbitrum & Optimism to
-        Ethereum without having to wait!`}
-      </Text> */}
 
       <Text variant="smallHeading">DAI in L2s</Text>
 

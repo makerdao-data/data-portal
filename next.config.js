@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   i18n: {
-    locales: ['en-US'],
-    defaultLocale: 'en-US'
+    locales: ['en'],
+    defaultLocale: 'en'
   },
   reactStrictMode: true,
   swcMinify: true,
@@ -13,7 +13,12 @@ const nextConfig = {
     return [
       {
         source: '/',
-        destination: '/l2s#overview',
+        destination: '/l2s/overview',
+        permanent: false
+      },
+      {
+        source: '/l2s',
+        destination: '/l2s/overview',
         permanent: false
       }
     ];

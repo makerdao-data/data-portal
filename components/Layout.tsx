@@ -1,27 +1,26 @@
 import Head from 'next/head';
-import React, { Fragment, ReactNode } from 'react';
-import Navbar from './Navbar';
-import { Box } from 'theme-ui';
-import Footer from './Footer';
-import { Alert } from '@makerdao-dicu/makerdao-ui';
+import React, { ReactNode } from 'react';
+import SideBar from './Sidebar';
+import { Box, Flex } from 'theme-ui';
+import MobileNavbar from './MobileNavbar';
+import { useToggle } from '../hooks';
 
 type LayoutProps = {
   children: ReactNode;
 };
 
 export default function Layout({ children }: LayoutProps) {
+  const [sidebarOpen, toggleSidebar] = useToggle();
+
   return (
     <Box
       as="div"
       sx={{
-        maxWidth: '1200px',
-        margin: '0 auto',
+        isolation: 'isolate',
+        width: '100%',
         position: 'relative',
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        paddingLeft: '1rem',
-        paddingRight: '1rem'
+        minHeight: '100%',
+        display: 'flex'
       }}>
       <Head>
         <title>Data Insights</title>
@@ -29,18 +28,20 @@ export default function Layout({ children }: LayoutProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navbar />
+      <MobileNavbar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
+      <SideBar sidebarOpen={sidebarOpen} />
 
-      <Box
-        as="div"
+      <Flex
         sx={{
-          marginTop: '8rem',
-          paddingBottom: '10rem'
+          flexDirection: 'column',
+          flex: '1 1 0%',
+          margin: ['6rem 1rem', '3rem 3rem 3rem 220px'],
+          isolation: 'isolate'
         }}>
         {children}
-      </Box>
 
-      <Footer />
+        {/* <Footer /> */}
+      </Flex>
     </Box>
   );
 }

@@ -5,7 +5,7 @@ test.describe('L2s page test', () => {
     page
   }) => {
     await page.goto('http://localhost:3000/');
-    await expect(page).toHaveURL('http://localhost:3000/l2s#overview');
+    await expect(page).toHaveURL('http://localhost:3000/en/l2s#overview');
   });
 
   test('sub navbar sections navigation', async ({ page }) => {
@@ -16,21 +16,23 @@ test.describe('L2s page test', () => {
     ).toBeVisible();
 
     await page.getByRole('link', { name: 'Overview' }).click();
-    await expect(page).toHaveURL('http://localhost:3000/l2s#overview');
+    await expect(page).toHaveURL('http://localhost:3000/en/l2s#overview');
 
     await page.getByRole('link', { name: 'Fast Withdrawals' }).click();
-    await expect(page).toHaveURL('http://localhost:3000/l2s#fast-withdrawals');
+    await expect(page).toHaveURL(
+      'http://localhost:3000/en/l2s#fast-withdrawals'
+    );
 
     await page.getByRole('link', { name: 'Arbitrum' }).click();
-    await expect(page).toHaveURL('http://localhost:3000/l2s#arbitrum');
+    await expect(page).toHaveURL('http://localhost:3000/en/l2s#arbitrum');
 
     await page.getByRole('link', { name: 'Optimism' }).click();
-    await expect(page).toHaveURL('http://localhost:3000/l2s#optimism');
+    await expect(page).toHaveURL('http://localhost:3000/en/l2s#optimism');
 
     await page.getByRole('link', { name: 'Starknet' }).click();
-    await expect(page).toHaveURL('http://localhost:3000/l2s#starknet');
+    await expect(page).toHaveURL('http://localhost:3000/en/l2s#starknet');
 
     await page.getByRole('link', { name: 'Appendix' }).click();
-    await expect(page).toHaveURL('http://localhost:3000/l2s#appendix');
+    await expect(page).toHaveURL('http://localhost:3000/en/l2s#appendix');
   });
 });
