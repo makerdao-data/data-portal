@@ -1,15 +1,6 @@
 import React from 'react';
-import { Flex, Link, NavLink } from 'theme-ui';
-import {
-  MakerIcon,
-  Text,
-  DiscordIcon,
-  GithubIcon,
-  TwitterIcon,
-  RedditIcon,
-  YoutubeIcon
-} from '@makerdao-dicu/makerdao-ui';
-import { NavbarExternalLink } from './NavbarButton';
+import { Flex } from 'theme-ui';
+import { MakerIcon, Text } from '@makerdao-dicu/makerdao-ui';
 import ColorModeSelector from './ColorModeSelector';
 import DashboardsNavigation from './DashboardsNavigation';
 import SidebarFooter from './SidebarFooter';
