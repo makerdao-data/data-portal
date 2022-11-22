@@ -1,13 +1,27 @@
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from '@makerdao-dicu/makerdao-ui';
 import Layout from '../components/Layout';
+import { NextIntlProvider } from 'next-intl';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ThemeProvider>
+    <NextIntlProvider locale="en" messages={pageProps.messages}>
+      <ThemeProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeProvider>
+    </NextIntlProvider>
   );
+}
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      // You can get the messages from anywhere you like. The recommended
+      // pattern is to put them in JSON files separated by language and read
+      // the desired one based on the `locale` received from Next.js.
+      messages: (await import(`../i18n/messages/${locale}.json`)).default
+    }
+  };
 }

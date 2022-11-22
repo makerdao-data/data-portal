@@ -1,7 +1,6 @@
 import {
   DiscordIcon,
   GithubIcon,
-  MakerColorIcon,
   MakerIcon,
   RedditIcon,
   Text,
@@ -9,13 +8,11 @@ import {
   YoutubeIcon
 } from '@makerdao-dicu/makerdao-ui';
 import Link from 'next/link';
-import { Box, Flex, NavLink, useColorMode } from 'theme-ui';
+import { Box, Flex, NavLink } from 'theme-ui';
 
 export default function Footer() {
-  // const [colorMode] = useColorMode();
-
   return (
-    <Box sx={{ position: 'relative' }}>
+    <Box sx={{ position: 'relative', visibility: ['visible', 'hidden'] }}>
       <Box
         as="div"
         sx={{
