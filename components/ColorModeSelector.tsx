@@ -24,6 +24,7 @@ export default function ColorModeSelector() {
         <MoonIcon
           role="button"
           aria-label="Dark mode button"
+          aria-disabled={selectedColorMode === 'light'}
           width={20}
           height={20}
         />
@@ -39,6 +40,7 @@ export default function ColorModeSelector() {
         <SunIcon
           role="button"
           aria-label="Light mode button"
+          aria-disabled={selectedColorMode === 'dark'}
           width={20}
           height={20}
         />

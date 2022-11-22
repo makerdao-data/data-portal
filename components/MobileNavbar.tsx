@@ -22,7 +22,7 @@ export default function MobileNavbar({
     <Box
       as="nav"
       role="navigation"
-      aria-label="Navbar"
+      aria-label="Top Navbar"
       sx={{
         position: 'fixed',
         width: '100%',
@@ -54,9 +54,21 @@ export default function MobileNavbar({
       </Flex>
 
       {sidebarOpen ? (
-        <CloseIcon onClick={toggleSidebar} width={25} height={25} />
+        <CloseIcon
+          role="button"
+          aria-label="Close sidebar button"
+          onClick={toggleSidebar}
+          width={25}
+          height={25}
+        />
       ) : (
-        <MenuIcon onClick={toggleSidebar} width={25} height={25} />
+        <MenuIcon
+          role="button"
+          aria-label="Open sidebar button"
+          onClick={toggleSidebar}
+          width={25}
+          height={25}
+        />
       )}
 
       {sidebarOpen ? (

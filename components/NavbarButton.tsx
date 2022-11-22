@@ -72,8 +72,6 @@ export function NavbarLink({ href, text, sx }: NavbarLinkProps) {
 export function NavbarExternalLink({ href, text, sx }: NavbarLinkProps) {
   return (
     <Box
-      role="link"
-      aria-label={'NavbarExternalLink' + text}
       sx={{
         ['a']: {
           color: 'text',
