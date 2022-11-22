@@ -20,7 +20,9 @@ export default function Layout({ children }: LayoutProps) {
         width: '100%',
         position: 'relative',
         minHeight: '100%',
-        display: 'flex'
+        display: 'flex',
+        backgroundColor: 'background',
+        transition: 'background 0.3s'
       }}>
       <Head>
         <title>Data Insights</title>
