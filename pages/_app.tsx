@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from '@makerdao-dicu/makerdao-ui';
-import Layout from '../components/layout';
+import Layout from '../components/layout_temp';
 import { NextIntlProvider } from 'next-intl';
 import { SWRConfig } from 'swr';
 import ErrorBoundary from '../components/ErrorBoundary';
