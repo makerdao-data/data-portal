@@ -15,11 +15,7 @@ export default function Overview() {
   const { data, error } = useSwr<Summary, Error>('/metrics/summary');
 
   const dataSeries = useMemo(() => {
-    if (data) {
-      return createOverviewAreaChartDataSeries(data);
-    }
-
-    return [];
+    return createOverviewAreaChartDataSeries(data);
   }, [data]);
 
   if (error) {
