@@ -2,11 +2,11 @@ import { Box, Flex, useColorMode } from 'theme-ui';
 import { Text, AreaChart } from '@makerdao-dicu/makerdao-ui';
 import { ColorType } from 'lightweight-charts';
 import { useIntl } from 'next-intl';
-import AmountCard from './components/AmountCard';
+import AmountCard from '../../components/AmountCard';
 import useSwr from 'swr';
 import { useMemo } from 'react';
 import { Summary } from '../../__generated__/dataAPI';
-import createOverviewAreaChartDataSeries from './transformers/create-overview-data-series';
+import { createOverviewAreaChartDataSeries } from '../../transformers/create-overview-data-series';
 import Skeleton from 'react-loading-skeleton';
 
 export default function Overview() {
