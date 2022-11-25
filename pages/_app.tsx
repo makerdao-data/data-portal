@@ -1,15 +1,36 @@
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from '@makerdao-dicu/makerdao-ui';
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
 import { NextIntlProvider } from 'next-intl';
+import { SWRConfig } from 'swr';
+import ErrorBoundary from '../components/ErrorBoundary';
+
+async function fetcher(path: string) {
+  const response = await fetch(process.env.NEXT_PUBLIC_API_V1_URL + path, {
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + process.env.NEXT_PUBLIC_API_V1_TOKEN
+    }
+  });
+  const data = await response.json();
+
+  return data;
+}
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <NextIntlProvider locale="en" messages={pageProps.messages}>
       <ThemeProvider>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <SWRConfig
+          value={{
+            fetcher
+          }}>
+          <Layout>
+            <ErrorBoundary>
+              <Component {...pageProps} />
+            </ErrorBoundary>
+          </Layout>
+        </SWRConfig>
       </ThemeProvider>
     </NextIntlProvider>
   );

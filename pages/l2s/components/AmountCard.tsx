@@ -1,11 +1,13 @@
 import { Text, useTheme } from '@makerdao-dicu/makerdao-ui';
 import { Flex } from 'theme-ui';
 import { useIntl } from 'next-intl';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 type AmountCardProps = {
   title: string;
-  value: number;
-  change: number;
+  value?: number;
+  change?: number;
 };
 
 export default function AmountCard({ title, value, change }: AmountCardProps) {
@@ -23,16 +25,31 @@ export default function AmountCard({ title, value, change }: AmountCardProps) {
         borderRadius: '8px'
       }}>
       <Text variant="microHeading">{title}</Text>
-      <Text sx={{ fontSize: theme.fontSizes?.[8], fontWeight: 700 }}>
-        {intl.formatNumber(value, {
-          maximumFractionDigits: 2
-        })}
+      <Text
+        role="textbox"
+        aria-label={title + ' value'}
+        sx={{ fontSize: theme.fontSizes?.[8], fontWeight: 700 }}>
+        {value ? (
+          intl.formatNumber(value, {
+            maximumFractionDigits: 2
+          })
+        ) : (
+          <Skeleton />
+        )}
       </Text>
-      <Text variant="muted" sx={{ color: change < 0 ? 'error' : 'success' }}>
-        {intl.formatNumber(change, {
-          style: 'percent',
-          minimumFractionDigits: 2
-        })}
+      <Text
+        role="textbox"
+        aria-label={title + ' change'}
+        variant="muted"
+        sx={{ color: change && change < 0 ? 'error' : 'success' }}>
+        {change ? (
+          intl.formatNumber(change, {
+            style: 'percent',
+            minimumFractionDigits: 2
+          })
+        ) : (
+          <Skeleton />
+        )}
       </Text>
     </Flex>
   );
