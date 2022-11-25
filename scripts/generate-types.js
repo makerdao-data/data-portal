@@ -88,8 +88,8 @@ generateApi({
   //   onPrepareConfig: (currentConfiguration) => {}
   // }
 })
-  .then(({ files, configuration }) => {
-    files.forEach(({ content, name }) => {
+  .then(({ files }) => {
+    files.forEach(({ content }) => {
       fs.writeFile(path, content);
     });
   })
