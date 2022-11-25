@@ -8,13 +8,14 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix --dir .",
-    "e2e": "playwright test"
+    "e2e": "playwright test",
+    "generate-types": "node scripts/generate-types.js"
   },
   "pre-commit": [
     "lint:fix"
   ],
   "dependencies": {
-    "@makerdao-dicu/makerdao-ui": "^0.0.19",
+    "@makerdao-dicu/makerdao-ui": "^0.0.20",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.8",
@@ -26,6 +27,8 @@
     "next-transpile-modules": "^10.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-loading-skeleton": "^3.1.0",
+    "swr": "^1.3.0",
     "typescript": "4.8.4"
   },
   "devDependencies": {
@@ -36,6 +39,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "pre-commit": "^1.2.2",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "swagger-typescript-api": "^12.0.2"
   }
 }

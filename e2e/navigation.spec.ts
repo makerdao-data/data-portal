@@ -1,9 +1,27 @@
 import { test, expect, devices } from '@playwright/test';
+// import summaryFixture from '../fixtures/summary.json';
 
 test.describe('navigation test', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:3000/');
+    await page.goto(`http://localhost:3000`);
   });
+
+  // test('overview query', async ({ page }) => {
+  //   await page.route(
+  //     'https://data-api.makerdao.network/v1/metrics/summary',
+  //     (route) =>
+  //       route.fulfill({
+  //         status: 200,
+  //         body: JSON.stringify(summaryFixture)
+  //       })
+  //   );
+
+  //   await page.goto('http://localhost:3000/l2s/overview');
+
+  //   await expect(
+  //     page.getByRole('textbox', { name: 'DAI Supply value' })
+  //   ).toContainText('122,544,793.02');
+  // });
 
   test('render sidebar and hide topnavbar on desktop', async ({ page }) => {
     await expect(
