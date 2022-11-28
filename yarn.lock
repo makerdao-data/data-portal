@@ -289,10 +289,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@makerdao-dicu/makerdao-ui@^0.0.20":
-  version "0.0.20"
-  resolved "https://registry.yarnpkg.com/@makerdao-dicu/makerdao-ui/-/makerdao-ui-0.0.20.tgz#52e40a84ee71735eda068bbb699b14e740820553"
-  integrity sha512-55H5VZl0azTxcWuoc0KK6fxc2CwKeKSy5eKEOLaheH2j1yvY4bsJnCXR2+RJ40e5vbOLouBodw3kXIMvSg4fYQ==
+"@makerdao-dicu/makerdao-ui@^0.0.22":
+  version "0.0.22"
+  resolved "https://registry.yarnpkg.com/@makerdao-dicu/makerdao-ui/-/makerdao-ui-0.0.22.tgz#19af24ed5b2c19dde5c26d675a7032d5d93e0707"
+  integrity sha512-dB9QPsN4m7irRJzczM/AMnhbqQsxy9umr90vCpv84hSnIMmOiV9G/A9WOup9DSaGgfmEZgCakWif+1a26QWNWQ==
   dependencies:
     "@emotion/react" "^11.10.4"
     "@emotion/styled" "^11.10.4"
