@@ -89,6 +89,8 @@ export default function Overview() {
           }}>
           {dataSeries.length > 0 ? (
             <AreaChart
+              role="figure"
+              aria-label="DAI in L2s chart"
               dataSeries={dataSeries}
               chartOptions={{
                 layout: {
