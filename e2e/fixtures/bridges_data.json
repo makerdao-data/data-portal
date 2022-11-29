@@ -1,0 +1,15 @@
+{
+  "info": {
+    "optimism": {
+      "isOpen": "Open"
+    },
+    "starknet": {
+      "ceiling": 200000,
+      "isOpen": "Closed",
+      "maxDeposit": 1000
+    },
+    "abitrum": {
+      "isOpen": "Open"
+    }
+  }
+}

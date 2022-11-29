@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import summaryFixture from './fixtures/summary.json';
+import bridges_data from './fixtures/bridges_data.json';
 
 test.describe('navigation test', () => {
   test.beforeEach(async ({ page }) => {
@@ -9,6 +10,15 @@ test.describe('navigation test', () => {
         route.fulfill({
           status: 200,
           body: JSON.stringify(summaryFixture)
+        })
+    );
+
+    await page.route(
+      'https://data-api.makerdao.network/v1/bridges/all',
+      (route) =>
+        route.fulfill({
+          status: 200,
+          body: JSON.stringify(bridges_data)
         })
     );
 

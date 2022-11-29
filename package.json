@@ -9,7 +9,7 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix --dir .",
     "e2e": "playwright test",
-    "generate-types": "node scripts/generate-types.js"
+    "generate-data-api": "node scripts/generate-data-api.js"
   },
   "pre-commit": [
     "lint:fix"
