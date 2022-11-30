@@ -927,6 +927,12 @@ export interface HTTPValidationError {
   detail?: ValidationError[];
 }
 
+/** Info */
+export interface Info {
+  /** Info */
+  info: Record<string, any>;
+}
+
 /** LastBlock */
 export interface LastBlock {
   /**
@@ -1782,7 +1788,7 @@ export class HttpClient<SecurityDataType = unknown> {
     baseUrl,
     cancelToken,
     ...params
-  }: FullRequestParams): Promise<HttpResponse<T, E>> => {
+  }: FullRequestParams): Promise<T> => {
     const secureParams =
       ((typeof secure === 'boolean' ? secure : this.baseApiParams.secure) &&
         this.securityWorker &&
@@ -1839,7 +1845,7 @@ export class HttpClient<SecurityDataType = unknown> {
       }
 
       if (!response.ok) throw data;
-      return data;
+      return data.data;
     });
   };
 }
@@ -2436,13 +2442,13 @@ export class Api<
         /**
          * From Date
          * @format date
-         * @default "2022-11-16"
+         * @default "2022-11-27"
          */
         from_date?: string;
         /**
          * To Date
          * @format date
-         * @default "2022-11-16"
+         * @default "2022-11-27"
          */
         to_date?: string;
         /**
@@ -3686,6 +3692,78 @@ export class Api<
     readSummaryMetricsV1MetricsSummaryGet: (params: RequestParams = {}) =>
       this.request<Summary, any>({
         path: `/v1/metrics/summary`,
+        method: 'GET',
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * No description
+     *
+     * @tags bridges
+     * @name ReadOptimismBridgeInfoV1BridgesOptimismGet
+     * @summary Read Optimism Bridge Info
+     * @request GET:/v1/bridges/optimism
+     * @secure
+     */
+    readOptimismBridgeInfoV1BridgesOptimismGet: (params: RequestParams = {}) =>
+      this.request<Info, any>({
+        path: `/v1/bridges/optimism`,
+        method: 'GET',
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * No description
+     *
+     * @tags bridges
+     * @name ReadArbitrumBridgeInfoV1BridgesArbitrumGet
+     * @summary Read Arbitrum Bridge Info
+     * @request GET:/v1/bridges/arbitrum
+     * @secure
+     */
+    readArbitrumBridgeInfoV1BridgesArbitrumGet: (params: RequestParams = {}) =>
+      this.request<Info, any>({
+        path: `/v1/bridges/arbitrum`,
+        method: 'GET',
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * No description
+     *
+     * @tags bridges
+     * @name ReadStarknetBridgeInfoV1BridgesStarknetGet
+     * @summary Read Starknet Bridge Info
+     * @request GET:/v1/bridges/starknet
+     * @secure
+     */
+    readStarknetBridgeInfoV1BridgesStarknetGet: (params: RequestParams = {}) =>
+      this.request<Info, any>({
+        path: `/v1/bridges/starknet`,
+        method: 'GET',
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * No description
+     *
+     * @tags bridges
+     * @name ReadAllBridgesInfoV1BridgesAllGet
+     * @summary Read All Bridges Info
+     * @request GET:/v1/bridges/all
+     * @secure
+     */
+    readAllBridgesInfoV1BridgesAllGet: (params: RequestParams = {}) =>
+      this.request<Info, any>({
+        path: `/v1/bridges/all`,
         method: 'GET',
         secure: true,
         format: 'json',

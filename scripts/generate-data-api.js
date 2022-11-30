@@ -14,7 +14,7 @@ generateApi({
       ...constructs.Keyword,
       Object: 'Record<string, any>'
     }
-  })
+  }),
   // input: path.resolve(process.cwd(), './foo/swagger.json'),
   // spec: {
   //   swagger: '3.0',
@@ -28,11 +28,11 @@ generateApi({
   // defaultResponseAsSuccess: false,
   // generateClient: true,
   // generateRouteTypes: false,
-  // generateResponses: true,
+  // generateResponses: false,
   // toJS: false,
   // extractRequestParams: false,
   // extractRequestBody: false,
-  // unwrapResponseData: false,
+  unwrapResponseData: true
   // prettier: {
   //   // By default prettier config is load from your project
   //   printWidth: 120,
