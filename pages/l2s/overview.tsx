@@ -29,7 +29,9 @@ export default function Overview() {
 
       <DaiInL2sSection data={data} />
 
-      <L1BridgesStatus />
+      <Flex>
+        <L1BridgesStatus />
+      </Flex>
     </Flex>
   );
 }
