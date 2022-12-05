@@ -1,16 +1,21 @@
 import { Text, useTheme } from '@makerdao-dicu/makerdao-ui';
-import { Flex } from 'theme-ui';
+import { Flex, FlexProps } from 'theme-ui';
 import { useIntl } from 'next-intl';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
-type AmountCardProps = {
+type DataCardProps = {
   title: string;
   value?: number;
   change?: number;
 };
 
-export default function AmountCard({ title, value, change }: AmountCardProps) {
+export default function DataCard({
+  title,
+  value,
+  change,
+  ...props
+}: DataCardProps & FlexProps) {
   const intl = useIntl();
   const { theme } = useTheme();
 
@@ -22,9 +27,10 @@ export default function AmountCard({ title, value, change }: AmountCardProps) {
         border: '1px solid',
         borderColor: 'secondary',
         padding: 2,
-        borderRadius: '8px'
+        borderRadius: '8px',
+        ...props.sx
       }}>
-      <Text variant="microHeading">{title}</Text>
+      <Text variant="smallHeading">{title}</Text>
       <Text
         role="textbox"
         aria-label={title + ' value'}
@@ -43,10 +49,10 @@ export default function AmountCard({ title, value, change }: AmountCardProps) {
         variant="muted"
         sx={{ color: change && change < 0 ? 'error' : 'success' }}>
         {change ? (
-          intl.formatNumber(change, {
+          `7d Change ${change > 0 ? '+' : ''}${intl.formatNumber(change, {
             style: 'percent',
             minimumFractionDigits: 2
-          })
+          })}`
         ) : (
           <Skeleton />
         )}

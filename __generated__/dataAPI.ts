@@ -384,6 +384,8 @@ export interface Bridge {
   supply_pct_change: any[];
   /** Escrow Pct Change */
   escrow_pct_change: any[];
+  /** Last Refresh */
+  last_refresh: Record<string, any>;
 }
 
 /** CurrentVault */
@@ -533,6 +535,16 @@ export interface Delegate {
   type: string;
   /** Name */
   name?: string;
+}
+
+/** Domains */
+export interface Domains {
+  /** Domains */
+  domains: any[];
+  /** Throughput */
+  throughput: number;
+  /** Utilization */
+  utilization: number;
 }
 
 /** Executive */
@@ -1187,6 +1199,18 @@ export interface Summary {
   total_supply: Record<string, any>;
   /** Total Escrow */
   total_escrow: Record<string, any>;
+  /** Last Refresh */
+  last_refresh: Record<string, any>;
+  /** Teleport Domains */
+  teleport_domains: Record<string, any>;
+  /** Networks Transfer Volume */
+  networks_transfer_volume: Record<string, any>;
+  /** Networks Transfer Count */
+  networks_transfer_count: Record<string, any>;
+  /** Networks Avg Transfer */
+  networks_avg_transfer: Record<string, any>;
+  /** Bridges */
+  bridges: Record<string, any>;
 }
 
 /** Support */
@@ -2442,13 +2466,13 @@ export class Api<
         /**
          * From Date
          * @format date
-         * @default "2022-11-27"
+         * @default "2022-12-01"
          */
         from_date?: string;
         /**
          * To Date
          * @format date
-         * @default "2022-11-27"
+         * @default "2022-12-01"
          */
         to_date?: string;
         /**
@@ -3764,6 +3788,24 @@ export class Api<
     readAllBridgesInfoV1BridgesAllGet: (params: RequestParams = {}) =>
       this.request<Info, any>({
         path: `/v1/bridges/all`,
+        method: 'GET',
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * No description
+     *
+     * @tags teleport
+     * @name ReadTeleportDomainsV1TeleportDomainsGet
+     * @summary Read Teleport Domains
+     * @request GET:/v1/teleport/domains
+     * @secure
+     */
+    readTeleportDomainsV1TeleportDomainsGet: (params: RequestParams = {}) =>
+      this.request<Domains, any>({
+        path: `/v1/teleport/domains`,
         method: 'GET',
         secure: true,
         format: 'json',

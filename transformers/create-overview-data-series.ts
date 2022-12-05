@@ -7,12 +7,11 @@ export function createOverviewAreaChartDataSeries(
   if (data !== undefined) {
     return [
       {
-        colors: {
-          backgroundColor: 'white',
-          lineColor: '#2962FF',
-          textColor: 'text',
-          areaTopColor: '#2962FF',
-          areaBottomColor: 'rgba(41, 98, 255, 0.28)'
+        styleOptions: {
+          lineColor: '#ff0420',
+          topColor: '#ff0420',
+          bottomColor: 'rgba(255, 4, 32, 0.28)',
+          title: 'Optimism'
         },
         data: Object.keys(data.total_supply.OPTIMISM)
           .filter((key) =>
@@ -30,12 +29,11 @@ export function createOverviewAreaChartDataSeries(
           }))
       },
       {
-        colors: {
-          backgroundColor: 'white',
-          lineColor: '#ff818f',
-          textColor: 'text',
-          areaTopColor: '#ff818f',
-          areaBottomColor: 'rgba(255, 125, 130, 0.28)'
+        styleOptions: {
+          lineColor: '#28a0f0',
+          topColor: '#28a0f0',
+          bottomColor: 'rgba(40, 160, 240, 0.28)',
+          title: 'Arbitrum'
         },
         data: Object.keys(data.total_supply.ARBITRUM)
           .filter((key) =>
@@ -54,12 +52,11 @@ export function createOverviewAreaChartDataSeries(
           }))
       },
       {
-        colors: {
-          backgroundColor: 'white',
-          lineColor: '#9191b0',
-          textColor: 'text',
-          areaTopColor: '#9191b0',
-          areaBottomColor: 'rgba(126, 125, 161, 0.28)'
+        styleOptions: {
+          lineColor: '#252563',
+          topColor: '#252563',
+          bottomColor: 'rgba(37, 37, 99, 0.28)',
+          title: 'Starknet'
         },
         data: Object.keys(data.total_supply.STARKNET)
           .filter((key) =>
