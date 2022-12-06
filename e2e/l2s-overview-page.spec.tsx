@@ -25,7 +25,7 @@ test.describe('Overview page test', () => {
     await page.goto(`http://localhost:3000/l2s/overview`);
   });
 
-  test.only('DAI in L2s section', async ({ page }) => {
+  test('DAI in L2s section', async ({ page }) => {
     await expect(
       page.getByRole('textbox', { name: 'DAI Supply value' })
     ).toContainText('122,544,793.03');
@@ -44,7 +44,7 @@ test.describe('Overview page test', () => {
 
     await expect(
       page.getByRole('textbox', { name: 'Last refresh date' })
-    ).toContainText('Dec 6, 2022, 2:57 PM (about 2 hours)');
+    ).toContainText('Dec 6, 2022, 11:57 AM (about 1 hour)');
 
     await expect(
       page.getByRole('figure', { name: 'DAI in L2s chart' })
