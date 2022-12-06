@@ -1,4 +1,4 @@
-import { Flex, Link, NavLink } from 'theme-ui';
+import { Flex, Link } from 'theme-ui';
 import DataCard from '../components/DataCard';
 import { Text } from '@makerdao-dicu/makerdao-ui';
 import { Summary } from '../__generated__/dataAPI';
