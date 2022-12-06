@@ -30,15 +30,15 @@ export default function DaiSupply({ data, error }: DaiSupplyProps) {
   const lastEthRefresh = useMemo(() => {
     if (data && lastEthBlockData) {
       const latestProcessedBlock = data.last_refresh.ethereum.last_block;
-      const lastRefreshDate = new Date(
-        data.last_refresh.ethereum.last_timestamp
+      const localLastRefreshDate = new Date(
+        data.last_refresh.ethereum.last_timestamp + 'Z'
       );
       return {
         latestProcessedBlock,
         blocksDistance:
           parseInt(lastEthBlockData.result) - latestProcessedBlock,
-        date: lastRefreshDate,
-        timeDistance: formatDistance(lastRefreshDate, new Date())
+        date: localLastRefreshDate,
+        timeDistance: formatDistance(localLastRefreshDate, new Date())
       };
     }
 
