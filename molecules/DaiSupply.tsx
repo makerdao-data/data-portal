@@ -1,15 +1,50 @@
-import { Flex } from 'theme-ui';
+import { Flex, Link } from 'theme-ui';
 import DataCard from '../components/DataCard';
 import { Text } from '@makerdao-dicu/makerdao-ui';
 import { Summary } from '../__generated__/dataAPI';
-import { Fragment } from 'react';
+import { Fragment, useMemo } from 'react';
+import useSwr from 'swr';
+import { ethLastBlockFetcher } from '../data/dataApiClient';
+import { formatDistance } from 'date-fns';
+import Skeleton from 'react-loading-skeleton';
+import { useIntl } from 'next-intl';
 
 type DaiSupplyProps = {
   data: Summary | undefined;
   error: Error | undefined;
 };
 
+type AlchemyLastBlock = {
+  jsonrcp: string;
+  id: number;
+  result: string;
+};
+
 export default function DaiSupply({ data, error }: DaiSupplyProps) {
+  const intl = useIntl();
+  const { data: lastEthBlockData, error: lastEthBlockFetchError } = useSwr<
+    AlchemyLastBlock,
+    Error
+  >('ethLastBlockNumber', ethLastBlockFetcher as any);
+
+  const lastEthRefresh = useMemo(() => {
+    if (data && lastEthBlockData) {
+      const latestProcessedBlock = data.last_refresh.ethereum.last_block;
+      const lastRefreshDate = new Date(
+        data.last_refresh.ethereum.last_timestamp
+      );
+      return {
+        latestProcessedBlock,
+        blocksDistance:
+          parseInt(lastEthBlockData.result) - latestProcessedBlock,
+        date: lastRefreshDate,
+        timeDistance: formatDistance(lastRefreshDate, new Date())
+      };
+    }
+
+    return null;
+  }, [data, lastEthBlockData]);
+
   return (
     <Flex
       sx={{
@@ -45,10 +80,47 @@ export default function DaiSupply({ data, error }: DaiSupplyProps) {
           />
 
           <Flex sx={{ flexDirection: ['row', 'row', 'column'] }}>
-            <Text variant="muted">
-              Last update: 15983125 block (107 blocks)
-            </Text>
-            <Text variant="muted">2022-11-16 14:16:59 UTC (21 mins)</Text>
+            {lastEthBlockFetchError ? (
+              <Text variant="error">
+                {'Last refresh data is not available at the moment.'}
+              </Text>
+            ) : (
+              <Fragment>
+                {lastEthRefresh ? (
+                  <Text
+                    role="textbox"
+                    aria-label="Last processed block text"
+                    variant="muted">
+                    Last update: block{' '}
+                    <Link
+                      role="link"
+                      aria-label="Ethereum block link"
+                      target="_blank"
+                      href={`https://etherscan.io/block/${lastEthRefresh.latestProcessedBlock}`}>
+                      {lastEthRefresh.latestProcessedBlock}
+                    </Link>{' '}
+                    ({lastEthRefresh.blocksDistance} blocks)
+                  </Text>
+                ) : (
+                  <Text variant="muted">
+                    <Skeleton />
+                  </Text>
+                )}
+                <Text
+                  role="textbox"
+                  aria-label="Last refresh date"
+                  variant="muted">
+                  {lastEthRefresh ? (
+                    `${intl.formatDateTime(lastEthRefresh.date, {
+                      dateStyle: 'medium',
+                      timeStyle: 'short'
+                    })} (${lastEthRefresh.timeDistance})`
+                  ) : (
+                    <Skeleton />
+                  )}
+                </Text>
+              </Fragment>
+            )}
           </Flex>
         </Fragment>
       )}
