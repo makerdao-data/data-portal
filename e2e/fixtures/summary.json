@@ -3081,5 +3081,23 @@
         "isOpen": "Open"
       }
     }
+  },
+  "last_refresh": {
+    "arbitrum": {
+      "last_block": 44105591,
+      "last_timestamp": "2022-12-06 15:00:02"
+    },
+    "ethereum": {
+      "last_block": 16126494,
+      "last_timestamp": "2022-12-06 14:57:11"
+    },
+    "optimism": {
+      "last_block": 46084114,
+      "last_timestamp": "2022-12-06 15:00:46"
+    },
+    "starknet": {
+      "last_block": 15343,
+      "last_timestamp": "2022-12-06 14:30:51"
+    }
   }
 }

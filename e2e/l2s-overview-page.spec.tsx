@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import summaryFixture from './fixtures/summary.json';
+import alchemyFixture from './fixtures/alchemy.json';
 
 test.describe('Overview page test', () => {
   test.beforeEach(async ({ page }) => {
@@ -12,10 +13,19 @@ test.describe('Overview page test', () => {
         })
     );
 
+    await page.route(
+      'https://eth-mainnet.g.alchemy.com/v2/kKpGhqgtnDaz1n6PhdhZTXBPKcX9vlVN',
+      (route) =>
+        route.fulfill({
+          status: 200,
+          body: JSON.stringify(alchemyFixture)
+        })
+    );
+
     await page.goto(`http://localhost:3000/l2s/overview`);
   });
 
-  test('DAI in L2s section', async ({ page }) => {
+  test.only('DAI in L2s section', async ({ page }) => {
     await expect(
       page.getByRole('textbox', { name: 'DAI Supply value' })
     ).toContainText('122,544,793.03');
@@ -23,6 +33,18 @@ test.describe('Overview page test', () => {
     await expect(
       page.getByRole('textbox', { name: 'DAI Supply change' })
     ).toContainText('-2.18%');
+
+    await expect(
+      page.getByRole('textbox', { name: 'Last processed block text' })
+    ).toContainText('Last update: block 16126494 (103 blocks)');
+
+    await expect(
+      page.getByRole('link', { name: 'Ethereum block link' })
+    ).toHaveAttribute('href', 'https://etherscan.io/block/16126494');
+
+    await expect(
+      page.getByRole('textbox', { name: 'Last refresh date' })
+    ).toContainText('Dec 6, 2022, 2:57 PM (about 2 hours)');
 
     await expect(
       page.getByRole('figure', { name: 'DAI in L2s chart' })

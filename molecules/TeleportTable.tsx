@@ -5,11 +5,11 @@ import {
   Text
 } from '@makerdao-dicu/makerdao-ui';
 import { useIntl } from 'next-intl';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import { Fragment, useMemo } from 'react';
 import { Box, Flex } from 'theme-ui';
 import { Summary } from '../__generated__/dataAPI';
-import { Progress } from 'theme-ui';
+import { Progress, Link } from 'theme-ui';
 import TableSkeleton from '../components/TableSkeleton';
 
 type TeleportTableProps = {
@@ -89,14 +89,6 @@ export default function TeleportTable({ data, error }: TeleportTableProps) {
 
               ['td, th']: {
                 padding: '0.3rem'
-              },
-              ['a']: {
-                color: 'primary',
-                textDecoration: 'none',
-
-                [':hover']: {
-                  textDecoration: 'underline'
-                }
               }
             }}>
             <thead>
@@ -168,10 +160,15 @@ export default function TeleportTable({ data, error }: TeleportTableProps) {
                           }}>
                           <Flex sx={{ gap: '0.3rem', alignItems: 'center' }}>
                             {icons[domain]}
-                            <Link href={'/l2s/' + domain}>
-                              {domain[0].toUpperCase() +
-                                domain.split('').splice(1).join('')}
-                            </Link>
+                            <NextLink
+                              href={'/l2s/' + domain}
+                              passHref
+                              legacyBehavior>
+                              <Link>
+                                {domain[0].toUpperCase() +
+                                  domain.split('').splice(1).join('')}
+                              </Link>
+                            </NextLink>
                           </Flex>
                         </Box>
 
