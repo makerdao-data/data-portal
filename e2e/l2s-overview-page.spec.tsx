@@ -4,6 +4,25 @@ import alchemyFixture from './fixtures/alchemy.json';
 
 test.describe('Overview page test', () => {
   test.beforeEach(async ({ page }) => {
+    // Pick the new/fake "now" for you test pages.
+    const fakeNow = new Date('2022-12-06 10:57:11').valueOf();
+    // Update the Date accordingly in your test pages
+    await page.addInitScript(`{
+      Date = class extends Date {
+        constructor(...args) {
+          if (args.length === 0) {
+            super(${fakeNow});
+          } else {
+            super(...args);
+          }
+        }
+      }
+
+      const __DateNowOffset = ${fakeNow} - Date.now();
+      const __DateNow = Date.now;
+      Date.now = () => __DateNow() + __DateNowOffset;
+    }`);
+
     await page.route(
       'https://data-api.makerdao.network/v1/metrics/summary',
       (route) =>
@@ -44,7 +63,7 @@ test.describe('Overview page test', () => {
 
     await expect(
       page.getByRole('textbox', { name: 'Last refresh date' })
-    ).toContainText('Dec 6, 2022, 11:57 AM (about 1 hour)');
+    ).toContainText('Dec 6, 2022, 11:57 AM LT (about 1 hour)');
 
     await expect(
       page.getByRole('figure', { name: 'DAI in L2s chart' })

@@ -114,7 +114,7 @@ export default function DaiSupply({ data, error }: DaiSupplyProps) {
                     `${intl.formatDateTime(lastEthRefresh.date, {
                       dateStyle: 'medium',
                       timeStyle: 'short'
-                    })} (${lastEthRefresh.timeDistance})`
+                    })} LT (${lastEthRefresh.timeDistance})`
                   ) : (
                     <Skeleton />
                   )}
