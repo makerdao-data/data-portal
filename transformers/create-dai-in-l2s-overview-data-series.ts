@@ -1,7 +1,7 @@
 import { DataSerie } from '@makerdao-dicu/makerdao-ui';
 import { Summary } from '../__generated__/dataAPI';
 
-export function createOverviewAreaChartDataSeries(
+export function createDaiInL2sAreaChartDataSeries(
   data: Summary | undefined
 ): DataSerie[] {
   if (data !== undefined) {
