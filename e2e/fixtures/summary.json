@@ -35,6 +35,21 @@
     "arbitrum": 129299,
     "starknet": 4119
   },
+  "networks_transfer_volume": {
+    "Arbitrum": 161898641.62806398,
+    "Optimism": 148980733.59964207,
+    "Starknet": 174163.7717917986
+  },
+  "networks_transfer_count": {
+    "Arbitrum": 90262,
+    "Optimism": 186932,
+    "Starknet": 10060
+  },
+  "networks_avg_transfer": {
+    "Arbitrum": 1793.6522748007353,
+    "Optimism": 796.9782252350698,
+    "Starknet": 17.312502166182764
+  },
   "total_supply": {
     "OPTIMISM": {
       "2021-07-07 00:00:00": null,
