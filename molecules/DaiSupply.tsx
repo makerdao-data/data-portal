@@ -25,6 +25,7 @@ export default function DaiSupply({ data, error }: DaiSupplyProps) {
   const { data: lastEthBlockData, error: lastEthBlockFetchError } = useSwr<
     AlchemyLastBlock,
     Error
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   >('ethLastBlockNumber', ethLastBlockFetcher as any);
 
   const lastEthRefresh = useMemo(() => {
