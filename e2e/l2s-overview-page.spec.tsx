@@ -44,7 +44,7 @@ test.describe('Overview page test', () => {
     await page.goto(`http://localhost:3000/l2s/overview`);
   });
 
-  test('DAI supply card', async ({ page }) => {
+  test('DAI in L2s section', async ({ page }) => {
     await expect(
       page.getByRole('textbox', { name: 'DAI Supply value' })
     ).toContainText('122,544,793.03');
@@ -65,19 +65,6 @@ test.describe('Overview page test', () => {
       page.getByRole('textbox', { name: 'Last refresh date' })
     ).toContainText('Dec 6, 2022, 11:57 AM LT (about 1 hour)');
 
-    await expect(
-      page.getByRole('figure', { name: 'DAI in L2s chart' })
-    ).toBeVisible();
-
-    await expect(
-      page
-        .getByRole('figure', { name: 'DAI in L2s chart' })
-        .locator('div')
-        .first()
-    ).toHaveCSS('height', '380px');
-  });
-
-  test('DAI in L2s chart', async ({ page }) => {
     await expect(
       page.getByRole('figure', { name: 'DAI in L2s chart' })
     ).toBeVisible();
@@ -175,15 +162,5 @@ test.describe('Overview page test', () => {
     await expect(
       page.getByRole('cell', { name: 'arbitrum Bridge contract cell' })
     ).toContainText('0x41...0000');
-  });
-
-  test('Network comparison chart', async ({ page }) => {
-    await expect(
-      page.getByRole('textbox', { name: 'Network comparison title' })
-    ).toContainText('Network comparison');
-
-    await expect(
-      page.getByRole('figure', { name: 'Network comparison chart' })
-    ).toBeVisible();
   });
 });
