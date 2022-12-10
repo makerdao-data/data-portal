@@ -6,10 +6,12 @@ import DaiInL2sChart from '../../molecules/DaiInL2sChart';
 import TeleportTable from '../../molecules/TeleportTable';
 import { dataApiClient } from '../../data/dataApiClient';
 import DaiSupply from '../../molecules/DaiSupply';
+import NetworkComparisonBarChart from '../../molecules/NetworkComparisonBarChart';
 
 export default function Overview() {
   const { data, error } = useSwr<Summary, Error>(
     'metricsSummary',
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     dataApiClient.v1.readSummaryMetricsV1MetricsSummaryGet as any
   );
 
@@ -28,6 +30,8 @@ export default function Overview() {
       </Flex>
 
       <DaiInL2sChart data={data} error={error} />
+
+      <NetworkComparisonBarChart data={data} error={error} />
     </Flex>
   );
 }
