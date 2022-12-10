@@ -4,7 +4,7 @@ import { useIntl } from 'next-intl';
 import { useMemo } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import { Box, useColorMode } from 'theme-ui';
-import { createDaiInL2sAreaChartDataSeries } from '../transformers/create-dai-in-l2s-overview-data-series';
+import { createOverviewAreaChartDataSeries } from '../transformers/create-overview-data-series';
 import { Summary } from '../__generated__/dataAPI';
 
 type DaiInL2sChartProps = {
@@ -16,10 +16,9 @@ export default function DaiInL2sChart({ data, error }: DaiInL2sChartProps) {
   const intl = useIntl();
   const [colorMode] = useColorMode();
 
-  const dataSeries = useMemo(
-    () => createDaiInL2sAreaChartDataSeries(data),
-    [data]
-  );
+  const dataSeries = useMemo(() => {
+    return createOverviewAreaChartDataSeries(data);
+  }, [data]);
 
   return (
     <Box
@@ -30,6 +29,7 @@ export default function DaiInL2sChart({ data, error }: DaiInL2sChartProps) {
         border: error ? 'none' : '1px solid',
         borderColor: 'secondary',
         borderRadius: '8px',
+        height: '387px',
         flex: ['1 1 100%', '1 1 0%', '1 1 0%'],
         textAlign: 'center'
       }}>
@@ -66,7 +66,7 @@ export default function DaiInL2sChart({ data, error }: DaiInL2sChartProps) {
           }}
         />
       ) : (
-        <Skeleton height={400} style={{ borderRadius: '8px', top: '-4px' }} />
+        <Skeleton height={385} style={{ borderRadius: '8px', top: '-4px' }} />
       )}
     </Box>
   );

@@ -1,10 +1,5 @@
 {
-  "plugins": ["prettier", "@typescript-eslint"],
-  "parser": "@typescript-eslint/parser",
-  "extends": [
-    "next",
-    "plugin:prettier/recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
-  "rules": { "no-unused-vars": 0, "@typescript-eslint/no-unused-vars": "warn" }
+  "plugins": ["prettier"],
+  "extends": ["next", "plugin:prettier/recommended"],
+  "rules": { "no-unused-vars": 1 }
 }

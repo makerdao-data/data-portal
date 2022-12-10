@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const { generateApi } = require('swagger-typescript-api');
 const path = require('path');
 const fs = require('fs');
