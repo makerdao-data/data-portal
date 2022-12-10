@@ -10,6 +10,7 @@ import DaiSupply from '../../molecules/DaiSupply';
 export default function Overview() {
   const { data, error } = useSwr<Summary, Error>(
     'metricsSummary',
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     dataApiClient.v1.readSummaryMetricsV1MetricsSummaryGet as any
   );
 
