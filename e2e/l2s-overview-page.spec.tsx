@@ -177,6 +177,24 @@ test.describe('Overview page test', () => {
     ).toContainText('0x41...0000');
   });
 
+  test('Weekly kpis', async ({ page }) => {
+    await expect(
+      page.getByRole('textbox', { name: 'DAI Weekly transfer volume value' })
+    ).toContainText('420,770,255.18');
+
+    await expect(
+      page.getByRole('textbox', { name: 'DAI Weekly transfer volume change' })
+    ).toContainText('-32.27%');
+
+    await expect(
+      page.getByRole('textbox', { name: 'Weekly transfers value' })
+    ).toContainText('366,223');
+
+    await expect(
+      page.getByRole('textbox', { name: 'Weekly transfers change' })
+    ).toContainText('-14.80%');
+  });
+
   test('Network comparison chart', async ({ page }) => {
     await expect(
       page.getByRole('textbox', { name: 'Network comparison title' })

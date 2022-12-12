@@ -1,5 +1,5 @@
 import { Flex, Link } from 'theme-ui';
-import DataCard from '../components/DataCard';
+import KpiCard from '../components/KpiCard';
 import { Text } from '@makerdao-dicu/makerdao-ui';
 import { Summary } from '../__generated__/dataAPI';
 import { Fragment, useMemo } from 'react';
@@ -53,7 +53,7 @@ export default function DaiSupply({ data, error }: DaiSupplyProps) {
         justifyContent: 'space-between',
         flex: ['1 1 100%', '1 1 0%', '1 1 0%'],
         maxWidth: ['100%', '100%', '280px'],
-        textAlign: 'right'
+        textAlign: 'left'
       }}>
       {error ? (
         <Text variant="error">
@@ -61,7 +61,7 @@ export default function DaiSupply({ data, error }: DaiSupplyProps) {
         </Text>
       ) : (
         <Fragment>
-          <DataCard
+          <KpiCard
             title="DAI Supply"
             value={data?.supply_circulating.total}
             change={
@@ -72,9 +72,10 @@ export default function DaiSupply({ data, error }: DaiSupplyProps) {
             }
             sx={{
               border: 'none',
+              paddingLeft: 0,
               ['span']: data
                 ? {
-                    alignSelf: ['center', 'flex-end', 'flex-end']
+                    alignSelf: ['center', 'flex-start', 'flex-start']
                   }
                 : {}
             }}

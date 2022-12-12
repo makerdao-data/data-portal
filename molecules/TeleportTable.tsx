@@ -69,7 +69,7 @@ export default function TeleportTable({ data, error }: TeleportTableProps) {
         padding: 2
       }}>
       <Fragment>
-        <Text variant="microHeading">Teleport</Text>
+        <Text variant="smallHeading">Teleport</Text>
 
         <Box
           sx={{

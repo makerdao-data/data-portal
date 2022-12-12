@@ -37,14 +37,14 @@ export default function NetworkComparisonBarChart({
         border: error ? 'none' : '1px solid',
         borderColor: 'secondary',
         borderRadius: '8px',
-        minHeight: '300px',
+        height: '300px',
         flex: ['1 1 100%', '1 1 0%', '1 1 0%'],
-        padding: 2,
-        gap: 2
+        alignSelf: 'flex-end',
+        padding: 2
       }}>
       <Fragment>
         <Text
-          variant="microHeading"
+          variant="smallHeading"
           role="textbox"
           aria-label="Network comparison title">
           Network comparison
@@ -83,8 +83,7 @@ export default function NetworkComparisonBarChart({
               })
             }
             theme={{
-              textColor: colorMode === 'light' ? '#231536' : '#fff',
-              fontSize: 13
+              textColor: colorMode === 'light' ? '#231536' : '#fff'
             }}
             indexScale={{ type: 'band', round: true }}
             colors={({ id, data }) => String(data[id + 'Color'])}
