@@ -102,9 +102,7 @@ const config: PlaywrightTestConfig = {
     command: 'yarn dev',
     port: 3000,
     reuseExistingServer: true
-  },
-
-  globalSetup: require.resolve('./e2e/global-setup.ts')
+  }
 };
 
 export default config;
