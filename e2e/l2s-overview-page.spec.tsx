@@ -4,23 +4,9 @@ import alchemyFixture from './fixtures/alchemy.json';
 
 test.describe('Overview page test', () => {
   test.beforeEach(async ({ page }) => {
-    // Get fakeNow from UTC to extract the timeZone offset used in the test
-    const fakeNowDateTime = '2022-12-06 10:57:11';
-    const fakeNowFromUTC = new Date(fakeNowDateTime);
-    const timeZomeOffset = fakeNowFromUTC.getTimezoneOffset();
-    const timeZoneOffsetHours = `${Math.abs(Math.floor(timeZomeOffset / 60))}`;
-    const timeZoneOffsetMinutes = `${Math.abs(timeZomeOffset % 30)}`;
-    const timeZoneOffsetText = `${
-      timeZomeOffset < 0 ? '-' : '+'
-    }${timeZoneOffsetHours.padStart(2, '0')}:${timeZoneOffsetMinutes.padStart(
-      2,
-      '0'
-    )}`;
-
-    // Get fakeNow from the test timeZone
-    const fakeNow = new Date(
-      `${fakeNowDateTime}Z${timeZoneOffsetText}`
-    ).valueOf();
+    // Pick the new/fake "now" for you test pages.
+    const fakeNow = new Date('2022-12-06 10:57:11').valueOf();
+    const lastEthTimestamp = new Date('2022-12-06 14:57:11').valueOf();
     // Update the Date accordingly in your test pages
     await page.addInitScript(`{
       Date = class extends Date {
@@ -28,7 +14,7 @@ test.describe('Overview page test', () => {
           if (args.length === 0) {
             super(${fakeNow});
           } else {
-            super(...args);
+            super(${lastEthTimestamp});
           }
         }
       }
@@ -78,7 +64,7 @@ test.describe('Overview page test', () => {
 
     await expect(
       page.getByRole('textbox', { name: 'Last refresh date' })
-    ).toContainText('Dec 6, 2022, 11:57 AM LT (about 7 hours)');
+    ).toContainText('Dec 6, 2022, 2:57 PM LT (less than a minute)');
 
     await expect(
       page.getByRole('figure', { name: 'DAI in L2s chart' })
