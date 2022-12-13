@@ -1,4 +1,5 @@
 import type { Summary } from '../__generated__/dataAPI';
+import { Text } from '@makerdao-dicu/makerdao-ui';
 
 export function createNetworkComparisonChartDataSeries(
   data: Summary | undefined
@@ -61,9 +62,9 @@ export function createNetworkComparisonChartDataSeries(
 }
 
 export const domainColor: Record<string, string> = {
-  optimism: '#ff0420',
-  arbitrum: '#28a0f0',
-  starknet: '#252563'
+  optimism: 'rgba(255, 4, 32, 0.7)',
+  arbitrum: 'rgba(40, 160, 240, 0.7)',
+  starknet: 'rgba(37, 37, 99, 0.7)'
 };
 
 export enum NetworkComparisonIndex {
