@@ -134,13 +134,13 @@ test.describe('Overview page test', () => {
 
     await expect(
       page.getByRole('cell', { name: 'starknet Bridge ceiling cell' })
-    ).toContainText('200,000');
+    ).toContainText('200K');
 
     await expect(
       page.getByRole('cell', {
         name: 'starknet Bridge max deposit cell'
       })
-    ).toContainText('1,000');
+    ).toContainText('1K');
 
     await expect(
       page.getByRole('cell', { name: 'starknet Bridge fast withdrawal cell' })
