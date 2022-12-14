@@ -1,5 +1,4 @@
 import type { Summary } from '../__generated__/dataAPI';
-import { Text } from '@makerdao-dicu/makerdao-ui';
 
 export function createNetworkComparisonChartDataSeries(
   data: Summary | undefined

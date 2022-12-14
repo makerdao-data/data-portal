@@ -191,7 +191,8 @@ export default function TeleportTable({ data, error }: TeleportTableProps) {
                           sx={{ textAlign: 'right' }}>
                           {bridge.ceiling
                             ? intl.formatNumber(bridge.ceiling, {
-                                maximumFractionDigits: 2
+                                maximumFractionDigits: 2,
+                                notation: 'compact'
                               })
                             : '–'}
                         </Box>
@@ -202,7 +203,8 @@ export default function TeleportTable({ data, error }: TeleportTableProps) {
                           sx={{ textAlign: 'right' }}>
                           {bridge.maxDeposit
                             ? intl.formatNumber(bridge.maxDeposit, {
-                                maximumFractionDigits: 2
+                                maximumFractionDigits: 2,
+                                notation: 'compact'
                               })
                             : '–'}
                         </Box>

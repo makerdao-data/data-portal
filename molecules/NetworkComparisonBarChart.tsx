@@ -53,7 +53,7 @@ export default function NetworkComparisonBarChart({
 
         {error ? (
           <Text variant="error">
-            {'Dai in L2s data is not available at the moment.'}
+            {'Network comparison data is not available at the moment.'}
           </Text>
         ) : dataSeries.length > 0 ? (
           <ResponsiveBar
