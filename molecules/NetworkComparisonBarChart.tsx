@@ -7,7 +7,7 @@ import {
   NetworkComparisonIndex
 } from '../transformers/create-network-comparison-chart-data-series';
 import { Summary } from '../__generated__/dataAPI';
-import { Text } from '@makerdao-dicu/makerdao-ui';
+import { Text, useTheme } from '@makerdao-dicu/makerdao-ui';
 import { Fragment, useMemo } from 'react';
 import Skeleton from 'react-loading-skeleton';
 
@@ -22,6 +22,7 @@ export default function NetworkComparisonBarChart({
 }: NetworkComparitionBarChartProps) {
   const intl = useIntl();
   const [colorMode] = useColorMode();
+  const { theme } = useTheme();
   const dataSeries = useMemo(
     () => createNetworkComparisonChartDataSeries(data),
     [data]
@@ -37,14 +38,14 @@ export default function NetworkComparisonBarChart({
         border: error ? 'none' : '1px solid',
         borderColor: 'secondary',
         borderRadius: '8px',
-        minHeight: '300px',
+        height: '260px',
         flex: ['1 1 100%', '1 1 0%', '1 1 0%'],
-        padding: 2,
-        gap: 2
+        alignSelf: 'flex-end',
+        padding: 2
       }}>
       <Fragment>
         <Text
-          variant="microHeading"
+          variant="smallHeading"
           role="textbox"
           aria-label="Network comparison title">
           Network comparison
@@ -52,7 +53,7 @@ export default function NetworkComparisonBarChart({
 
         {error ? (
           <Text variant="error">
-            {'Dai in L2s data is not available at the moment.'}
+            {'Network comparison data is not available at the moment.'}
           </Text>
         ) : dataSeries.length > 0 ? (
           <ResponsiveBar
@@ -66,7 +67,7 @@ export default function NetworkComparisonBarChart({
             }}
             keys={['optimism', 'arbitrum', 'starknet']}
             indexBy="id"
-            margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+            margin={{ top: 20, right: 100, bottom: 50, left: 50 }}
             padding={0.3}
             valueScale={{ type: 'linear' }}
             valueFormat={(value) =>
@@ -84,14 +85,35 @@ export default function NetworkComparisonBarChart({
             }
             theme={{
               textColor: colorMode === 'light' ? '#231536' : '#fff',
-              fontSize: 13
+              legends: {
+                text: {
+                  fontSize: theme.fontSizes?.[3]
+                }
+              },
+              labels: {
+                text: {
+                  fontSize: theme.fontSizes?.[4],
+                  fontWeight: 500
+                }
+              },
+              axis: {
+                ticks: {
+                  text: {
+                    fontSize: theme.fontSizes?.[4]
+                  }
+                }
+              },
+              grid: {
+                line: {
+                  strokeWidth: 0.5
+                }
+              }
             }}
             indexScale={{ type: 'band', round: true }}
             colors={({ id, data }) => String(data[id + 'Color'])}
-            borderColor={{
-              from: 'color',
-              modifiers: [['darker', 1.6]]
-            }}
+            borderColor={colorMode === 'light' ? '#231536' : '#fff'}
+            borderWidth={1}
+            borderRadius={5}
             axisTop={null}
             axisRight={null}
             axisBottom={{
@@ -111,6 +133,7 @@ export default function NetworkComparisonBarChart({
               legendOffset: -40,
               format: (value) => intl.formatNumber(value, { style: 'percent' })
             }}
+            // axisLeft={null}
             labelSkipWidth={12}
             labelSkipHeight={12}
             labelTextColor="#fff"
@@ -144,7 +167,7 @@ export default function NetworkComparisonBarChart({
                 itemHeight: 20,
                 itemDirection: 'left-to-right',
                 itemOpacity: 0.85,
-                symbolSize: 20,
+                symbolSize: 15,
                 effects: [
                   {
                     on: 'hover',
@@ -187,7 +210,7 @@ export default function NetworkComparisonBarChart({
             }}
           />
         ) : (
-          <Skeleton height={385} style={{ borderRadius: '8px', top: '-4px' }} />
+          <Skeleton height={220} style={{ borderRadius: '8px', top: '-4px' }} />
         )}
       </Fragment>
     </Flex>

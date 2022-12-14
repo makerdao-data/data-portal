@@ -7,6 +7,7 @@ import TeleportTable from '../../molecules/TeleportTable';
 import { dataApiClient } from '../../data/dataApiClient';
 import DaiSupply from '../../molecules/DaiSupply';
 import NetworkComparisonBarChart from '../../molecules/NetworkComparisonBarChart';
+import WeeklyKpis from '../../molecules/WeeklyKpis';
 
 export default function Overview() {
   const { data, error } = useSwr<Summary, Error>(
@@ -24,14 +25,18 @@ export default function Overview() {
       <Text variant="heading">Maker Teleport Monitoring</Text>
 
       <Flex sx={{ gap: 2, flexWrap: ['wrap', 'wrap', 'nowrap'] }}>
-        <TeleportTable data={data} error={error} />
-
         <DaiSupply data={data} error={error} />
+
+        <TeleportTable data={data} error={error} />
       </Flex>
 
       <DaiInL2sChart data={data} error={error} />
 
-      <NetworkComparisonBarChart data={data} error={error} />
+      <Flex sx={{ gap: 2, flexWrap: ['wrap', 'wrap', 'nowrap'] }}>
+        <WeeklyKpis data={data} error={error} />
+
+        <NetworkComparisonBarChart data={data} error={error} />
+      </Flex>
     </Flex>
   );
 }

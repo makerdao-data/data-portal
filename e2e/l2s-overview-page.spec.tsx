@@ -6,6 +6,7 @@ test.describe('Overview page test', () => {
   test.beforeEach(async ({ page }) => {
     // Pick the new/fake "now" for you test pages.
     const fakeNow = new Date('2022-12-06 10:57:11').valueOf();
+    const lastEthTimestamp = new Date('2022-12-06 14:57:11').valueOf();
     // Update the Date accordingly in your test pages
     await page.addInitScript(`{
       Date = class extends Date {
@@ -13,7 +14,7 @@ test.describe('Overview page test', () => {
           if (args.length === 0) {
             super(${fakeNow});
           } else {
-            super(...args);
+            super(${lastEthTimestamp});
           }
         }
       }
@@ -63,7 +64,7 @@ test.describe('Overview page test', () => {
 
     await expect(
       page.getByRole('textbox', { name: 'Last refresh date' })
-    ).toContainText('Dec 6, 2022, 11:57 AM LT (about 1 hour)');
+    ).toContainText('Dec 6, 2022, 2:57 PM LT (less than a minute)');
 
     await expect(
       page.getByRole('figure', { name: 'DAI in L2s chart' })
@@ -133,13 +134,13 @@ test.describe('Overview page test', () => {
 
     await expect(
       page.getByRole('cell', { name: 'starknet Bridge ceiling cell' })
-    ).toContainText('200,000');
+    ).toContainText('200K');
 
     await expect(
       page.getByRole('cell', {
         name: 'starknet Bridge max deposit cell'
       })
-    ).toContainText('1,000');
+    ).toContainText('1K');
 
     await expect(
       page.getByRole('cell', { name: 'starknet Bridge fast withdrawal cell' })
@@ -175,6 +176,24 @@ test.describe('Overview page test', () => {
     await expect(
       page.getByRole('cell', { name: 'arbitrum Bridge contract cell' })
     ).toContainText('0x41...0000');
+  });
+
+  test('Weekly kpis', async ({ page }) => {
+    await expect(
+      page.getByRole('textbox', { name: 'DAI Weekly transfer volume value' })
+    ).toContainText('420,770,255.18');
+
+    await expect(
+      page.getByRole('textbox', { name: 'DAI Weekly transfer volume change' })
+    ).toContainText('-32.27%');
+
+    await expect(
+      page.getByRole('textbox', { name: 'Weekly transfers value' })
+    ).toContainText('366,223');
+
+    await expect(
+      page.getByRole('textbox', { name: 'Weekly transfers change' })
+    ).toContainText('-14.80%');
   });
 
   test('Network comparison chart', async ({ page }) => {

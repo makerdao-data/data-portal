@@ -4,18 +4,18 @@ import { useIntl } from 'next-intl';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
-type DataCardProps = {
+type KpiCardProps = {
   title: string;
   value?: number;
   change?: number;
 };
 
-export default function DataCard({
+export default function KpiCard({
   title,
   value,
   change,
   ...props
-}: DataCardProps & FlexProps) {
+}: KpiCardProps & FlexProps) {
   const intl = useIntl();
   const { theme } = useTheme();
 
@@ -37,7 +37,8 @@ export default function DataCard({
         sx={{ fontSize: theme.fontSizes?.[8], fontWeight: 700 }}>
         {value ? (
           intl.formatNumber(value, {
-            maximumFractionDigits: 2
+            maximumFractionDigits: 2,
+            notation: value > 999999999 ? 'compact' : 'standard'
           })
         ) : (
           <Skeleton />
