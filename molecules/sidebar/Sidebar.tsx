@@ -1,9 +1,9 @@
 import React from 'react';
 import { Flex } from 'theme-ui';
 import { MakerIcon, Text } from '@makerdao-dicu/makerdao-ui';
-import ColorModeSelector from './ColorModeSelector';
-import DashboardsNavigation from './DashboardsNavigation';
-import SidebarFooter from './SidebarFooter';
+import ColorModeSelector from '../../components/ColorModeSelector';
+import DashboardsNavigation from './components/DashboardsNavigation';
+import SidebarFooter from './components/SidebarFooter';
 
 type SidebarProps = {
   sidebarOpen: boolean;

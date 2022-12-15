@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import React, { ReactNode } from 'react';
-import SideBar from './Sidebar';
+import SideBar from '../molecules/sidebar/Sidebar';
 import { Box, Flex } from 'theme-ui';
-import MobileNavbar from './MobileNavbar';
+import MobileNavbar from '../molecules/MobileNavbar';
 import { useToggle } from '../hooks';
 
 type LayoutProps = {
@@ -41,8 +41,6 @@ export default function Layout({ children }: LayoutProps) {
           isolation: 'isolate'
         }}>
         {children}
-
-        {/* <Footer /> */}
       </Flex>
     </Box>
   );

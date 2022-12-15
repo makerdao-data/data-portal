@@ -2127,7 +2127,7 @@ export class Api<
      * @tags governance
      * @name ReadExecutivesV1GovernanceExecutivesGet
      * @summary Read Executives
-     * @request GET:/v1/governance/executives
+     * @request GET:/v1/teleport/executives
      * @secure
      */
     readExecutivesV1GovernanceExecutivesGet: (
@@ -2170,7 +2170,7 @@ export class Api<
       params: RequestParams = {}
     ) =>
       this.request<Executive[], HTTPValidationError>({
-        path: `/v1/governance/executives`,
+        path: `/v1/teleport/executives`,
         method: 'GET',
         query: query,
         secure: true,
@@ -2184,7 +2184,7 @@ export class Api<
      * @tags governance
      * @name ReadExecutivesListV1GovernanceExecutivesListGet
      * @summary Read Executives List
-     * @request GET:/v1/governance/executives_list
+     * @request GET:/v1/teleport/executives_list
      * @secure
      */
     readExecutivesListV1GovernanceExecutivesListGet: (
@@ -2207,7 +2207,7 @@ export class Api<
       params: RequestParams = {}
     ) =>
       this.request<ExecutivesList[], HTTPValidationError>({
-        path: `/v1/governance/executives_list`,
+        path: `/v1/teleport/executives_list`,
         method: 'GET',
         query: query,
         secure: true,
@@ -2221,7 +2221,7 @@ export class Api<
      * @tags governance
      * @name ReadSpellsListV1GovernanceSpellsListGet
      * @summary Read Spells List
-     * @request GET:/v1/governance/spells_list
+     * @request GET:/v1/teleport/spells_list
      * @secure
      */
     readSpellsListV1GovernanceSpellsListGet: (
@@ -2244,7 +2244,7 @@ export class Api<
       params: RequestParams = {}
     ) =>
       this.request<SpellsList[], HTTPValidationError>({
-        path: `/v1/governance/spells_list`,
+        path: `/v1/teleport/spells_list`,
         method: 'GET',
         query: query,
         secure: true,
@@ -2258,7 +2258,7 @@ export class Api<
      * @tags governance
      * @name ReadPollsV1GovernancePollsGet
      * @summary Read Polls
-     * @request GET:/v1/governance/polls
+     * @request GET:/v1/teleport/polls
      * @secure
      */
     readPollsV1GovernancePollsGet: (
@@ -2299,7 +2299,7 @@ export class Api<
       params: RequestParams = {}
     ) =>
       this.request<Vote[], HTTPValidationError>({
-        path: `/v1/governance/polls`,
+        path: `/v1/teleport/polls`,
         method: 'GET',
         query: query,
         secure: true,
@@ -2313,7 +2313,7 @@ export class Api<
      * @tags governance
      * @name ReadProxiesV1GovernanceProxiesGet
      * @summary Read Proxies
-     * @request GET:/v1/governance/proxies
+     * @request GET:/v1/teleport/proxies
      * @secure
      */
     readProxiesV1GovernanceProxiesGet: (
@@ -2354,7 +2354,7 @@ export class Api<
       params: RequestParams = {}
     ) =>
       this.request<Proxy[], HTTPValidationError>({
-        path: `/v1/governance/proxies`,
+        path: `/v1/teleport/proxies`,
         method: 'GET',
         query: query,
         secure: true,
@@ -2368,7 +2368,7 @@ export class Api<
      * @tags governance
      * @name ReadStakesV1GovernanceStakesGet
      * @summary Read Stakes
-     * @request GET:/v1/governance/stakes
+     * @request GET:/v1/teleport/stakes
      * @secure
      */
     readStakesV1GovernanceStakesGet: (
@@ -2409,7 +2409,7 @@ export class Api<
       params: RequestParams = {}
     ) =>
       this.request<Stake[], HTTPValidationError>({
-        path: `/v1/governance/stakes`,
+        path: `/v1/teleport/stakes`,
         method: 'GET',
         query: query,
         secure: true,
@@ -2423,7 +2423,7 @@ export class Api<
      * @tags governance
      * @name ReadDelegatesV1GovernanceDelegatesGet
      * @summary Read Delegates
-     * @request GET:/v1/governance/delegates
+     * @request GET:/v1/teleport/delegates
      * @secure
      */
     readDelegatesV1GovernanceDelegatesGet: (
@@ -2444,7 +2444,7 @@ export class Api<
       params: RequestParams = {}
     ) =>
       this.request<Delegate[], HTTPValidationError>({
-        path: `/v1/governance/delegates`,
+        path: `/v1/teleport/delegates`,
         method: 'GET',
         query: query,
         secure: true,
@@ -2458,7 +2458,7 @@ export class Api<
      * @tags governance
      * @name ReadDelegatesSupportV1GovernanceDelegatesSupportGet
      * @summary Read Delegates Support
-     * @request GET:/v1/governance/delegates_support
+     * @request GET:/v1/teleport/delegates_support
      * @secure
      */
     readDelegatesSupportV1GovernanceDelegatesSupportGet: (
@@ -2491,7 +2491,7 @@ export class Api<
       params: RequestParams = {}
     ) =>
       this.request<Support[], HTTPValidationError>({
-        path: `/v1/governance/delegates_support`,
+        path: `/v1/teleport/delegates_support`,
         method: 'GET',
         query: query,
         secure: true,

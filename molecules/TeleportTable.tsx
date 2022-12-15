@@ -161,7 +161,7 @@ export default function TeleportTable({ data, error }: TeleportTableProps) {
                           <Flex sx={{ gap: '0.3rem', alignItems: 'center' }}>
                             {icons[domain]}
                             <NextLink
-                              href={'/l2s/' + domain}
+                              href={'/teleport/' + domain}
                               passHref
                               legacyBehavior>
                               <Link>
