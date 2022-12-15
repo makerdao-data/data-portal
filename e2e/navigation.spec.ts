@@ -45,12 +45,12 @@ test.describe('navigation test', () => {
     await expect(
       page.getByRole('menu', { name: 'Overview sidebar menu' })
     ).not.toBeVisible();
-    await page.getByRole('button', { name: 'NavbarButtonL2s' }).click();
+    await page.getByRole('button', { name: 'NavbarButtonTeleport' }).click();
     await expect(
       page.getByRole('menu', { name: 'Overview sidebar menu' })
     ).toBeVisible();
     await page.getByRole('link', { name: 'Overview' }).click();
 
-    await expect(page).toHaveURL('http://localhost:3000/l2s/overview');
+    await expect(page).toHaveURL('http://localhost:3000/teleport/overview');
   });
 });

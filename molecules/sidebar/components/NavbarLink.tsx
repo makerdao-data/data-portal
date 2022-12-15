@@ -1,13 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Box, ThemeUIStyleObject } from 'theme-ui';
-import { Text } from '@makerdao-dicu/makerdao-ui';
-
-type NavbarButtonProps = {
-  text: string;
-  toggleSubMenu?: () => void;
-  sx?: ThemeUIStyleObject;
-};
 
 type NavbarLinkProps = {
   href: string;
@@ -16,28 +9,6 @@ type NavbarLinkProps = {
   active?: boolean;
   sx?: ThemeUIStyleObject;
 } & Partial<HTMLAnchorElement>;
-
-export default function NavbarButton({
-  text,
-  toggleSubMenu,
-  sx
-}: NavbarButtonProps) {
-  return (
-    <Box
-      role="button"
-      aria-label={'NavbarButton' + text}
-      onClick={toggleSubMenu}>
-      <Text
-        variant="text"
-        sx={{
-          cursor: 'pointer',
-          ...sx
-        }}>
-        {text}
-      </Text>
-    </Box>
-  );
-}
 
 export function NavbarLink({ href, text, sx }: NavbarLinkProps) {
   const router = useRouter();

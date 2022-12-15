@@ -42,7 +42,7 @@ test.describe('Overview page test', () => {
         })
     );
 
-    await page.goto(`http://localhost:3000/l2s/overview`);
+    await page.goto(`http://localhost:3000/teleport/overview`);
   });
 
   test('DAI supply card', async ({ page }) => {
@@ -97,9 +97,9 @@ test.describe('Overview page test', () => {
     ).toBeVisible();
 
     await page.getByRole('link', { name: 'Optimism' }).click();
-    await expect(page).toHaveURL('http://localhost:3000/l2s/optimism');
+    await expect(page).toHaveURL('http://localhost:3000/teleport/optimism');
 
-    await page.goto(`http://localhost:3000/l2s/overview`);
+    await page.goto(`http://localhost:3000/teleport/overview`);
 
     await expect(
       page.getByRole('cell', { name: 'optimism Bridge status cell' })
@@ -124,9 +124,9 @@ test.describe('Overview page test', () => {
     ).toContainText('0x4f...0000');
 
     await page.getByRole('link', { name: 'Starknet' }).click();
-    await expect(page).toHaveURL('http://localhost:3000/l2s/starknet');
+    await expect(page).toHaveURL('http://localhost:3000/teleport/starknet');
 
-    await page.goto(`http://localhost:3000/l2s/overview`);
+    await page.goto(`http://localhost:3000/teleport/overview`);
 
     await expect(
       page.getByRole('cell', { name: 'starknet Bridge status cell' })
@@ -151,9 +151,9 @@ test.describe('Overview page test', () => {
     ).toContainText('0x53...0000');
 
     await page.getByRole('link', { name: 'Arbitrum' }).click();
-    await expect(page).toHaveURL('http://localhost:3000/l2s/arbitrum');
+    await expect(page).toHaveURL('http://localhost:3000/teleport/arbitrum');
 
-    await page.goto(`http://localhost:3000/l2s/overview`);
+    await page.goto(`http://localhost:3000/teleport/overview`);
 
     await expect(
       page.getByRole('cell', { name: 'arbitrum Bridge status cell' })

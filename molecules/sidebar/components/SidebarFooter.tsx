@@ -7,7 +7,7 @@ import {
   Text
 } from '@makerdao-dicu/makerdao-ui';
 import { Flex, Link, NavLink } from 'theme-ui';
-import { NavbarExternalLink } from './NavbarButton';
+import { NavbarExternalLink } from './NavbarLink';
 
 export default function SidebarFooter() {
   return (
