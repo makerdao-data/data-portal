@@ -1,4 +1,4 @@
-# MakerDAO Data insights portal
+# MakerDAO Data Insights CU portal
 
 ## Getting Started
 
