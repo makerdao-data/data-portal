@@ -17,7 +17,7 @@ export const ethLastBlockFetcher = () =>
 
 export const arbitrumLastBlockFetcher = () =>
   fetch(
-    `${process.env.NEXT_PUBLIC_ALCHEMY_ETH_API}/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_TOKEN}`,
+    `${process.env.NEXT_PUBLIC_ALCHEMY_ARBITRUM_API}/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_TOKEN}`,
     {
       body: JSON.stringify({
         jsonrpc: '2.0',
