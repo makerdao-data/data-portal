@@ -8,11 +8,11 @@ import { useIntl } from 'next-intl';
 import NextLink from 'next/link';
 import { Fragment, useMemo } from 'react';
 import { Box, Flex } from 'theme-ui';
-import { Summary } from '../__generated__/dataAPI';
+import { Summary } from '../../__generated__/dataAPI';
 import { Progress, Link } from 'theme-ui';
-import TableSkeleton from '../components/TableSkeleton';
+import TableSkeleton from '../../components/TableSkeleton';
 
-type TeleportTableProps = {
+type TeleportDomainsTableProps = {
   data: Summary | undefined;
   error: Error | undefined;
 };
@@ -26,22 +26,29 @@ type Bridge = {
   hex: string;
   id: number;
   line: number;
+  address: string;
 };
 
-export default function TeleportTable({ data, error }: TeleportTableProps) {
+export default function TeleportDomainsTable({
+  data,
+  error
+}: TeleportDomainsTableProps) {
   const intl = useIntl();
 
   const aggregatedBridgesData = useMemo(() => {
     if (data !== undefined) {
       return Object.keys(data.bridges.info).reduce((memo, bridge) => {
+        const domainDetails = data.teleport_domains.domains.find(
+          ({ domain }: Partial<Bridge>) =>
+            DOMAIN_NAME_MAPPING[domain as Domains] === bridge
+        );
+
         return [
           ...memo,
           {
             ...data.bridges.info[bridge],
-            ...data.teleport_domains.domains.find(
-              ({ domain }: Partial<Bridge>) =>
-                DOMAIN_NAME_MAPPING[domain as Domains] === bridge
-            ),
+            ...domainDetails,
+            debt: domainDetails.debt >= 0 ? domainDetails.debt : 0,
             domain: bridge
           }
         ];
@@ -265,9 +272,14 @@ export default function TeleportTable({ data, error }: TeleportTableProps) {
                           sx={{ textAlign: 'right' }}>
                           <Link
                             target="_blank"
-                            href={'https://etherscan.io/address/' + bridge.hex}>
-                            {`${bridge.hex.slice(0, 4)}...${bridge.hex.slice(
-                              bridge.hex.length - 4
+                            href={
+                              'https://etherscan.io/address/' + bridge.address
+                            }>
+                            {`${bridge.address.slice(
+                              0,
+                              4
+                            )}...${bridge.address.slice(
+                              bridge.address.length - 4
                             )}`}
                           </Link>
                         </Box>

@@ -376,8 +376,12 @@ export interface Bridge {
   l2_weekly_transfers_count_2: number;
   /** Unique Holders */
   unique_holders: number;
+  /** Unique Holders 7 */
+  unique_holders_7: number;
   /** Average Dai Ownership */
   average_dai_ownership: number;
+  /** Average Dai Ownership 7 */
+  average_dai_ownership_7: number;
   /** Top 10 Holders */
   top_10_holders: Record<string, any>;
   /** Supply Pct Change */
@@ -386,134 +390,14 @@ export interface Bridge {
   escrow_pct_change: any[];
   /** Last Refresh */
   last_refresh: Record<string, any>;
-}
-
-/** CurrentVault */
-export interface CurrentVault {
-  /**
-   * Vault
-   * unique vault identifier
-   * @example "26232"
-   */
-  vault: string;
-  /**
-   * Ilk
-   * collateral type
-   * @example "ETH-A"
-   */
-  ilk: string;
-  /**
-   * Collateral
-   * collateral amount locked (collateral)
-   * @example 7.869134
-   */
-  collateral: number;
-  /**
-   * Principal
-   * principal debt without fees (DAI)
-   * @example 15000
-   */
-  principal: number;
-  /**
-   * Paid Fees
-   * already paid fees, not included in debt (DAI)
-   * @example 1.440574
-   */
-  paid_fees: number;
-  /**
-   * Debt
-   * total debt (DAI)
-   * @example 15055.884045
-   */
-  debt: number;
-  /**
-   * Accrued Fees
-   * accrued fees (DAI)
-   * @example 55.8840450000007
-   */
-  accrued_fees: number;
-  /**
-   * Osm Price
-   * Oracle Security Module collateral price (collateral/DAI)
-   * @example 3265.23
-   */
-  osm_price: number;
-  /**
-   * Mkt Price
-   * collateral market price (collateral/DAI)
-   * @example 3276.596079732024
-   */
-  mkt_price?: number;
-  /**
-   * Ratio
-   * minimum collateralization ratio
-   * @example 1.45
-   */
-  ratio: number;
-  /**
-   * Liquidation Price
-   * collateral liquidation price
-   * @example 2774.2610387941036
-   */
-  liquidation_price?: number;
-  /**
-   * Available Debt
-   * debt available to generate (DAI)
-   * @example 2664.4831348758617
-   */
-  available_debt: number;
-  /**
-   * Available Collateral
-   * collateral available to withdraw (collateral)
-   * @example 1.1832246260049066
-   */
-  available_collateral: number;
-  /**
-   * Owner
-   * owner wallet address
-   * @example "0xfc983932ced719bd89bfdff7761d1d80ac92aa61"
-   */
-  owner?: string;
-  /** Ds Proxy */
-  ds_proxy?: string;
-  /**
-   * Urn
-   * vault urn handler
-   * @example "0xc7dfb534e18e861a7d4e8d5175a928bffffba41c"
-   */
-  urn: string;
-  /**
-   * Art
-   * total art value
-   * @example 1.4173688514666083e+22
-   */
-  art: number;
-  /**
-   * Block Created
-   * vault's creation block
-   * @example 13486542
-   */
-  block_created: number;
-  /**
-   * Time Created
-   * vault's creation timestamp
-   * @format date-time
-   * @example "2021-10-25T12:17:41"
-   */
-  time_created: string;
-  /**
-   * Last Block
-   * block id
-   * @example 14537868
-   */
-  last_block: number;
-  /**
-   * Last Time
-   * latest synced block timestamp
-   * @format date-time
-   * @example "2022-01-14T16:34:50"
-   */
-  last_time: string;
+  /** Dai Buckets */
+  DAI_buckets: Record<string, any>;
+  /** Flows */
+  flows: any[];
+  /** Weekly Teleport Share */
+  weekly_teleport_share: number;
+  /** Weekly Teleport Share 7 */
+  weekly_teleport_share_7: number;
 }
 
 /** Delegate */
@@ -972,6 +856,14 @@ export interface LastTime {
   last_time: string;
 }
 
+/**
+ * Network
+ * An enumeration.
+ */
+export enum Network {
+  ETHEREUM = 'ETHEREUM'
+}
+
 /** Origin */
 export interface Origin {
   /**
@@ -1034,8 +926,20 @@ export interface Ownership {
   origin?: string;
 }
 
-/** ParameterEvent */
-export interface ParameterEvent {
+/** ParameterSnapshot */
+export interface ParameterSnapshot {
+  /** Parameter */
+  parameter: string;
+  /** Ilk */
+  ilk?: string;
+  /** Value */
+  value: number;
+}
+
+/** ParticipationCost */
+export interface ParticipationCost {
+  /** Poll Id */
+  poll_id: number;
   /** Block */
   block: number;
   /**
@@ -1045,30 +949,24 @@ export interface ParameterEvent {
   timestamp: string;
   /** Tx Hash */
   tx_hash: string;
-  /** Spell */
-  spell: string;
-  /** Parameter */
-  parameter: string;
-  /** Ilk */
-  ilk?: string;
-  /** From Value */
-  from_value: number;
-  /** To Value */
-  to_value: number;
-  /** Source Type */
-  source_type?: string;
-  /** Title */
-  title?: string;
-}
-
-/** ParameterSnapshot */
-export interface ParameterSnapshot {
-  /** Parameter */
-  parameter: string;
-  /** Ilk */
-  ilk?: string;
-  /** Value */
-  value: number;
+  /** Voter */
+  voter: string;
+  /** Recognized Delegate */
+  recognized_delegate?: string;
+  /** Gas Price */
+  gas_price?: number;
+  /** Gas Used */
+  gas_used?: number;
+  /** Max Priority Fee Per Gas */
+  max_priority_fee_per_gas?: number;
+  /** Base Fee Per Gas */
+  base_fee_per_gas?: number;
+  /** Eth Price Usd */
+  eth_price_usd?: number;
+  /** Tx Fee Eth */
+  tx_fee_eth?: number;
+  /** Tx Fee Usd */
+  tx_fee_usd?: number;
 }
 
 /** Proxy */
@@ -1226,6 +1124,33 @@ export interface Support {
   support: number;
 }
 
+/** TotalSupply */
+export interface TotalSupply {
+  /** Block */
+  block: number;
+  /**
+   * Timestamp
+   * @format date-time
+   */
+  timestamp: string;
+  /** Network */
+  network: string;
+  /** Token */
+  token: string;
+  /** Raw Total Supply */
+  raw_total_supply: number;
+  /** Total Supply */
+  total_supply: number;
+}
+
+/**
+ * TotalSupplyToken
+ * An enumeration.
+ */
+export enum TotalSupplyToken {
+  DAI = 'DAI'
+}
+
 /** TransferHistory */
 export interface TransferHistory {
   /** Block */
@@ -1299,108 +1224,6 @@ export interface ValidationError {
   msg: string;
   /** Error Type */
   type: string;
-}
-
-/** VaultHistory */
-export interface VaultHistory {
-  /**
-   * Order Index
-   * @example "013656651_136_000_010_000"
-   */
-  order_index: string;
-  /**
-   * Block
-   * block id
-   * @example 13656651
-   */
-  block: number;
-  /**
-   * Timestamp
-   * @format date-time
-   * @example "2021-11-21T06:49:05"
-   */
-  timestamp: string;
-  /**
-   * Tx Hash
-   * transaction hash/id
-   * @example "0x339560202349c62cd7695dbf3da70c1f3beb102b027e75f40fbe6bf4290adb2c"
-   */
-  tx_hash: string;
-  /**
-   * Vault
-   * unique vault identifier
-   * @example "26232"
-   */
-  vault: string;
-  /**
-   * Ilk
-   * collateral type
-   * @example "ETH-A"
-   */
-  ilk: string;
-  /**
-   * Operation
-   * transaction type
-   * @example "GENERATE"
-   */
-  operation: string;
-  /**
-   * Dcollateral
-   * delta/change in collateral
-   * @example 0.08
-   */
-  dcollateral: number;
-  /**
-   * Dprincipal
-   * delta/change in principal
-   * @example 0
-   */
-  dprincipal: number;
-  /**
-   * Dfees
-   * delta/change in fees
-   * @example 0
-   */
-  dfees: number;
-  /**
-   * Mkt Price
-   * collateral market price (collateral/DAI)
-   * @example 3276.596079732024
-   */
-  mkt_price?: number;
-  /**
-   * Osm Price
-   * Oracle Security Module collateral price (collateral/DAI)
-   * @example 3265.23
-   */
-  osm_price?: number;
-  /**
-   * Dart
-   * delta/change in art
-   * @example 0
-   */
-  dart: number;
-  /**
-   * Rate
-   * @example 1.0580857164099792e+27
-   */
-  rate: number;
-  /**
-   * Ratio
-   * minimum collateralization ratio
-   * @example 1.45
-   */
-  ratio: number;
-  /**
-   * Urn
-   * vault urn handler
-   * @example "0xc7dfb534e18e861a7d4e8d5175a928bffffba41c"
-   */
-  urn: string;
-  /** Ds Proxy */
-  ds_proxy?: string;
-  /** Owner */
-  owner?: string;
 }
 
 /** VaultHistoryDaily */
@@ -1620,7 +1443,7 @@ export enum ApiApiV1EndpointsTokensToken {
 }
 
 /** Token */
-export interface SchemasTokensTokenToken {
+export interface SchemasTokensTokensToken {
   /** Access Token */
   access_token: string;
   /** Token Type */
@@ -1891,7 +1714,7 @@ export class HttpClient<SecurityDataType = unknown> {
  * limitations under the License.
  *
  *
- * #### Copytights
+ * #### Copyrights
  * This documentation, the API, the data and all related code, documents, content and materials are © DAI Foundation.
  *
  *
@@ -1978,7 +1801,7 @@ export class Api<
       data: BodyGetAccessTokenV1LoginAccessTokenPost,
       params: RequestParams = {}
     ) =>
-      this.request<SchemasTokensTokenToken, HTTPValidationError>({
+      this.request<SchemasTokensTokensToken, HTTPValidationError>({
         path: `/v1/login/access-token`,
         method: 'POST',
         body: data,
@@ -2127,7 +1950,7 @@ export class Api<
      * @tags governance
      * @name ReadExecutivesV1GovernanceExecutivesGet
      * @summary Read Executives
-     * @request GET:/v1/teleport/executives
+     * @request GET:/v1/governance/executives
      * @secure
      */
     readExecutivesV1GovernanceExecutivesGet: (
@@ -2170,7 +1993,7 @@ export class Api<
       params: RequestParams = {}
     ) =>
       this.request<Executive[], HTTPValidationError>({
-        path: `/v1/teleport/executives`,
+        path: `/v1/governance/executives`,
         method: 'GET',
         query: query,
         secure: true,
@@ -2184,7 +2007,7 @@ export class Api<
      * @tags governance
      * @name ReadExecutivesListV1GovernanceExecutivesListGet
      * @summary Read Executives List
-     * @request GET:/v1/teleport/executives_list
+     * @request GET:/v1/governance/executives_list
      * @secure
      */
     readExecutivesListV1GovernanceExecutivesListGet: (
@@ -2207,7 +2030,7 @@ export class Api<
       params: RequestParams = {}
     ) =>
       this.request<ExecutivesList[], HTTPValidationError>({
-        path: `/v1/teleport/executives_list`,
+        path: `/v1/governance/executives_list`,
         method: 'GET',
         query: query,
         secure: true,
@@ -2221,7 +2044,7 @@ export class Api<
      * @tags governance
      * @name ReadSpellsListV1GovernanceSpellsListGet
      * @summary Read Spells List
-     * @request GET:/v1/teleport/spells_list
+     * @request GET:/v1/governance/spells_list
      * @secure
      */
     readSpellsListV1GovernanceSpellsListGet: (
@@ -2244,7 +2067,7 @@ export class Api<
       params: RequestParams = {}
     ) =>
       this.request<SpellsList[], HTTPValidationError>({
-        path: `/v1/teleport/spells_list`,
+        path: `/v1/governance/spells_list`,
         method: 'GET',
         query: query,
         secure: true,
@@ -2258,7 +2081,7 @@ export class Api<
      * @tags governance
      * @name ReadPollsV1GovernancePollsGet
      * @summary Read Polls
-     * @request GET:/v1/teleport/polls
+     * @request GET:/v1/governance/polls
      * @secure
      */
     readPollsV1GovernancePollsGet: (
@@ -2299,7 +2122,7 @@ export class Api<
       params: RequestParams = {}
     ) =>
       this.request<Vote[], HTTPValidationError>({
-        path: `/v1/teleport/polls`,
+        path: `/v1/governance/polls`,
         method: 'GET',
         query: query,
         secure: true,
@@ -2313,7 +2136,7 @@ export class Api<
      * @tags governance
      * @name ReadProxiesV1GovernanceProxiesGet
      * @summary Read Proxies
-     * @request GET:/v1/teleport/proxies
+     * @request GET:/v1/governance/proxies
      * @secure
      */
     readProxiesV1GovernanceProxiesGet: (
@@ -2354,7 +2177,7 @@ export class Api<
       params: RequestParams = {}
     ) =>
       this.request<Proxy[], HTTPValidationError>({
-        path: `/v1/teleport/proxies`,
+        path: `/v1/governance/proxies`,
         method: 'GET',
         query: query,
         secure: true,
@@ -2368,7 +2191,7 @@ export class Api<
      * @tags governance
      * @name ReadStakesV1GovernanceStakesGet
      * @summary Read Stakes
-     * @request GET:/v1/teleport/stakes
+     * @request GET:/v1/governance/stakes
      * @secure
      */
     readStakesV1GovernanceStakesGet: (
@@ -2409,7 +2232,7 @@ export class Api<
       params: RequestParams = {}
     ) =>
       this.request<Stake[], HTTPValidationError>({
-        path: `/v1/teleport/stakes`,
+        path: `/v1/governance/stakes`,
         method: 'GET',
         query: query,
         secure: true,
@@ -2423,7 +2246,7 @@ export class Api<
      * @tags governance
      * @name ReadDelegatesV1GovernanceDelegatesGet
      * @summary Read Delegates
-     * @request GET:/v1/teleport/delegates
+     * @request GET:/v1/governance/delegates
      * @secure
      */
     readDelegatesV1GovernanceDelegatesGet: (
@@ -2444,7 +2267,7 @@ export class Api<
       params: RequestParams = {}
     ) =>
       this.request<Delegate[], HTTPValidationError>({
-        path: `/v1/teleport/delegates`,
+        path: `/v1/governance/delegates`,
         method: 'GET',
         query: query,
         secure: true,
@@ -2458,7 +2281,7 @@ export class Api<
      * @tags governance
      * @name ReadDelegatesSupportV1GovernanceDelegatesSupportGet
      * @summary Read Delegates Support
-     * @request GET:/v1/teleport/delegates_support
+     * @request GET:/v1/governance/delegates_support
      * @secure
      */
     readDelegatesSupportV1GovernanceDelegatesSupportGet: (
@@ -2466,13 +2289,13 @@ export class Api<
         /**
          * From Date
          * @format date
-         * @default "2022-12-01"
+         * @default "2022-12-22"
          */
         from_date?: string;
         /**
          * To Date
          * @format date
-         * @default "2022-12-01"
+         * @default "2022-12-22"
          */
         to_date?: string;
         /**
@@ -2491,7 +2314,131 @@ export class Api<
       params: RequestParams = {}
     ) =>
       this.request<Support[], HTTPValidationError>({
-        path: `/v1/teleport/delegates_support`,
+        path: `/v1/governance/delegates_support`,
+        method: 'GET',
+        query: query,
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * @description EXPERIMENTAL: DELIVERED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND. Get list of spells.
+     *
+     * @tags governance
+     * @name ReadSpellsV1GovernanceSpellsSummaryGet
+     * @summary Read Spells
+     * @request GET:/v1/governance/spells_summary
+     * @secure
+     */
+    readSpellsV1GovernanceSpellsSummaryGet: (
+      query?: {
+        /**
+         * Spell
+         * @minLength 42
+         * @maxLength 42
+         * @pattern ^0x[a-zA-z0-9]{40}$
+         */
+        spell?: string;
+        /** Ilk */
+        ilk?: string;
+        /** Parameter */
+        parameter?: string;
+        /**
+         * Timestamp Gt
+         * @format date-time
+         */
+        timestamp_gt?: string;
+        /**
+         * Timestamp Lte
+         * @format date-time
+         */
+        timestamp_lte?: string;
+        /**
+         * Skip
+         * ignore first object(s) returned
+         * @min 0
+         * @default 0
+         */
+        skip?: number;
+        /**
+         * Limit
+         * limit amount of objects returned
+         * @min 1
+         * @max 100
+         * @default 100
+         */
+        limit?: number;
+        /** @default "desc" */
+        order?: ApiApiV1EndpointsGovernanceOrder;
+      },
+      params: RequestParams = {}
+    ) =>
+      this.request<SpellSummary[], HTTPValidationError>({
+        path: `/v1/governance/spells_summary`,
+        method: 'GET',
+        query: query,
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * @description Retrieve creating and braking vote proxy events.
+     *
+     * @tags governance
+     * @name ReadParticipationCostV1GovernanceParticipationCostGet
+     * @summary Read Participation Cost
+     * @request GET:/v1/governance/participation_cost
+     * @secure
+     */
+    readParticipationCostV1GovernanceParticipationCostGet: (
+      query?: {
+        /** Poll Id */
+        poll_id?: number;
+        /**
+         * Voter
+         * voter wallet address
+         * @minLength 42
+         * @maxLength 42
+         * @pattern ^0x[a-zA-z0-9]{40}$
+         * @example "0xaf8aa6846539033eaf0c3ca4c9c7373e370e039b"
+         */
+        voter?: string;
+        /**
+         * greater than
+         * returns objects greater than the specified datetime
+         * @format date-time
+         * @example "2021-11-14T14:23:02.232Z"
+         */
+        timestamp_gt?: string;
+        /**
+         * less or equal than
+         * returns objects less than or equal to the specified datetime
+         * @format date-time
+         * @example "2021-11-14T14:23:02.232Z"
+         */
+        timestamp_lte?: string;
+        /**
+         * Skip
+         * ignore first object(s) returned
+         * @min 0
+         * @default 0
+         */
+        skip?: number;
+        /**
+         * Limit
+         * limit amount of objects returned
+         * @min 1
+         * @max 100
+         * @default 100
+         */
+        limit?: number;
+      },
+      params: RequestParams = {}
+    ) =>
+      this.request<ParticipationCost[], HTTPValidationError>({
+        path: `/v1/governance/participation_cost`,
         method: 'GET',
         query: query,
         secure: true,
@@ -2503,12 +2450,12 @@ export class Api<
      * @description The endpoint allows pulling of filtered data about current state of all or selected vaults.
      *
      * @tags vaults
-     * @name ReadCurrentVaultsV1VaultsCurrentStateGet
-     * @summary Read Current Vaults
+     * @name ReadExperimentalCurrentVaultsV1VaultsCurrentStateGet
+     * @summary Read Experimental Current Vaults
      * @request GET:/v1/vaults/current_state
      * @secure
      */
-    readCurrentVaultsV1VaultsCurrentStateGet: (
+    readExperimentalCurrentVaultsV1VaultsCurrentStateGet: (
       query?: {
         /**
          * Ilk
@@ -2547,7 +2494,7 @@ export class Api<
       },
       params: RequestParams = {}
     ) =>
-      this.request<CurrentVault[], HTTPValidationError>({
+      this.request<ExperimentalCurrentVault[], HTTPValidationError>({
         path: `/v1/vaults/current_state`,
         method: 'GET',
         query: query,
@@ -2557,7 +2504,7 @@ export class Api<
       }),
 
     /**
-     * @description Retrieve events changing vault's state throught its lifetime.
+     * @description Retrieve events changing vault's state throughout its lifetime.
      *
      * @tags vaults
      * @name ReadVaultHistoryV1VaultsVaultHistoryVaultGet
@@ -2583,7 +2530,7 @@ export class Api<
       },
       params: RequestParams = {}
     ) =>
-      this.request<VaultHistory[], HTTPValidationError>({
+      this.request<ExperimentalVaultHistory[], HTTPValidationError>({
         path: `/v1/vaults/vault_history/${vault}`,
         method: 'GET',
         query: query,
@@ -2670,6 +2617,98 @@ export class Api<
     ) =>
       this.request<Origin[], HTTPValidationError>({
         path: `/v1/vaults/origins`,
+        method: 'GET',
+        query: query,
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * @description Get detailed information on vault ownership.
+     *
+     * @tags vaults
+     * @name ReadVaultOwnershipV1VaultsVaultOwnershipGet
+     * @summary Read Vault Ownership
+     * @request GET:/v1/vaults/vault_ownership
+     * @secure
+     */
+    readVaultOwnershipV1VaultsVaultOwnershipGet: (
+      query?: {
+        /** Vault */
+        vault?: string;
+        /**
+         * Skip
+         * ignore first object(s) returned
+         * @min 0
+         * @default 0
+         */
+        skip?: number;
+        /**
+         * Limit
+         * limit amount of objects returned
+         * @min 1
+         * @max 100
+         * @default 100
+         */
+        limit?: number;
+      },
+      params: RequestParams = {}
+    ) =>
+      this.request<Ownership[], HTTPValidationError>({
+        path: `/v1/vaults/vault_ownership`,
+        method: 'GET',
+        query: query,
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * @description Get vault's daily snapshot.
+     *
+     * @tags vaults
+     * @name ReadVaultHistoryDailyV1VaultsVaultHistoryDailyGet
+     * @summary Read Vault History Daily
+     * @request GET:/v1/vaults/vault_history_daily
+     * @secure
+     */
+    readVaultHistoryDailyV1VaultsVaultHistoryDailyGet: (
+      query?: {
+        /** Vault */
+        vault?: string;
+        /** Ilk */
+        ilk?: string;
+        /**
+         * Date Gt
+         * @format date
+         */
+        date_gt?: string;
+        /**
+         * Date Lte
+         * @format date
+         */
+        date_lte?: string;
+        /**
+         * Skip
+         * ignore first object(s) returned
+         * @min 0
+         * @default 0
+         */
+        skip?: number;
+        /**
+         * Limit
+         * limit amount of objects returned
+         * @min 1
+         * @max 100
+         * @default 100
+         */
+        limit?: number;
+      },
+      params: RequestParams = {}
+    ) =>
+      this.request<VaultHistoryDaily[], HTTPValidationError>({
+        path: `/v1/vaults/vault_history_daily`,
         method: 'GET',
         query: query,
         secure: true,
@@ -3034,7 +3073,7 @@ export class Api<
       },
       params: RequestParams = {}
     ) =>
-      this.request<ParameterEvent[], HTTPValidationError>({
+      this.request<ExperimentalParameterEvent[], HTTPValidationError>({
         path: `/v1/protocol_parameters/parameter_event`,
         method: 'GET',
         query: query,
@@ -3082,6 +3121,7 @@ export class Api<
      * @name ReadVaultsAtRiskV1ExperimentalVaultsAtRiskGet
      * @summary Read Vaults At Risk
      * @request GET:/v1/experimental/vaults_at_risk
+     * @deprecated
      * @secure
      */
     readVaultsAtRiskV1ExperimentalVaultsAtRiskGet: (
@@ -3102,6 +3142,7 @@ export class Api<
      * @name ReadFlapActionsV1ExperimentalFlapsGet
      * @summary Read Flap Actions
      * @request GET:/v1/experimental/flaps
+     * @deprecated
      * @secure
      */
     readFlapActionsV1ExperimentalFlapsGet: (
@@ -3147,6 +3188,7 @@ export class Api<
      * @name ReadVaultsAtRiskAltV1ExperimentalVaultsAtRiskAltGet
      * @summary Read Vaults At Risk Alt
      * @request GET:/v1/experimental/vaults_at_risk_alt
+     * @deprecated
      * @secure
      */
     readVaultsAtRiskAltV1ExperimentalVaultsAtRiskAltGet: (
@@ -3167,6 +3209,7 @@ export class Api<
      * @name ReadVaultHistoryDailyV1ExperimentalVaultHistoryDailyGet
      * @summary Read Vault History Daily
      * @request GET:/v1/experimental/vault_history_daily
+     * @deprecated
      * @secure
      */
     readVaultHistoryDailyV1ExperimentalVaultHistoryDailyGet: (
@@ -3216,6 +3259,7 @@ export class Api<
      * @name ReadBlocksV1ExperimentalBlocksGet
      * @summary Read Blocks
      * @request GET:/v1/experimental/blocks
+     * @deprecated
      * @secure
      */
     readBlocksV1ExperimentalBlocksGet: (
@@ -3265,6 +3309,7 @@ export class Api<
      * @name ReadBlocksV1ExperimentalBlocksPost
      * @summary Read Blocks
      * @request POST:/v1/experimental/blocks
+     * @deprecated
      * @secure
      */
     readBlocksV1ExperimentalBlocksPost: (
@@ -3303,6 +3348,7 @@ export class Api<
      * @name ReadVaultOwnershipV1ExperimentalVaultOwnershipGet
      * @summary Read Vault Ownership
      * @request GET:/v1/experimental/vault_ownership
+     * @deprecated
      * @secure
      */
     readVaultOwnershipV1ExperimentalVaultOwnershipGet: (
@@ -3340,6 +3386,7 @@ export class Api<
      * @name ReadExperimentalParameterEventV1ExperimentalParameterEventGet
      * @summary Read Experimental Parameter Event
      * @request GET:/v1/experimental/parameter_event
+     * @deprecated
      * @secure
      */
     readExperimentalParameterEventV1ExperimentalParameterEventGet: (
@@ -3395,6 +3442,7 @@ export class Api<
      * @name ReadExperimentalVaultHistoryV1ExperimentalVaultHistoryVaultGet
      * @summary Read Experimental Vault History
      * @request GET:/v1/experimental/vault_history/{vault}
+     * @deprecated
      * @secure
      */
     readExperimentalVaultHistoryV1ExperimentalVaultHistoryVaultGet: (
@@ -3431,6 +3479,7 @@ export class Api<
      * @name ReadExperimentalCurrentVaultsV1ExperimentalCurrentStateGet
      * @summary Read Experimental Current Vaults
      * @request GET:/v1/experimental/current_state
+     * @deprecated
      * @secure
      */
     readExperimentalCurrentVaultsV1ExperimentalCurrentStateGet: (
@@ -3488,6 +3537,7 @@ export class Api<
      * @name ReadSpellsV1ExperimentalSpellsSummaryGet
      * @summary Read Spells
      * @request GET:/v1/experimental/spells_summary
+     * @deprecated
      * @secure
      */
     readSpellsV1ExperimentalSpellsSummaryGet: (
@@ -3541,6 +3591,7 @@ export class Api<
      * @name TokenTransferHistoryV1TokensTokenTransferHistoryGet
      * @summary Token Transfer History
      * @request GET:/v1/tokens/token_transfer_history
+     * @secure
      */
     tokenTransferHistoryV1TokensTokenTransferHistoryGet: (
       query: {
@@ -3590,6 +3641,7 @@ export class Api<
         path: `/v1/tokens/token_transfer_history`,
         method: 'GET',
         query: query,
+        secure: true,
         format: 'json',
         ...params
       }),
@@ -3601,6 +3653,7 @@ export class Api<
      * @name TokenBalanceHistoryV1TokensTokenBalanceHistoryGet
      * @summary Token Balance History
      * @request GET:/v1/tokens/token_balance_history
+     * @secure
      */
     tokenBalanceHistoryV1TokensTokenBalanceHistoryGet: (
       query: {
@@ -3646,6 +3699,34 @@ export class Api<
         path: `/v1/tokens/token_balance_history`,
         method: 'GET',
         query: query,
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * @description DELIVERED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND. Read recent token supply based on token name and network. Available tokens: DAI Available networks: ETHEREUM
+     *
+     * @tags tokens
+     * @name ReadTotalSupplyV1TokensTotalSupplyGet
+     * @summary Read Total Supply
+     * @request GET:/v1/tokens/total_supply
+     * @secure
+     */
+    readTotalSupplyV1TokensTotalSupplyGet: (
+      query: {
+        /** An enumeration. */
+        token: TotalSupplyToken;
+        /** An enumeration. */
+        network: Network;
+      },
+      params: RequestParams = {}
+    ) =>
+      this.request<TotalSupply, HTTPValidationError>({
+        path: `/v1/tokens/total_supply`,
+        method: 'GET',
+        query: query,
+        secure: true,
         format: 'json',
         ...params
       }),
@@ -3807,6 +3888,95 @@ export class Api<
       this.request<Domains, any>({
         path: `/v1/teleport/domains`,
         method: 'GET',
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * @description DELIVERED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND. Get blocks from Maker constitution.
+     *
+     * @tags utils
+     * @name ReadBlocksV1UtilsBlocksPost
+     * @summary Read Blocks
+     * @request POST:/v1/utils/blocks
+     * @secure
+     */
+    readBlocksV1UtilsBlocksPost: (
+      data: number[],
+      query?: {
+        /**
+         * Skip
+         * ignore first object(s) returned
+         * @min 0
+         * @default 0
+         */
+        skip?: number;
+        /**
+         * Limit
+         * limit amount of objects returned
+         * @min 1
+         * @max 100
+         * @default 100
+         */
+        limit?: number;
+      },
+      params: RequestParams = {}
+    ) =>
+      this.request<Block[], HTTPValidationError>({
+        path: `/v1/utils/blocks`,
+        method: 'POST',
+        query: query,
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * @description The endpoint allows pulling of data representing FLAP auctions actions.
+     *
+     * @tags auctions
+     * @name ReadFlapActionsV1AuctionsFlapsGet
+     * @summary Read Flap Actions
+     * @request GET:/v1/auctions/flaps
+     * @secure
+     */
+    readFlapActionsV1AuctionsFlapsGet: (
+      query?: {
+        /**
+         * Timestamp Gt
+         * @format date-time
+         */
+        timestamp_gt?: string;
+        /**
+         * Timestamp Lte
+         * @format date-time
+         */
+        timestamp_lte?: string;
+        /**
+         * Skip
+         * ignore first object(s) returned
+         * @min 0
+         * @default 0
+         */
+        skip?: number;
+        /**
+         * Limit
+         * limit amount of objects returned
+         * @min 1
+         * @max 100
+         * @default 100
+         */
+        limit?: number;
+      },
+      params: RequestParams = {}
+    ) =>
+      this.request<Flap[], HTTPValidationError>({
+        path: `/v1/auctions/flaps`,
+        method: 'GET',
+        query: query,
         secure: true,
         format: 'json',
         ...params

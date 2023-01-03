@@ -1,25 +1,22 @@
-import { AreaChart, Text } from '@makerdao-dicu/makerdao-ui';
 import { ColorType } from 'lightweight-charts';
 import { useIntl } from 'next-intl';
-import { useMemo } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import { Box, useColorMode } from 'theme-ui';
-import { createDaiInL2sAreaChartDataSeries } from '../transformers/create-dai-in-l2s-overview-data-series';
-import { Summary } from '../__generated__/dataAPI';
+import HistogramChart, {
+  HistogramDataSerie
+} from '../../components/HistogramChart';
 
-type DaiInL2sChartProps = {
-  data: Summary | undefined;
-  error: Error | undefined;
+type BridgeFlowsChartProps = {
+  data: HistogramDataSerie[];
+  title?: string;
 };
 
-export default function DaiInL2sChart({ data, error }: DaiInL2sChartProps) {
+export default function BridgeFlowsChart({
+  title,
+  data
+}: BridgeFlowsChartProps) {
   const intl = useIntl();
   const [colorMode] = useColorMode();
-
-  const dataSeries = useMemo(
-    () => createDaiInL2sAreaChartDataSeries(data),
-    [data]
-  );
 
   return (
     <Box
@@ -27,21 +24,19 @@ export default function DaiInL2sChart({ data, error }: DaiInL2sChartProps) {
         ['.tv-lightweight-charts']: {
           borderRadius: '8px'
         },
-        border: error ? 'none' : '1px solid',
+        border: '1px solid',
         borderColor: 'secondary',
         borderRadius: '8px',
         flex: ['1 1 100%', '1 1 0%', '1 1 0%'],
-        textAlign: 'center'
+        textAlign: 'center',
+        padding: 2
       }}>
-      {error ? (
-        <Text variant="error">
-          {'Dai in L2s data is not available at the moment.'}
-        </Text>
-      ) : dataSeries.length > 0 ? (
-        <AreaChart
+      {data.length > 0 ? (
+        <HistogramChart
           role="figure"
           aria-label="DAI in L2s chart"
-          dataSeries={dataSeries}
+          dataSeries={data}
+          title={title}
           chartOptions={{
             layout: {
               background: {

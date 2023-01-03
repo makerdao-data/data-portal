@@ -59,7 +59,7 @@ test.describe('Overview page test', () => {
     ).toContainText('Last update: block 16126494 (103 blocks)');
 
     await expect(
-      page.getByRole('link', { name: 'Ethereum block link' })
+      page.getByRole('link', { name: 'Block link' })
     ).toHaveAttribute('href', 'https://etherscan.io/block/16126494');
 
     await expect(

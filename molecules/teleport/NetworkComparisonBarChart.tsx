@@ -5,8 +5,8 @@ import {
   createNetworkComparisonChartDataSeries,
   domainColor,
   NetworkComparisonIndex
-} from '../transformers/create-network-comparison-chart-data-series';
-import { Summary } from '../__generated__/dataAPI';
+} from '../../transformers/create-network-comparison-chart-data-series';
+import { Summary } from '../../__generated__/dataAPI';
 import { Text, useTheme } from '@makerdao-dicu/makerdao-ui';
 import { Fragment, useMemo } from 'react';
 import Skeleton from 'react-loading-skeleton';
@@ -39,7 +39,7 @@ export default function NetworkComparisonBarChart({
         borderColor: 'secondary',
         borderRadius: '8px',
         height: '260px',
-        flex: ['1 1 100%', '1 1 0%', '1 1 0%'],
+        flex: ['1 1 100%', '1 1 100%', '1 1 100%', '1 1 0%'],
         alignSelf: 'flex-end',
         padding: 2
       }}>
@@ -116,6 +116,7 @@ export default function NetworkComparisonBarChart({
             borderRadius={5}
             axisTop={null}
             axisRight={null}
+            enableGridY={false}
             axisBottom={{
               tickSize: 5,
               tickPadding: 5,
@@ -133,7 +134,6 @@ export default function NetworkComparisonBarChart({
               legendOffset: -40,
               format: (value) => intl.formatNumber(value, { style: 'percent' })
             }}
-            // axisLeft={null}
             labelSkipWidth={12}
             labelSkipHeight={12}
             labelTextColor="#fff"
