@@ -1,5 +1,6 @@
 import { DataSerie } from '@makerdao-dicu/makerdao-ui';
 import { Summary } from '../__generated__/dataAPI';
+import summary from '../e2e/fixtures/summary.json';
 
 export function createDaiInL2sAreaChartDataSeries(
   data: Summary | undefined
@@ -9,11 +10,12 @@ export function createDaiInL2sAreaChartDataSeries(
       {
         styleOptions: {
           lineColor: '#ff0420',
-          topColor: '#ff0420',
-          bottomColor: 'rgba(255, 4, 32, 0.28)',
+          lineWidth: 2,
+          topColor: 'transparent',
+          bottomColor: 'transparent',
           title: 'Optimism'
         },
-        data: Object.keys(data.total_supply.OPTIMISM)
+        data: Object.keys(summary.total_supply.OPTIMISM)
           .filter((key) =>
             Boolean(
               data.total_supply.OPTIMISM[
@@ -23,16 +25,19 @@ export function createDaiInL2sAreaChartDataSeries(
           )
           .map((key) => ({
             time: key,
-            value: data.total_supply.OPTIMISM[
-              key as keyof typeof data.total_supply.OPTIMISM
-            ] as number
+            value: parseFloat(
+              data.total_supply.OPTIMISM[
+                key as keyof typeof data.total_supply.OPTIMISM
+              ]
+            )
           }))
       },
       {
         styleOptions: {
           lineColor: '#28a0f0',
-          topColor: '#28a0f0',
-          bottomColor: 'rgba(40, 160, 240, 0.28)',
+          lineWidth: 2,
+          topColor: 'transparent',
+          bottomColor: 'transparent',
           title: 'Arbitrum'
         },
         data: Object.keys(data.total_supply.ARBITRUM)
@@ -45,17 +50,19 @@ export function createDaiInL2sAreaChartDataSeries(
           )
           .map((key) => ({
             time: key,
-            value:
+            value: parseFloat(
               data.total_supply.ARBITRUM[
                 key as keyof typeof data.total_supply.ARBITRUM
               ]
+            )
           }))
       },
       {
         styleOptions: {
           lineColor: '#252563',
-          topColor: '#252563',
-          bottomColor: 'rgba(37, 37, 99, 0.28)',
+          lineWidth: 2,
+          topColor: 'transparent',
+          bottomColor: 'transparent',
           title: 'Starknet'
         },
         data: Object.keys(data.total_supply.STARKNET)

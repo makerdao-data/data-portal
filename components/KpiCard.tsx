@@ -6,7 +6,7 @@ import 'react-loading-skeleton/dist/skeleton.css';
 
 type KpiCardProps = {
   title: string;
-  value?: number;
+  value?: number | string;
   change?: number;
 };
 
@@ -35,21 +35,14 @@ export default function KpiCard({
         role="textbox"
         aria-label={title + ' value'}
         sx={{ fontSize: theme.fontSizes?.[8], fontWeight: 700 }}>
-        {value ? (
-          intl.formatNumber(value, {
-            maximumFractionDigits: 2,
-            notation: value > 999999999 ? 'compact' : 'standard'
-          })
-        ) : (
-          <Skeleton />
-        )}
+        {value ?? <Skeleton />}
       </Text>
       <Text
         role="textbox"
         aria-label={title + ' change'}
         variant="muted"
         sx={{ color: change && change < 0 ? 'error' : 'success' }}>
-        {change ? (
+        {change !== undefined ? (
           `7d Change ${change > 0 ? '+' : ''}${intl.formatNumber(change, {
             style: 'percent',
             minimumFractionDigits: 2

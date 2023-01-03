@@ -25,6 +25,8 @@ export default function Sidebar({ sidebarOpen }: SidebarProps) {
         flexDirection: 'column',
         height: '100vh',
         overflowY: 'auto',
+        scrollbarWidth: 'none',
+        msOverflowStyle: 'none',
         transition: 'all 0.3s',
         visibility: sidebarOpen ? 'visible' : ['hidden', 'visible', 'visible'],
         marginLeft: sidebarOpen ? 0 : ['-210px', 0, 0]
