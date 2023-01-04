@@ -123,13 +123,13 @@ export default function BridgeDaiDistributionBarChart({
             valueFormat={(value) =>
               intl.formatNumber(value, {
                 style: 'percent',
-                maximumFractionDigits: 2,
+                maximumFractionDigits: 0,
                 notation: 'compact'
               })
             }
             labelFormat={(value) =>
               intl.formatNumber(Number(value) * 1000, {
-                maximumFractionDigits: 2,
+                maximumFractionDigits: 0,
                 notation: 'compact'
               })
             }

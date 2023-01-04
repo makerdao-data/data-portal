@@ -27,7 +27,7 @@ export default function BridgeFlowsChart({
         border: '1px solid',
         borderColor: 'secondary',
         borderRadius: '8px',
-        flex: ['1 1 100%', '1 1 0%', '1 1 0%'],
+        flex: ['1 1 100%', '1 1 100%', '1 1 100%', '1 1 0%'],
         textAlign: 'center',
         padding: 2
       }}>

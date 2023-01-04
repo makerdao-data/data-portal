@@ -21,9 +21,9 @@ import { NETWORK_SCANNERS_URLS } from '../../constants';
 export default function Overview() {
   const intl = useIntl();
   const { data, error } = useSwr<Bridge, Error>(
-    'arbitrumMetrics',
+    'optimismMetrics',
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    dataApiClient.v1.readArbitrumMetricsV1MetricsArbitrumGet as any
+    dataApiClient.v1.readOptimismMetricsV1MetricsOptimismGet as any
   );
 
   const mainChartDataSeries = useMemo(
@@ -122,7 +122,7 @@ export default function Overview() {
           label: (
             <Link
               href={`${
-                NETWORK_SCANNERS_URLS[Domains.ARBITRUM]
+                NETWORK_SCANNERS_URLS[Domains.OPTIMISM]
               }/address/${address}`}
               target="_blank">
               {formattedAddress}
@@ -145,7 +145,7 @@ export default function Overview() {
   }, [data]);
 
   const refreshData = useRefreshData(
-    Domains.ARBITRUM,
+    Domains.OPTIMISM,
     data
       ? {
           lastBlock: data.last_refresh.last_block,
@@ -160,12 +160,12 @@ export default function Overview() {
 
   return (
     <Flex sx={{ flexDirection: 'column', gap: 4 }}>
-      <Text variant="heading">Maker Teleport - Arbitrum</Text>
+      <Text variant="heading">Maker Teleport - Optimism</Text>
 
       <Flex sx={{ gap: 2, flexWrap: ['wrap', 'wrap', 'nowrap'] }}>
         <MainKpiCard
           title="L2 Dai Supply"
-          domain={Domains.ARBITRUM}
+          domain={Domains.OPTIMISM}
           value={
             data
               ? intl.formatNumber(data.supply_circulating, {

@@ -21,9 +21,9 @@ import { NETWORK_SCANNERS_URLS } from '../../constants';
 export default function Overview() {
   const intl = useIntl();
   const { data, error } = useSwr<Bridge, Error>(
-    'arbitrumMetrics',
+    'starknetMetrics',
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    dataApiClient.v1.readArbitrumMetricsV1MetricsArbitrumGet as any
+    dataApiClient.v1.readStarknetMetricsV1MetricsStarknetGet as any
   );
 
   const mainChartDataSeries = useMemo(
@@ -122,8 +122,8 @@ export default function Overview() {
           label: (
             <Link
               href={`${
-                NETWORK_SCANNERS_URLS[Domains.ARBITRUM]
-              }/address/${address}`}
+                NETWORK_SCANNERS_URLS[Domains.STARKNET]
+              }/contract/${address}`}
               target="_blank">
               {formattedAddress}
             </Link>
@@ -145,7 +145,7 @@ export default function Overview() {
   }, [data]);
 
   const refreshData = useRefreshData(
-    Domains.ARBITRUM,
+    Domains.STARKNET,
     data
       ? {
           lastBlock: data.last_refresh.last_block,
@@ -160,12 +160,12 @@ export default function Overview() {
 
   return (
     <Flex sx={{ flexDirection: 'column', gap: 4 }}>
-      <Text variant="heading">Maker Teleport - Arbitrum</Text>
+      <Text variant="heading">Maker Teleport - Starknet</Text>
 
       <Flex sx={{ gap: 2, flexWrap: ['wrap', 'wrap', 'nowrap'] }}>
         <MainKpiCard
           title="L2 Dai Supply"
-          domain={Domains.ARBITRUM}
+          domain={Domains.STARKNET}
           value={
             data
               ? intl.formatNumber(data.supply_circulating, {

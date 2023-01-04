@@ -5,9 +5,12 @@ import { Fragment } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import { useIntl } from 'next-intl';
 import { RefreshData } from '../../hooks/refresh-data';
+import { Domains } from '../../types';
+import { NETWORK_SCANNERS_URLS } from '../../constants';
 
 type MainKpiCardProps = {
   title: string;
+  domain: Domains;
   value: string | number | undefined;
   change: number | undefined;
   lastRefreshData: RefreshData | null;
@@ -16,6 +19,7 @@ type MainKpiCardProps = {
 
 export default function MainKpiCard({
   title,
+  domain,
   value,
   change,
   lastRefreshData,
@@ -65,7 +69,7 @@ export default function MainKpiCard({
                     role="link"
                     aria-label="Block link"
                     target="_blank"
-                    href={`https://etherscan.io/block/${lastRefreshData.latestProcessedBlock}`}>
+                    href={`${NETWORK_SCANNERS_URLS[domain]}/block/${lastRefreshData.latestProcessedBlock}`}>
                     {lastRefreshData.latestProcessedBlock}
                   </Link>{' '}
                   ({lastRefreshData.blocksDistance} blocks)

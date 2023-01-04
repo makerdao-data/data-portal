@@ -14,6 +14,7 @@ import { ethLastBlockFetcher } from '../../data/alchemyApi';
 import { RefreshData } from '../../hooks/refresh-data';
 import KpiCardList from '../../molecules/teleport/KpiCardList';
 import { useIntl } from 'next-intl';
+import { Domains } from '../../types';
 
 type AlchemyLastBlock = {
   jsonrcp: string;
@@ -109,6 +110,7 @@ export default function Overview() {
       <Flex sx={{ gap: 2, flexWrap: ['wrap', 'wrap', 'nowrap'] }}>
         <MainKpiCard
           title="Dai Supply"
+          domain={Domains.ETHEREUM}
           value={
             data
               ? intl.formatNumber(data?.supply_circulating.total, {

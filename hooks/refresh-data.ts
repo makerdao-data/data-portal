@@ -1,11 +1,12 @@
 import { formatDistance } from 'date-fns';
-import { resolve } from 'path';
 import { useMemo } from 'react';
 import useSwr from 'swr';
 import {
   arbitrumLastBlockFetcher,
-  ethLastBlockFetcher
+  ethLastBlockFetcher,
+  optimismLastBlockFetcher
 } from '../data/alchemyApi';
+import { starknetLastBlockFetcher } from '../data/infuraApi';
 import { Domains } from '../types';
 
 type AlchemyLastBlock = {
@@ -60,6 +61,6 @@ export default function useRefreshData(
 const FETCHERS: Record<Domains, () => Promise<any>> = {
   ETHEREUM: ethLastBlockFetcher,
   ARBITRUM: arbitrumLastBlockFetcher,
-  OPTIMISM: () => new Promise(() => resolve()),
-  STARKNET: () => new Promise(() => resolve())
+  OPTIMISM: optimismLastBlockFetcher,
+  STARKNET: starknetLastBlockFetcher
 };
