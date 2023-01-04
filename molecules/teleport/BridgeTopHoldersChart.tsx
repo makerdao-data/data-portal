@@ -73,7 +73,7 @@ export default function BridgeTopHoldersChart({
             }}
             valueFormat={(value) =>
               intl.formatNumber(value, {
-                maximumFractionDigits: 2,
+                maximumFractionDigits: 0,
                 notation: 'compact'
               })
             }

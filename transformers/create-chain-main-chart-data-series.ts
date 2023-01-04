@@ -1,7 +1,7 @@
 import { DataSerie } from '@makerdao-dicu/makerdao-ui';
 import { Bridge } from '../__generated__/dataAPI';
 
-export function createArbitrumMainChartDataSeries(
+export function createBridgeMainChartDataSeries(
   data: Bridge | undefined
 ): DataSerie[] {
   if (data !== undefined) {
