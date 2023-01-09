@@ -1,6 +1,5 @@
 import { DataSerie } from '@makerdao-dicu/makerdao-ui';
 import { Summary } from '../__generated__/dataAPI';
-import summary from '../e2e/fixtures/summary.json';
 
 export function createDaiInL2sAreaChartDataSeries(
   data: Summary | undefined
@@ -15,7 +14,7 @@ export function createDaiInL2sAreaChartDataSeries(
           bottomColor: 'transparent',
           title: 'Optimism'
         },
-        data: Object.keys(summary.total_supply.OPTIMISM)
+        data: Object.keys(data.total_supply.OPTIMISM)
           .filter((key) =>
             Boolean(
               data.total_supply.OPTIMISM[
