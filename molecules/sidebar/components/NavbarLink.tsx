@@ -1,16 +1,17 @@
+import { WarningIcon } from '@makerdao-dicu/makerdao-ui';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { Box, ThemeUIStyleObject } from 'theme-ui';
+import { Box, Flex, ThemeUIStyleObject } from 'theme-ui';
 
 type NavbarLinkProps = {
   href: string;
   text: string;
   toggleSubMenu?: () => void;
-  active?: boolean;
+  disabled?: boolean;
   sx?: ThemeUIStyleObject;
 } & Partial<HTMLAnchorElement>;
 
-export function NavbarLink({ href, text, sx }: NavbarLinkProps) {
+export function NavbarLink({ href, text, sx, disabled }: NavbarLinkProps) {
   const router = useRouter();
   const active = router.asPath === href;
 
@@ -18,6 +19,7 @@ export function NavbarLink({ href, text, sx }: NavbarLinkProps) {
     <Box
       role="link"
       aria-label={'NavbarLink' + text}
+      title={disabled ? 'Coming soon' : text}
       sx={{
         backgroundColor: active ? 'primary' : '',
         borderRadius: '6px',
@@ -31,11 +33,19 @@ export function NavbarLink({ href, text, sx }: NavbarLinkProps) {
         ['a']: {
           color: active ? 'text' : 'textMuted',
           textDecoration: 'none',
-          fontSize: 4
+          fontSize: 4,
+
+          pointerEvents: disabled ? 'none' : 'unset'
         },
         ...sx
       }}>
-      <Link href={href}>{text}</Link>
+      <Flex sx={{ gap: 1 }}>
+        <Link href={href}>{text}</Link>
+
+        {disabled ? (
+          <WarningIcon stroke="#FCDC93" width={15} height={20} />
+        ) : null}
+      </Flex>
     </Box>
   );
 }

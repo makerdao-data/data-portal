@@ -7,6 +7,7 @@ import { NavbarLink } from './NavbarLink';
 export type Link = {
   text: string;
   href: string;
+  disabled?: boolean;
 };
 
 type NavigationMenuProps = {
@@ -34,8 +35,13 @@ export default function NavigationMenu({
           role="menu"
           aria-label="Overview sidebar menu"
           sx={{ flexDirection: 'column' }}>
-          {links.map(({ href, text }) => (
-            <NavbarLink key={href} href={href} text={text} />
+          {links.map(({ href, text, disabled }) => (
+            <NavbarLink
+              disabled={disabled}
+              key={href}
+              href={href}
+              text={text}
+            />
           ))}
         </Flex>
       ) : null}
