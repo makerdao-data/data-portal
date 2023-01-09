@@ -37,7 +37,7 @@ export default function Layout({ children }: LayoutProps) {
         sx={{
           flexDirection: 'column',
           flex: '1 1 0%',
-          margin: ['6rem 1rem', '3rem 3rem 3rem 207px'],
+          margin: ['6rem 1rem', '3rem 3rem 3rem 210px'],
           isolation: 'isolate',
           ['& > div']: {
             margin: '0 auto',
