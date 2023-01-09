@@ -97,10 +97,7 @@ export default function NetworkComparisonCharts({
                     // @ts-ignore
                     arcLinkLabel={({ data }) => data.formattedId}
                     arcLabelsSkipAngle={15}
-                    arcLabelsTextColor={{
-                      from: 'color',
-                      modifiers: [['darker', 10]]
-                    }}
+                    arcLabelsTextColor="fff"
                     theme={{
                       textColor: colorMode === 'light' ? '#231536' : '#fff'
                     }}
