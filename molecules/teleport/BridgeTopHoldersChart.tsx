@@ -5,7 +5,7 @@ import { Text } from '@makerdao-dicu/makerdao-ui';
 import { Fragment } from 'react';
 import Skeleton from 'react-loading-skeleton';
 
-export type PieChartDataSerie = {
+export type BridgeTopHoldersPieChartDataSerie = {
   id: string;
   formattedId: string;
   label: JSX.Element;
@@ -15,7 +15,7 @@ export type PieChartDataSerie = {
 
 type BridgeTopHoldersChartProps = {
   title: string;
-  dataSeries: PieChartDataSerie[];
+  dataSeries: BridgeTopHoldersPieChartDataSerie[];
   error: Error | undefined;
 };
 

@@ -1,8 +1,20 @@
 import type { Summary } from '../__generated__/dataAPI';
 
-export function createNetworkComparisonChartDataSeries(
+export type NetworkComparisonPieChartDataSerie = {
+  id: string;
+  formattedId: string;
+  value: number;
+};
+
+type NetworkComparitionDataSeries = {
+  weeklyTransferVolume: NetworkComparisonPieChartDataSerie[];
+  weeklyTransferCount: NetworkComparisonPieChartDataSerie[];
+  avgTransferAmount: NetworkComparisonPieChartDataSerie[];
+};
+
+export function createNetworkComparisonChartsDataSeries(
   data: Summary | undefined
-): Record<string, string | number>[] {
+): NetworkComparitionDataSeries {
   if (data !== undefined) {
     const {
       networks_transfer_volume,
@@ -24,40 +36,74 @@ export function createNetworkComparisonChartDataSeries(
       networks_avg_transfer.Arbitrum +
       networks_avg_transfer.Starknet;
 
-    const dataSeries = [
+    const weeklyTransferVolumeDataSeries = [
       {
-        id: 'weeklyTransferVolume',
-        optimism: networks_transfer_volume.Optimism / totalTransferAmount,
-        optimismColor: domainColor.optimism,
-        arbitrum: networks_transfer_volume.Arbitrum / totalTransferAmount,
-        arbitrumColor: domainColor.arbitrum,
-        starknet: networks_transfer_volume.Starknet / totalTransferAmount,
-        starknetColor: domainColor.starknet
+        id: 'optimism',
+        formattedId: 'Optimism',
+        value: networks_transfer_volume.Optimism / totalTransferAmount
       },
       {
-        id: 'weeklyTransferCount',
-        optimism: networks_transfer_count.Optimism / totalTransferCount,
-        optimismColor: domainColor.optimism,
-        arbitrum: networks_transfer_count.Arbitrum / totalTransferCount,
-        arbitrumColor: domainColor.arbitrum,
-        starknet: networks_transfer_count.Starknet / totalTransferCount,
-        starknetColor: domainColor.starknet
+        id: 'arbitrum',
+        formattedId: 'Arbitrum',
+        value: networks_transfer_volume.Arbitrum / totalTransferAmount
       },
       {
-        id: 'avgTransferAmount',
-        optimism: networks_avg_transfer.Optimism / totalAvgTransfer,
-        optimismColor: domainColor.optimism,
-        arbitrum: networks_avg_transfer.Arbitrum / totalAvgTransfer,
-        arbitrumColor: domainColor.arbitrum,
-        starknet: networks_avg_transfer.Starknet / totalAvgTransfer,
-        starknetColor: domainColor.starknet
+        id: 'starknet',
+        formattedId: 'Starknet',
+        value: networks_transfer_volume.Starknet / totalTransferAmount
       }
     ];
+
+    const weeklyTransferCountDataSeries = [
+      {
+        id: 'optimism',
+        formattedId: 'Optimism',
+        value: networks_transfer_count.Optimism / totalTransferCount
+      },
+      {
+        id: 'arbitrum',
+        formattedId: 'Arbitrum',
+        value: networks_transfer_count.Arbitrum / totalTransferCount
+      },
+      {
+        id: 'starknet',
+        formattedId: 'Starknet',
+        value: networks_transfer_count.Starknet / totalTransferCount
+      }
+    ];
+
+    const avgTransferAmountDataSeries = [
+      {
+        id: 'optimism',
+        formattedId: 'Optimism',
+        value: networks_avg_transfer.Optimism / totalAvgTransfer
+      },
+      {
+        id: 'arbitrum',
+        formattedId: 'Arbitrum',
+        value: networks_avg_transfer.Arbitrum / totalAvgTransfer
+      },
+      {
+        id: 'starknet',
+        formattedId: 'Starknet',
+        value: networks_avg_transfer.Starknet / totalAvgTransfer
+      }
+    ];
+
+    const dataSeries = {
+      weeklyTransferVolume: weeklyTransferVolumeDataSeries,
+      weeklyTransferCount: weeklyTransferCountDataSeries,
+      avgTransferAmount: avgTransferAmountDataSeries
+    };
 
     return dataSeries;
   }
 
-  return [];
+  return {
+    weeklyTransferVolume: [],
+    weeklyTransferCount: [],
+    avgTransferAmount: []
+  };
 }
 
 export const domainColor: Record<string, string> = {
