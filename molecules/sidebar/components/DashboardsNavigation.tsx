@@ -78,64 +78,78 @@ export default function DashboardsNavigation() {
 }
 
 const governanceLinks: Link[] = [
-  { href: '/governance/overview', text: 'Overview' },
+  { href: '/governance/overview', text: 'Overview', disabled: true },
   {
     href: '/governance/executive-votes',
-    text: 'Executive votes'
+    text: 'Executive votes',
+    disabled: true
   },
-  { href: '/governance/poll-votes', text: 'Poll votes' },
-  { href: '/governance/delegates', text: 'Delegates' },
-  { href: '/governance/voters', text: 'Voters' },
-  { href: '/governance/protocol-parameters', text: 'Protocol parameters' }
+  { href: '/governance/poll-votes', text: 'Poll votes', disabled: true },
+  { href: '/governance/delegates', text: 'Delegates', disabled: true },
+  { href: '/governance/voters', text: 'Voters', disabled: true },
+  {
+    href: '/governance/protocol-parameters',
+    text: 'Protocol parameters',
+    disabled: true
+  }
 ];
 
 const daiLinks: Link[] = [
-  { href: '/dai/overview', text: 'Overview' },
+  { href: '/dai/overview', text: 'Overview', disabled: true },
   {
     href: '/dai/balance-and-transfers',
-    text: 'Balance & transfers'
+    text: 'Balance & transfers',
+    disabled: true
   },
-  { href: '/dai/dsr', text: 'DSR' }
+  { href: '/dai/dsr', text: 'DSR', disabled: true }
 ];
 
 const vaultsLinks: Link[] = [
-  { href: '/vaults/overview', text: 'Overview' },
+  { href: '/vaults/overview', text: 'Overview', disabled: true },
   {
     href: '/vaults/balance-and-transfers',
-    text: 'Balance & transfers'
+    text: 'Balance & transfers',
+    disabled: true
   }
 ];
 
 const d3mLinks: Link[] = [
-  { href: '/d3m/overview', text: 'Overview' },
+  { href: '/d3m/overview', text: 'Overview', disabled: true },
   {
     href: '/d3m/balance-and-transfers',
-    text: 'Balance & transfers'
+    text: 'Balance & transfers',
+    disabled: true
   }
 ];
 
-const psmLinks: Link[] = [{ href: '/psm/overview', text: 'Overview' }];
+const psmLinks: Link[] = [
+  { href: '/psm/overview', text: 'Overview', disabled: true }
+];
 
-const rwasLinks: Link[] = [{ href: '/rwas/overview', text: 'Overview' }];
+const rwasLinks: Link[] = [
+  { href: '/rwas/overview', text: 'Overview', disabled: true }
+];
 
 const teleportLinks: Link[] = [
   { href: '/teleport/overview', text: 'Overview' },
   {
     href: '/teleport/fast-withdrawals',
-    text: 'Fast Withdrawals'
+    text: 'Fast Withdrawals',
+    disabled: true
   },
   { href: '/teleport/arbitrum', text: 'Arbitrum' },
   { href: '/teleport/optimism', text: 'Optimism' },
   { href: '/teleport/starknet', text: 'Starknet' },
-  { href: '/teleport/system-status', text: 'System status' }
+  { href: '/teleport/system-status', text: 'System status', disabled: true }
 ];
 
 const oraclesLinks: Link[] = [
-  { href: '/oracles/overview', text: 'Overview' },
+  { href: '/oracles/overview', text: 'Overview', disabled: true },
   {
     href: '/oracles/pricing',
-    text: 'Pricing'
+    text: 'Pricing',
+    disabled: true
   },
-  { href: '/oracles/p2p-network', text: 'P2P Network' },
-  { href: '/oracles/attestations', text: 'Attestations' }
+  { href: '/oracles/p2p-network', text: 'P2P Network', disabled: true },
+  { href: '/oracles/attestations', text: 'Attestations', disabled: true }
 ];
