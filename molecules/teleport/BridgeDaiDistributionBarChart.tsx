@@ -54,7 +54,7 @@ export default function BridgeDaiDistributionBarChart({
             data={data.dataSeries}
             keys={data.dataSeries.map(({ id }) => String(id))}
             indexBy="id"
-            margin={{ top: 20, right: 0, bottom: 70, left: 40 }}
+            margin={{ top: 20, right: 0, bottom: 70, left: 20 }}
             padding={0}
             valueScale={{ type: 'symlog' }}
             indexScale={{ type: 'band', round: true }}
@@ -110,14 +110,7 @@ export default function BridgeDaiDistributionBarChart({
               format: (value: keyof typeof data.categoryMapping) =>
                 data.categoryMapping[value]
             }}
-            axisLeft={{
-              tickSize: 5,
-              tickPadding: 5,
-              tickRotation: 0,
-              legendPosition: 'middle',
-              legendOffset: -40,
-              format: (value) => intl.formatNumber(value, { style: 'percent' })
-            }}
+            axisLeft={null}
             role="application"
             ariaLabel="Arbitrum DAI distribution chart"
             valueFormat={(value) =>
@@ -155,7 +148,9 @@ export default function BridgeDaiDistributionBarChart({
                     }}
                   />
                   <Text>{data.categoryMapping[props.id] + ':'}</Text>
-                  <Text variant="boldBody">{props.formattedValue}</Text>
+                  <Text variant="boldBody">
+                    {intl.formatNumber(Number(props.data.value))}
+                  </Text>
                 </Flex>
               );
             }}
