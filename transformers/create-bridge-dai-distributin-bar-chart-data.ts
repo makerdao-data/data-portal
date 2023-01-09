@@ -26,18 +26,16 @@ export function createBridgeDaiDistributionBarChartData(
 
     return {
       categoryMapping: CATEGORY_MAPPING,
-      dataSeries: Object.keys(CATEGORY_MAPPING).reduce(
-        (memo, category) => {
-          return [
-            ...memo,
-            {
-              id: category,
-              [category]: data.DAI_buckets[category] / total
-            }
-          ];
-        },
-        [{}]
-      )
+      dataSeries: Object.keys(CATEGORY_MAPPING).reduce((memo, category) => {
+        return [
+          ...memo,
+          {
+            id: category,
+            [category]: data.DAI_buckets[category] / total,
+            value: data.DAI_buckets[category]
+          }
+        ];
+      }, [] as Record<string, string | number>[])
     };
   }
 
