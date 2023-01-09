@@ -6,7 +6,7 @@ import MainAreaChart from '../../molecules/MainAreaChart';
 import TeleportTable from '../../molecules/teleport/TeleportDomainsTable';
 import { dataApiClient } from '../../data/dataApiClient';
 import MainKpiCard from '../../molecules/teleport/MainKpiCard';
-import NetworkComparisonBarChart from '../../molecules/teleport/NetworkComparisonBarChart';
+import NetworkComparisonCharts from '../../molecules/teleport/NetworkComparisonCharts';
 import { useMemo } from 'react';
 import { createDaiInL2sAreaChartDataSeries } from '../../transformers/create-dai-in-l2s-overview-data-series';
 import { formatDistance } from 'date-fns';
@@ -142,7 +142,7 @@ export default function Overview() {
       <Flex sx={{ gap: 2, flexWrap: ['wrap', 'wrap', 'wrap', 'nowrap'] }}>
         <KpiCardList data={weeklyKpiData} error={error} />
 
-        <NetworkComparisonBarChart data={data} error={error} />
+        <NetworkComparisonCharts data={data} error={error} />
       </Flex>
     </Flex>
   );

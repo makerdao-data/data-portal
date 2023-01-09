@@ -12,7 +12,7 @@ type NetworkComparitionDataSeries = {
   avgTransferAmount: NetworkComparisonPieChartDataSerie[];
 };
 
-export function createNetworkComparisonChartDataSeries(
+export function createNetworkComparisonChartsDataSeries(
   data: Summary | undefined
 ): NetworkComparitionDataSeries {
   if (data !== undefined) {

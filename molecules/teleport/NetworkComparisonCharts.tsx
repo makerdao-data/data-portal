@@ -2,7 +2,7 @@ import { ResponsivePie } from '@nivo/pie';
 import { useIntl } from 'next-intl';
 import { Box, Flex, useColorMode } from 'theme-ui';
 import {
-  createNetworkComparisonChartDataSeries,
+  createNetworkComparisonChartsDataSeries,
   domainColor,
   NetworkComparisonIndex
 } from '../../transformers/create-network-comparison-chart-data-series';
@@ -11,19 +11,19 @@ import { Text } from '@makerdao-dicu/makerdao-ui';
 import { Fragment, useMemo } from 'react';
 import Skeleton from 'react-loading-skeleton';
 
-type NetworkComparitionBarChartProps = {
+type NetworkComparitionChartProps = {
   data: Summary | undefined;
   error: Error | undefined;
 };
 
-export default function NetworkComparisonBarChart({
+export default function NetworkComparisonCharts({
   data,
   error
-}: NetworkComparitionBarChartProps) {
+}: NetworkComparitionChartProps) {
   const intl = useIntl();
   const [colorMode] = useColorMode();
   const dataSeries = useMemo(
-    () => createNetworkComparisonChartDataSeries(data),
+    () => createNetworkComparisonChartsDataSeries(data),
     [data]
   );
 
