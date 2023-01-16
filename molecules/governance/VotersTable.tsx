@@ -262,6 +262,10 @@ export default function VotersTable({ data }: VotersTableProps) {
           value={state.pageSize}
           onChange={(e) => {
             setPageSize(Number(e.target.value));
+          }}
+          sx={{
+            padding: '2px 8px',
+            paddingRight: 32
           }}>
           {[10, 20, 30, 40, 50, 100].map((pageSize) => (
             <option key={pageSize} value={pageSize}>
