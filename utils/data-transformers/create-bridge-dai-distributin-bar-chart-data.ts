@@ -1,4 +1,4 @@
-import { Bridge } from '../__generated__/dataAPI';
+import { Bridge } from '../../__generated__/dataAPI';
 
 export type BridgeDaiComparisionBarChartData = {
   categoryMapping: Record<string, string>;

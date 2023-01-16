@@ -5,7 +5,7 @@ import { Fragment } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import { useIntl } from 'next-intl';
 import { RefreshData } from '../../hooks/refresh-data';
-import { Domains } from '../../types';
+import { Domains } from '../../types/teleport';
 import { NETWORK_SCANNERS_URLS } from '../../constants';
 
 type MainKpiCardProps = {
