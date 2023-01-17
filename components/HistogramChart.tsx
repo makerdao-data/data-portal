@@ -9,7 +9,7 @@ import {
   HistogramStyleOptions
 } from 'lightweight-charts';
 import { useEffect, useRef } from 'react';
-import { Box, BoxProps, useColorMode } from 'theme-ui';
+import { Box, BoxProps } from 'theme-ui';
 
 export type HistogramDataSerie = {
   data: HistogramData[] | WhitespaceData[];
@@ -29,7 +29,6 @@ export default function HistogramChart({
   ...props
 }: HistogramChartProps) {
   const chartContainerRef = useRef<HTMLDivElement>();
-  const [colorMode] = useColorMode();
   const { theme } = useTheme();
 
   useEffect(() => {
@@ -51,15 +50,15 @@ export default function HistogramChart({
     }
 
     if (title) {
-      const prevTooltip = document.getElementById('tooltip-id');
-      const node = document.getElementById('chart-id');
+      const prevTooltip = document.getElementById('tooltip-' + { title });
+      const node = document.getElementById(title);
 
       if (prevTooltip && node) {
         node.removeChild(prevTooltip);
       }
 
       const toolTip = document.createElement('div');
-      toolTip.setAttribute('id', 'tooltip-id');
+      toolTip.setAttribute('id', 'tooltip-' + { title });
 
       chartContainerRef.current?.appendChild(toolTip);
 
@@ -82,14 +81,14 @@ export default function HistogramChart({
 
       chart.remove();
     };
-  }, [chartOptions, chartOptions.height, colorMode, dataSeries, theme, title]);
+  }, [chartOptions, chartOptions.height, dataSeries, theme, title]);
 
   return (
     <Box
       role="graphics-doc"
       as="div"
       ref={chartContainerRef}
-      id="chart-id"
+      id={title}
       sx={{ position: 'relative' }}
       {...props}
     />

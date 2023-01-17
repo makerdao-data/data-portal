@@ -6,9 +6,10 @@ import { Box, useColorMode } from 'theme-ui';
 
 type MainAreaChartProps = {
   data: DataSerie[];
+  title?: string;
 };
 
-export default function MainAreaChart({ data }: MainAreaChartProps) {
+export default function MainAreaChart({ data, title }: MainAreaChartProps) {
   const intl = useIntl();
   const [colorMode] = useColorMode();
 
@@ -30,6 +31,7 @@ export default function MainAreaChart({ data }: MainAreaChartProps) {
           role="figure"
           aria-label="DAI in L2s chart"
           dataSeries={data}
+          title={title}
           chartOptions={{
             layout: {
               background: {
