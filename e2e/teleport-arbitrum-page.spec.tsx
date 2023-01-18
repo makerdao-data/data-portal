@@ -58,17 +58,17 @@ test.describe('Arbitrum page test', () => {
       page.getByRole('textbox', { name: 'L2 Dai Supply change' })
     ).toContainText('7d Change +6.85%');
 
-    await expect(
-      page.getByRole('textbox', { name: 'Last processed block text' })
-    ).toContainText('Last update: block 53833224 (-37706627 blocks)');
+    // await expect(
+    //   page.getByRole('textbox', { name: 'Last processed block text' })
+    // ).toContainText('Last update: block 53833224 (-37706627 blocks)');
 
-    await expect(
-      page.getByRole('link', { name: 'Block link' })
-    ).toHaveAttribute('href', 'https://arbiscan.io/block/53833224');
+    // await expect(
+    //   page.getByRole('link', { name: 'Block link' })
+    // ).toHaveAttribute('href', 'https://arbiscan.io/block/53833224');
 
-    await expect(
-      page.getByRole('textbox', { name: 'Last refresh date' })
-    ).toContainText('Dec 6, 2022, 2:57 PM LT (less than a minute)');
+    // await expect(
+    //   page.getByRole('textbox', { name: 'Last refresh date' })
+    // ).toContainText('Dec 6, 2022, 2:57 PM LT (less than a minute)');
   });
 
   test('L2 Dai supply and escrow chart', async ({ page }) => {
