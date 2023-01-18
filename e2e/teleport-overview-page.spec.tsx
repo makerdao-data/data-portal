@@ -65,17 +65,6 @@ test.describe('Overview page test', () => {
     await expect(
       page.getByRole('textbox', { name: 'Last refresh date' })
     ).toContainText('Dec 6, 2022, 2:57 PM LT (less than a minute)');
-
-    await expect(
-      page.getByRole('figure', { name: 'DAI in L2s chart' })
-    ).toBeVisible();
-
-    await expect(
-      page
-        .getByRole('figure', { name: 'DAI in L2s chart' })
-        .locator('div')
-        .first()
-    ).toHaveCSS('height', '380px');
   });
 
   test('DAI in L2s chart', async ({ page }) => {
@@ -202,7 +191,45 @@ test.describe('Overview page test', () => {
     ).toContainText('Network comparison');
 
     await expect(
-      page.getByRole('figure', { name: 'Network comparison chart' })
+      page.getByRole('figure', {
+        name: 'Network Weekly transfer volume comparison chart'
+      })
     ).toBeVisible();
+
+    await expect(
+      page.getByRole('figure', {
+        name: 'Network Weekly transfer count comparison chart'
+      })
+    ).toBeVisible();
+
+    await expect(
+      page.getByRole('figure', {
+        name: 'Network Avg. Transfer amount comparison chart'
+      })
+    ).toBeVisible();
+  });
+
+  test('Overview page data api error', async ({ page }) => {
+    await page.route(
+      'https://data-api.makerdao.network/v1/metrics/summary',
+      (route) => route.abort()
+    );
+
+    await page.route(
+      'https://eth-mainnet.g.alchemy.com/v2/kKpGhqgtnDaz1n6PhdhZTXBPKcX9vlVN',
+      (route) => route.abort()
+    );
+
+    await page.goto(`http://localhost:3000/teleport/overview`);
+
+    await expect(
+      page.getByRole('textbox', { name: 'Error message' })
+    ).toContainText([
+      'Dai Supply data is not available at the moment.',
+      'Teleport data is not available at the moment.',
+      'Dai in L2s data is not available at the moment.',
+      'Data is not available at the moment.',
+      'Network comparison data is not available at the moment.'
+    ]);
   });
 });

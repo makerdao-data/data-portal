@@ -168,11 +168,14 @@ export default function Overview() {
       </Flex>
 
       {error ? (
-        <Text variant="error">
+        <Text variant="error" role="textbox" aria-label="Error message">
           {'Dai in L2s data is not available at the moment.'}
         </Text>
       ) : (
-        <MainAreaChart data={mainChartDataSeries} />
+        <MainAreaChart
+          data={mainChartDataSeries}
+          aria-label="DAI in L2s chart"
+        />
       )}
 
       <Flex sx={{ gap: 2, flexWrap: ['wrap', 'wrap', 'wrap', 'nowrap'] }}>
