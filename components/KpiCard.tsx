@@ -34,7 +34,12 @@ export default function KpiCard({
         ...props.sx
       }}>
       <Flex sx={{ justifyContent: 'space-between' }}>
-        <Text variant="smallHeading">{title}</Text>
+        <Text
+          variant="smallHeading"
+          role="heading"
+          aria-label={title + ' title'}>
+          {title}
+        </Text>
 
         {exportMethod ? <CsvExport exportMethod={exportMethod} /> : null}
       </Flex>

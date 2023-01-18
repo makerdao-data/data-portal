@@ -1,7 +1,7 @@
 import { ColorType } from 'lightweight-charts';
 import { useIntl } from 'next-intl';
 import Skeleton from 'react-loading-skeleton';
-import { Box, useColorMode } from 'theme-ui';
+import { Box, BoxProps, useColorMode } from 'theme-ui';
 import HistogramChart, {
   HistogramDataSerie
 } from '../../components/HistogramChart';
@@ -9,11 +9,12 @@ import HistogramChart, {
 type BridgeFlowsChartProps = {
   data: HistogramDataSerie[];
   title?: string;
-};
+} & BoxProps;
 
 export default function BridgeFlowsChart({
   title,
-  data
+  data,
+  ...props
 }: BridgeFlowsChartProps) {
   const intl = useIntl();
   const [colorMode] = useColorMode();
@@ -34,7 +35,7 @@ export default function BridgeFlowsChart({
       {data.length > 0 ? (
         <HistogramChart
           role="figure"
-          aria-label="DAI in L2s chart"
+          aria-label="Histogram chart"
           dataSeries={data}
           title={title}
           chartOptions={{
@@ -59,6 +60,7 @@ export default function BridgeFlowsChart({
                 intl.formatNumber(value, { maximumFractionDigits: 2 })
             }
           }}
+          {...props}
         />
       ) : (
         <Skeleton height={400} style={{ borderRadius: '8px', top: '-4px' }} />

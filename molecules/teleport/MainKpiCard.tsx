@@ -40,7 +40,7 @@ export default function MainKpiCard({
         textAlign: 'left'
       }}>
       {error ? (
-        <Text variant="error">
+        <Text variant="error" role="textbox" aria-label="Error message">
           {`${title} data is not available at the moment.`}
         </Text>
       ) : (

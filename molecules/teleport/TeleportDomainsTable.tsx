@@ -140,7 +140,10 @@ export default function TeleportDomainsTable({
               <tbody>
                 <tr>
                   <td colSpan={6} style={{ textAlign: 'center' }}>
-                    <Text variant="error">
+                    <Text
+                      variant="error"
+                      role="textbox"
+                      aria-label="Error message">
                       {'Teleport data is not available at the moment.'}
                     </Text>
                   </td>
