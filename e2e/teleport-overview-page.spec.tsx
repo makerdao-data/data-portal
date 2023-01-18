@@ -54,17 +54,17 @@ test.describe('Overview page test', () => {
       page.getByRole('textbox', { name: 'DAI Supply change' })
     ).toContainText('-2.18%');
 
-    // await expect(
-    //   page.getByRole('textbox', { name: 'Last processed block text' })
-    // ).toContainText('Last update: block 16126494 (103 blocks)');
+    await expect(
+      page.getByRole('textbox', { name: 'Last processed block text' })
+    ).toContainText('Last update: block 16126494 (103 blocks)');
 
-    // await expect(
-    //   page.getByRole('link', { name: 'Block link' })
-    // ).toHaveAttribute('href', 'https://etherscan.io/block/16126494');
+    await expect(
+      page.getByRole('link', { name: 'Block link' })
+    ).toHaveAttribute('href', 'https://etherscan.io/block/16126494');
 
-    // await expect(
-    //   page.getByRole('textbox', { name: 'Last refresh date' })
-    // ).toContainText('Dec 6, 2022, 2:57 PM LT (less than a minute)');
+    await expect(
+      page.getByRole('textbox', { name: 'Last refresh date' })
+    ).toContainText('Dec 6, 2022, 2:57 PM LT (less than a minute)');
   });
 
   test('DAI in L2s chart', async ({ page }) => {
