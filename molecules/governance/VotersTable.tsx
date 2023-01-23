@@ -13,6 +13,7 @@ type VotersTableProps = {
 export default function VotersTable({ data }: VotersTableProps) {
   const intl = useIntl();
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const columns: any[] = useMemo(() => {
     return [
       {

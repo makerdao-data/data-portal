@@ -1,4 +1,4 @@
-import { Fragment, useRef, useState } from 'react';
+import { useState } from 'react';
 import {
   useAsyncDebounce,
   useGlobalFilter,

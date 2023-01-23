@@ -83,7 +83,8 @@ export default function TeleportDomainsTable({
           position: 'relative',
           overflowX: 'auto'
         }
-      }}>
+      }}
+      aria-label="Bridges status table">
       <THead>
         <TRow>
           <THeader

@@ -4,7 +4,6 @@ import VotersTable from '../../molecules/governance/VotersTable';
 import { RequestParams, Voter as TVoter } from '../../__generated__/dataAPI';
 import { dataApiClient } from '../../data/dataApiClient';
 import useSwr, { Fetcher } from 'swr';
-import { useEffect, useRef } from 'react';
 
 export default function Voters() {
   const fetcher: Fetcher<TVoter[], RequestParams> =

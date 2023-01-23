@@ -196,13 +196,21 @@ test.describe('Overview page test', () => {
     ).toContainText('-14.80%');
   });
 
-  test('Network comparison chart', async ({ page }) => {
+  test('Network comparison charts', async ({ page }) => {
     await expect(
       page.getByRole('textbox', { name: 'Network comparison title' })
     ).toContainText('Network comparison');
 
     await expect(
-      page.getByRole('figure', { name: 'Network comparison chart' })
+      page.getByRole('figure', { name: 'Weekly transfer volume pie chart' })
+    ).toBeVisible();
+
+    await expect(
+      page.getByRole('figure', { name: 'Weekly transfer count pie chart' })
+    ).toBeVisible();
+
+    await expect(
+      page.getByRole('figure', { name: 'Avg. Transfer amount pie chart' })
     ).toBeVisible();
   });
 });

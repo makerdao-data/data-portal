@@ -64,7 +64,14 @@ export default function NetworkComparisonCharts({
                   height: '220px',
                   width: '100%'
                 }}>
-                <Box sx={{ height: '90%' }}>
+                <Box
+                  sx={{ height: '90%' }}
+                  role="figure"
+                  aria-label={`${
+                    NetworkComparisonIndex[
+                      key as keyof typeof NetworkComparisonIndex
+                    ]
+                  } pie chart`}>
                   <ResponsivePie
                     data={data}
                     id={({ formattedId }) => formattedId}
