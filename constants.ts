@@ -1,4 +1,4 @@
-import { Domains } from './types';
+import { Domains } from './types/teleport';
 
 export const NETWORK_SCANNERS_URLS: Record<Domains, string> = {
   ETHEREUM: 'https://etherscan.io',

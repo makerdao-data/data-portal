@@ -5,7 +5,7 @@ import {
   createNetworkComparisonChartsDataSeries,
   domainColor,
   NetworkComparisonIndex
-} from '../../transformers/create-network-comparison-chart-data-series';
+} from '../../utils/data-transformers/create-network-comparison-chart-data-series';
 import { Summary } from '../../__generated__/dataAPI';
 import { Text } from '@makerdao-dicu/makerdao-ui';
 import { Fragment, useMemo } from 'react';
@@ -67,11 +67,11 @@ export default function NetworkComparisonCharts({
                 <Box
                   sx={{ height: '90%' }}
                   role="figure"
-                  aria-label={`Network ${
+                  aria-label={`${
                     NetworkComparisonIndex[
                       key as keyof typeof NetworkComparisonIndex
                     ]
-                  } comparison chart`}>
+                  } pie chart`}>
                   <ResponsivePie
                     data={data}
                     id={({ formattedId }) => formattedId}

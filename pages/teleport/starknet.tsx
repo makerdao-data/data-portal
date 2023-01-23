@@ -7,14 +7,14 @@ import { dataApiClient } from '../../data/dataApiClient';
 import MainKpiCard from '../../molecules/teleport/MainKpiCard';
 import { useMemo } from 'react';
 import { useRefreshData } from '../../hooks';
-import { Domains } from '../../types';
-import { createBridgeMainChartDataSeries } from '../../transformers/create-chain-main-chart-data-series';
+import { Domains } from '../../types/teleport';
+import { createBridgeMainChartDataSeries } from '../../utils/data-transformers/create-chain-main-chart-data-series';
 import KpiCardList from '../../molecules/teleport/KpiCardList';
 import BridgeTopHoldersChart from '../../molecules/teleport/BridgeTopHoldersChart';
 import BridgeDaiDistributionBarChart from '../../molecules/teleport/BridgeDaiDistributionBarChart';
 import { useIntl } from 'next-intl';
-import { createBridgeDaiDistributionBarChartData } from '../../transformers/create-bridge-dai-distributin-bar-chart-data';
-import { createBridgeFlowsBarChartData } from '../../transformers/create-bridge-flows-bar-chart-data';
+import { createBridgeDaiDistributionBarChartData } from '../../utils/data-transformers/create-bridge-dai-distributin-bar-chart-data';
+import { createBridgeFlowsBarChartData } from '../../utils/data-transformers/create-bridge-flows-bar-chart-data';
 import BridgeFlowsChart from '../../molecules/teleport/BridgeFlowsChart';
 import { NETWORK_SCANNERS_URLS } from '../../constants';
 

@@ -4,7 +4,7 @@ import { Text, useTheme } from '@makerdao-dicu/makerdao-ui';
 import { Fragment } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import { useIntl } from 'next-intl';
-import { BridgeDaiComparisionBarChartData } from '../../transformers/create-bridge-dai-distributin-bar-chart-data';
+import { BridgeDaiComparisionBarChartData } from '../../utils/data-transformers/create-bridge-dai-distributin-bar-chart-data';
 
 type BridgeDaiDistributionBarChartProps = {
   title: string;

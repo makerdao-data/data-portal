@@ -1,4 +1,4 @@
-import type { Summary } from '../__generated__/dataAPI';
+import { Summary } from '../../__generated__/dataAPI';
 
 export type NetworkComparisonPieChartDataSerie = {
   id: string;

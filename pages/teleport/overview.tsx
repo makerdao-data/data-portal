@@ -7,14 +7,14 @@ import TeleportTable from '../../molecules/teleport/TeleportDomainsTable';
 import { dataApiClient } from '../../data/dataApiClient';
 import MainKpiCard from '../../molecules/teleport/MainKpiCard';
 import NetworkComparisonCharts from '../../molecules/teleport/NetworkComparisonCharts';
+import { createDaiInL2sAreaChartDataSeries } from '../../utils/data-transformers/create-dai-in-l2s-overview-data-series';
 import { useCallback, useMemo } from 'react';
-import { createDaiInL2sAreaChartDataSeries } from '../../transformers/create-dai-in-l2s-overview-data-series';
 import { formatDistance } from 'date-fns';
 import { ethLastBlockFetcher } from '../../data/alchemyApi';
 import { RefreshData } from '../../hooks/refresh-data';
 import KpiCardList from '../../molecules/teleport/KpiCardList';
 import { useIntl } from 'next-intl';
-import { Domains } from '../../types';
+import { Domains } from '../../types/teleport';
 import { Data as ReactCsvData } from 'react-csv/components/CommonPropTypes';
 
 type AlchemyLastBlock = {

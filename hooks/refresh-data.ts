@@ -7,7 +7,7 @@ import {
   optimismLastBlockFetcher
 } from '../data/alchemyApi';
 import { starknetLastBlockFetcher } from '../data/infuraApi';
-import { Domains } from '../types';
+import { Domains } from '../types/teleport';
 
 type AlchemyLastBlock = {
   jsonrcp: string;

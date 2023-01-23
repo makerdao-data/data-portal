@@ -1,5 +1,5 @@
-import { HistogramDataSerie } from '../components/HistogramChart';
-import { Bridge } from '../__generated__/dataAPI';
+import { HistogramDataSerie } from '../../components/HistogramChart';
+import { Bridge } from '../../__generated__/dataAPI';
 
 export function createBridgeFlowsBarChartData(
   data: Bridge | undefined

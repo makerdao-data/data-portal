@@ -1,5 +1,5 @@
 import { DataSerie } from '@makerdao-dicu/makerdao-ui';
-import { Bridge } from '../__generated__/dataAPI';
+import { Bridge } from '../../__generated__/dataAPI';
 
 export function createBridgeMainChartDataSeries(
   data: Bridge | undefined

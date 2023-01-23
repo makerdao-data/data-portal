@@ -54,76 +54,6 @@ export interface Action {
   caller?: string;
 }
 
-/** AtRisk */
-export interface AtRisk {
-  /** Vault */
-  vault: string;
-  /** Ilk */
-  ilk: string;
-  /** Urn */
-  urn: string;
-  /** Current Price */
-  current_price: number;
-  /** Next Price */
-  next_price?: number;
-  /** Debt */
-  debt: number;
-  /** Collateral */
-  collateral: number;
-  /** Collateral Value */
-  collateral_value: number;
-  /** Liquidation Ratio */
-  liquidation_ratio: number;
-  /** Current Collateralization */
-  current_collateralization: number;
-  /** Next Collateralization */
-  next_collateralization: number;
-  /**
-   * Next Price Update Utc
-   * @format date-time
-   */
-  next_price_update_UTC: string;
-  /** Approximate Time Left */
-  approximate_time_left: string;
-  /** Liquidation Price */
-  liquidation_price: number;
-}
-
-/** AtRiskAlt */
-export interface AtRiskAlt {
-  /** Vault */
-  vault: string;
-  /** Ilk */
-  ilk: string;
-  /** Urn */
-  urn: string;
-  /** Current Price */
-  current_price: number;
-  /** Next Price */
-  next_price?: number;
-  /** Debt */
-  debt: number;
-  /** Collateral */
-  collateral: number;
-  /** Collateral Value */
-  collateral_value: number;
-  /** Liquidation Ratio */
-  liquidation_ratio: number;
-  /** Current Collateralization */
-  current_collateralization: number;
-  /** Next Collateralization */
-  next_collateralization: number;
-  /**
-   * Next Price Update Utc
-   * @format date-time
-   */
-  next_price_update_UTC: string;
-  /** Approximate Time Left */
-  approximate_time_left: string;
-  /** Liquidation Price */
-  liquidation_price: number;
-}
-
 /** Auction */
 export interface Auction {
   /**
@@ -1397,13 +1327,28 @@ export interface Vote {
   operation: string;
 }
 
-/**
- * Order
- * An enumeration.
- */
-export enum ApiApiV1EndpointsExperimentalOrder {
-  Asc = 'asc',
-  Desc = 'desc'
+/** Voter */
+export interface Voter {
+  /** Voter Address */
+  voter_address: string;
+  /** Type */
+  type?: string;
+  /** Voter Alias */
+  voter_alias?: string;
+  /** Stake */
+  stake: number;
+  /** Current Votes */
+  current_votes: Record<string, any>[];
+  /**
+   * Since
+   * @format date
+   */
+  since: string;
+  /**
+   * Last
+   * @format date-time
+   */
+  last: string;
 }
 
 /**
@@ -1980,12 +1925,15 @@ export class Api<
         /**
          * Skip
          * ignore first object(s) returned
+         * @min 0
          * @default 0
          */
         skip?: number;
         /**
          * Limit
          * limit amount of objects returned
+         * @min 1
+         * @max 100
          * @default 100
          */
         limit?: number;
@@ -2017,12 +1965,15 @@ export class Api<
         /**
          * Skip
          * ignore first object(s) returned
+         * @min 0
          * @default 0
          */
         skip?: number;
         /**
          * Limit
          * limit amount of objects returned
+         * @min 1
+         * @max 100
          * @default 100
          */
         limit?: number;
@@ -2054,12 +2005,15 @@ export class Api<
         /**
          * Skip
          * ignore first object(s) returned
+         * @min 0
          * @default 0
          */
         skip?: number;
         /**
          * Limit
          * limit amount of objects returned
+         * @min 1
+         * @max 100
          * @default 100
          */
         limit?: number;
@@ -2109,12 +2063,15 @@ export class Api<
         /**
          * Skip
          * ignore first object(s) returned
+         * @min 0
          * @default 0
          */
         skip?: number;
         /**
          * Limit
          * limit amount of objects returned
+         * @min 1
+         * @max 100
          * @default 100
          */
         limit?: number;
@@ -2144,6 +2101,9 @@ export class Api<
         /**
          * Voter
          * voter wallet address
+         * @minLength 42
+         * @maxLength 42
+         * @pattern ^0x[a-zA-z0-9]{40}$
          * @example "0xaf8aa6846539033eaf0c3ca4c9c7373e370e039b"
          */
         voter?: string;
@@ -2164,12 +2124,15 @@ export class Api<
         /**
          * Skip
          * ignore first object(s) returned
+         * @min 0
          * @default 0
          */
         skip?: number;
         /**
          * Limit
          * limit amount of objects returned
+         * @min 1
+         * @max 100
          * @default 100
          */
         limit?: number;
@@ -2199,6 +2162,9 @@ export class Api<
         /**
          * Voter
          * voter wallet address
+         * @minLength 42
+         * @maxLength 42
+         * @pattern ^0x[a-zA-z0-9]{40}$
          * @example "0xaf8aa6846539033eaf0c3ca4c9c7373e370e039b"
          */
         voter?: string;
@@ -2219,12 +2185,15 @@ export class Api<
         /**
          * Skip
          * ignore first object(s) returned
+         * @min 0
          * @default 0
          */
         skip?: number;
         /**
          * Limit
          * limit amount of objects returned
+         * @min 1
+         * @max 100
          * @default 100
          */
         limit?: number;
@@ -2254,12 +2223,15 @@ export class Api<
         /**
          * Skip
          * ignore first object(s) returned
+         * @min 0
          * @default 0
          */
         skip?: number;
         /**
          * Limit
          * limit amount of objects returned
+         * @min 1
+         * @max 100
          * @default 100
          */
         limit?: number;
@@ -2289,24 +2261,27 @@ export class Api<
         /**
          * From Date
          * @format date
-         * @default "2022-12-22"
+         * @default "2023-01-18"
          */
         from_date?: string;
         /**
          * To Date
          * @format date
-         * @default "2022-12-22"
+         * @default "2023-01-18"
          */
         to_date?: string;
         /**
          * Skip
          * ignore first object(s) returned
+         * @min 0
          * @default 0
          */
         skip?: number;
         /**
          * Limit
          * limit amount of objects returned
+         * @min 1
+         * @max 100
          * @default 100
          */
         limit?: number;
@@ -2447,15 +2422,33 @@ export class Api<
       }),
 
     /**
+     * No description
+     *
+     * @tags governance
+     * @name ReadVotersV1GovernanceVotersGet
+     * @summary Read Voters
+     * @request GET:/v1/governance/voters
+     * @secure
+     */
+    readVotersV1GovernanceVotersGet: (params: RequestParams = {}) =>
+      this.request<Voter[], any>({
+        path: `/v1/governance/voters`,
+        method: 'GET',
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
      * @description The endpoint allows pulling of filtered data about current state of all or selected vaults.
      *
      * @tags vaults
-     * @name ReadExperimentalCurrentVaultsV1VaultsCurrentStateGet
-     * @summary Read Experimental Current Vaults
+     * @name ReadCurrentVaultsV1VaultsCurrentStateGet
+     * @summary Read Current Vaults
      * @request GET:/v1/vaults/current_state
      * @secure
      */
-    readExperimentalCurrentVaultsV1VaultsCurrentStateGet: (
+    readCurrentVaultsV1VaultsCurrentStateGet: (
       query?: {
         /**
          * Ilk
@@ -2472,6 +2465,9 @@ export class Api<
         /**
          * Owner
          * owner wallet address
+         * @minLength 42
+         * @maxLength 42
+         * @pattern ^0x[a-zA-z0-9]{40}$
          * @example "0x0b98f1d6ee453e8b0c36def52289a3de3bc82c5b"
          */
         owner?: string;
@@ -2482,12 +2478,15 @@ export class Api<
         /**
          * Skip
          * ignore first object(s) returned
+         * @min 0
          * @default 0
          */
         skip?: number;
         /**
          * Limit
          * limit amount of objects returned
+         * @min 1
+         * @max 100
          * @default 100
          */
         limit?: number;
@@ -2518,12 +2517,15 @@ export class Api<
         /**
          * Skip
          * ignore first object(s) returned
+         * @min 0
          * @default 0
          */
         skip?: number;
         /**
          * Limit
          * limit amount of objects returned
+         * @min 1
+         * @max 100
          * @default 100
          */
         limit?: number;
@@ -2596,19 +2598,32 @@ export class Api<
       query?: {
         /** Vault */
         vault?: string;
-        /** Owner */
+        /**
+         * Owner
+         * @minLength 42
+         * @maxLength 42
+         * @pattern ^0x[a-zA-z0-9]{40}$
+         */
         owner?: string;
-        /** Wallet */
+        /**
+         * Wallet
+         * @minLength 42
+         * @maxLength 42
+         * @pattern ^0x[a-zA-z0-9]{40}$
+         */
         wallet?: string;
         /**
          * Skip
          * ignore first object(s) returned
+         * @min 0
          * @default 0
          */
         skip?: number;
         /**
          * Limit
          * limit amount of objects returned
+         * @min 1
+         * @max 100
          * @default 100
          */
         limit?: number;
@@ -2762,12 +2777,15 @@ export class Api<
         /**
          * Skip
          * ignore first object(s) returned
+         * @min 0
          * @default 0
          */
         skip?: number;
         /**
          * Limit
          * limit amount of objects returned
+         * @min 1
+         * @max 100
          * @default 100
          */
         limit?: number;
@@ -2823,12 +2841,15 @@ export class Api<
         /**
          * Skip
          * ignore first object(s) returned
+         * @min 0
          * @default 0
          */
         skip?: number;
         /**
          * Limit
          * limit amount of objects returned
+         * @min 1
+         * @max 100
          * @default 100
          */
         limit?: number;
@@ -2870,6 +2891,9 @@ export class Api<
         /**
          * Keeper
          * unique keeper identifier
+         * @minLength 42
+         * @maxLength 42
+         * @pattern ^0x[a-zA-z0-9]{40}$
          * @example "0x008ca3a9c52e0f0d9ee94d310d20d67399d44f6c"
          */
         keeper?: string;
@@ -2890,12 +2914,15 @@ export class Api<
         /**
          * Skip
          * ignore first object(s) returned
+         * @min 0
          * @default 0
          */
         skip?: number;
         /**
          * Limit
          * limit amount of objects returned
+         * @min 1
+         * @max 100
          * @default 100
          */
         limit?: number;
@@ -2969,12 +2996,15 @@ export class Api<
         /**
          * Skip
          * ignore first object(s) returned
+         * @min 0
          * @default 0
          */
         skip?: number;
         /**
          * Limit
          * limit amount of objects returned
+         * @min 1
+         * @max 100
          * @default 100
          */
         limit?: number;
@@ -3004,12 +3034,15 @@ export class Api<
         /**
          * Skip
          * ignore first object(s) returned
+         * @min 0
          * @default 0
          */
         skip?: number;
         /**
          * Limit
          * limit amount of objects returned
+         * @min 1
+         * @max 100
          * @default 100
          */
         limit?: number;
@@ -3044,7 +3077,12 @@ export class Api<
          * @example "ETH-A"
          */
         ilk?: string;
-        /** Spell */
+        /**
+         * Spell
+         * @minLength 42
+         * @maxLength 42
+         * @pattern ^0x[a-zA-z0-9]{40}$
+         */
         spell?: string;
         /**
          * Timestamp Gt
@@ -3061,12 +3099,15 @@ export class Api<
         /**
          * Skip
          * ignore first object(s) returned
+         * @min 0
          * @default 0
          */
         skip?: number;
         /**
          * Limit
          * limit amount of objects returned
+         * @min 1
+         * @max 100
          * @default 100
          */
         limit?: number;
@@ -3115,476 +3156,6 @@ export class Api<
       }),
 
     /**
-     * @description EXPERIMENTAL: DELIVERED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND. Retrieve vaults at risk of being liquidated.
-     *
-     * @tags experimental
-     * @name ReadVaultsAtRiskV1ExperimentalVaultsAtRiskGet
-     * @summary Read Vaults At Risk
-     * @request GET:/v1/experimental/vaults_at_risk
-     * @deprecated
-     * @secure
-     */
-    readVaultsAtRiskV1ExperimentalVaultsAtRiskGet: (
-      params: RequestParams = {}
-    ) =>
-      this.request<AtRisk[], any>({
-        path: `/v1/experimental/vaults_at_risk`,
-        method: 'GET',
-        secure: true,
-        format: 'json',
-        ...params
-      }),
-
-    /**
-     * @description EXPERIMENTAL: DELIVERED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND. The endpoint allows pulling of data representing FLAP auctions actions.
-     *
-     * @tags experimental
-     * @name ReadFlapActionsV1ExperimentalFlapsGet
-     * @summary Read Flap Actions
-     * @request GET:/v1/experimental/flaps
-     * @deprecated
-     * @secure
-     */
-    readFlapActionsV1ExperimentalFlapsGet: (
-      query?: {
-        /**
-         * Timestamp Gt
-         * @format date-time
-         */
-        timestamp_gt?: string;
-        /**
-         * Timestamp Lte
-         * @format date-time
-         */
-        timestamp_lte?: string;
-        /**
-         * Skip
-         * ignore first object(s) returned
-         * @default 0
-         */
-        skip?: number;
-        /**
-         * Limit
-         * limit amount of objects returned
-         * @default 100
-         */
-        limit?: number;
-      },
-      params: RequestParams = {}
-    ) =>
-      this.request<Flap[], HTTPValidationError>({
-        path: `/v1/experimental/flaps`,
-        method: 'GET',
-        query: query,
-        secure: true,
-        format: 'json',
-        ...params
-      }),
-
-    /**
-     * @description EXPERIMENTAL: DELIVERED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND. Alternative endpoint returning vaults at risk of being liquidated.
-     *
-     * @tags experimental
-     * @name ReadVaultsAtRiskAltV1ExperimentalVaultsAtRiskAltGet
-     * @summary Read Vaults At Risk Alt
-     * @request GET:/v1/experimental/vaults_at_risk_alt
-     * @deprecated
-     * @secure
-     */
-    readVaultsAtRiskAltV1ExperimentalVaultsAtRiskAltGet: (
-      params: RequestParams = {}
-    ) =>
-      this.request<AtRiskAlt[], any>({
-        path: `/v1/experimental/vaults_at_risk_alt`,
-        method: 'GET',
-        secure: true,
-        format: 'json',
-        ...params
-      }),
-
-    /**
-     * @description EXPERIMENTAL: DELIVERED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND. Get vault's daily snapshot.
-     *
-     * @tags experimental
-     * @name ReadVaultHistoryDailyV1ExperimentalVaultHistoryDailyGet
-     * @summary Read Vault History Daily
-     * @request GET:/v1/experimental/vault_history_daily
-     * @deprecated
-     * @secure
-     */
-    readVaultHistoryDailyV1ExperimentalVaultHistoryDailyGet: (
-      query?: {
-        /** Vault */
-        vault?: string;
-        /** Ilk */
-        ilk?: string;
-        /**
-         * Date Gt
-         * @format date
-         */
-        date_gt?: string;
-        /**
-         * Date Lte
-         * @format date
-         */
-        date_lte?: string;
-        /**
-         * Skip
-         * ignore first object(s) returned
-         * @default 0
-         */
-        skip?: number;
-        /**
-         * Limit
-         * limit amount of objects returned
-         * @default 100
-         */
-        limit?: number;
-      },
-      params: RequestParams = {}
-    ) =>
-      this.request<VaultHistoryDaily[], HTTPValidationError>({
-        path: `/v1/experimental/vault_history_daily`,
-        method: 'GET',
-        query: query,
-        secure: true,
-        format: 'json',
-        ...params
-      }),
-
-    /**
-     * @description EXPERIMENTAL: DELIVERED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND. Get blocks from Maker constitution.
-     *
-     * @tags experimental
-     * @name ReadBlocksV1ExperimentalBlocksGet
-     * @summary Read Blocks
-     * @request GET:/v1/experimental/blocks
-     * @deprecated
-     * @secure
-     */
-    readBlocksV1ExperimentalBlocksGet: (
-      query?: {
-        /** Block Gt */
-        block_gt?: number;
-        /** Block Lte */
-        block_lte?: number;
-        /**
-         * Timestamp Gt
-         * @format date-time
-         */
-        timestamp_gt?: string;
-        /**
-         * Timestamp Lte
-         * @format date-time
-         */
-        timestamp_lte?: string;
-        /**
-         * Skip
-         * ignore first object(s) returned
-         * @default 0
-         */
-        skip?: number;
-        /**
-         * Limit
-         * limit amount of objects returned
-         * @default 100
-         */
-        limit?: number;
-      },
-      params: RequestParams = {}
-    ) =>
-      this.request<Block[], HTTPValidationError>({
-        path: `/v1/experimental/blocks`,
-        method: 'GET',
-        query: query,
-        secure: true,
-        format: 'json',
-        ...params
-      }),
-
-    /**
-     * @description EXPERIMENTAL: DELIVERED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND. Get blocks from Maker constitution.
-     *
-     * @tags experimental
-     * @name ReadBlocksV1ExperimentalBlocksPost
-     * @summary Read Blocks
-     * @request POST:/v1/experimental/blocks
-     * @deprecated
-     * @secure
-     */
-    readBlocksV1ExperimentalBlocksPost: (
-      data: number[],
-      query?: {
-        /**
-         * Skip
-         * ignore first object(s) returned
-         * @default 0
-         */
-        skip?: number;
-        /**
-         * Limit
-         * limit amount of objects returned
-         * @default 100
-         */
-        limit?: number;
-      },
-      params: RequestParams = {}
-    ) =>
-      this.request<Block[], HTTPValidationError>({
-        path: `/v1/experimental/blocks`,
-        method: 'POST',
-        query: query,
-        body: data,
-        secure: true,
-        type: ContentType.Json,
-        format: 'json',
-        ...params
-      }),
-
-    /**
-     * @description Get detailed information on vault ownership.
-     *
-     * @tags experimental
-     * @name ReadVaultOwnershipV1ExperimentalVaultOwnershipGet
-     * @summary Read Vault Ownership
-     * @request GET:/v1/experimental/vault_ownership
-     * @deprecated
-     * @secure
-     */
-    readVaultOwnershipV1ExperimentalVaultOwnershipGet: (
-      query?: {
-        /** Vault */
-        vault?: string;
-        /**
-         * Skip
-         * ignore first object(s) returned
-         * @default 0
-         */
-        skip?: number;
-        /**
-         * Limit
-         * limit amount of objects returned
-         * @default 100
-         */
-        limit?: number;
-      },
-      params: RequestParams = {}
-    ) =>
-      this.request<Ownership[], HTTPValidationError>({
-        path: `/v1/experimental/vault_ownership`,
-        method: 'GET',
-        query: query,
-        secure: true,
-        format: 'json',
-        ...params
-      }),
-
-    /**
-     * @description The endpoint allows getting a list of filtered system parameters events.
-     *
-     * @tags experimental
-     * @name ReadExperimentalParameterEventV1ExperimentalParameterEventGet
-     * @summary Read Experimental Parameter Event
-     * @request GET:/v1/experimental/parameter_event
-     * @deprecated
-     * @secure
-     */
-    readExperimentalParameterEventV1ExperimentalParameterEventGet: (
-      query?: {
-        /** Parameter */
-        parameter?: string;
-        /**
-         * Ilk
-         * vault type
-         * @example "ETH-A"
-         */
-        ilk?: string;
-        /** Spell */
-        spell?: string;
-        /**
-         * Timestamp Gt
-         * @format date-time
-         */
-        timestamp_gt?: string;
-        /**
-         * Timestamp Lte
-         * @format date-time
-         */
-        timestamp_lte?: string;
-        /**
-         * Skip
-         * ignore first object(s) returned
-         * @default 0
-         */
-        skip?: number;
-        /**
-         * Limit
-         * limit amount of objects returned
-         * @default 100
-         */
-        limit?: number;
-      },
-      params: RequestParams = {}
-    ) =>
-      this.request<ExperimentalParameterEvent[], HTTPValidationError>({
-        path: `/v1/experimental/parameter_event`,
-        method: 'GET',
-        query: query,
-        secure: true,
-        format: 'json',
-        ...params
-      }),
-
-    /**
-     * @description Retrieve events changing vault's state throughout its lifetime.
-     *
-     * @tags experimental
-     * @name ReadExperimentalVaultHistoryV1ExperimentalVaultHistoryVaultGet
-     * @summary Read Experimental Vault History
-     * @request GET:/v1/experimental/vault_history/{vault}
-     * @deprecated
-     * @secure
-     */
-    readExperimentalVaultHistoryV1ExperimentalVaultHistoryVaultGet: (
-      vault: string,
-      query?: {
-        /**
-         * Skip
-         * ignore first object(s) returned
-         * @default 0
-         */
-        skip?: number;
-        /**
-         * Limit
-         * limit amount of objects returned
-         * @default 100
-         */
-        limit?: number;
-      },
-      params: RequestParams = {}
-    ) =>
-      this.request<ExperimentalVaultHistory[], HTTPValidationError>({
-        path: `/v1/experimental/vault_history/${vault}`,
-        method: 'GET',
-        query: query,
-        secure: true,
-        format: 'json',
-        ...params
-      }),
-
-    /**
-     * @description The endpoint allows pulling of filtered data about current state of all or selected vaults.
-     *
-     * @tags experimental
-     * @name ReadExperimentalCurrentVaultsV1ExperimentalCurrentStateGet
-     * @summary Read Experimental Current Vaults
-     * @request GET:/v1/experimental/current_state
-     * @deprecated
-     * @secure
-     */
-    readExperimentalCurrentVaultsV1ExperimentalCurrentStateGet: (
-      query?: {
-        /**
-         * Ilk
-         * vault type
-         * @example "ETH-A"
-         */
-        ilk?: string;
-        /**
-         * Vault
-         * unique vault identifier
-         * @example "26232"
-         */
-        vault?: string;
-        /**
-         * Owner
-         * owner wallet address
-         * @example "0x0b98f1d6ee453e8b0c36def52289a3de3bc82c5b"
-         */
-        owner?: string;
-        /** Debt Gt */
-        debt_gt?: number;
-        /** Debt Lte */
-        debt_lte?: number;
-        /**
-         * Skip
-         * ignore first object(s) returned
-         * @default 0
-         */
-        skip?: number;
-        /**
-         * Limit
-         * limit amount of objects returned
-         * @default 100
-         */
-        limit?: number;
-      },
-      params: RequestParams = {}
-    ) =>
-      this.request<ExperimentalCurrentVault[], HTTPValidationError>({
-        path: `/v1/experimental/current_state`,
-        method: 'GET',
-        query: query,
-        secure: true,
-        format: 'json',
-        ...params
-      }),
-
-    /**
-     * @description EXPERIMENTAL: DELIVERED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND. Get list of spells.
-     *
-     * @tags experimental
-     * @name ReadSpellsV1ExperimentalSpellsSummaryGet
-     * @summary Read Spells
-     * @request GET:/v1/experimental/spells_summary
-     * @deprecated
-     * @secure
-     */
-    readSpellsV1ExperimentalSpellsSummaryGet: (
-      query?: {
-        /** Spell */
-        spell?: string;
-        /** Ilk */
-        ilk?: string;
-        /** Parameter */
-        parameter?: string;
-        /**
-         * Timestamp Gt
-         * @format date-time
-         */
-        timestamp_gt?: string;
-        /**
-         * Timestamp Lte
-         * @format date-time
-         */
-        timestamp_lte?: string;
-        /** @default "desc" */
-        order?: ApiApiV1EndpointsExperimentalOrder;
-        /**
-         * Skip
-         * ignore first object(s) returned
-         * @default 0
-         */
-        skip?: number;
-        /**
-         * Limit
-         * limit amount of objects returned
-         * @default 100
-         */
-        limit?: number;
-      },
-      params: RequestParams = {}
-    ) =>
-      this.request<SpellSummary[], HTTPValidationError>({
-        path: `/v1/experimental/spells_summary`,
-        method: 'GET',
-        query: query,
-        secure: true,
-        format: 'json',
-        ...params
-      }),
-
-    /**
      * @description DELIVERED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND. View token transfer history at a given block or timestamp.
      *
      * @tags tokens
@@ -3623,15 +3194,20 @@ export class Api<
          */
         address?: string;
         /**
+         * Skip
+         * ignore first object(s) returned
+         * @min 0
+         * @default 0
+         */
+        skip?: number;
+        /**
          * Limit
+         * limit amount of objects returned
+         * @min 1
+         * @max 100
          * @default 100
          */
         limit?: number;
-        /**
-         * Offset
-         * @default 0
-         */
-        offset?: number;
         /** @default "desc" */
         order?: ApiApiV1EndpointsTokensOrder;
       },
@@ -3681,15 +3257,20 @@ export class Api<
          */
         address?: string;
         /**
+         * Skip
+         * ignore first object(s) returned
+         * @min 0
+         * @default 0
+         */
+        skip?: number;
+        /**
          * Limit
+         * limit amount of objects returned
+         * @min 1
+         * @max 100
          * @default 100
          */
         limit?: number;
-        /**
-         * Offset
-         * @default 0
-         */
-        offset?: number;
         /** @default "desc" */
         order?: ApiApiV1EndpointsTokensOrder;
       },
