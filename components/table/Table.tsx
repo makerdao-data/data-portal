@@ -2,17 +2,19 @@ import { Fragment, ReactNode } from 'react';
 import { Flex, Box, ThemeUIStyleObject } from 'theme-ui';
 import { Text } from '@makerdao-dicu/makerdao-ui';
 
+export type TableStyles = {
+  tableContainer?: ThemeUIStyleObject;
+  tableSuperContainer?: ThemeUIStyleObject;
+  table?: ThemeUIStyleObject;
+};
+
 type TableProps = {
   children: ReactNode;
   title?: string;
-  sx?: {
-    tableContainer?: ThemeUIStyleObject;
-    tableSuperContainer?: ThemeUIStyleObject;
-    table?: ThemeUIStyleObject;
-  };
+  sx?: TableStyles;
 };
 
-export default function Table({ children, title, sx }: TableProps) {
+export default function Table({ children, title, sx, ...rest }: TableProps) {
   return (
     <Flex
       sx={{
@@ -48,7 +50,8 @@ export default function Table({ children, title, sx }: TableProps) {
               },
 
               ...sx?.table
-            }}>
+            }}
+            {...rest}>
             {children}
           </Box>
         </Box>

@@ -1,218 +1,754 @@
 [
   {
-    "current_votes_title": "Urgent Collateral Parameter Changes - November 12, 2022",
-    "current_votes_address": "0x16787f838d6562d7a0337ff65130b6a9a1255c77",
-    "last": "2022-12-17 23:27:35",
-    "since": "2022-06-16",
-    "stake": "28,758.15",
-    "voter_alias": "0x74971f1be0afd1bb820668abfe411d164f17b53c",
-    "voter_address": "0x74971f1be0afd1bb820668abfe411d164f17b53c"
-  },
-  {
-    "current_votes_title": "Compound D3M Onboarding, Activating Stablecoin Liquidations, Oracle Feed Whitelisting, Starknet Relay Upgrade, and MKR Vesting - December 2, 2022",
-    "current_votes_address": "0x08dbdbcf56ac587b4e6d6c6ecc5f242ea569e5cb",
-    "last": "2023-01-09 18:13:59",
+    "voter_address": "0x0f4be9f208c552a6b04d9a1222f385785f95beaa",
+    "type": "shadow",
+    "voter_alias": null,
+    "stake": 16609.81,
+    "current_votes": [
+      {
+        "address": "0x8c762ba54ca0791b8251e604cb7e3434c9153d22",
+        "title": "Recognized Delegate Compensation, GNO Onboarding, BlockTower Credit RWA Vaults Onboarding, renBTC Offboarding, MKR Vesting, MOMC Parameter Changes, DAI Savings Rate Adjustment, Starknet Bridge Parameter Changes - December 09, 2022"
+      },
+      {
+        "address": "0xb02fd2a51517c035d05b11272f769097dc2ead87",
+        "title": "Core Unit Budget Streams, MKR Vesting, Recognized Delegate Compensation - January 11, 2023"
+      }
+    ],
     "since": "2022-07-15",
-    "stake": "16,622.91",
-    "voter_alias": "0x0f4be9f208c552a6b04d9a1222f385785f95beaa",
-    "voter_address": "0x0f4be9f208c552a6b04d9a1222f385785f95beaa"
+    "last": "2023-01-16T20:08:11"
   },
   {
-    "current_votes_title": "Temporarily Prevent Surplus (flap) Auctions and MKR Burn - January 24, 2022",
-    "current_votes_address": "0x0f5d4cf379902655f2f4cd1b594cd61818892cc1",
-    "last": "2022-10-20 21:44:35",
-    "since": "2019-11-08",
-    "stake": "14,000.00",
-    "voter_alias": "0x05e793ce0c6027323ac150f6d45c2344d28b6019",
-    "voter_address": "0x05e793ce0c6027323ac150f6d45c2344d28b6019"
+    "voter_address": "0x40f784b16b2d405efd4e9eb7d0663398d7d886fb",
+    "type": "recognized",
+    "voter_alias": "ConsenSys",
+    "stake": 0.08,
+    "current_votes": [
+      {
+        "address": "0xb02fd2a51517c035d05b11272f769097dc2ead87",
+        "title": "Core Unit Budget Streams, MKR Vesting, Recognized Delegate Compensation - January 11, 2023"
+      }
+    ],
+    "since": "2022-11-01",
+    "last": "2023-01-16T19:25:23"
   },
   {
-    "current_votes_title": "Compound D3M Onboarding, Activating Stablecoin Liquidations, Oracle Feed Whitelisting, Starknet Relay Upgrade, and MKR Vesting - December 2, 2022",
-    "current_votes_address": "0x08dbdbcf56ac587b4e6d6c6ecc5f242ea569e5cb",
-    "last": "2022-12-31 13:43:11",
-    "since": "2022-02-23",
-    "stake": "13,097.62",
-    "voter_alias": "Doo",
-    "voter_address": "0x8804d391472126da56b9a560aef6c6d5aaa7607b"
+    "voter_address": "0x06e8dedf9e1adb1eba32f36ea9223770ba378b77",
+    "type": "shadow",
+    "voter_alias": null,
+    "stake": 0.1,
+    "current_votes": [
+      {
+        "address": "0xb02fd2a51517c035d05b11272f769097dc2ead87",
+        "title": "Core Unit Budget Streams, MKR Vesting, Recognized Delegate Compensation - January 11, 2023"
+      }
+    ],
+    "since": "2023-01-06",
+    "last": "2023-01-16T19:05:47"
   },
   {
-    "current_votes_title": "Recognized Delegate Compensation, GNO Onboarding, BlockTower Credit RWA Vaults Onboarding, renBTC Offboarding, MKR Vesting, MOMC Parameter Changes, DAI Savings Rate Adjustment, Starknet Bridge Parameter Changes - December 09, 2022",
-    "current_votes_address": "0x8c762ba54ca0791b8251e604cb7e3434c9153d22",
-    "last": "2023-01-07 13:45:47",
-    "since": "2022-07-14",
-    "stake": "10,712.54",
-    "voter_alias": "0xb4b82978fce6d26a22dea7e653bb9ce8e14f8056",
-    "voter_address": "0xb4b82978fce6d26a22dea7e653bb9ce8e14f8056"
-  },
-  {
-    "current_votes_title": "Temporarily Disable the Aave DAI Direct Deposit Module (D3M) - June 15, 2022",
-    "current_votes_address": "0x76b686379234c90b2d9d4a9412a359783273f6b2",
-    "last": "2022-06-17 08:15:48",
-    "since": "2020-12-09",
-    "stake": "10,526.72",
-    "voter_alias": "0xac39d02cdd60c2851a8441950ac06b0f911400e2",
-    "voter_address": "0xac39d02cdd60c2851a8441950ac06b0f911400e2"
-  },
-  {
-    "current_votes_title": "Compound D3M Onboarding, Activating Stablecoin Liquidations, Oracle Feed Whitelisting, Starknet Relay Upgrade, and MKR Vesting - December 2, 2022",
-    "current_votes_address": "0x08dbdbcf56ac587b4e6d6c6ecc5f242ea569e5cb",
-    "last": "2022-12-19 13:29:23",
-    "since": "2022-04-11",
-    "stake": "9,104.32",
+    "voter_address": "0xaa19f47e6acb02df88efa9f023f2a38412069902",
+    "type": "recognized",
     "voter_alias": "mhonkasalo & teemulau",
-    "voter_address": "0xaa19f47e6acb02df88efa9f023f2a38412069902"
+    "stake": 9104.32,
+    "current_votes": [
+      {
+        "address": "0x8c762ba54ca0791b8251e604cb7e3434c9153d22",
+        "title": "Recognized Delegate Compensation, GNO Onboarding, BlockTower Credit RWA Vaults Onboarding, renBTC Offboarding, MKR Vesting, MOMC Parameter Changes, DAI Savings Rate Adjustment, Starknet Bridge Parameter Changes - December 09, 2022"
+      },
+      {
+        "address": "0xb02fd2a51517c035d05b11272f769097dc2ead87",
+        "title": "Core Unit Budget Streams, MKR Vesting, Recognized Delegate Compensation - January 11, 2023"
+      }
+    ],
+    "since": "2022-04-11",
+    "last": "2023-01-16T15:10:11"
   },
   {
-    "current_votes_title": "Urgent Collateral Parameter Changes - November 12, 2022",
-    "current_votes_address": "0x16787f838d6562d7a0337ff65130b6a9a1255c77",
-    "last": "2022-12-22 01:47:11",
-    "since": "2022-03-24",
-    "stake": "9,032.94",
-    "voter_alias": "Flipside Crypto",
-    "voter_address": "0x84b05b0a30b6ae620f393d1037f217e607ad1b96"
+    "voter_address": "0xfe8427a949048d14bb26778fa1253d79aadab6ee",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.02,
+    "current_votes": [
+      {
+        "address": "0x8c762ba54ca0791b8251e604cb7e3434c9153d22",
+        "title": "Recognized Delegate Compensation, GNO Onboarding, BlockTower Credit RWA Vaults Onboarding, renBTC Offboarding, MKR Vesting, MOMC Parameter Changes, DAI Savings Rate Adjustment, Starknet Bridge Parameter Changes - December 09, 2022"
+      }
+    ],
+    "since": "2022-12-31",
+    "last": "2023-01-16T13:04:59"
   },
   {
-    "current_votes_title": "Compound D3M Onboarding, Activating Stablecoin Liquidations, Oracle Feed Whitelisting, Starknet Relay Upgrade, and MKR Vesting - December 2, 2022",
-    "current_votes_address": "0x08dbdbcf56ac587b4e6d6c6ecc5f242ea569e5cb",
-    "last": "2023-01-06 00:45:23",
-    "since": "2022-10-24",
-    "stake": "9,019.42",
-    "voter_alias": "0x869147940842bb1aa4c40e60c5e583f4911f2e02",
-    "voter_address": "0x869147940842bb1aa4c40e60c5e583f4911f2e02"
+    "voter_address": "0xfb8caa905a2e87ef0790df090d90765f83eafd5a",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.0,
+    "current_votes": [],
+    "since": "2023-01-16",
+    "last": "2023-01-16T01:32:59"
   },
   {
-    "current_votes_title": "Recognized Delegate Compensation, GNO Onboarding, BlockTower Credit RWA Vaults Onboarding, renBTC Offboarding, MKR Vesting, MOMC Parameter Changes, DAI Savings Rate Adjustment, Starknet Bridge Parameter Changes - December 09, 2022",
-    "current_votes_address": "0x8c762ba54ca0791b8251e604cb7e3434c9153d22",
-    "last": "2022-12-19 13:19:11",
-    "since": "2022-07-22",
-    "stake": "8,123.93",
-    "voter_alias": "0x92e1ca8b69a44bb17afa92838da68fc41f12250a",
-    "voter_address": "0x92e1ca8b69a44bb17afa92838da68fc41f12250a"
-  },
-  {
-    "current_votes_title": "Recognized Delegate Compensation, GNO Onboarding, BlockTower Credit RWA Vaults Onboarding, renBTC Offboarding, MKR Vesting, MOMC Parameter Changes, DAI Savings Rate Adjustment, Starknet Bridge Parameter Changes - December 09, 2022",
-    "current_votes_address": "0x8c762ba54ca0791b8251e604cb7e3434c9153d22",
-    "last": "2023-01-05 06:11:11",
-    "since": "2022-04-13",
-    "stake": "6,676.69",
-    "voter_alias": "Penn Blockchain",
-    "voter_address": "0x7ddb50a5b15aea7e7cf9ac8e55a7f9fd9d05ecc6"
-  },
-  {
-    "current_votes_title": "Compound D3M Onboarding, Activating Stablecoin Liquidations, Oracle Feed Whitelisting, Starknet Relay Upgrade, and MKR Vesting - December 2, 2022",
-    "current_votes_address": "0x08dbdbcf56ac587b4e6d6c6ecc5f242ea569e5cb",
-    "last": "2023-01-04 14:17:59",
-    "since": "2022-10-23",
-    "stake": "6,373.83",
-    "voter_alias": "0x4e324f2327fa3e567d802ddcf655f7188eb62754",
-    "voter_address": "0x4e324f2327fa3e567d802ddcf655f7188eb62754"
-  },
-  {
-    "current_votes_title": "Collateral Auction Parameter Changes, MOMC Parameter Adjustments, Recognized Delegate Compensation for September - October 14, 2022",
-    "current_votes_address": "0xdffa28aaabf9e6a07e19fdf3a9b94fdc93a039f1",
-    "last": "2022-11-23 21:36:11",
-    "since": "2022-02-06",
-    "stake": "6,098.56",
-    "voter_alias": "Hasu",
-    "voter_address": "0xafaff1a605c373b43727136c995d21a7fcd08989"
-  },
-  {
-    "current_votes_title": "Update the PROXY_ACTIONS_END_CROPPER Address, Starknet Bridge Deposit Limit Increase, Core Unit MKR Vesting - September 28, 2022",
-    "current_votes_address": "0x3ea2748a32d53449bee93e2ae101e6d7179d7865",
-    "last": "2022-12-01 03:04:11",
-    "since": "2021-12-14",
-    "stake": "3,100.15",
-    "voter_alias": "ACREinvest",
-    "voter_address": "0x4d3ac33ab1dd7b0f352b8e590fe8b62c4c39ead5"
-  },
-  {
-    "current_votes_title": "Temporarily Disable the Aave DAI Direct Deposit Module (D3M) - June 15, 2022",
-    "current_votes_address": "0x76b686379234c90b2d9d4a9412a359783273f6b2",
-    "last": "2022-06-17 08:15:48",
-    "since": "2021-05-12",
-    "stake": "2,900.14",
-    "voter_alias": "0x597e9516239044a9f8b9a1acb53e6d28b1047b65",
-    "voter_address": "0x597e9516239044a9f8b9a1acb53e6d28b1047b65"
-  },
-  {
-    "current_votes_title": "0xd24fbbb4497ad32308bda735683b55499ddc2cad",
-    "current_votes_address": "0xd24fbbb4497ad32308bda735683b55499ddc2cad",
-    "last": "2020-02-21 21:04:54",
-    "since": "2020-02-21",
-    "stake": "2,600.00",
-    "voter_alias": "0xd727b3f91ee58aa59267b9621514989ba4b6b2b7",
-    "voter_address": "0xd727b3f91ee58aa59267b9621514989ba4b6b2b7"
-  },
-  {
-    "current_votes_title": "0xfa635d9093c2dd637cf19d48df6ea1dbde56ddb1",
-    "current_votes_address": "0xfa635d9093c2dd637cf19d48df6ea1dbde56ddb1",
-    "last": "2022-06-21 15:07:27",
-    "since": "2019-11-08",
-    "stake": "2,360.00",
-    "voter_alias": "0x6186ff3058150604b98af5a8521c96599a1ebfc1",
-    "voter_address": "0x6186ff3058150604b98af5a8521c96599a1ebfc1"
-  },
-  {
-    "current_votes_title": "Maker Teleport Technical Deployment on StarkNet, Recognized Delegate Compensation Distribution for October, MOMC Parameter Changes - November 9, 2022",
-    "current_votes_address": "0xf2bf5b5dfcaf8f22306d786f6b18ffc9d91c7641",
-    "last": "2023-01-10 04:24:59",
-    "since": "2022-06-30",
-    "stake": "1,500.20",
-    "voter_alias": "ChicagoDAO",
-    "voter_address": "0x797d63cb6709c79b9eca99d9585ea613da205156"
-  },
-  {
-    "current_votes_title": "Activate DSChief v1.2",
-    "current_votes_address": "0x0000000000000000000000000000000000000000",
-    "last": "2017-12-18 18:08:48",
-    "since": "2017-12-18",
-    "stake": "1,500.00",
-    "voter_alias": "0x7c5f6ffad368dbf1a83e6d66b5ace792fac2e7c0",
-    "voter_address": "0x7c5f6ffad368dbf1a83e6d66b5ace792fac2e7c0"
-  },
-  {
-    "current_votes_title": "Urgent Collateral Parameter Changes - November 12, 2022",
-    "current_votes_address": "0x16787f838d6562d7a0337ff65130b6a9a1255c77",
-    "last": "2022-11-12 22:13:59",
+    "voter_address": "0x5a680b2fd327f3ad78daa2a2843d9aaac7d144a6",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.0,
+    "current_votes": [
+      {
+        "address": "0x08dbdbcf56ac587b4e6d6c6ecc5f242ea569e5cb",
+        "title": "Compound D3M Onboarding, Activating Stablecoin Liquidations, Oracle Feed Whitelisting, Starknet Relay Upgrade, and MKR Vesting - December 2, 2022"
+      }
+    ],
     "since": "2022-11-12",
-    "stake": "1,500.00",
-    "voter_alias": "0x00e286b5256aa6cf252d5a8a5a7b8c20ec3bc4d5",
-    "voter_address": "0x00e286b5256aa6cf252d5a8a5a7b8c20ec3bc4d5"
+    "last": "2023-01-15T16:30:59"
   },
   {
-    "current_votes_title": "Recognized Delegate Compensation, GNO Onboarding, BlockTower Credit RWA Vaults Onboarding, renBTC Offboarding, MKR Vesting, MOMC Parameter Changes, DAI Savings Rate Adjustment, Starknet Bridge Parameter Changes - December 09, 2022",
-    "current_votes_address": "0x8c762ba54ca0791b8251e604cb7e3434c9153d22",
-    "last": "2022-12-17 23:48:35",
-    "since": "2022-08-25",
-    "stake": "1,083.27",
+    "voter_address": "0x9301f3bb7a71ab4d46b17bd1f8254142fa8f26ad",
+    "type": "recognized",
+    "voter_alias": "ONESTONE",
+    "stake": 9.01,
+    "current_votes": [
+      {
+        "address": "0xb02fd2a51517c035d05b11272f769097dc2ead87",
+        "title": "Core Unit Budget Streams, MKR Vesting, Recognized Delegate Compensation - January 11, 2023"
+      }
+    ],
+    "since": "2022-09-12",
+    "last": "2023-01-15T14:39:59"
+  },
+  {
+    "voter_address": "0x76a45e6a43353bb15ba6c7ccc68e009ec07c5d60",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.1,
+    "current_votes": [],
+    "since": "2023-01-15",
+    "last": "2023-01-15T13:51:47"
+  },
+  {
+    "voter_address": "0x5dd6fd6f17b550f45129e4e62bf4e7bd7e05f6d0",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.0,
+    "current_votes": [],
+    "since": "2023-01-15",
+    "last": "2023-01-15T06:38:35"
+  },
+  {
+    "voter_address": "0xf92396b345fc1693824cd174718beec48119e353",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.0,
+    "current_votes": [],
+    "since": "2023-01-15",
+    "last": "2023-01-15T06:38:35"
+  },
+  {
+    "voter_address": "0x245018db6890b79e500df2803d0d7131299ceb5b",
+    "type": null,
+    "voter_alias": null,
+    "stake": 1.16,
+    "current_votes": [
+      {
+        "address": "0xb02fd2a51517c035d05b11272f769097dc2ead87",
+        "title": "Core Unit Budget Streams, MKR Vesting, Recognized Delegate Compensation - January 11, 2023"
+      }
+    ],
+    "since": "2022-10-08",
+    "last": "2023-01-14T15:59:11"
+  },
+  {
+    "voter_address": "0x26404746cd2228018f86c98f580e5030b06ff3c8",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.04,
+    "current_votes": [
+      {
+        "address": "0xb02fd2a51517c035d05b11272f769097dc2ead87",
+        "title": "Core Unit Budget Streams, MKR Vesting, Recognized Delegate Compensation - January 11, 2023"
+      }
+    ],
+    "since": "2023-01-14",
+    "last": "2023-01-14T14:32:47"
+  },
+  {
+    "voter_address": "0xcea0b7f22aaf244e16298f309cb61c91aabbcfd5",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.05,
+    "current_votes": [
+      {
+        "address": "0xb02fd2a51517c035d05b11272f769097dc2ead87",
+        "title": "Core Unit Budget Streams, MKR Vesting, Recognized Delegate Compensation - January 11, 2023"
+      }
+    ],
+    "since": "2023-01-14",
+    "last": "2023-01-14T13:24:59"
+  },
+  {
+    "voter_address": "0x5ae6a335b79fe534926ba97d2e30000791338f91",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.0,
+    "current_votes": [
+      {
+        "address": "0xb02fd2a51517c035d05b11272f769097dc2ead87",
+        "title": "Core Unit Budget Streams, MKR Vesting, Recognized Delegate Compensation - January 11, 2023"
+      }
+    ],
+    "since": "2023-01-14",
+    "last": "2023-01-14T06:38:47"
+  },
+  {
+    "voter_address": "0x45f707e26a18547192820dcf01a05ad2712dadb4",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.01,
+    "current_votes": [
+      {
+        "address": "0xb02fd2a51517c035d05b11272f769097dc2ead87",
+        "title": "Core Unit Budget Streams, MKR Vesting, Recognized Delegate Compensation - January 11, 2023"
+      }
+    ],
+    "since": "2023-01-14",
+    "last": "2023-01-14T02:39:47"
+  },
+  {
+    "voter_address": "0xf437dac31a5c39d2a7c3f92682f0ff20d170a83a",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.03,
+    "current_votes": [
+      {
+        "address": "0xb02fd2a51517c035d05b11272f769097dc2ead87",
+        "title": "Core Unit Budget Streams, MKR Vesting, Recognized Delegate Compensation - January 11, 2023"
+      }
+    ],
+    "since": "2023-01-14",
+    "last": "2023-01-14T02:05:11"
+  },
+  {
+    "voter_address": "0x6f9bb7e454f5b3eb2310343f0e99269dc2bb8a1d",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.0,
+    "current_votes": [],
+    "since": "2023-01-13",
+    "last": "2023-01-13T23:45:23"
+  },
+  {
+    "voter_address": "0x797d63cb6709c79b9eca99d9585ea613da205156",
+    "type": "recognized",
+    "voter_alias": "ChicagoDAO",
+    "stake": 1500.2,
+    "current_votes": [
+      {
+        "address": "0xb02fd2a51517c035d05b11272f769097dc2ead87",
+        "title": "Core Unit Budget Streams, MKR Vesting, Recognized Delegate Compensation - January 11, 2023"
+      }
+    ],
+    "since": "2022-06-30",
+    "last": "2023-01-13T20:11:35"
+  },
+  {
+    "voter_address": "0x7ddb50a5b15aea7e7cf9ac8e55a7f9fd9d05ecc6",
+    "type": "recognized",
+    "voter_alias": "Penn Blockchain",
+    "stake": 8677.04,
+    "current_votes": [
+      {
+        "address": "0xb02fd2a51517c035d05b11272f769097dc2ead87",
+        "title": "Core Unit Budget Streams, MKR Vesting, Recognized Delegate Compensation - January 11, 2023"
+      }
+    ],
+    "since": "2022-04-13",
+    "last": "2023-01-13T18:14:59"
+  },
+  {
+    "voter_address": "0xd9d00c42bed99a6d3a0f2902c640bccceecf6c29",
+    "type": "recognized",
+    "voter_alias": "pvl",
+    "stake": 0.29,
+    "current_votes": [
+      {
+        "address": "0xb02fd2a51517c035d05b11272f769097dc2ead87",
+        "title": "Core Unit Budget Streams, MKR Vesting, Recognized Delegate Compensation - January 11, 2023"
+      }
+    ],
+    "since": "2022-09-06",
+    "last": "2023-01-13T14:19:35"
+  },
+  {
+    "voter_address": "0x8bace50b5d9afbbfb08b1975d6ded63573895706",
+    "type": "shadow",
+    "voter_alias": null,
+    "stake": 0.01,
+    "current_votes": [
+      {
+        "address": "0xb02fd2a51517c035d05b11272f769097dc2ead87",
+        "title": "Core Unit Budget Streams, MKR Vesting, Recognized Delegate Compensation - January 11, 2023"
+      }
+    ],
+    "since": "2023-01-13",
+    "last": "2023-01-13T09:35:23"
+  },
+  {
+    "voter_address": "0xd60bb1dad4ed8df7e34ca61d3a9c37768da070ba",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.0,
+    "current_votes": [],
+    "since": "2022-09-18",
+    "last": "2023-01-13T06:20:23"
+  },
+  {
+    "voter_address": "0x316090e23cc44e70245ba9846404413aca2df16f",
+    "type": "recognized",
+    "voter_alias": "Frontier Research LLC",
+    "stake": 407.85,
+    "current_votes": [
+      {
+        "address": "0xb02fd2a51517c035d05b11272f769097dc2ead87",
+        "title": "Core Unit Budget Streams, MKR Vesting, Recognized Delegate Compensation - January 11, 2023"
+      }
+    ],
+    "since": "2022-08-28",
+    "last": "2023-01-13T01:05:35"
+  },
+  {
+    "voter_address": "0xeeaf0b2dbbf6d0a7de0e0668a1c97ba7f3098840",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.05,
+    "current_votes": [],
+    "since": "2023-01-12",
+    "last": "2023-01-12T21:24:35"
+  },
+  {
+    "voter_address": "0x31c30a8d292c1fcc9b10fb14c9f8096893b7a290",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.01,
+    "current_votes": [
+      {
+        "address": "0xb02fd2a51517c035d05b11272f769097dc2ead87",
+        "title": "Core Unit Budget Streams, MKR Vesting, Recognized Delegate Compensation - January 11, 2023"
+      }
+    ],
+    "since": "2023-01-12",
+    "last": "2023-01-12T18:35:35"
+  },
+  {
+    "voter_address": "0x9ad3111aad0dbd0a15c170b15babb2acafaf365a",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.01,
+    "current_votes": [
+      {
+        "address": "0xb02fd2a51517c035d05b11272f769097dc2ead87",
+        "title": "Core Unit Budget Streams, MKR Vesting, Recognized Delegate Compensation - January 11, 2023"
+      }
+    ],
+    "since": "2023-01-12",
+    "last": "2023-01-12T17:22:23"
+  },
+  {
+    "voter_address": "0x869147940842bb1aa4c40e60c5e583f4911f2e02",
+    "type": "shadow",
+    "voter_alias": null,
+    "stake": 9019.42,
+    "current_votes": [
+      {
+        "address": "0xb02fd2a51517c035d05b11272f769097dc2ead87",
+        "title": "Core Unit Budget Streams, MKR Vesting, Recognized Delegate Compensation - January 11, 2023"
+      }
+    ],
+    "since": "2022-10-24",
+    "last": "2023-01-12T15:13:35"
+  },
+  {
+    "voter_address": "0x92e1ca8b69a44bb17afa92838da68fc41f12250a",
+    "type": "shadow",
+    "voter_alias": null,
+    "stake": 8103.35,
+    "current_votes": [
+      {
+        "address": "0x8c762ba54ca0791b8251e604cb7e3434c9153d22",
+        "title": "Recognized Delegate Compensation, GNO Onboarding, BlockTower Credit RWA Vaults Onboarding, renBTC Offboarding, MKR Vesting, MOMC Parameter Changes, DAI Savings Rate Adjustment, Starknet Bridge Parameter Changes - December 09, 2022"
+      },
+      {
+        "address": "0xb02fd2a51517c035d05b11272f769097dc2ead87",
+        "title": "Core Unit Budget Streams, MKR Vesting, Recognized Delegate Compensation - January 11, 2023"
+      }
+    ],
+    "since": "2022-07-22",
+    "last": "2023-01-12T14:00:23"
+  },
+  {
+    "voter_address": "0x00e286b5256aa6cf252d5a8a5a7b8c20ec3bc4d5",
+    "type": null,
+    "voter_alias": null,
+    "stake": 1500.0,
+    "current_votes": [
+      {
+        "address": "0x16787f838d6562d7a0337ff65130b6a9a1255c77",
+        "title": "Urgent Collateral Parameter Changes - November 12, 2022"
+      }
+    ],
+    "since": "2022-11-12",
+    "last": "2023-01-12T10:56:35"
+  },
+  {
+    "voter_address": "0x804ab0d608703dd271efdc6d185de2518f5f266f",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.0,
+    "current_votes": [],
+    "since": "2023-01-12",
+    "last": "2023-01-12T10:35:35"
+  },
+  {
+    "voter_address": "0xc724e609d9a3968013ef8ce0bf2cb48971a9b01d",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.0,
+    "current_votes": [],
+    "since": "2022-08-19",
+    "last": "2023-01-12T05:46:11"
+  },
+  {
+    "voter_address": "0x8b4c184918947b52f615fc2ab350e092906b54cb",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.0,
+    "current_votes": [],
+    "since": "2022-10-21",
+    "last": "2023-01-12T04:44:11"
+  },
+  {
+    "voter_address": "0xb4b82978fce6d26a22dea7e653bb9ce8e14f8056",
+    "type": "shadow",
+    "voter_alias": null,
+    "stake": 10712.54,
+    "current_votes": [
+      {
+        "address": "0xb02fd2a51517c035d05b11272f769097dc2ead87",
+        "title": "Core Unit Budget Streams, MKR Vesting, Recognized Delegate Compensation - January 11, 2023"
+      }
+    ],
+    "since": "2022-07-14",
+    "last": "2023-01-12T04:42:47"
+  },
+  {
+    "voter_address": "0xcf4798d0d502139f0d45becf9dfbee8ce9f2c16a",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.0,
+    "current_votes": [
+      {
+        "address": "0xb02fd2a51517c035d05b11272f769097dc2ead87",
+        "title": "Core Unit Budget Streams, MKR Vesting, Recognized Delegate Compensation - January 11, 2023"
+      }
+    ],
+    "since": "2023-01-12",
+    "last": "2023-01-12T03:31:47"
+  },
+  {
+    "voter_address": "0x1031fc5bcad7b655d40928ed45435a0eb792e5cb",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.02,
+    "current_votes": [],
+    "since": "2023-01-12",
+    "last": "2023-01-12T02:41:59"
+  },
+  {
+    "voter_address": "0x2c511d932c5a6fe4071262d49bfc018cfbaaa1f5",
+    "type": "recognized",
+    "voter_alias": "Chris Blec",
+    "stake": 72.88,
+    "current_votes": [
+      {
+        "address": "0xb02fd2a51517c035d05b11272f769097dc2ead87",
+        "title": "Core Unit Budget Streams, MKR Vesting, Recognized Delegate Compensation - January 11, 2023"
+      }
+    ],
+    "since": "2022-06-11",
+    "last": "2023-01-11T21:50:11"
+  },
+  {
+    "voter_address": "0x84b05b0a30b6ae620f393d1037f217e607ad1b96",
+    "type": "recognized",
+    "voter_alias": "Flipside Crypto",
+    "stake": 9032.94,
+    "current_votes": [
+      {
+        "address": "0x8c762ba54ca0791b8251e604cb7e3434c9153d22",
+        "title": "Recognized Delegate Compensation, GNO Onboarding, BlockTower Credit RWA Vaults Onboarding, renBTC Offboarding, MKR Vesting, MOMC Parameter Changes, DAI Savings Rate Adjustment, Starknet Bridge Parameter Changes - December 09, 2022"
+      },
+      {
+        "address": "0xb02fd2a51517c035d05b11272f769097dc2ead87",
+        "title": "Core Unit Budget Streams, MKR Vesting, Recognized Delegate Compensation - January 11, 2023"
+      }
+    ],
+    "since": "2022-03-24",
+    "last": "2023-01-11T20:52:11"
+  },
+  {
+    "voter_address": "0x4e324f2327fa3e567d802ddcf655f7188eb62754",
+    "type": "shadow",
+    "voter_alias": null,
+    "stake": 6373.83,
+    "current_votes": [
+      {
+        "address": "0x8c762ba54ca0791b8251e604cb7e3434c9153d22",
+        "title": "Recognized Delegate Compensation, GNO Onboarding, BlockTower Credit RWA Vaults Onboarding, renBTC Offboarding, MKR Vesting, MOMC Parameter Changes, DAI Savings Rate Adjustment, Starknet Bridge Parameter Changes - December 09, 2022"
+      },
+      {
+        "address": "0xb02fd2a51517c035d05b11272f769097dc2ead87",
+        "title": "Core Unit Budget Streams, MKR Vesting, Recognized Delegate Compensation - January 11, 2023"
+      }
+    ],
+    "since": "2022-10-23",
+    "last": "2023-01-11T19:20:23"
+  },
+  {
+    "voter_address": "0x8804d391472126da56b9a560aef6c6d5aaa7607b",
+    "type": "recognized",
+    "voter_alias": "Doo",
+    "stake": 13097.62,
+    "current_votes": [
+      {
+        "address": "0x8c762ba54ca0791b8251e604cb7e3434c9153d22",
+        "title": "Recognized Delegate Compensation, GNO Onboarding, BlockTower Credit RWA Vaults Onboarding, renBTC Offboarding, MKR Vesting, MOMC Parameter Changes, DAI Savings Rate Adjustment, Starknet Bridge Parameter Changes - December 09, 2022"
+      },
+      {
+        "address": "0xb02fd2a51517c035d05b11272f769097dc2ead87",
+        "title": "Core Unit Budget Streams, MKR Vesting, Recognized Delegate Compensation - January 11, 2023"
+      }
+    ],
+    "since": "2022-02-23",
+    "last": "2023-01-11T18:15:23"
+  },
+  {
+    "voter_address": "0x8f6b5668d988cc066ef81d5fd4921fb21b172f71",
+    "type": "shadow",
+    "voter_alias": null,
+    "stake": 1.0,
+    "current_votes": [
+      {
+        "address": "0x8c762ba54ca0791b8251e604cb7e3434c9153d22",
+        "title": "Recognized Delegate Compensation, GNO Onboarding, BlockTower Credit RWA Vaults Onboarding, renBTC Offboarding, MKR Vesting, MOMC Parameter Changes, DAI Savings Rate Adjustment, Starknet Bridge Parameter Changes - December 09, 2022"
+      },
+      {
+        "address": "0xb02fd2a51517c035d05b11272f769097dc2ead87",
+        "title": "Core Unit Budget Streams, MKR Vesting, Recognized Delegate Compensation - January 11, 2023"
+      }
+    ],
+    "since": "2022-12-11",
+    "last": "2023-01-11T18:03:11"
+  },
+  {
+    "voter_address": "0x925016c2367802632cabdf13b5fc2c1bdc2c301a",
+    "type": "recognized",
+    "voter_alias": "HKUST EPI Blockchain",
+    "stake": 8.42,
+    "current_votes": [],
+    "since": "2022-12-15",
+    "last": "2023-01-11T17:39:23"
+  },
+  {
+    "voter_address": "0xe89f973a19cd76c3e5e236062668e43042176638",
+    "type": "recognized",
+    "voter_alias": "CodeKnight",
+    "stake": 61.29,
+    "current_votes": [
+      {
+        "address": "0x8c762ba54ca0791b8251e604cb7e3434c9153d22",
+        "title": "Recognized Delegate Compensation, GNO Onboarding, BlockTower Credit RWA Vaults Onboarding, renBTC Offboarding, MKR Vesting, MOMC Parameter Changes, DAI Savings Rate Adjustment, Starknet Bridge Parameter Changes - December 09, 2022"
+      },
+      {
+        "address": "0xb02fd2a51517c035d05b11272f769097dc2ead87",
+        "title": "Core Unit Budget Streams, MKR Vesting, Recognized Delegate Compensation - January 11, 2023"
+      }
+    ],
+    "since": "2022-08-04",
+    "last": "2023-01-11T17:01:23"
+  },
+  {
+    "voter_address": "0xbddac546588dc9543eb16386ff64c942a6448ada",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.0,
+    "current_votes": [
+      {
+        "address": "0x8c762ba54ca0791b8251e604cb7e3434c9153d22",
+        "title": "Recognized Delegate Compensation, GNO Onboarding, BlockTower Credit RWA Vaults Onboarding, renBTC Offboarding, MKR Vesting, MOMC Parameter Changes, DAI Savings Rate Adjustment, Starknet Bridge Parameter Changes - December 09, 2022"
+      }
+    ],
+    "since": "2023-01-11",
+    "last": "2023-01-11T11:32:35"
+  },
+  {
+    "voter_address": "0xdf0eab98c112bc479c04df921d606ebbee72c4b0",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.02,
+    "current_votes": [
+      {
+        "address": "0x8c762ba54ca0791b8251e604cb7e3434c9153d22",
+        "title": "Recognized Delegate Compensation, GNO Onboarding, BlockTower Credit RWA Vaults Onboarding, renBTC Offboarding, MKR Vesting, MOMC Parameter Changes, DAI Savings Rate Adjustment, Starknet Bridge Parameter Changes - December 09, 2022"
+      }
+    ],
+    "since": "2023-01-05",
+    "last": "2023-01-11T11:23:11"
+  },
+  {
+    "voter_address": "0x3b90bbfb7fc9373c67e1b777397b9335145b3bba",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.0,
+    "current_votes": [],
+    "since": "2023-01-11",
+    "last": "2023-01-11T11:17:11"
+  },
+  {
+    "voter_address": "0xa7e5a837382c4b2a484bd2afadc8b5a5f6d74e87",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.0,
+    "current_votes": [],
+    "since": "2023-01-11",
+    "last": "2023-01-11T11:13:11"
+  },
+  {
+    "voter_address": "0xed6c1002450cbf418e96d16361cbed3a84366c43",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.0,
+    "current_votes": [
+      {
+        "address": "0x16787f838d6562d7a0337ff65130b6a9a1255c77",
+        "title": "Urgent Collateral Parameter Changes - November 12, 2022"
+      },
+      {
+        "address": "0x8c762ba54ca0791b8251e604cb7e3434c9153d22",
+        "title": "Recognized Delegate Compensation, GNO Onboarding, BlockTower Credit RWA Vaults Onboarding, renBTC Offboarding, MKR Vesting, MOMC Parameter Changes, DAI Savings Rate Adjustment, Starknet Bridge Parameter Changes - December 09, 2022"
+      }
+    ],
+    "since": "2023-01-07",
+    "last": "2023-01-11T08:19:11"
+  },
+  {
+    "voter_address": "0xbc2e26ded32a96911b65ee2283a1e30f077bbc59",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.0,
+    "current_votes": [],
+    "since": "2022-06-30",
+    "last": "2023-01-11T07:38:59"
+  },
+  {
+    "voter_address": "0x0f8183bf2e539a6e47521a1ff478ad30186c497a",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.0,
+    "current_votes": [],
+    "since": "2022-10-22",
+    "last": "2023-01-11T02:26:35"
+  },
+  {
+    "voter_address": "0xd1fc89e0c3828f50b650e1309e30cb4fcf2bdbe3",
+    "type": "recognized",
     "voter_alias": "Jason Yanowitz",
-    "voter_address": "0xd1fc89e0c3828f50b650e1309e30cb4fcf2bdbe3"
+    "stake": 1083.27,
+    "current_votes": [
+      {
+        "address": "0x8c762ba54ca0791b8251e604cb7e3434c9153d22",
+        "title": "Recognized Delegate Compensation, GNO Onboarding, BlockTower Credit RWA Vaults Onboarding, renBTC Offboarding, MKR Vesting, MOMC Parameter Changes, DAI Savings Rate Adjustment, Starknet Bridge Parameter Changes - December 09, 2022"
+      }
+    ],
+    "since": "2022-08-25",
+    "last": "2023-01-10T23:37:11"
   },
   {
-    "current_votes_title": "Urgent Collateral Parameter Changes - November 12, 2022",
-    "current_votes_address": "0x16787f838d6562d7a0337ff65130b6a9a1255c77",
-    "last": "2022-11-16 16:11:47",
-    "since": "2021-11-17",
-    "stake": "1,006.55",
-    "voter_alias": "JustinCase",
-    "voter_address": "0xcdb792c14391f7115ba77a7cd27f724fc9ea2091"
+    "voter_address": "0xcdd649e17a053f0bf31d9699ab20f13f28764447",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.0,
+    "current_votes": [],
+    "since": "2023-01-10",
+    "last": "2023-01-10T23:02:11"
   },
   {
-    "current_votes_title": "Recognized Delegate Compensation, GNO Onboarding, BlockTower Credit RWA Vaults Onboarding, renBTC Offboarding, MKR Vesting, MOMC Parameter Changes, DAI Savings Rate Adjustment, Starknet Bridge Parameter Changes - December 09, 2022",
-    "current_votes_address": "0x8c762ba54ca0791b8251e604cb7e3434c9153d22",
-    "last": "2022-12-11 13:26:35",
-    "since": "2022-06-27",
-    "stake": "1,001.53",
-    "voter_alias": "London Business School",
-    "voter_address": "0xf1792852bf860b4ef84a2869df1550bc80ec0ab7"
+    "voter_address": "0x6d07fa7b60cce5b70cd01842310462783b00b770",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.0,
+    "current_votes": [
+      {
+        "address": "0xdffa28aaabf9e6a07e19fdf3a9b94fdc93a039f1",
+        "title": "Collateral Auction Parameter Changes, MOMC Parameter Adjustments, Recognized Delegate Compensation for September - October 14, 2022"
+      }
+    ],
+    "since": "2022-07-02",
+    "last": "2023-01-10T18:37:11"
   },
   {
-    "current_votes_title": "Temporarily Disable the Aave DAI Direct Deposit Module (D3M) - June 15, 2022",
-    "current_votes_address": "0x76b686379234c90b2d9d4a9412a359783273f6b2",
-    "last": "2022-06-17 08:15:48",
-    "since": "2020-12-10",
-    "stake": "1,000.00",
-    "voter_alias": "0xc615c2104c785bb3880747bc8cfadf1b532e2a64",
-    "voter_address": "0xc615c2104c785bb3880747bc8cfadf1b532e2a64"
+    "voter_address": "0x70dfbf4813899a72208c6400e121672b7e831889",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.02,
+    "current_votes": [
+      {
+        "address": "0x8c762ba54ca0791b8251e604cb7e3434c9153d22",
+        "title": "Recognized Delegate Compensation, GNO Onboarding, BlockTower Credit RWA Vaults Onboarding, renBTC Offboarding, MKR Vesting, MOMC Parameter Changes, DAI Savings Rate Adjustment, Starknet Bridge Parameter Changes - December 09, 2022"
+      }
+    ],
+    "since": "2022-10-02",
+    "last": "2023-01-10T14:13:47"
+  },
+  {
+    "voter_address": "0x653ffc901974f0cae765771163470bc88c56611f",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.0,
+    "current_votes": [],
+    "since": "2022-08-21",
+    "last": "2023-01-10T12:59:23"
+  },
+  {
+    "voter_address": "0xcb6daa44796bc7dab4759c0e31a81108af5b7a72",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.0,
+    "current_votes": [],
+    "since": "2022-08-21",
+    "last": "2023-01-10T12:58:35"
+  },
+  {
+    "voter_address": "0xb588c243200067cc737c234dc6652565cb78eaa2",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.0,
+    "current_votes": [],
+    "since": "2022-08-21",
+    "last": "2023-01-10T12:57:35"
+  },
+  {
+    "voter_address": "0xecc444a9f0483741c5db2c2b4ca868e712b4abab",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.0,
+    "current_votes": [],
+    "since": "2022-08-21",
+    "last": "2023-01-10T12:56:35"
+  },
+  {
+    "voter_address": "0x7908c09ea110c5e175f58ab194286d7db9b358c0",
+    "type": null,
+    "voter_alias": null,
+    "stake": 0.0,
+    "current_votes": [],
+    "since": "2022-08-20",
+    "last": "2023-01-10T12:53:35"
   }
 ]

@@ -2,7 +2,6 @@ import { Text, useTheme } from '@makerdao-dicu/makerdao-ui';
 import { Flex, FlexProps } from 'theme-ui';
 import { useIntl } from 'next-intl';
 import Skeleton from 'react-loading-skeleton';
-import 'react-loading-skeleton/dist/skeleton.css';
 
 type KpiCardProps = {
   title: string;

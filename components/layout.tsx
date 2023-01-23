@@ -4,6 +4,7 @@ import SideBar from '../molecules/sidebar/Sidebar';
 import { Box, Flex } from 'theme-ui';
 import MobileNavbar from '../molecules/MobileNavbar';
 import { useToggle } from '../hooks';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 type LayoutProps = {
   children: ReactNode;
