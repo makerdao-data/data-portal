@@ -2,17 +2,20 @@ import { Text, useTheme } from '@makerdao-dicu/makerdao-ui';
 import { Flex, FlexProps } from 'theme-ui';
 import { useIntl } from 'next-intl';
 import Skeleton from 'react-loading-skeleton';
+import CsvExport, { CsvData } from './CsvExport';
 
 type KpiCardProps = {
   title: string;
   value?: number | string;
   change?: number;
+  exportMethod?: () => CsvData;
 };
 
 export default function KpiCard({
   title,
   value,
   change,
+  exportMethod,
   ...props
 }: KpiCardProps & FlexProps) {
   const intl = useIntl();
@@ -29,7 +32,16 @@ export default function KpiCard({
         borderRadius: '8px',
         ...props.sx
       }}>
-      <Text variant="smallHeading">{title}</Text>
+      <Flex sx={{ justifyContent: 'space-between' }}>
+        <Text
+          variant="smallHeading"
+          role="heading"
+          aria-label={title + ' title'}>
+          {title}
+        </Text>
+
+        {exportMethod ? <CsvExport exportMethod={exportMethod} /> : null}
+      </Flex>
       <Text
         role="textbox"
         aria-label={title + ' value'}

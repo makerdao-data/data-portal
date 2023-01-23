@@ -119,9 +119,12 @@ export default function TeleportDomainsTable({
         <TBody>
           <TRow>
             <TCell sx={{ textAlign: 'center' }} colSpan={6}>
-              <Text variant="error">
-                {'Teleport data is not available at the moment.'}
-              </Text>
+               <Text
+                      variant="error"
+                      role="textbox"
+                      aria-label="Error message">
+                      {'Teleport data is not available at the moment.'}
+                    </Text>
             </TCell>
           </TRow>
         </TBody>

@@ -2,13 +2,18 @@ import { AreaChart, DataSerie } from '@makerdao-dicu/makerdao-ui';
 import { ColorType } from 'lightweight-charts';
 import { useIntl } from 'next-intl';
 import Skeleton from 'react-loading-skeleton';
-import { Box, useColorMode } from 'theme-ui';
+import { Box, BoxProps, useColorMode } from 'theme-ui';
 
 type MainAreaChartProps = {
   data: DataSerie[];
-};
+  title?: string;
+} & BoxProps;
 
-export default function MainAreaChart({ data }: MainAreaChartProps) {
+export default function MainAreaChart({
+  data,
+  title,
+  ...props
+}: MainAreaChartProps) {
   const intl = useIntl();
   const [colorMode] = useColorMode();
 
@@ -28,8 +33,9 @@ export default function MainAreaChart({ data }: MainAreaChartProps) {
       {data.length > 0 ? (
         <AreaChart
           role="figure"
-          aria-label="DAI in L2s chart"
+          aria-label={'Main area chart'}
           dataSeries={data}
+          title={title}
           chartOptions={{
             layout: {
               background: {
@@ -52,6 +58,7 @@ export default function MainAreaChart({ data }: MainAreaChartProps) {
                 intl.formatNumber(value, { maximumFractionDigits: 2 })
             }
           }}
+          {...props}
         />
       ) : (
         <Skeleton height={400} style={{ borderRadius: '8px', top: '-4px' }} />

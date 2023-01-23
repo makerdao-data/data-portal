@@ -40,18 +40,20 @@ export default function BridgeDaiDistributionBarChart({
       <Fragment>
         <Text
           variant="smallHeading"
-          role="textbox"
+          role="heading"
           aria-label={title + ' comparison title'}>
           {title}
         </Text>
 
         {error ? (
-          <Text variant="error">
+          <Text variant="error" role="textbox" aria-label="Error message">
             {title + ' data is not available at the moment.'}
           </Text>
         ) : data.dataSeries.length > 0 ? (
           <ResponsiveBar
             data={data.dataSeries}
+            role="figure"
+            ariaLabel={title + ' chart'}
             keys={data.dataSeries.map(({ id }) => String(id))}
             indexBy="id"
             margin={{ top: 20, right: 0, bottom: 70, left: 20 }}
@@ -111,8 +113,6 @@ export default function BridgeDaiDistributionBarChart({
                 data.categoryMapping[value]
             }}
             axisLeft={null}
-            role="application"
-            ariaLabel="Arbitrum DAI distribution chart"
             valueFormat={(value) =>
               intl.formatNumber(value, {
                 style: 'percent',

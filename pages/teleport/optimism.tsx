@@ -186,11 +186,14 @@ export default function Overview() {
         />
 
         {error ? (
-          <Text variant="error">
+          <Text variant="error" role="textbox" aria-label="Error message">
             {'Dai in L2s data is not available at the moment.'}
           </Text>
         ) : (
-          <TeleportMainChart data={mainChartDataSeries} />
+          <TeleportMainChart
+            data={mainChartDataSeries}
+            aria-label="L2 DAI supply and escrow chart"
+          />
         )}
       </Flex>
 
@@ -213,7 +216,17 @@ export default function Overview() {
       <Flex sx={{ gap: 2, flexWrap: ['wrap', 'wrap', 'wrap', 'nowrap'] }}>
         <KpiCardList data={netInflowsKpiData} error={error} />
 
-        <BridgeFlowsChart data={netFlowsChartData} title="Net Inflows" />
+        {error ? (
+          <Text variant="error" role="textbox" aria-label="Error message">
+            {'Net Inflows data is not available at the moment.'}
+          </Text>
+        ) : (
+          <BridgeFlowsChart
+            data={netFlowsChartData}
+            title="Net Inflows"
+            aria-label="Net inflows chart"
+          />
+        )}
       </Flex>
     </Flex>
   );

@@ -51,7 +51,7 @@ export default function NetworkComparisonCharts({
         </Text>
 
         {error ? (
-          <Text variant="error">
+          <Text variant="error" role="textbox" aria-label="Error message">
             {'Network comparison data is not available at the moment.'}
           </Text>
         ) : Object.values(dataSeries).every((value) => value.length) ? (
@@ -64,7 +64,14 @@ export default function NetworkComparisonCharts({
                   height: '220px',
                   width: '100%'
                 }}>
-                <Box sx={{ height: '90%' }}>
+                <Box
+                  sx={{ height: '90%' }}
+                  role="figure"
+                  aria-label={`Network ${
+                    NetworkComparisonIndex[
+                      key as keyof typeof NetworkComparisonIndex
+                    ]
+                  } comparison chart`}>
                   <ResponsivePie
                     data={data}
                     id={({ formattedId }) => formattedId}
