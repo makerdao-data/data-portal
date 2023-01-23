@@ -51,7 +51,7 @@ export default function NetworkComparisonCharts({
         </Text>
 
         {error ? (
-          <Text variant="error">
+          <Text variant="error" role="textbox" aria-label="Error message">
             {'Network comparison data is not available at the moment.'}
           </Text>
         ) : Object.values(dataSeries).every((value) => value.length) ? (

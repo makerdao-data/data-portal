@@ -7,6 +7,7 @@ import { useIntl } from 'next-intl';
 import { RefreshData } from '../../hooks/refresh-data';
 import { Domains } from '../../types/teleport';
 import { NETWORK_SCANNERS_URLS } from '../../constants';
+import { CsvData } from '../../components/CsvExport';
 
 type MainKpiCardProps = {
   title: string;
@@ -15,6 +16,7 @@ type MainKpiCardProps = {
   change: number | undefined;
   lastRefreshData: RefreshData | null;
   error: Error | undefined;
+  exportMethod?: () => CsvData;
 };
 
 export default function MainKpiCard({
@@ -23,7 +25,8 @@ export default function MainKpiCard({
   value,
   change,
   lastRefreshData,
-  error
+  error,
+  exportMethod
 }: MainKpiCardProps) {
   const intl = useIntl();
 
@@ -37,7 +40,7 @@ export default function MainKpiCard({
         textAlign: 'left'
       }}>
       {error ? (
-        <Text variant="error">
+        <Text variant="error" role="textbox" aria-label="Error message">
           {`${title} data is not available at the moment.`}
         </Text>
       ) : (
@@ -46,6 +49,7 @@ export default function MainKpiCard({
             title={title}
             value={value}
             change={change}
+            exportMethod={exportMethod}
             sx={{
               border: 'none',
               paddingLeft: 0,

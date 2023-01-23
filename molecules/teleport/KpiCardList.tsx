@@ -22,7 +22,9 @@ export default function KpiCardList({ data, error }: KpiCardListProps) {
         flex: ['1 1 100%', '0 0 100%', '0 0 100%', '0 0 300px']
       }}>
       {error ? (
-        <Text variant="error">{'Data is not available at the moment.'}</Text>
+        <Text variant="error" role="textbox" aria-label="Error message">
+          {'Data is not available at the moment.'}
+        </Text>
       ) : (
         data.map((kpi) => (
           <KpiCard
