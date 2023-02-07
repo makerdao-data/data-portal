@@ -351,6 +351,15 @@ export interface Delegate {
   name?: string;
 }
 
+/**
+ * DelegateType
+ * An enumeration.
+ */
+export enum DelegateType {
+  Recognized = 'recognized',
+  Shadow = 'shadow'
+}
+
 /** Domains */
 export interface Domains {
   /** Domains */
@@ -832,6 +841,46 @@ export interface Origin {
   owner?: string;
 }
 
+/** Overview */
+export interface Overview {
+  /** Total Mkr Locked In Cheif */
+  total_mkr_locked_in_cheif: number;
+  /** Mkr Locked In Chief By Recognized */
+  mkr_locked_in_chief_by_recognized: number;
+  /** Mkr Locked In Chief By Shadow */
+  mkr_locked_in_chief_by_shadow: number;
+  /** Mkr Locked In Chief By Regular */
+  mkr_locked_in_chief_by_regular: number;
+  /** Unique Recognized */
+  unique_recognized: number;
+  /** Unique Shadow */
+  unique_shadow: number;
+  /** Unique Regular */
+  unique_regular: number;
+  /** Mkr Locked In Hat From Recognized */
+  mkr_locked_in_hat_from_recognized: number;
+  /** Mkr Locked In Hat From Shadow */
+  mkr_locked_in_hat_from_shadow: number;
+  /** Mkr Locked In Hat From Regular */
+  mkr_locked_in_hat_from_regular: number;
+  /** Mkr Locked In Governing Executive */
+  mkr_locked_in_governing_executive: number;
+  /** Avg Mkr Used In Polls */
+  avg_mkr_used_in_polls: number;
+  /** Avg Voters Count In Polls */
+  avg_voters_count_in_polls: number;
+  /** Exexutives Passed */
+  exexutives_passed: any[];
+  /** Exexutives Rejected */
+  exexutives_rejected: any[];
+  /** Executives */
+  executives: Record<string, any>;
+  /** Voters In Polls */
+  voters_in_polls: Record<string, any>;
+  /** Is Latest Executive Hat */
+  is_latest_executive_hat: boolean;
+}
+
 /** Ownership */
 export interface Ownership {
   /**
@@ -1048,8 +1097,12 @@ export interface Support {
    * @format date
    */
   date: string;
+  /** Type */
+  type: string;
   /** Vote Delegate */
   vote_delegate: string;
+  /** Delegate */
+  delegate: string;
   /** Support */
   support: number;
 }
@@ -2261,15 +2314,17 @@ export class Api<
         /**
          * From Date
          * @format date
-         * @default "2023-01-18"
+         * @default "2023-02-02"
          */
         from_date?: string;
         /**
          * To Date
          * @format date
-         * @default "2023-01-18"
+         * @default "2023-02-02"
          */
         to_date?: string;
+        /** An enumeration. */
+        type?: DelegateType;
         /**
          * Skip
          * ignore first object(s) returned
@@ -2433,6 +2488,26 @@ export class Api<
     readVotersV1GovernanceVotersGet: (params: RequestParams = {}) =>
       this.request<Voter[], any>({
         path: `/v1/governance/voters`,
+        method: 'GET',
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * No description
+     *
+     * @tags governance
+     * @name ReadGovernanceOverviewV1GovernanceOverviewGet
+     * @summary Read Governance Overview
+     * @request GET:/v1/governance/overview
+     * @secure
+     */
+    readGovernanceOverviewV1GovernanceOverviewGet: (
+      params: RequestParams = {}
+    ) =>
+      this.request<Overview, any>({
+        path: `/v1/governance/overview`,
         method: 'GET',
         secure: true,
         format: 'json',

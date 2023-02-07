@@ -78,7 +78,7 @@ export default function DashboardsNavigation() {
 }
 
 const governanceLinks: Link[] = [
-  { href: '/governance/overview', text: 'Overview', disabled: true },
+  { href: '/governance/overview', text: 'Overview' },
   {
     href: '/governance/executive-votes',
     text: 'Executive votes',
