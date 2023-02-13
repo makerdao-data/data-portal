@@ -67,6 +67,7 @@ export default function DelegatesWeightChart() {
           <Line
             data={delegatatesWithSupportChartDataSets}
             options={{
+              hover: {},
               responsive: true,
               maintainAspectRatio: false,
               plugins: {
