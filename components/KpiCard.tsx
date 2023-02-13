@@ -8,6 +8,7 @@ type KpiCardProps = {
   title: string;
   value?: number | string;
   change?: number;
+  noChangeInfo?: boolean;
   exportMethod?: () => CsvData;
 };
 
@@ -15,6 +16,7 @@ export default function KpiCard({
   title,
   value,
   change,
+  noChangeInfo = false,
   exportMethod,
   ...props
 }: KpiCardProps & FlexProps) {
@@ -28,7 +30,7 @@ export default function KpiCard({
         gap: 2,
         border: '1px solid',
         borderColor: 'secondary',
-        padding: 2,
+        padding: '8px',
         borderRadius: '8px',
         ...props.sx
       }}>
@@ -48,20 +50,22 @@ export default function KpiCard({
         sx={{ fontSize: theme.fontSizes?.[8], fontWeight: 700 }}>
         {value ?? <Skeleton />}
       </Text>
-      <Text
-        role="textbox"
-        aria-label={title + ' change'}
-        variant="muted"
-        sx={{ color: change && change < 0 ? 'error' : 'success' }}>
-        {change !== undefined ? (
-          `7d Change ${change > 0 ? '+' : ''}${intl.formatNumber(change, {
-            style: 'percent',
-            minimumFractionDigits: 2
-          })}`
-        ) : (
-          <Skeleton />
-        )}
-      </Text>
+      {noChangeInfo ? null : (
+        <Text
+          role="textbox"
+          aria-label={title + ' change'}
+          variant="muted"
+          sx={{ color: change && change < 0 ? 'error' : 'success' }}>
+          {change !== undefined ? (
+            `7d Change ${change > 0 ? '+' : ''}${intl.formatNumber(change, {
+              style: 'percent',
+              minimumFractionDigits: 2
+            })}`
+          ) : (
+            <Skeleton />
+          )}
+        </Text>
+      )}
     </Flex>
   );
 }

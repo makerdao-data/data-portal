@@ -10,7 +10,7 @@ import {
   UseGlobalFiltersState,
   TableInstance
 } from 'react-table';
-import { Box, Flex, Input, useColorMode } from 'theme-ui';
+import { Box, Flex, Input } from 'theme-ui';
 import { Table, THead, TRow, THeader, TBody, TCell } from '../components/table';
 import 'regenerator-runtime/runtime';
 import {
@@ -18,7 +18,8 @@ import {
   Button,
   Select,
   ChevronLeftIcon,
-  ChevronRightIcon
+  ChevronRightIcon,
+  Text
 } from '@makerdao-dicu/makerdao-ui';
 import { TableStyles } from '../components/table/Table';
 import TableSkeleton from '../components/TableSkeleton';
@@ -30,16 +31,16 @@ interface TableData<T extends object> {
 
 interface DataTableProps<T extends object> {
   tableData: TableData<T>;
+  title?: string;
   sx?: TableStyles;
 }
 
 export default function DataTable<T extends object>({
   tableData,
   sx,
+  title,
   ...rest
 }: DataTableProps<T>) {
-  const [colorMode] = useColorMode();
-
   const tableInstance = useTable(
     {
       data: tableData.data,
@@ -62,17 +63,21 @@ export default function DataTable<T extends object>({
     page
   } = tableInstance;
 
-  const rowsBorderColor = colorMode === 'light' ? 'secondary' : 'onSurface';
-
   return (
     <Flex sx={{ flexDirection: 'column', gap: '2rem' }} role="table" {...rest}>
       <Flex
         sx={{
-          border: '1px solid',
-          borderRadius: '8px',
-          borderColor: 'secondary',
-          padding: '0 0.5rem'
+          justifyContent: 'space-between',
+          alignItems: 'center'
         }}>
+        {title ? (
+          <Text
+            variant="smallHeading"
+            role="textbox"
+            aria-label={title + ' table title'}>
+            {title}
+          </Text>
+        ) : null}
         <GlobalFilter
           preGlobalFilteredRows={preGlobalFilteredRows}
           globalFilter={state.globalFilter}
@@ -135,17 +140,11 @@ export default function DataTable<T extends object>({
 
           <TBody {...getTableBodyProps}>
             {page.length ? (
-              page.map((row, index) => {
+              page.map((row) => {
                 prepareRow(row);
                 return (
                   // eslint-disable-next-line react/jsx-key
-                  <TRow
-                    {...row.getRowProps()}
-                    sx={{
-                      borderBottom:
-                        index < page.length - 1 ? '1px solid' : 'none',
-                      borderColor: rowsBorderColor
-                    }}>
+                  <TRow {...row.getRowProps()}>
                     {row.cells.map((cell, index) => {
                       return (
                         // eslint-disable-next-line react/jsx-key
@@ -286,7 +285,13 @@ function GlobalFilter<T extends object>({
   }, 200);
 
   return (
-    <Flex>
+    <Flex
+      sx={{
+        border: '1px solid',
+        borderRadius: '6px',
+        borderColor: 'tableStructure',
+        padding: '6px 13px'
+      }}>
       <Box sx={{ alignSelf: 'center', lineHeight: 0 }}>
         <SearchIcon
           viewBox="0 0 14 15"
@@ -307,8 +312,9 @@ function GlobalFilter<T extends object>({
           fontSize: '1.1rem',
           border: '0',
           backgroundColor: 'transparent',
-          width: 'auto',
-          display: 'inline-block'
+          width: '235px',
+          display: 'inline-block',
+          padding: '0 6px'
         }}
       />
     </Flex>

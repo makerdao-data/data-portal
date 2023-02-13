@@ -3,37 +3,36 @@ import { Text } from '@makerdao-dicu/makerdao-ui';
 import useSwr, { Fetcher } from 'swr';
 import {
   RequestParams,
-  Overview as TOverview
+  Overview as TOverview,
+  Voter
 } from '../../__generated__/dataAPI';
 // import MainAreaChart from '../../molecules/MainAreaChart';
 import { dataApiClient } from '../../data/dataApiClient';
-import MainKpiCard from '../../molecules/teleport/MainKpiCard';
-import NetworkComparisonCharts from '../../molecules/teleport/NetworkComparisonCharts';
-import { createDaiInL2sAreaChartDataSeries } from '../../utils/data-transformers/create-dai-in-l2s-overview-data-series';
-import { useCallback, useMemo } from 'react';
-import { formatDistance } from 'date-fns';
-import { ethLastBlockFetcher } from '../../data/alchemyApi';
-import { RefreshData } from '../../hooks/refresh-data';
-import KpiCardList from '../../molecules/teleport/KpiCardList';
 import { useIntl } from 'next-intl';
-import { Domains } from '../../types/teleport';
-import { Data as ReactCsvData } from 'react-csv/components/CommonPropTypes';
 import OverviewVoterTypesTable from '../../molecules/governance/OverviewVoterTypesTable';
 import KpiCard from '../../components/KpiCard';
 import DelegatesWeightChart from '../../molecules/governance/DelegatesWeightChart';
-
-type AlchemyLastBlock = {
-  jsonrcp: string;
-  id: number;
-  result: string;
-};
+import Card from '../../components/Card';
+import VotersTable from '../../molecules/governance/VotersTable';
+import GoverningExecutiveCard from '../../molecules/governance/GoverningExecutiveCard';
+// import AvgVotersInPollCard from '../../molecules/governance/AvgVotersInPollCard';
 
 export default function Overview() {
   const intl = useIntl();
-  const fetcher: Fetcher<TOverview, RequestParams> =
+  const governanceOverviewFetcher: Fetcher<TOverview, RequestParams> =
     dataApiClient.v1.readGovernanceOverviewV1GovernanceOverviewGet;
+  const votersFetcher: Fetcher<Voter[], RequestParams> =
+    dataApiClient.v1.readVotersV1GovernanceVotersGet;
 
-  const { data, error } = useSwr<TOverview, Error>('voters', fetcher);
+  const { data: votersData, error: votersError } = useSwr<Voter[], Error>(
+    'voters',
+    votersFetcher
+  );
+
+  const { data: governanceData, error: governanceOverviewError } = useSwr<
+    TOverview,
+    Error
+  >('governanceOverview', governanceOverviewFetcher);
   // const downloadVotersData = useCallback(() => {
   //   const headers = [
   //     { label: 'Address', key: 'voter_address' },
@@ -76,45 +75,85 @@ export default function Overview() {
   //   };
   // }, [data, intl]);
 
-  if (error) {
-    console.error(error);
+  if (votersError || governanceOverviewError) {
+    console.error(votersError || governanceOverviewError);
   }
 
   return (
-    <Flex sx={{ flexDirection: 'column', gap: 4 }}>
+    <Flex sx={{ flexDirection: 'column', gap: 24 }}>
       <Text variant="heading">Governance overview</Text>
 
-      <Flex sx={{ gap: 2, flexWrap: ['wrap', 'wrap', 'nowrap'] }}>
-        {error ? (
+      <Flex sx={{ gap: 24, flexWrap: ['wrap', 'wrap', 'nowrap'] }}>
+        {governanceOverviewError ? (
           <Text variant="error" role="textbox" aria-label="Error message">
             {'Staked MKR data is not available at the moment.'}
           </Text>
         ) : (
-          <KpiCard
-            title="Staked MKR in Chief"
-            value={
-              data
-                ? intl.formatNumber(data.total_mkr_locked_in_cheif, {
-                    maximumFractionDigits: 2
-                  })
-                : undefined
-            }
-            change={0}
-            // exportMethod={downloadVotersData}
-            sx={{ border: 'none' }}
-          />
+          <Card sx={{ padding: '8px' }}>
+            <KpiCard
+              title="Staked MKR in Chief"
+              value={
+                governanceData
+                  ? intl.formatNumber(
+                      governanceData.total_mkr_locked_in_cheif,
+                      {
+                        maximumFractionDigits: 2
+                      }
+                    )
+                  : undefined
+              }
+              change={0}
+              // exportMethod={downloadVotersData}
+              sx={{ border: 'none' }}
+            />
+          </Card>
         )}
 
-        <OverviewVoterTypesTable data={data} error={error} />
+        <Card title="Voters" sx={{ flex: '1 1 0%' }}>
+          <OverviewVoterTypesTable
+            data={governanceData}
+            error={governanceOverviewError}
+          />
+        </Card>
       </Flex>
 
       <DelegatesWeightChart />
 
-      {/* <Flex sx={{ gap: 2, flexWrap: ['wrap', 'wrap', 'wrap', 'nowrap'] }}>
-        <KpiCardList data={weeklyKpiData} error={error} />
+      <GoverningExecutiveCard
+        data={governanceData}
+        error={governanceOverviewError}
+      />
 
-        <NetworkComparisonCharts data={data} error={error} />
-      </Flex> */}
+      {/* <AvgVotersInPollCard
+        data={governanceData}
+        error={governanceOverviewError}
+      /> */}
+
+      <Card>
+        <Flex sx={{ gap: 2, flexWrap: ['wrap', 'wrap', 'wrap', 'nowrap'] }}>
+          <KpiCard
+            noChangeInfo
+            title="Total voters"
+            value={
+              votersData
+                ? intl.formatNumber(votersData.length, {
+                    maximumFractionDigits: 0
+                  })
+                : undefined
+            }
+            // exportMethod={downloadVotersData}
+            sx={{ border: 'none', minWidth: 145, padding: 0 }}
+          />
+
+          {votersError ? (
+            <Text variant="error" role="textbox" aria-label="Error message">
+              {'Voters data is not available at the moment.'}
+            </Text>
+          ) : (
+            <VotersTable title="List of voters" data={votersData} />
+          )}
+        </Flex>
+      </Card>
     </Flex>
   );
 }

@@ -25,17 +25,10 @@ export default function BridgeDaiDistributionBarChart({
     <Flex
       sx={{
         flexDirection: 'column',
-        ['.tv-lightweight-charts']: {
-          borderRadius: '8px'
-        },
-        border: error ? 'none' : '1px solid',
-        borderColor: 'secondary',
-        borderRadius: '8px',
-        height: '261px',
+        height: '300px',
         width: '100%',
         flex: ['1 1 100%', '1 1 100%', '1 1 100%', '1 1 0%'],
-        alignSelf: 'flex-end',
-        padding: 2
+        alignSelf: 'flex-end'
       }}>
       <Fragment>
         <Text

@@ -73,11 +73,13 @@ export default function TeleportDomainsTable({
 
   return (
     <Table
-      title="Teleport"
       sx={{
         table: {
           textAlign: 'left',
           tableLayout: 'fixed'
+        },
+        tableSuperContainer: {
+          border: 'none'
         },
         tableContainer: {
           position: 'relative',

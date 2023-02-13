@@ -1,6 +1,7 @@
 import { Flex } from 'theme-ui';
 import KpiCard from '../../components/KpiCard';
 import { Text } from '@makerdao-dicu/makerdao-ui';
+import Card from '../../components/Card';
 
 type KpiData = {
   title: string;
@@ -27,12 +28,14 @@ export default function KpiCardList({ data, error }: KpiCardListProps) {
         </Text>
       ) : (
         data.map((kpi) => (
-          <KpiCard
-            key={kpi.title}
-            title={kpi.title}
-            value={kpi.value}
-            change={kpi.change}
-          />
+          <Card key={kpi.title}>
+            <KpiCard
+              title={kpi.title}
+              value={kpi.value}
+              change={kpi.change}
+              sx={{ border: 'none', padding: 0 }}
+            />
+          </Card>
         ))
       )}
     </Flex>

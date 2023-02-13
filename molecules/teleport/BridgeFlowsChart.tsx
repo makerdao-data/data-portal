@@ -22,15 +22,8 @@ export default function BridgeFlowsChart({
   return (
     <Box
       sx={{
-        ['.tv-lightweight-charts']: {
-          borderRadius: '8px'
-        },
-        border: '1px solid',
-        borderColor: 'secondary',
-        borderRadius: '8px',
-        flex: ['1 1 100%', '1 1 100%', '1 1 100%', '1 1 0%'],
-        textAlign: 'center',
-        padding: 2
+        textAlign: 'center'
+        // height: '100%'
       }}>
       {data.length > 0 ? (
         <HistogramChart
@@ -42,9 +35,9 @@ export default function BridgeFlowsChart({
             layout: {
               background: {
                 type: ColorType.Solid,
-                color: colorMode === 'light' ? '#F6F8F9' : '#141414'
+                color: colorMode === 'light' ? '#FFF' : '#212121'
               },
-              textColor: colorMode === 'light' ? '#231536' : '#fff'
+              textColor: colorMode === 'light' ? '#231536' : '#F1F1F1'
             },
             grid: {
               vertLines: {
@@ -54,7 +47,7 @@ export default function BridgeFlowsChart({
                 visible: false
               }
             },
-            height: 380,
+            height: 480,
             localization: {
               priceFormatter: (value: number) =>
                 intl.formatNumber(value, { maximumFractionDigits: 2 })

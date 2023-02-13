@@ -1,6 +1,5 @@
-import { Fragment, ReactNode } from 'react';
-import { Flex, Box, ThemeUIStyleObject } from 'theme-ui';
-import { Text } from '@makerdao-dicu/makerdao-ui';
+import { ReactNode } from 'react';
+import { Box, Flex, ThemeUIStyleObject } from 'theme-ui';
 
 export type TableStyles = {
   tableContainer?: ThemeUIStyleObject;
@@ -10,52 +9,47 @@ export type TableStyles = {
 
 type TableProps = {
   children: ReactNode;
-  title?: string;
   sx?: TableStyles;
 };
 
-export default function Table({ children, title, sx, ...rest }: TableProps) {
+export default function Table({ children, sx, ...rest }: TableProps) {
   return (
     <Flex
       sx={{
-        flexDirection: 'column',
         flexBasis: ['100%', '100%', '100%'],
         alignSelf: 'flex-start',
-        gap: 2,
         flex: ['1 1 100%', '1 1 0%', '1 1 0%'],
         border: '1px solid',
-        borderColor: 'secondary',
-        borderRadius: '8px',
-        padding: 2,
+        borderColor: 'tableStructure',
+        borderRadius: '6px',
 
         ...sx?.tableSuperContainer
       }}>
-      <Fragment>
-        {title ? <Text variant="smallHeading">{title}</Text> : null}
+      <Box sx={{ borderRadius: '6px', ...sx?.tableContainer }}>
+        <Box
+          as="table"
+          role="table"
+          sx={{
+            fontSize: '0.9rem',
+            width: '100%',
+            borderCollapse: 'separate',
+            borderSpacing: 0,
 
-        <Box sx={sx?.tableContainer}>
-          <Box
-            as="table"
-            role="table"
-            aria-label={title + ' table'}
-            sx={{
-              fontSize: '0.9rem',
-              width: '100%',
-              borderCollapse: 'collapse',
+            ['td, th']: {
+              padding: 16,
+              verticalAlign: 'baseline',
+              whiteSpace: 'nowrap',
+              backgroundColor: 'surface',
+              borderBottom: '1px solid',
+              borderColor: 'tableStructure'
+            },
 
-              ['td, th']: {
-                padding: '0.3rem',
-                verticalAlign: 'baseline',
-                whiteSpace: 'nowrap'
-              },
-
-              ...sx?.table
-            }}
-            {...rest}>
-            {children}
-          </Box>
+            ...sx?.table
+          }}
+          {...rest}>
+          {children}
         </Box>
-      </Fragment>
+      </Box>
     </Flex>
   );
 }

@@ -20,12 +20,6 @@ export default function MainAreaChart({
   return (
     <Box
       sx={{
-        ['.tv-lightweight-charts']: {
-          borderRadius: '8px'
-        },
-        border: '1px solid',
-        borderColor: 'secondary',
-        borderRadius: '8px',
         flex: ['1 1 100%', '1 1 0%', '1 1 0%'],
         textAlign: 'center',
         padding: 2
@@ -40,9 +34,9 @@ export default function MainAreaChart({
             layout: {
               background: {
                 type: ColorType.Solid,
-                color: colorMode === 'light' ? '#F6F8F9' : '#141414'
+                color: colorMode === 'light' ? '#FFF' : '#212121'
               },
-              textColor: colorMode === 'light' ? '#231536' : '#fff'
+              textColor: colorMode === 'light' ? '#231536' : '#F1F1F1'
             },
             grid: {
               vertLines: {
