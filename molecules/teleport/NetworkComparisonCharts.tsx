@@ -8,7 +8,7 @@ import {
 } from '../../utils/data-transformers/create-network-comparison-chart-data-series';
 import { Summary } from '../../__generated__/dataAPI';
 import { Text } from '@makerdao-dicu/makerdao-ui';
-import { Fragment, useMemo } from 'react';
+import { useMemo } from 'react';
 import Skeleton from 'react-loading-skeleton';
 
 type NetworkComparitionChartProps = {
