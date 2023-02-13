@@ -85,7 +85,8 @@ export default function DelegatesWeightChart() {
                 },
                 tooltip: {
                   mode: 'x' as const,
-                  itemSort: (a, b) => {
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                  itemSort: (a: any, b: any) => {
                     return b.raw.y - a.raw.y;
                   }
                 },

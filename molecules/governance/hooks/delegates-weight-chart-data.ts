@@ -132,49 +132,7 @@ export default function useDelegatesWeightChartData(): DelegatesWeightChartData 
           data: Object.keys(delegateSupport).map((month) => ({
             x: delegateSupport[month].date,
             y: delegateSupport[month].support
-          })),
-          options: {
-            onHover: (e, activeEls, chart) => {
-              if (activeEls.length === 0) {
-                chart.data.datasets.forEach((dataset) => {
-                  dataset.backgroundColor =
-                    dataset.backgroundColor.length === 9
-                      ? dataset.backgroundColor.slice(0, -2)
-                      : dataset.backgroundColor;
-                  dataset.borderColor =
-                    dataset.borderColor.length === 9
-                      ? dataset.borderColor.slice(0, -2)
-                      : dataset.borderColor;
-                });
-                chart.update();
-                return;
-              }
-
-              const hoveredEl = chart.getElementsAtEventForMode(
-                e,
-                'point',
-                {
-                  intersect: true
-                },
-                true
-              )[0];
-
-              chart.data.datasets.forEach((dataset, i) => {
-                dataset.backgroundColor =
-                  hoveredEl.datasetIndex === i ||
-                  dataset.backgroundColor.length === 9
-                    ? dataset.backgroundColor
-                    : dataset.backgroundColor + '4D';
-                dataset.borderColor =
-                  hoveredEl.datasetIndex === i ||
-                  dataset.borderColor.length === 9
-                    ? dataset.borderColor
-                    : dataset.borderColor + '4D';
-              });
-
-              chart.update();
-            }
-          }
+          }))
         };
 
         return dataSet;
