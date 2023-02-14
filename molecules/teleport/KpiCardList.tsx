@@ -1,7 +1,6 @@
 import { Flex } from 'theme-ui';
 import KpiCard from '../../components/KpiCard';
 import { Text } from '@makerdao-dicu/makerdao-ui';
-import Card from '../../components/Card';
 
 type KpiData = {
   title: string;
@@ -18,9 +17,11 @@ export default function KpiCardList({ data, error }: KpiCardListProps) {
   return (
     <Flex
       sx={{
-        flexDirection: 'column',
+        flexDirection: ['row', 'row', 'row', 'column'],
+        flexWrap: ['wrap', 'wrap', 'wrap', 'nowrap'],
+        justifyContent: 'space-between',
         gap: 3,
-        flex: ['1 1 100%', '0 0 100%', '0 0 100%', '0 0 300px']
+        flex: ['1 1 100%', '0 0 100%', '0 0 100%', '0 0 auto']
       }}>
       {error ? (
         <Text variant="error" role="textbox" aria-label="Error message">
@@ -28,14 +29,18 @@ export default function KpiCardList({ data, error }: KpiCardListProps) {
         </Text>
       ) : (
         data.map((kpi) => (
-          <Card key={kpi.title}>
-            <KpiCard
-              title={kpi.title}
-              value={kpi.value}
-              change={kpi.change}
-              sx={{ border: 'none', padding: 0 }}
-            />
-          </Card>
+          <KpiCard
+            key={kpi.title}
+            title={kpi.title}
+            value={kpi.value}
+            change={kpi.change}
+            sx={{
+              border: 'none',
+              padding: 0,
+              flex: ['1 1 100%', '1 1 auto', '0 0 auto', '0 0 auto'],
+              alignItems: ['center', 'center', 'center', 'start']
+            }}
+          />
         ))
       )}
     </Flex>

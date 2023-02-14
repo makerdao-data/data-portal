@@ -23,7 +23,6 @@ export default function BridgeFlowsChart({
     <Box
       sx={{
         textAlign: 'center'
-        // height: '100%'
       }}>
       {data.length > 0 ? (
         <HistogramChart
@@ -47,7 +46,7 @@ export default function BridgeFlowsChart({
                 visible: false
               }
             },
-            height: 480,
+            height: 400,
             localization: {
               priceFormatter: (value: number) =>
                 intl.formatNumber(value, { maximumFractionDigits: 2 })

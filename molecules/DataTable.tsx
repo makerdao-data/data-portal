@@ -192,7 +192,7 @@ export default function DataTable<T extends object>({
 const columnsWidths = [
   ['100px', '100px', '240px'],
   '100px',
-  '700px',
+  '400px',
   '120px',
   '120px'
 ];

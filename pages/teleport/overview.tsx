@@ -1,4 +1,4 @@
-import { Flex } from 'theme-ui';
+import { Box, Flex } from 'theme-ui';
 import { Text } from '@makerdao-dicu/makerdao-ui';
 import useSwr from 'swr';
 import { Summary } from '../../__generated__/dataAPI';
@@ -183,15 +183,19 @@ export default function Overview() {
         </Card>
       )}
 
-      <Flex sx={{ gap: 2, flexWrap: ['wrap', 'wrap', 'wrap', 'nowrap'] }}>
-        <KpiCardList data={weeklyKpiData} error={error} />
+      <Card>
+        <Flex sx={{ gap: 24, flexWrap: ['wrap', 'wrap', 'wrap', 'nowrap'] }}>
+          <KpiCardList data={weeklyKpiData} error={error} />
 
-        <Card
-          title="Network comparison"
-          sx={{ flex: ['1 1 100%', '1 1 100%', '1 1 100%', '1 1 0%'] }}>
-          <NetworkComparisonCharts data={data} error={error} />
-        </Card>
-      </Flex>
+          <Box sx={{ flex: ['1 1 100%', '1 1 100%', '1 1 100%', '1 1 0%'] }}>
+            <NetworkComparisonCharts
+              title="Network comparison"
+              data={data}
+              error={error}
+            />
+          </Box>
+        </Flex>
+      </Card>
     </Flex>
   );
 }

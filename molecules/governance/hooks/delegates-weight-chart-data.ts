@@ -38,11 +38,14 @@ export default function useDelegatesWeightChartData(): DelegatesWeightChartData 
   const { data: delegatesSupport, error: delegatesSupportQueryError } = useSwr<
     Support[],
     Error
-  >('delegatesSupport', () =>
-    delegatesSupportFetcher({
-      from_date: '2021-07-27'
-    })
-  );
+  >('delegatesSupport', () => {
+    const fromDate = new Date(
+      new Date().setFullYear(new Date().getFullYear() - 1)
+    );
+    return delegatesSupportFetcher({
+      from_date: `${fromDate.getFullYear()}-${fromDate.getMonth()}-${fromDate.getDate()}`
+    });
+  });
 
   const error = useMemo(
     () => delegatesQueryError || delegatesSupportQueryError,

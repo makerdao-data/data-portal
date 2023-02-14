@@ -14,11 +14,13 @@ import Skeleton from 'react-loading-skeleton';
 type NetworkComparitionChartProps = {
   data: Summary | undefined;
   error: Error | undefined;
+  title?: string;
 };
 
 export default function NetworkComparisonCharts({
   data,
-  error
+  error,
+  title
 }: NetworkComparitionChartProps) {
   const intl = useIntl();
   const [colorMode] = useColorMode();
@@ -33,6 +35,15 @@ export default function NetworkComparisonCharts({
         flexDirection: 'column',
         alignSelf: 'flex-end'
       }}>
+      {title ? (
+        <Text
+          variant="smallHeading"
+          role="heading"
+          aria-label={title + ' chart title'}>
+          {title}
+        </Text>
+      ) : null}
+
       {error ? (
         <Text variant="error" role="textbox" aria-label="Error message">
           {'Network comparison data is not available at the moment.'}
