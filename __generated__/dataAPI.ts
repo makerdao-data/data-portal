@@ -2314,13 +2314,13 @@ export class Api<
         /**
          * From Date
          * @format date
-         * @default "2023-02-02"
+         * @default "2023-02-13"
          */
         from_date?: string;
         /**
          * To Date
          * @format date
-         * @default "2023-02-02"
+         * @default "2023-02-13"
          */
         to_date?: string;
         /** An enumeration. */

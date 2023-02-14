@@ -3,13 +3,9 @@ import randomColor from 'randomcolor';
 import { useMemo } from 'react';
 import useSwr, { Fetcher } from 'swr';
 import { dataApiClient } from '../../../data/dataApiClient';
-import { Delegate, Support } from '../../../__generated__/dataAPI';
+import { Support } from '../../../__generated__/dataAPI';
 import { ChartDataset } from 'chart.js';
 import chartsRgbColorPallete from '../../../utils/chartColors';
-
-interface DelegateWithName extends Omit<Delegate, 'name'> {
-  name: string;
-}
 
 type ChartDataSet = Record<string, Record<string, Support>>;
 
@@ -25,74 +21,48 @@ type DelegatesWeightChartData = [
 ];
 
 export default function useDelegatesWeightChartData(): DelegatesWeightChartData {
-  const delegatesFetcher: Fetcher<Delegate[]> =
-    dataApiClient.v1.readDelegatesV1GovernanceDelegatesGet;
   const delegatesSupportFetcher: Fetcher<Support[]> =
     dataApiClient.v1.readDelegatesSupportV1GovernanceDelegatesSupportGet;
 
-  const { data: delegates, error: delegatesQueryError } = useSwr<
-    Delegate[],
-    Error
-  >('delegates', delegatesFetcher);
-
-  const { data: delegatesSupport, error: delegatesSupportQueryError } = useSwr<
-    Support[],
-    Error
-  >('delegatesSupport', () => {
-    const fromDate = new Date(
-      new Date().setFullYear(new Date().getFullYear() - 1)
-    );
-    return delegatesSupportFetcher({
-      from_date: `${fromDate.getFullYear()}-${fromDate.getMonth()}-${fromDate.getDate()}`
-    });
-  });
-
-  const error = useMemo(
-    () => delegatesQueryError || delegatesSupportQueryError,
-    [delegatesQueryError, delegatesSupportQueryError]
+  const { data: recognizedDelegatesSupport, error } = useSwr<Support[], Error>(
+    'recognizedDelegatesSupport',
+    () => {
+      const fromDate = new Date(
+        new Date().setFullYear(new Date().getFullYear() - 1)
+      );
+      return delegatesSupportFetcher({
+        from_date: `${fromDate.getFullYear()}-${fromDate.getMonth()}-${fromDate.getDate()}`,
+        type: 'recognized'
+      });
+    }
   );
 
   const loading = useMemo(() => {
-    return (
-      (delegates === undefined || delegatesSupport === undefined) &&
-      delegatesQueryError === undefined &&
-      delegatesSupportQueryError === undefined
-    );
-  }, [
-    delegates,
-    delegatesQueryError,
-    delegatesSupport,
-    delegatesSupportQueryError
-  ]);
+    return recognizedDelegatesSupport === undefined && error === undefined;
+  }, [recognizedDelegatesSupport, error]);
 
-  const recognizedDelegates = useMemo(
-    () =>
-      delegates?.filter((delegate) => Boolean(delegate.name)) as
-        | DelegateWithName[]
-        | undefined,
-    [delegates]
-  );
+  const recognizedDelegateNames = useMemo(() => {
+    const delegateNames = Array.from(
+      new Set(recognizedDelegatesSupport?.map(({ delegate }) => delegate))
+    );
+
+    return delegateNames;
+  }, [recognizedDelegatesSupport]);
 
   const colors = chartsRgbColorPallete(0.5);
 
   const delegatatesWithSupportChartDataSets = useMemo(() => {
-    if (delegatesSupport && recognizedDelegates) {
-      const recognizedDelegatesKeys = recognizedDelegates.map(
-        ({ vote_delegate }) => vote_delegate
-      );
-      const recognizedDelegatesSupport = delegatesSupport.filter(
-        ({ vote_delegate }) => recognizedDelegatesKeys.includes(vote_delegate)
-      );
+    if (recognizedDelegatesSupport) {
       const recognizedDelegateSupportByDelegate = _.groupBy(
         recognizedDelegatesSupport,
-        'vote_delegate'
+        'delegate'
       );
 
       const delegateMonthlySupport: ChartDataSet = Object.keys(
         recognizedDelegateSupportByDelegate
-      ).reduce((memo, vote_delegate) => {
+      ).reduce((memo, delegate) => {
         const groupedSupport: Record<string, Support[]> = _.groupBy(
-          recognizedDelegateSupportByDelegate[vote_delegate],
+          recognizedDelegateSupportByDelegate[delegate],
           (support) => {
             const date = new Date(support.date);
             return `${date.getFullYear()}/${date.getMonth() + 1}`;
@@ -120,16 +90,16 @@ export default function useDelegatesWeightChartData(): DelegatesWeightChartData 
 
         return {
           ...memo,
-          [vote_delegate]: lastSupportPerMonth
+          [delegate]: lastSupportPerMonth
         };
       }, {});
 
-      const dataSetList = recognizedDelegates.map((delegate, index) => {
-        const delegateSupport = delegateMonthlySupport[delegate.vote_delegate];
+      const dataSetList = recognizedDelegateNames.map((delegate, index) => {
+        const delegateSupport = delegateMonthlySupport[delegate];
 
         const dataSet = {
           fill: true,
-          label: delegate.name,
+          label: delegate,
           borderColor: colors[index] ?? randomColor({ hue: 'orange' }),
           backgroundColor: colors[index] ?? randomColor({ hue: 'orange' }),
           data: Object.keys(delegateSupport).map((month) => ({
@@ -147,7 +117,7 @@ export default function useDelegatesWeightChartData(): DelegatesWeightChartData 
     }
 
     return { datasets: [] };
-  }, [colors, delegatesSupport, recognizedDelegates]);
+  }, [colors, recognizedDelegatesSupport, recognizedDelegateNames]);
 
   return [delegatatesWithSupportChartDataSets, loading, error];
 }
