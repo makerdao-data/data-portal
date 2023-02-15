@@ -45,7 +45,7 @@ export default function DataTable<T extends object>({
     {
       data: tableData.data,
       columns: tableData.columns,
-      initialState: { pageSize: 50 }
+      initialState: { pageSize: 10 }
     },
     useGlobalFilter,
     useSortBy,

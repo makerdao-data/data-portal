@@ -40,17 +40,26 @@ export default function GoverningExecutiveCard({
 
   const chartData = useMemo(() => {
     if (data !== undefined) {
-      const labels = Object.keys(data.executives).map((yearMonth) =>
-        intl.formatDateTime(new Date(yearMonth + '-01'), {
-          month: 'long',
-          year: 'numeric'
-        })
-      );
+      const labels = [
+        ...Object.keys(data.executives)
+          .map((yearMonth) =>
+            intl.formatDateTime(new Date(yearMonth + '-01'), {
+              month: 'long',
+              year: 'numeric'
+            })
+          )
+          .slice(-12)
+      ];
+
       return {
         labels,
         datasets: [
           {
-            data: Object.values(data.executives).map(({ passed }) => passed),
+            data: [
+              ...Object.values(data.executives)
+                .map(({ passed }) => passed)
+                .slice(-12)
+            ],
             backgroundColor: '#3DDBD9'
           }
         ]
@@ -130,7 +139,7 @@ export default function GoverningExecutiveCard({
                         display: false
                       },
                       grid: {
-                        color: colorMode === 'light' ? '#708390' : '#4F4F4F'
+                        color: colorMode === 'light' ? '#ECECEC' : '#4F4F4F'
                       },
                       ticks: {
                         color: colorMode === 'light' ? '#231536' : '#F1F1F1'

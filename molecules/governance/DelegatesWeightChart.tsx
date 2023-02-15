@@ -100,8 +100,7 @@ export default function DelegatesWeightChart() {
                   type: 'time',
                   time: {
                     tooltipFormat: 'MMM dd, yyyy',
-                    unit: 'month',
-                    round: 'day'
+                    unit: 'month'
                   },
                   title: {
                     display: false
@@ -119,7 +118,7 @@ export default function DelegatesWeightChart() {
                     display: false
                   },
                   grid: {
-                    color: colorMode === 'light' ? '#708390' : '#4F4F4F'
+                    color: colorMode === 'light' ? '#ECECEC' : '#4F4F4F'
                   },
                   ticks: {
                     color: colorMode === 'light' ? '#231536' : '#F1F1F1'
