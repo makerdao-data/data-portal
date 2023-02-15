@@ -77,6 +77,22 @@ test.describe('Voters page test', () => {
     ).toBeVisible();
   });
 
+  test('Average voters in polls Kpi', async ({ page }) => {
+    await expect(
+      page.getByRole('heading', { name: 'Average voters in polls title' })
+    ).toContainText('Average voters in polls');
+
+    await expect(
+      page.getByRole('textbox', { name: 'Average voters in polls value' })
+    ).toContainText('27');
+  });
+
+  test('MKR used for polls chart', async ({ page }) => {
+    await expect(
+      page.getByRole('figure', { name: 'MKR used for polls chart' })
+    ).toBeVisible();
+  });
+
   test('Total voters Kpi', async ({ page }) => {
     await expect(
       page.getByRole('heading', { name: 'Total voters title' })
