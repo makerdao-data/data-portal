@@ -12,7 +12,7 @@ import {
   Tooltip,
   Legend
 } from 'chart.js';
-import { Bar } from 'react-chartjs-2';
+import { Chart } from 'react-chartjs-2';
 import { useMemo } from 'react';
 import { Text } from '@makerdao-dicu/makerdao-ui';
 import Skeleton from 'react-loading-skeleton';
@@ -40,29 +40,66 @@ export default function AvgVotersInPollCard({
 
   const chartData = useMemo(() => {
     if (data !== undefined) {
-      const labels = Object.keys(data.voters_in_polls).map((yearMonth) =>
-        intl.formatDateTime(new Date(yearMonth + '-01'), {
-          month: 'long',
-          year: 'numeric'
-        })
+      const lastYearData = Object.fromEntries([
+        ...Object.entries(data.voters_in_polls)
+          .map((entry) => entry)
+          .slice(-12)
+      ]);
+
+      const labels = Object.keys(lastYearData).map(
+        (yearMonth) => new Date(yearMonth + '-01')
       );
+
       return {
         labels,
         datasets: [
           {
-            data: Object.values(data.voters_in_polls).reduce(
-              ({ mkr_used_for_polling }) => mkr_used_for_polling
+            type: 'line' as const,
+            data: Object.values(lastYearData).map(
+              ({ unique_voters }) => unique_voters
             ),
-            backgroundColor: '#4589FF'
+            borderColor: '#FBCC5F',
+            borderWidth: 2,
+            label: 'Unique voters',
+            skipNull: true,
+            yAxisID: 'y1'
+          },
+          {
+            type: 'bar' as const,
+            data: Object.values(lastYearData).map(
+              ({ MKRs_used_for_polling }) => MKRs_used_for_polling.recognized
+            ),
+            backgroundColor: '#4589FF',
+            label: 'Recognized',
+            skipNull: true,
+            yAxisID: 'y'
+          },
+          {
+            type: 'bar' as const,
+            data: Object.values(lastYearData).map(
+              ({ MKRs_used_for_polling }) => MKRs_used_for_polling.shadow
+            ),
+            backgroundColor: '#00C5C2',
+            label: 'Shadow',
+            skipNull: true,
+            yAxisID: 'y'
+          },
+          {
+            type: 'bar' as const,
+            data: Object.values(lastYearData).map(
+              ({ MKRs_used_for_polling }) => MKRs_used_for_polling.regular
+            ),
+            backgroundColor: '#D251E0',
+            label: 'Regular',
+            skipNull: true,
+            yAxisID: 'y'
           }
         ]
       };
     }
 
     return { datasets: [] };
-  }, [data, intl]);
-
-  console.log({ chartData });
+  }, [data]);
 
   return (
     <Card>
@@ -82,7 +119,7 @@ export default function AvgVotersInPollCard({
                   })
                 : undefined
             }
-            sx={{ border: 'none', minWidth: 251 }}
+            sx={{ border: 'none', flexBasis: '20%' }}
           />
 
           <Box
@@ -100,7 +137,8 @@ export default function AvgVotersInPollCard({
             </Text>
 
             {data !== undefined ? (
-              <Bar
+              <Chart
+                type="bar"
                 role="figure"
                 aria-label="MKR used for polls chart"
                 data={chartData}
@@ -114,14 +152,43 @@ export default function AvgVotersInPollCard({
                   },
                   plugins: {
                     legend: {
-                      display: false
+                      display: true,
+                      labels: {
+                        color: colorMode === 'light' ? '#231536' : '#F1F1F1'
+                      }
                     }
                   },
                   scales: {
                     x: {
+                      type: 'time',
+                      time: {
+                        tooltipFormat: 'MMM dd, yyyy',
+                        unit: 'month'
+                      },
+                      stacked: true,
                       title: {
                         display: false
                       },
+                      grid: {
+                        display: false
+                      },
+                      ticks: {
+                        color: colorMode === 'light' ? '#231536' : '#F1F1F1'
+                      }
+                    },
+                    y: {
+                      stacked: true,
+                      grid: {
+                        color: colorMode === 'light' ? '#ECECEC' : '#4F4F4F'
+                      },
+                      ticks: {
+                        color: colorMode === 'light' ? '#231536' : '#F1F1F1'
+                      }
+                    },
+                    y1: {
+                      type: 'linear',
+                      display: true,
+                      position: 'right',
                       grid: {
                         display: false
                       },

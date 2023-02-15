@@ -245,11 +245,8 @@ export interface BodyGetAccessTokenV1LoginAccessTokenPost {
 export interface BodyRegisterUserV1UsersRegisterPost {
   /** Password */
   password: string;
-  /**
-   * Email
-   * @format email
-   */
-  email: string;
+  /** Username */
+  username: string;
   /** Full Name */
   full_name?: string;
 }
@@ -1155,11 +1152,8 @@ export interface TransferHistory {
 
 /** User */
 export interface User {
-  /**
-   * Email
-   * @format email
-   */
-  email?: string;
+  /** Username */
+  username?: string;
   /**
    * Is Active
    * @default true
@@ -1178,11 +1172,8 @@ export interface User {
 
 /** UserCreate */
 export interface UserCreate {
-  /**
-   * Email
-   * @format email
-   */
-  email: string;
+  /** Username */
+  username: string;
   /**
    * Is Active
    * @default true
@@ -1770,7 +1761,6 @@ export class HttpClient<SecurityDataType = unknown> {
  * # Authentication
  *
  * The first time using the service, you'll need to register as a user using `/v1/users/register`.
- * We highly encourage to use an email address that you have regular access to as we will use it to communicate major service changes.
  *
  * After creating the user, login to get a bearer token using `/v1/login/access-token`.
  *
@@ -2314,13 +2304,13 @@ export class Api<
         /**
          * From Date
          * @format date
-         * @default "2023-02-13"
+         * @default "2023-02-14"
          */
         from_date?: string;
         /**
          * To Date
          * @format date
-         * @default "2023-02-13"
+         * @default "2023-02-14"
          */
         to_date?: string;
         /** An enumeration. */

@@ -13,7 +13,7 @@ import DelegatesWeightChart from '../../molecules/governance/DelegatesWeightChar
 import Card from '../../components/Card';
 import GoverningExecutiveCard from '../../molecules/governance/GoverningExecutiveCard';
 import OverviewVotersCard from '../../molecules/governance/OverviewVotersCard';
-// import AvgVotersInPollCard from '../../molecules/governance/AvgVotersInPollCard';
+import AvgVotersInPollCard from '../../molecules/governance/AvgVotersInPollCard';
 
 export default function Overview() {
   const intl = useIntl();
@@ -74,10 +74,10 @@ export default function Overview() {
         error={governanceOverviewError}
       />
 
-      {/* <AvgVotersInPollCard
+      <AvgVotersInPollCard
         data={governanceData}
         error={governanceOverviewError}
-      /> */}
+      />
 
       <OverviewVotersCard />
     </Flex>

@@ -40,26 +40,21 @@ export default function GoverningExecutiveCard({
 
   const chartData = useMemo(() => {
     if (data !== undefined) {
-      const labels = [
-        ...Object.keys(data.executives)
-          .map((yearMonth) =>
-            intl.formatDateTime(new Date(yearMonth + '-01'), {
-              month: 'long',
-              year: 'numeric'
-            })
-          )
+      const lastYearData = Object.fromEntries([
+        ...Object.entries(data.executives)
+          .map((entry) => entry)
           .slice(-12)
-      ];
+      ]);
+
+      const labels = Object.keys(lastYearData).map(
+        (yearMonth) => new Date(yearMonth + '-01')
+      );
 
       return {
         labels,
         datasets: [
           {
-            data: [
-              ...Object.values(data.executives)
-                .map(({ passed }) => passed)
-                .slice(-12)
-            ],
+            data: Object.values(lastYearData).map(({ passed }) => passed),
             backgroundColor: '#3DDBD9'
           }
         ]
@@ -67,7 +62,7 @@ export default function GoverningExecutiveCard({
     }
 
     return { datasets: [] };
-  }, [data, intl]);
+  }, [data]);
 
   return (
     <Card sx={{ padding: '8px' }}>
@@ -87,7 +82,7 @@ export default function GoverningExecutiveCard({
                   })
                 : undefined
             }
-            sx={{ border: 'none', minWidth: 251 }}
+            sx={{ border: 'none', flexBasis: '20%' }}
           />
 
           <Flex
@@ -124,6 +119,11 @@ export default function GoverningExecutiveCard({
                   },
                   scales: {
                     x: {
+                      type: 'time',
+                      time: {
+                        tooltipFormat: 'MMM dd, yyyy',
+                        unit: 'month'
+                      },
                       title: {
                         display: false
                       },
