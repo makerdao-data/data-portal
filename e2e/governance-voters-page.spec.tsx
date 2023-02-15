@@ -27,13 +27,13 @@ test.describe('Voters page test', () => {
         .locator('tbody')
         .locator('tr')
         .count()
-    ).toBe(50);
+    ).toBe(10);
   });
 
   test('Voters table pagination', async ({ page }) => {
     await expect(
       page.getByRole('textbox', { name: 'Page number' })
-    ).toContainText('Page 1 of 2');
+    ).toContainText('Page 1 of 6 ');
     await expect(
       page.getByRole('button', { name: 'First page button' })
     ).toBeDisabled();
@@ -51,7 +51,7 @@ test.describe('Voters page test', () => {
 
     await expect(
       page.getByRole('textbox', { name: 'Page number' })
-    ).toContainText('Page 2 of 2');
+    ).toContainText('Page 2 of 6 ');
 
     await expect(
       page.getByRole('button', { name: 'First page button' })
@@ -61,10 +61,10 @@ test.describe('Voters page test', () => {
     ).toBeEnabled();
     await expect(
       page.getByRole('button', { name: 'Last page button' })
-    ).toBeDisabled();
+    ).toBeEnabled();
     await expect(
       page.getByRole('button', { name: 'Next page button' })
-    ).toBeDisabled();
+    ).toBeEnabled();
   });
 
   test('Voters table global filter', async ({ page }) => {
@@ -79,7 +79,7 @@ test.describe('Voters page test', () => {
         .locator('tbody')
         .locator('tr')
         .count()
-    ).toBe(50);
+    ).toBe(10);
 
     await page
       .getByRole('textbox', { name: 'Data table global filter' })
