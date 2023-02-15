@@ -26,8 +26,8 @@ test.describe('Overview page test', () => {
 
     await page.route(
       'https://data-api.makerdao.network/v1/metrics/summary',
-      (route) =>
-        route.fulfill({
+      async (route) =>
+        await route.fulfill({
           status: 200,
           body: JSON.stringify(summaryFixture)
         })
@@ -35,8 +35,8 @@ test.describe('Overview page test', () => {
 
     await page.route(
       'https://eth-mainnet.g.alchemy.com/v2/kKpGhqgtnDaz1n6PhdhZTXBPKcX9vlVN',
-      (route) =>
-        route.fulfill({
+      async (route) =>
+        await route.fulfill({
           status: 200,
           body: JSON.stringify(alchemyFixture)
         })
@@ -187,7 +187,7 @@ test.describe('Overview page test', () => {
 
   test('Network comparison charts', async ({ page }) => {
     await expect(
-      page.getByRole('textbox', { name: 'Network comparison title' })
+      page.getByRole('heading', { name: 'Network comparison chart title' })
     ).toContainText('Network comparison');
 
     await expect(
@@ -206,12 +206,12 @@ test.describe('Overview page test', () => {
   test('Overview page data api error', async ({ page }) => {
     await page.route(
       'https://data-api.makerdao.network/v1/metrics/summary',
-      (route) => route.abort()
+      async (route) => await route.abort()
     );
 
     await page.route(
       'https://eth-mainnet.g.alchemy.com/v2/kKpGhqgtnDaz1n6PhdhZTXBPKcX9vlVN',
-      (route) => route.abort()
+      async (route) => await route.abort()
     );
 
     await page.goto(`http://localhost:3000/teleport/overview`);
