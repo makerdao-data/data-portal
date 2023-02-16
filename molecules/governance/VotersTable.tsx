@@ -30,10 +30,11 @@ export default function VotersTable({ data, title }: VotersTableProps) {
       },
       {
         Header: 'Stake (MKR)',
-        accessor: (row: Voter) =>
-          intl.formatNumber(row.stake, {
+        Cell: ({ row }: { row: { original: Voter } }) =>
+          intl.formatNumber(row.original.stake, {
             maximumFractionDigits: 2
           }),
+        accessor: (row: Voter) => row.stake,
         id: 'stake'
       },
       {
