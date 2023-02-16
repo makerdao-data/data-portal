@@ -182,7 +182,11 @@ export default function AvgVotersInPollCard({
                         color: colorMode === 'light' ? '#ECECEC' : '#4F4F4F'
                       },
                       ticks: {
-                        color: colorMode === 'light' ? '#231536' : '#F1F1F1'
+                        color: colorMode === 'light' ? '#231536' : '#F1F1F1',
+                        format: {
+                          maximumFractionDigits: 0,
+                          notation: 'compact'
+                        }
                       }
                     },
                     y1: {
