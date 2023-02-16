@@ -1,4 +1,4 @@
-import { Flex, Link } from 'theme-ui';
+import { Box, Flex, Link } from 'theme-ui';
 import { Text } from '@makerdao-dicu/makerdao-ui';
 import useSwr from 'swr';
 import { Bridge } from '../../__generated__/dataAPI';
@@ -17,6 +17,7 @@ import { createBridgeDaiDistributionBarChartData } from '../../utils/data-transf
 import { createBridgeFlowsBarChartData } from '../../utils/data-transformers/create-bridge-flows-bar-chart-data';
 import BridgeFlowsChart from '../../molecules/teleport/BridgeFlowsChart';
 import { NETWORK_SCANNERS_URLS } from '../../constants';
+import Card from '../../components/Card';
 
 export default function Overview() {
   const intl = useIntl();
@@ -159,7 +160,7 @@ export default function Overview() {
   }
 
   return (
-    <Flex sx={{ flexDirection: 'column', gap: 4 }}>
+    <Flex sx={{ flexDirection: 'column', gap: 24 }}>
       <Text variant="heading">Maker Teleport - Starknet</Text>
 
       <Flex sx={{ gap: 2, flexWrap: ['wrap', 'wrap', 'nowrap'] }}>
@@ -190,44 +191,59 @@ export default function Overview() {
             {'Dai in L2s data is not available at the moment.'}
           </Text>
         ) : (
-          <TeleportMainChart
-            data={mainChartDataSeries}
-            aria-label="L2 DAI supply and escrow chart"
-          />
+          <Card sx={{ flex: ['1 1 100%', '1 1 0%', '1 1 0%'] }}>
+            <TeleportMainChart
+              data={mainChartDataSeries}
+              aria-label="L2 DAI supply and escrow chart"
+            />
+          </Card>
         )}
       </Flex>
 
-      <Flex sx={{ gap: 2, flexWrap: ['wrap', 'wrap', 'wrap', 'nowrap'] }}>
-        <KpiCardList data={uniqueHoldersKpiData} error={error} />
+      <Card>
+        <Flex sx={{ gap: 24, flexWrap: ['wrap', 'wrap', 'wrap', 'nowrap'] }}>
+          <KpiCardList data={uniqueHoldersKpiData} error={error} />
 
-        <BridgeTopHoldersChart
-          title="Top DAI Holders"
-          dataSeries={topDaiHoldersPieChartDataSeries}
-          error={error}
-        />
+          <Flex
+            sx={{
+              flex: ['1 1 100%', '1 1 100%', '1 1 100%', '1 1 0%'],
+              gap: 24,
+              flexWrap: ['wrap', 'wrap', 'wrap', 'nowrap']
+            }}>
+            <BridgeTopHoldersChart
+              title="Top DAI Holders"
+              dataSeries={topDaiHoldersPieChartDataSeries}
+              error={error}
+            />
 
-        <BridgeDaiDistributionBarChart
-          title="DAI Distribution"
-          error={error}
-          data={daiDistributionData}
-        />
-      </Flex>
+            <BridgeDaiDistributionBarChart
+              title="DAI Distribution"
+              error={error}
+              data={daiDistributionData}
+            />
+          </Flex>
+        </Flex>
+      </Card>
 
-      <Flex sx={{ gap: 2, flexWrap: ['wrap', 'wrap', 'wrap', 'nowrap'] }}>
-        <KpiCardList data={netInflowsKpiData} error={error} />
+      <Card>
+        <Flex sx={{ gap: 2, flexWrap: ['wrap', 'wrap', 'wrap', 'nowrap'] }}>
+          <KpiCardList data={netInflowsKpiData} error={error} />
 
-        {error ? (
-          <Text variant="error" role="textbox" aria-label="Error message">
-            {'Net Inflows data is not available at the moment.'}
-          </Text>
-        ) : (
-          <BridgeFlowsChart
-            data={netFlowsChartData}
-            title="Net Inflows"
-            aria-label="Net inflows chart"
-          />
-        )}
-      </Flex>
+          {error ? (
+            <Text variant="error" role="textbox" aria-label="Error message">
+              {'Net Inflows data is not available at the moment.'}
+            </Text>
+          ) : (
+            <Box sx={{ flex: ['1 1 100%', '1 1 0%', '1 1 0%'] }}>
+              <BridgeFlowsChart
+                data={netFlowsChartData}
+                title="Net Inflows"
+                aria-label="Net inflows chart"
+              />
+            </Box>
+          )}
+        </Flex>
+      </Card>
     </Flex>
   );
 }

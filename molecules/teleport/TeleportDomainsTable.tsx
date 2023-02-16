@@ -73,11 +73,19 @@ export default function TeleportDomainsTable({
 
   return (
     <Table
-      title="Teleport"
       sx={{
         table: {
           textAlign: 'left',
-          tableLayout: 'fixed'
+          tableLayout: 'fixed',
+          ['td, th']: {
+            padding: '9px, 16px',
+            verticalAlign: 'baseline',
+            whiteSpace: 'nowrap',
+            backgroundColor: 'surface'
+          }
+        },
+        tableSuperContainer: {
+          border: 'none'
         },
         tableContainer: {
           position: 'relative',
@@ -193,8 +201,7 @@ export default function TeleportDomainsTable({
                     aria-label={domain + ' Bridge fast withdrawal cell'}
                     sx={{
                       textAlign: 'right',
-                      position: 'relative',
-                      zIndex: -1
+                      position: 'relative'
                     }}>
                     <Text
                       sx={{
@@ -223,7 +230,7 @@ export default function TeleportDomainsTable({
                       }
                       sx={{
                         height: 24,
-                        backgroundColor: 'background',
+                        backgroundColor: 'surface',
                         border: '1px solid',
                         borderColor: 'secondary',
                         display: 'inline-block',

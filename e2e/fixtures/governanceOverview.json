@@ -1,0 +1,368 @@
+{
+  "total_mkr_locked_in_cheif": 196163.56964624312,
+  "mkr_locked_in_chief_by_recognized": 93927.65001210266,
+  "mkr_locked_in_chief_by_shadow": 57571.18329301768,
+  "mkr_locked_in_chief_by_regular": 34131.01123622317,
+  "unique_recognized": 28.0,
+  "unique_shadow": 151.0,
+  "unique_regular": 651.0,
+  "mkr_locked_in_hat_from_recognized": 89262.16493874027,
+  "mkr_locked_in_hat_from_shadow": 1.0,
+  "mkr_locked_in_hat_from_regular": 0.08070764831848448,
+  "mkr_locked_in_governing_executive": 89263.24564638859,
+  "avg_mkr_used_in_polls": 49725.70474964153,
+  "avg_voters_count_in_polls": 27.002336,
+  "exexutives_passed": [
+    ["2020-7", 4],
+    ["2021-7", 3],
+    ["2020-11", 5],
+    ["2020-12", 5],
+    ["2022-10", 5],
+    ["2020-10", 4],
+    ["2022-3", 5],
+    ["2022-1", 4],
+    ["2021-2", 4],
+    ["2021-4", 6],
+    ["2021-1", 5],
+    ["2020-8", 6],
+    ["2023-1", 2],
+    ["2021-8", 3],
+    ["2020-9", 7],
+    ["2021-3", 6],
+    ["2020-6", 2],
+    ["2022-4", 4],
+    ["2022-5", 4],
+    ["2021-10", 3],
+    ["2022-9", 3],
+    ["2022-7", 4],
+    ["2021-9", 3],
+    ["2021-12", 2],
+    ["2021-11", 5],
+    ["2021-5", 4],
+    ["2021-6", 3],
+    ["2022-11", 4],
+    ["2022-6", 2],
+    ["2022-12", 2],
+    ["2022-8", 4],
+    ["2020-5", 1],
+    ["2022-2", 1],
+    ["1970-1", 1]
+  ],
+  "exexutives_rejected": [
+    ["2020-8", 1],
+    ["2021-8", 1],
+    ["2020-9", 1]
+  ],
+  "executives": {
+    "1970-1": { "passed": 1 },
+    "2020-10": { "passed": 4 },
+    "2020-11": { "passed": 5 },
+    "2020-12": { "passed": 5 },
+    "2020-5": { "passed": 1 },
+    "2020-6": { "passed": 2 },
+    "2020-7": { "passed": 4 },
+    "2020-8": { "passed": 6, "rejected": 1 },
+    "2020-9": { "passed": 7, "rejected": 1 },
+    "2021-1": { "passed": 5 },
+    "2021-10": { "passed": 3 },
+    "2021-11": { "passed": 5 },
+    "2021-12": { "passed": 2 },
+    "2021-2": { "passed": 4 },
+    "2021-3": { "passed": 6 },
+    "2021-4": { "passed": 6 },
+    "2021-5": { "passed": 4 },
+    "2021-6": { "passed": 3 },
+    "2021-7": { "passed": 3 },
+    "2021-8": { "passed": 3, "rejected": 1 },
+    "2021-9": { "passed": 3 },
+    "2022-1": { "passed": 4 },
+    "2022-10": { "passed": 5 },
+    "2022-11": { "passed": 4 },
+    "2022-12": { "passed": 2 },
+    "2022-2": { "passed": 1 },
+    "2022-3": { "passed": 5 },
+    "2022-4": { "passed": 4 },
+    "2022-5": { "passed": 4 },
+    "2022-6": { "passed": 2 },
+    "2022-7": { "passed": 4 },
+    "2022-8": { "passed": 4 },
+    "2022-9": { "passed": 3 },
+    "2023-1": { "passed": 2 }
+  },
+  "voters_in_polls": {
+    "2019-10": {
+      "MKRs_used_for_polling": {
+        "regular": 207370.4757280656
+      },
+      "unique_voters": 72
+    },
+    "2019-11": {
+      "MKRs_used_for_polling": {
+        "regular": 198044.9034671747
+      },
+      "unique_voters": 98
+    },
+    "2019-12": {
+      "MKRs_used_for_polling": {
+        "regular": 408053.7280131909
+      },
+      "unique_voters": 98
+    },
+    "2019-8": {
+      "MKRs_used_for_polling": {
+        "regular": 225096.06202601542
+      },
+      "unique_voters": 140
+    },
+    "2019-9": {
+      "MKRs_used_for_polling": {
+        "regular": 220401.48917699832
+      },
+      "unique_voters": 72
+    },
+    "2020-1": {
+      "MKRs_used_for_polling": {
+        "regular": 609650.5815142215
+      },
+      "unique_voters": 83
+    },
+    "2020-10": {
+      "MKRs_used_for_polling": {
+        "regular": 1392165.1813262454
+      },
+      "unique_voters": 85
+    },
+    "2020-11": {
+      "MKRs_used_for_polling": {
+        "regular": 1439779.1697441058
+      },
+      "unique_voters": 175
+    },
+    "2020-12": {
+      "MKRs_used_for_polling": {
+        "regular": 922543.5437180364
+      },
+      "unique_voters": 68
+    },
+    "2020-2": {
+      "MKRs_used_for_polling": {
+        "regular": 650757.2966382217
+      },
+      "unique_voters": 84
+    },
+    "2020-3": {
+      "MKRs_used_for_polling": {
+        "regular": 435421.1120153135
+      },
+      "unique_voters": 72
+    },
+    "2020-4": {
+      "MKRs_used_for_polling": {
+        "regular": 1105116.2842392526
+      },
+      "unique_voters": 138
+    },
+    "2020-5": {
+      "MKRs_used_for_polling": {
+        "regular": 466161.43321886356
+      },
+      "unique_voters": 113
+    },
+    "2020-6": {
+      "MKRs_used_for_polling": {
+        "regular": 958898.2517096559
+      },
+      "unique_voters": 106
+    },
+    "2020-7": {
+      "MKRs_used_for_polling": {
+        "regular": 881512.2438723269
+      },
+      "unique_voters": 118
+    },
+    "2020-8": {
+      "MKRs_used_for_polling": {
+        "regular": 1083211.3086818953
+      },
+      "unique_voters": 118
+    },
+    "2020-9": {
+      "MKRs_used_for_polling": {
+        "regular": 846977.1823142575
+      },
+      "unique_voters": 59
+    },
+    "2021-1": {
+      "MKRs_used_for_polling": {
+        "regular": 1531463.2117776566
+      },
+      "unique_voters": 65
+    },
+    "2021-10": {
+      "MKRs_used_for_polling": {
+        "recognized": 824418.353478,
+        "regular": 169628.70211556027,
+        "shadow": 480916.575242
+      },
+      "unique_voters": 46
+    },
+    "2021-11": {
+      "MKRs_used_for_polling": {
+        "recognized": 2164423.515935,
+        "regular": 309701.9041018025,
+        "shadow": 64744.68488
+      },
+      "unique_voters": 38
+    },
+    "2021-12": {
+      "MKRs_used_for_polling": {
+        "recognized": 1053886.19396,
+        "regular": 16656.46895597806,
+        "shadow": 147.69999999999996
+      },
+      "unique_voters": 17
+    },
+    "2021-2": {
+      "MKRs_used_for_polling": {
+        "regular": 1609244.3318565667
+      },
+      "unique_voters": 66
+    },
+    "2021-3": {
+      "MKRs_used_for_polling": {
+        "regular": 1325179.92293784
+      },
+      "unique_voters": 237
+    },
+    "2021-4": {
+      "MKRs_used_for_polling": {
+        "regular": 539942.7635348724
+      },
+      "unique_voters": 75
+    },
+    "2021-5": {
+      "MKRs_used_for_polling": {
+        "regular": 795883.6350124402
+      },
+      "unique_voters": 104
+    },
+    "2021-6": {
+      "MKRs_used_for_polling": {
+        "regular": 672736.3443681254
+      },
+      "unique_voters": 59
+    },
+    "2021-7": {
+      "MKRs_used_for_polling": {
+        "regular": 654773.5373783604,
+        "shadow": 8.8
+      },
+      "unique_voters": 80
+    },
+    "2021-8": {
+      "MKRs_used_for_polling": {
+        "recognized": 107859.479031,
+        "regular": 221463.4714852933,
+        "shadow": 137480.7
+      },
+      "unique_voters": 58
+    },
+    "2021-9": {
+      "MKRs_used_for_polling": {
+        "recognized": 546983.480296,
+        "regular": 265672.2568249988,
+        "shadow": 496197.775021
+      },
+      "unique_voters": 38
+    },
+    "2022-1": {
+      "MKRs_used_for_polling": {
+        "recognized": 1725510.127913,
+        "regular": 113749.41906312469,
+        "shadow": 201838.7496
+      },
+      "unique_voters": 26
+    },
+    "2022-2": {
+      "MKRs_used_for_polling": {
+        "recognized": 1237102.596637,
+        "regular": 27701.552273612862,
+        "shadow": 9595.6
+      },
+      "unique_voters": 18
+    },
+    "2022-3": {
+      "MKRs_used_for_polling": {
+        "recognized": 1563267.537525,
+        "regular": 120278.38831871774,
+        "shadow": 55888.59244
+      },
+      "unique_voters": 52
+    },
+    "2022-4": {
+      "MKRs_used_for_polling": {
+        "recognized": 1624163.074636,
+        "regular": 44417.50492382488,
+        "shadow": 182.3999999999999
+      },
+      "unique_voters": 33
+    },
+    "2022-5": {
+      "MKRs_used_for_polling": {
+        "recognized": 1440733.250037,
+        "regular": 179887.85318593154,
+        "shadow": 6139.39748
+      },
+      "unique_voters": 130
+    },
+    "2022-6": {
+      "MKRs_used_for_polling": {
+        "recognized": 1977579.735884,
+        "regular": 881779.0251869508,
+        "shadow": 484996.97928699997
+      },
+      "unique_voters": 265
+    },
+    "2022-7": {
+      "MKRs_used_for_polling": {
+        "recognized": 857230.359839,
+        "regular": 77042.2615863633,
+        "shadow": 80.41653399999996
+      },
+      "unique_voters": 239
+    },
+    "2022-8": {
+      "MKRs_used_for_polling": {
+        "recognized": 1623910.878756,
+        "regular": 61400.694146322065,
+        "shadow": 7.101665
+      },
+      "unique_voters": 295
+    },
+    "2022-9": {
+      "MKRs_used_for_polling": {
+        "recognized": 531913.887644,
+        "regular": 11953.57915920996,
+        "shadow": 17058
+      },
+      "unique_voters": 66
+    },
+    "2023-1": {
+      "MKRs_used_for_polling": {
+        "recognized": 1369654.33778,
+        "regular": 2348.4992406530573,
+        "shadow": 97229.45
+      },
+      "unique_voters": 66
+    },
+    "2023-2": {
+      "MKRs_used_for_polling": {
+        "recognized": 179987.28843000002,
+        "regular": 0.6317451043016923,
+        "shadow": 0.03918
+      },
+      "unique_voters": 24
+    }
+  },
+  "is_latest_executive_hat": false
+}

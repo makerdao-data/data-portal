@@ -8,6 +8,7 @@ import { RefreshData } from '../../hooks/refresh-data';
 import { Domains } from '../../types/teleport';
 import { NETWORK_SCANNERS_URLS } from '../../constants';
 import { CsvData } from '../../components/CsvExport';
+import Card from '../../components/Card';
 
 type MainKpiCardProps = {
   title: string;
@@ -31,7 +32,7 @@ export default function MainKpiCard({
   const intl = useIntl();
 
   return (
-    <Flex
+    <Card
       sx={{
         flexDirection: 'column',
         justifyContent: 'space-between',
@@ -44,7 +45,12 @@ export default function MainKpiCard({
           {`${title} data is not available at the moment.`}
         </Text>
       ) : (
-        <Fragment>
+        <Flex
+          sx={{
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            height: '100%'
+          }}>
           <KpiCard
             title={title}
             value={value}
@@ -52,7 +58,7 @@ export default function MainKpiCard({
             exportMethod={exportMethod}
             sx={{
               border: 'none',
-              paddingLeft: 0,
+              padding: 0,
               ['span']: value
                 ? {
                     alignSelf: ['center', 'flex-start', 'flex-start']
@@ -98,8 +104,8 @@ export default function MainKpiCard({
               </Text>
             </Fragment>
           </Flex>
-        </Fragment>
+        </Flex>
       )}
-    </Flex>
+    </Card>
   );
 }

@@ -1,7 +1,6 @@
 import { ResponsiveBar } from '@nivo/bar';
 import { Box, Flex, useColorMode } from 'theme-ui';
 import { Text, useTheme } from '@makerdao-dicu/makerdao-ui';
-import { Fragment } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import { useIntl } from 'next-intl';
 import { BridgeDaiComparisionBarChartData } from '../../utils/data-transformers/create-bridge-dai-distributin-bar-chart-data';
@@ -25,35 +24,30 @@ export default function BridgeDaiDistributionBarChart({
     <Flex
       sx={{
         flexDirection: 'column',
-        ['.tv-lightweight-charts']: {
-          borderRadius: '8px'
-        },
-        border: error ? 'none' : '1px solid',
-        borderColor: 'secondary',
-        borderRadius: '8px',
-        height: '261px',
+        height: '280px',
         width: '100%',
         flex: ['1 1 100%', '1 1 100%', '1 1 100%', '1 1 0%'],
         alignSelf: 'flex-end',
-        padding: 2
+        gap: '24px'
       }}>
-      <Fragment>
-        <Text
-          variant="smallHeading"
-          role="heading"
-          aria-label={title + ' comparison title'}>
-          {title}
-        </Text>
+      <Text
+        variant="smallHeading"
+        role="heading"
+        aria-label={title + ' comparison title'}>
+        {title}
+      </Text>
 
-        {error ? (
-          <Text variant="error" role="textbox" aria-label="Error message">
-            {title + ' data is not available at the moment.'}
-          </Text>
-        ) : data.dataSeries.length > 0 ? (
+      {error ? (
+        <Text variant="error" role="textbox" aria-label="Error message">
+          {title + ' data is not available at the moment.'}
+        </Text>
+      ) : data.dataSeries.length > 0 ? (
+        <Box
+          role="figure"
+          aria-label={title + ' chart'}
+          sx={{ height: '250px' }}>
           <ResponsiveBar
             data={data.dataSeries}
-            role="figure"
-            ariaLabel={title + ' chart'}
             keys={data.dataSeries.map(({ id }) => String(id))}
             indexBy="id"
             margin={{ top: 20, right: 0, bottom: 70, left: 20 }}
@@ -155,10 +149,10 @@ export default function BridgeDaiDistributionBarChart({
               );
             }}
           />
-        ) : (
-          <Skeleton height={220} style={{ borderRadius: '8px', top: '-4px' }} />
-        )}
-      </Fragment>
+        </Box>
+      ) : (
+        <Skeleton height={220} style={{ borderRadius: '8px', top: '-4px' }} />
+      )}
     </Flex>
   );
 }

@@ -1,0 +1,902 @@
+[
+  {
+    "block": 12795624,
+    "timestamp": "2021-07-09T21:37:35",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x5299370b4e2ba6a8a16e3c770ef52214965ac82a",
+    "delegate": "0x0000000000cd12432608dbf16209fe742954e607",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 12858954,
+    "timestamp": "2021-07-19T19:42:03",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x14a4ed2000ca405452c140e21c10b3536c1a98e4",
+    "delegate": "0x883b94bbd31902c79ab2c2daf89d439c94232319",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 12906428,
+    "timestamp": "2021-07-27T05:59:34",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xb21e535fb349e4ef0520318acfe589e174b0126b",
+    "delegate": "0xd52623ee9a40402a5a9ed82bb0417e04d88a778c",
+    "type": "recognized",
+    "name": "ultraschuppi"
+  },
+  {
+    "block": 12912742,
+    "timestamp": "2021-07-28T06:04:45",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x845b36e1e4f41a361dd711bda8ea239bf191fe95",
+    "delegate": "0x80882f2a36d49fc46c3c654f7f9cb9a2bf0423e1",
+    "type": "recognized",
+    "name": "Feedblack Loops LLC"
+  },
+  {
+    "block": 12914692,
+    "timestamp": "2021-07-28T13:27:44",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xaf8aa6846539033eaf0c3ca4c9c7373e370e039b",
+    "delegate": "0x688d508f3a6b0a377e266405a1583b3316f9a2b3",
+    "type": "recognized",
+    "name": "Flip Flop Flap Delegate LLC"
+  },
+  {
+    "block": 12915493,
+    "timestamp": "2021-07-28T16:37:01",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xad2fda5f6ce305d2ced380fdfa791b6a26e7f281",
+    "delegate": "0x0988e41c02915fe1befa78c556f946e5f20ffbd3",
+    "type": "recognized",
+    "name": "Field Technologies, Inc."
+  },
+  {
+    "block": 12920035,
+    "timestamp": "2021-07-29T09:50:47",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x00daec2c2a6a3fcc66b02e38b7e56dcdfa9347a1",
+    "delegate": "0xe88fa472bfb71f5f8f708209345423db967913b5",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 12947590,
+    "timestamp": "2021-08-02T18:36:22",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x2c3b917cceaf41503145ceb4b37c8623d862c4cd",
+    "delegate": "0x6a3000945173ad8905c70fda700ebbe1c41eab40",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 12953031,
+    "timestamp": "2021-08-03T15:15:01",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x45127ec92b58c3a89e89f63553073adcaf2f1f5f",
+    "delegate": "0x8d07d225a769b7af3a923481e1fdf49180e6a265",
+    "type": "recognized",
+    "name": "monetsupply"
+  },
+  {
+    "block": 13009584,
+    "timestamp": "2021-08-12T09:43:21",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x22d5294a23d49294bf11d9db8beda36e104ad9b3",
+    "delegate": "0x9ac6a6b24bcd789fa59a175c0514f33255e1e6d0",
+    "type": "recognized",
+    "name": "MakerMan"
+  },
+  {
+    "block": 13016968,
+    "timestamp": "2021-08-13T13:04:09",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xb0b829a6aae0f7e59b43391b2c8a1cfd0c801c8c",
+    "delegate": "0x683a4f9915d6216f73d6df50151725036bd26c02",
+    "type": "recognized",
+    "name": "gauntlet"
+  },
+  {
+    "block": 13063757,
+    "timestamp": "2021-08-20T18:37:48",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x68b216e9fc96a7b98b5c0028ff72e4c39c5c5a61",
+    "delegate": "0x5bc928bf0dab1e4a2ddd9e347b0f22e88026d76c",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 13102911,
+    "timestamp": "2021-08-26T19:26:43",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xefcc3401739427eb0491cc27c7baa06817c7dfdb",
+    "delegate": "0xcac383f9e60889515ff661a0ba1b60e9354b56ca",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 13256717,
+    "timestamp": "2021-09-19T14:41:10",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x372ac7b024ccf098b4eb1c2685053164bee30ee6",
+    "delegate": "0x749fee22929ffb4d9be21fbeef05ed076a94e68f",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 13466357,
+    "timestamp": "2021-10-22T08:24:49",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x8b258b16969b27141a6274935184c2b940f93443",
+    "delegate": "0xe4402998883d7f681e88b3a7cdb78d68d7a21bef",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 13588098,
+    "timestamp": "2021-11-10T10:56:12",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xf60d7a62c98f65480725255e831de531efe3fe14",
+    "delegate": "0xa6e8772af29b29b9202a073f8e36f447689beef6",
+    "type": "recognized",
+    "name": "GFX Labs"
+  },
+  {
+    "block": 13634808,
+    "timestamp": "2021-11-17T19:21:19",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xcdb792c14391f7115ba77a7cd27f724fc9ea2091",
+    "delegate": "0x967d901496d3c3695f7adcec1a6a8d7eae4cf101",
+    "type": "recognized",
+    "name": "JustinCase"
+  },
+  {
+    "block": 13709346,
+    "timestamp": "2021-11-29T15:19:58",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x4d3ac33ab1dd7b0f352b8e590fe8b62c4c39ead5",
+    "delegate": "0x5b9c98e8a3d9db6cd4b4b4c1f92d0a551d06f00d",
+    "type": "recognized",
+    "name": "ACREinvest"
+  },
+  {
+    "block": 14036893,
+    "timestamp": "2022-01-19T15:57:32",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x4ec6ba3b5ac516aec98212afd90471d6fb8e9d99",
+    "delegate": "0x2fecea370e95cf4305dde128867127290ad8bd61",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14040812,
+    "timestamp": "2022-01-20T06:28:18",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xe1c47f39b3e628c2ad03c5517878b6abeb79cf78",
+    "delegate": "0x5f48d5639d4631e8db4c05f4aa708fc3d3e145ed",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14113879,
+    "timestamp": "2022-01-31T13:19:23",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xafaff1a605c373b43727136c995d21a7fcd08989",
+    "delegate": "0x9985bb6087eb46ab803796dfe8b1bb2cb2963b1c",
+    "type": "recognized",
+    "name": "Hasu"
+  },
+  {
+    "block": 14209468,
+    "timestamp": "2022-02-15T07:47:31",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x8804d391472126da56b9a560aef6c6d5aaa7607b",
+    "delegate": "0xa6ca9f4210960dcf667f397bb24f5d023b7eacc8",
+    "type": "recognized",
+    "name": "Doo"
+  },
+  {
+    "block": 14296448,
+    "timestamp": "2022-02-28T19:07:12",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x84b05b0a30b6ae620f393d1037f217e607ad1b96",
+    "delegate": "0x62a43123fe71f9764f26554b3f5017627996816a",
+    "type": "recognized",
+    "name": "Flipside Crypto"
+  },
+  {
+    "block": 14501130,
+    "timestamp": "2022-04-01T15:14:58",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xaa19f47e6acb02df88efa9f023f2a38412069902",
+    "delegate": "0x97fb39171acd7c82c439b6158ea2f71d26ba383d",
+    "type": "recognized",
+    "name": "mhonkasalo & teemulau"
+  },
+  {
+    "block": 14514242,
+    "timestamp": "2022-04-03T16:40:15",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x7ddb50a5b15aea7e7cf9ac8e55a7f9fd9d05ecc6",
+    "delegate": "0x070341aa5ed571f0fb2c4a5641409b1a46b4961b",
+    "type": "recognized",
+    "name": "Penn Blockchain"
+  },
+  {
+    "block": 14711859,
+    "timestamp": "2022-05-04T15:56:51",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x2c966c13070277c6c2bc831108f1a82ff777d370",
+    "delegate": "0xc2d1f486188356bfd71175c67f3ed738cccefd83",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14712336,
+    "timestamp": "2022-05-04T17:43:31",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x3c1a2559389fe61491793e8d40a6ed7089eb470b",
+    "delegate": "0x38b8a65da781ca11931e331e895b4c15b6bf717d",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14747382,
+    "timestamp": "2022-05-10T07:50:27",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x23fc251a4eca4a30489441cea4b09e74c5121379",
+    "delegate": "0x858128d2f83dbb226b6cf29bffe5e7e129c3a128",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14781831,
+    "timestamp": "2022-05-15T19:36:02",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xf1792852bf860b4ef84a2869df1550bc80ec0ab7",
+    "delegate": "0xb83b3e9c8e3393889afb272d354a7a3bd1fbcf5c",
+    "type": "recognized",
+    "name": "London Business School"
+  },
+  {
+    "block": 14794002,
+    "timestamp": "2022-05-17T18:00:08",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xb8df77c3bd57761bd0c55d2f873d3aa89b3da8b7",
+    "delegate": "0xdc1f98682f4f8a5c6d54f345f448437b83f5e432",
+    "type": "recognized",
+    "name": "Blockchain@Columbia"
+  },
+  {
+    "block": 14808631,
+    "timestamp": "2022-05-20T02:55:58",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x59557754414aedbf50421ea1136e8731243cc32a",
+    "delegate": "0x24394a4758dbdcf6fcbc14dc35af64ac0d9a450a",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14878631,
+    "timestamp": "2022-05-31T12:14:02",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x2c511d932c5a6fe4071262d49bfc018cfbaaa1f5",
+    "delegate": "0xa3f0abb4ba74512b5a736c5759446e9b50fda170",
+    "type": "recognized",
+    "name": "Chris Blec"
+  },
+  {
+    "block": 14932355,
+    "timestamp": "2022-06-09T11:31:52",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x1c318c0520f6919510dfb7cb9adcbf0ec548fad2",
+    "delegate": "0xbee3c272ad4215cb352291af334ddc014bb3c20b",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14933694,
+    "timestamp": "2022-06-09T17:04:10",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x0659bcb24d340418acd5d0b4cd5eac4c9f008a3f",
+    "delegate": "0x89768ca7e116d7971519af950dbbdf6e80b9ded1",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14934564,
+    "timestamp": "2022-06-09T20:34:41",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x0772c2057faa6742e2625d78a18e8951f88e0fa9",
+    "delegate": "0xefa80a25527fcdde37058aad50983f5c5f72039c",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14935898,
+    "timestamp": "2022-06-10T02:02:07",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xa3798b6274c4e67292098762c075b9d68b0d722e",
+    "delegate": "0x8390e3f92b24cfd8682111329cf25b86aba76cf3",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14936141,
+    "timestamp": "2022-06-10T03:02:28",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xd6226683bbb504bbe578e5fb72607e0f9b3aae19",
+    "delegate": "0x5e4db3f9811974246080cc663726e465de27cdc3",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14936261,
+    "timestamp": "2022-06-10T03:29:38",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x937f55e262f561217c7ac6d106eab8508766aab0",
+    "delegate": "0x2385202c54197c5a5d007c55311c050adf9a9dc8",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14936291,
+    "timestamp": "2022-06-10T03:36:54",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x5668060f1adb74568f8bf9c3b0b9f3eca86dfccb",
+    "delegate": "0xb9ed52d10ee3e2918cb7aa525449c732fa5108f6",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14940153,
+    "timestamp": "2022-06-10T19:25:00",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x291c484b281570635cc4715339c8ce9e6263a865",
+    "delegate": "0xa2e8b3bac9192265052ae5560133760af7e127bb",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14959920,
+    "timestamp": "2022-06-14T04:46:25",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x797d63cb6709c79b9eca99d9585ea613da205156",
+    "delegate": "0xb7771f70633c7e54e61dd38d01c26da0e86be1a5",
+    "type": "recognized",
+    "name": "ChicagoDAO"
+  },
+  {
+    "block": 14960815,
+    "timestamp": "2022-06-14T08:33:36",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x74971f1be0afd1bb820668abfe411d164f17b53c",
+    "delegate": "0xdc306882831243d1e914236464d66ca469093841",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14969682,
+    "timestamp": "2022-06-15T21:27:45",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x94070ad138abdd3742166e75b4d4e645b5d8b11e",
+    "delegate": "0x2fd7e798cc63769bee0b68d69ad5a9f4a53584d5",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14976381,
+    "timestamp": "2022-06-17T01:04:48",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x0b9f14926a8a127bae2f084f78bd9160921be8fa",
+    "delegate": "0x62d44f7540345de09b6b0ae6780dc151ef40b1d9",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14978761,
+    "timestamp": "2022-06-17T10:48:02",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xaf6fe58ccb66d288b70c11bce0903de51026a4e6",
+    "delegate": "0x2dd49b0aacbab93d7c8327e62dd145def2b84c6f",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14983071,
+    "timestamp": "2022-06-18T04:30:23",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x3d0cc78d54cfdef2ab3395c3d0d52d293f01a3c6",
+    "delegate": "0x8fb9afdcc074599d86327b731f47ffa5375823a9",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14991231,
+    "timestamp": "2022-06-19T14:28:10",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x4e314eba76c3062140ad196e4ffd34485e33c5f5",
+    "delegate": "0xd2362dbb5aa708bc454ce5c3f11050c016764fa6",
+    "type": "recognized",
+    "name": "Governance House"
+  },
+  {
+    "block": 14991345,
+    "timestamp": "2022-06-19T14:54:15",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xfd1d2c4142ea3fee1a5ebcea2446d23fdf11d67f",
+    "delegate": "0x5a0dc15c9ececeded97c7b1121461edc623a0349",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14991727,
+    "timestamp": "2022-06-19T16:32:24",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x8983373157d62ce651bd63883887ee4c56767e0f",
+    "delegate": "0xf710e54cfc59eedb5111567c0454519a0823418e",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14991745,
+    "timestamp": "2022-06-19T16:36:19",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xaacd3f9d01917ce75aec78be5779569c3b62b838",
+    "delegate": "0x3cd57e435a32df158e2077c340cc58dea738fc76",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14991760,
+    "timestamp": "2022-06-19T16:40:26",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x791c5bcecd163b7337412044479679776004b754",
+    "delegate": "0x159e7b1d3c5d1adc404c042149ed25e990338687",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14991776,
+    "timestamp": "2022-06-19T16:43:43",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xed06b6b384a4ccad3c2fa684d844d96cb3c0a4a8",
+    "delegate": "0x20e018d263acded93ed19e69e90c2b44c86e8497",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14991790,
+    "timestamp": "2022-06-19T16:46:56",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xb7375a852748c633f79a068b1cc526ccae92c4cc",
+    "delegate": "0x2686cc0c7459e65db3b560d887b96ff01b56dde5",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14991808,
+    "timestamp": "2022-06-19T16:51:37",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x413aafa55b528a3f603e8905c429a9b04d54e8bd",
+    "delegate": "0x4a7ed569f29708368d9e897989574c0c49ef608b",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14991825,
+    "timestamp": "2022-06-19T16:54:51",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x0fbdd2d1a0c9b2a512593fe26e0aff678d5448f0",
+    "delegate": "0xfd9847e3547de28328894588c6beb34a72aa5ccb",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14991832,
+    "timestamp": "2022-06-19T16:57:28",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x0e70b137787255a8a690b6bfe6364e3499f855ae",
+    "delegate": "0x4c9157696c022144d0ca128b5e46c9b8ed65ccaf",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14991845,
+    "timestamp": "2022-06-19T17:00:33",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x4b8909d025094080d0ff02919bf1af4d8107580f",
+    "delegate": "0xdc960f15c34a666ac94e936b89fb9611e4ec44f1",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14991862,
+    "timestamp": "2022-06-19T17:04:24",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x9fc1de5dc99ca3ab23cf8c6cb484249168a2faaf",
+    "delegate": "0xaa824a09c17c67e1328da4b9cdefb85e558c4cc1",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14991884,
+    "timestamp": "2022-06-19T17:08:16",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x1e2dd00f8efb8c195fe040c26b4fb36d396bb43d",
+    "delegate": "0xab3b469a60a78c75e420ea3bf57529c023b2c9fe",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14991885,
+    "timestamp": "2022-06-19T17:08:40",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xdb3d52d1461f80db44fdfa47fa64df1952b8d08c",
+    "delegate": "0xe6a340587a76890c0f7b91c12e181d33e398eda7",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14991886,
+    "timestamp": "2022-06-19T17:08:57",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x52d31c9f05c821a03087bc6ba78bf5aeb10205b0",
+    "delegate": "0x32f12d5dcf5911b11698024306b50b0281b61491",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14991886,
+    "timestamp": "2022-06-19T17:08:57",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x0f7b7cd119f16e2f7a0e8df338033cc2a0322b02",
+    "delegate": "0x63cc2166f1c94f68daf3f44dca2ca68835308ce2",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14991887,
+    "timestamp": "2022-06-19T17:09:21",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x7fe2e9f7edc63ffa233e1ac47684d082cdc93af6",
+    "delegate": "0x96b87cde66e27b52c148a5a5a7ca4d989d82e31d",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14991889,
+    "timestamp": "2022-06-19T17:09:38",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x812c24756e2e80b9e4681faf3ec1628dd4d55e92",
+    "delegate": "0xd56b4192a71687ab1ef4d497d7d6a9fa4714e15d",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14991891,
+    "timestamp": "2022-06-19T17:10:48",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xd906ec9be57bb835572110a84f14342b8f7b3dfb",
+    "delegate": "0x9466736b53b7ce25e3cfc4c33a619372acfd2501",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14991891,
+    "timestamp": "2022-06-19T17:10:48",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x9dffc66cb3a0337088d03e9a68442bee6b945d94",
+    "delegate": "0x301735ce03028e429199fd6a65cedd916b8792a1",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14991892,
+    "timestamp": "2022-06-19T17:10:53",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xa72b66af48877494ab9a4903fe2b2ca89663479d",
+    "delegate": "0x896333fb5145f184f1dc6fe88fbf10392edd313b",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14991892,
+    "timestamp": "2022-06-19T17:10:53",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xa271534f8120036aa9f34ddd0762deac44397f6a",
+    "delegate": "0xe6895cad8a69c7e9c95d006edc0a44da1e44e152",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14993975,
+    "timestamp": "2022-06-20T01:50:12",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x0655039e45d8b711efda6ac3ec812ec97e5b5c4c",
+    "delegate": "0xac7ec5ef22b13a00422d6b04829ee993f5c96e1b",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14994355,
+    "timestamp": "2022-06-20T03:28:35",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xf25ff2fae5bc8801ac44c00d5acafbebe48601b8",
+    "delegate": "0xfa0c3a490ee63edf277d15bf171997f3306d0520",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14994355,
+    "timestamp": "2022-06-20T03:28:35",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x6d6ff0f26dc401b715d24b5abe54264fef4d9dff",
+    "delegate": "0xdcd9d4403fd34caec239433721ed80d90e761f82",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14994404,
+    "timestamp": "2022-06-20T03:39:27",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x3a7aec33e7d36a8c8ac2f942a5f94e2d5dc0fbc3",
+    "delegate": "0x489243703959e200099b8cbe3bfdd86f13ce6be1",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14994404,
+    "timestamp": "2022-06-20T03:39:27",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xcb176586abdc3d1fcbb0589ce35c69879fbcb761",
+    "delegate": "0xd04048989a2bb05d9b5e7d4f9278d75dbf33327c",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 14999044,
+    "timestamp": "2022-06-20T22:40:09",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xf88790fb8f155924a2b3519871711f776a3cd0ff",
+    "delegate": "0x6289d52e79fbc4f97914178c6fdc586f56165de6",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 15000610,
+    "timestamp": "2022-06-21T05:09:16",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x112fd9e1bd30c9d43aaff155996014a4a51c6cff",
+    "delegate": "0xcffab3dfdca60d838512c41a772e799b71df1af4",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 15003017,
+    "timestamp": "2022-06-21T15:47:03",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xd0b4f8be71c100fa8d8fd47b939ec98f30727c31",
+    "delegate": "0x39d52da6beec991f075eebe577474fd105c5caec",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 15035215,
+    "timestamp": "2022-06-27T16:16:37",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x418594996e852041c020f99077233cec98a3af9e",
+    "delegate": "0xe2a82cdccbfa6ebf9817b0c4aed45264bd41fbec",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 15061941,
+    "timestamp": "2022-07-02T08:11:34",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x7474aa669775df936a4d1502cdbbc9bfef777a04",
+    "delegate": "0x562bf1b67dc40d9b7c3ddd49e45ae58e61e1b76e",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 15061957,
+    "timestamp": "2022-07-02T08:15:22",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x82a1e99ab8920e67f56e8da0f8546e28d9e86059",
+    "delegate": "0xf06f09c65635ea3db2f6255cabefcc11d28f2ef2",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 15062006,
+    "timestamp": "2022-07-02T08:24:30",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x1a18c25e5ffda2363bcf3b4159cb29d56cefa706",
+    "delegate": "0xda6c2d0f44352d9f4b8ebb00606657310ea4e26b",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 15062096,
+    "timestamp": "2022-07-02T08:46:03",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x563333c4d45abf38592479ebe87f9cd00d696fee",
+    "delegate": "0xdc09eb652d4568c3e22d176bce8f5efb12af7716",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 15062105,
+    "timestamp": "2022-07-02T08:48:17",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x3a4423fc9771e0c4bd1044fef7dbfc4cb251a69c",
+    "delegate": "0xf55f8884203632eb007f239758d1b25cd173458b",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 15062122,
+    "timestamp": "2022-07-02T08:52:24",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x690f6bd1ae0267e6ed95af6765aa9fd53da3610e",
+    "delegate": "0xbbfc1d1f420703aebe13007f5ce0182f70bf35b9",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 15062139,
+    "timestamp": "2022-07-02T08:54:33",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xe5e7c0027685576d3f0aacae7471ba3352f2ac56",
+    "delegate": "0xc03f8455f1492a1598b43211b0573b67ecc58c62",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 15062152,
+    "timestamp": "2022-07-02T08:57:43",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x97e3a106c3d42a1017c0829ce9acc8c6fc76d760",
+    "delegate": "0x40276ba5efdfbbf749557f6b2a094abd78197164",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 15094464,
+    "timestamp": "2022-07-07T08:45:39",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xd4be177aaa9521e05179683470684bddffeb1051",
+    "delegate": "0xf11a3703226a02825f23a02c1b3663be8fc46060",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 15100156,
+    "timestamp": "2022-07-08T05:53:10",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x9d080902fae4b720e00b5698f665e456909e6b53",
+    "delegate": "0xc29fc038cd055842d466281f609c319bde595017",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 15110999,
+    "timestamp": "2022-07-09T22:10:27",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x9a50f20f227552fe3bcd25bb8c21dd5d74bf27d9",
+    "delegate": "0x195bc4098e0149b2490edb7fc2ea6ef55e000e8d",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 15122172,
+    "timestamp": "2022-07-11T15:42:26",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xdfb0989b79d304e4bf3b86a5369f0dd93012ffab",
+    "delegate": "0x00e75f4e7eab50af96e30e45454329315e689826",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 15128249,
+    "timestamp": "2022-07-12T14:08:06",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xd4ed307399392b90c861db2876261cc084fcbab5",
+    "delegate": "0x84c87523dc3b0466b5d4174524baf086cb30bab4",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 15133526,
+    "timestamp": "2022-07-13T09:36:11",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x28a798ff68ca1f7dcd00175d3f2e86f79b62bc22",
+    "delegate": "0xc062eeca3891539f75054b1060997aa3459b7390",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 15139162,
+    "timestamp": "2022-07-14T06:47:02",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x92e1ca8b69a44bb17afa92838da68fc41f12250a",
+    "delegate": "0x25578c179f8c4c15921457de61596a1823541be2",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 15140223,
+    "timestamp": "2022-07-14T10:25:10",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xb4b82978fce6d26a22dea7e653bb9ce8e14f8056",
+    "delegate": "0xe491d9ea59cae5dd84804b224535c64d5cb90c3a",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 15146892,
+    "timestamp": "2022-07-15T11:05:33",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x0f4be9f208c552a6b04d9a1222f385785f95beaa",
+    "delegate": "0x26f41d791733ad797dc65ff05a4080ae7ec7c481",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 15162369,
+    "timestamp": "2022-07-17T20:51:25",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x6f9cd2350240be208a8f026802b2b6e76a9e2e28",
+    "delegate": "0x76e4f864bbeb60bee66ff5bbcd32decaf7fbde71",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 15181203,
+    "timestamp": "2022-07-20T18:54:15",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x261cef226034ad63a58fdd9524f4f2d9eab1d566",
+    "delegate": "0x46dfcbc2afd5dd8789ef0737fedb03489d33c428",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 15192239,
+    "timestamp": "2022-07-22T12:00:45",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x802f1b64d4f57d45cc0a1148ecef1ec49cd18075",
+    "delegate": "0x4270783a1d4e97e2249ca64b97bd29b8896e1cf8",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 15192240,
+    "timestamp": "2022-07-22T12:01:00",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xcb2559ac373a62082b8833de2568879452df681e",
+    "delegate": "0xa31e0765ba50b834bf14b38fffebbbe65a04bdf7",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 15192267,
+    "timestamp": "2022-07-22T12:07:02",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0x35ae9a334e3b45cdeeea30dd1eecb61a7c243096",
+    "delegate": "0xcf08c96a0e8e3bb018a92965529d0c829c80f42f",
+    "type": "shadow",
+    "name": null
+  },
+  {
+    "block": 15195768,
+    "timestamp": "2022-07-23T00:46:53",
+    "vote_delegate_proxy": "0xd897f108670903d1d6070fcf818f9db3615af272",
+    "vote_delegate": "0xb4d2bd26ef22d1d6dae7478fb31d2b6cc5f29adc",
+    "delegate": "0xccdffc2216c2eda0d1d5df8f92ae0ce1546d7f34",
+    "type": "shadow",
+    "name": null
+  }
+]

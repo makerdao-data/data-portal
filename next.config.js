@@ -13,12 +13,12 @@ const nextConfig = {
     return [
       {
         source: '/',
-        destination: '/teleport/overview',
+        destination: '/governance/overview',
         permanent: false
       },
       {
         source: '/governance',
-        destination: '/teleport/overview',
+        destination: '/governance/overview',
         permanent: false
       }
     ];

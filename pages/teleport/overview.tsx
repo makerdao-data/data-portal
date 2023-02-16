@@ -1,4 +1,4 @@
-import { Flex } from 'theme-ui';
+import { Box, Flex } from 'theme-ui';
 import { Text } from '@makerdao-dicu/makerdao-ui';
 import useSwr from 'swr';
 import { Summary } from '../../__generated__/dataAPI';
@@ -16,6 +16,7 @@ import KpiCardList from '../../molecules/teleport/KpiCardList';
 import { useIntl } from 'next-intl';
 import { Domains } from '../../types/teleport';
 import { Data as ReactCsvData } from 'react-csv/components/CommonPropTypes';
+import Card from '../../components/Card';
 
 type AlchemyLastBlock = {
   jsonrcp: string;
@@ -164,7 +165,9 @@ export default function Overview() {
           exportMethod={downloadDaiSupplyData}
         />
 
-        <TeleportTable data={data} error={error} />
+        <Card title="Teleport" sx={{ flex: '1 1 0%' }}>
+          <TeleportTable data={data} error={error} />
+        </Card>
       </Flex>
 
       {error ? (
@@ -172,17 +175,27 @@ export default function Overview() {
           {'Dai in L2s data is not available at the moment.'}
         </Text>
       ) : (
-        <MainAreaChart
-          data={mainChartDataSeries}
-          aria-label="DAI in L2s chart"
-        />
+        <Card>
+          <MainAreaChart
+            data={mainChartDataSeries}
+            aria-label="DAI in L2s chart"
+          />
+        </Card>
       )}
 
-      <Flex sx={{ gap: 2, flexWrap: ['wrap', 'wrap', 'wrap', 'nowrap'] }}>
-        <KpiCardList data={weeklyKpiData} error={error} />
+      <Card>
+        <Flex sx={{ gap: 24, flexWrap: ['wrap', 'wrap', 'wrap', 'nowrap'] }}>
+          <KpiCardList data={weeklyKpiData} error={error} />
 
-        <NetworkComparisonCharts data={data} error={error} />
-      </Flex>
+          <Box sx={{ flex: ['1 1 100%', '1 1 100%', '1 1 100%', '1 1 0%'] }}>
+            <NetworkComparisonCharts
+              title="Network comparison"
+              data={data}
+              error={error}
+            />
+          </Box>
+        </Flex>
+      </Card>
     </Flex>
   );
 }

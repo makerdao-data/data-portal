@@ -7,10 +7,11 @@ import DataTable from '../DataTable';
 import { Voter } from '../../__generated__/dataAPI';
 
 type VotersTableProps = {
-  data: Voter[];
+  data: Voter[] | undefined;
+  title?: string;
 };
 
-export default function VotersTable({ data }: VotersTableProps) {
+export default function VotersTable({ data, title }: VotersTableProps) {
   const intl = useIntl();
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -29,10 +30,11 @@ export default function VotersTable({ data }: VotersTableProps) {
       },
       {
         Header: 'Stake (MKR)',
-        accessor: (row: Voter) =>
-          intl.formatNumber(row.stake, {
+        Cell: ({ row }: { row: { original: Voter } }) =>
+          intl.formatNumber(row.original.stake, {
             maximumFractionDigits: 2
           }),
+        accessor: (row: Voter) => row.stake,
         id: 'stake'
       },
       {
@@ -73,5 +75,11 @@ export default function VotersTable({ data }: VotersTableProps) {
     ];
   }, [intl]);
 
-  return <DataTable tableData={{ data, columns }} aria-label="Voters Table" />;
+  return (
+    <DataTable
+      title={title}
+      tableData={{ data: data ?? [], columns }}
+      aria-label="Voters Table"
+    />
+  );
 }

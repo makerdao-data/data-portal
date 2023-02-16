@@ -17,9 +17,11 @@ export default function KpiCardList({ data, error }: KpiCardListProps) {
   return (
     <Flex
       sx={{
-        flexDirection: 'column',
+        flexDirection: ['row', 'row', 'row', 'column'],
+        flexWrap: ['wrap', 'wrap', 'wrap', 'nowrap'],
+        justifyContent: 'space-between',
         gap: 3,
-        flex: ['1 1 100%', '0 0 100%', '0 0 100%', '0 0 300px']
+        flex: ['1 1 100%', '0 0 100%', '0 0 100%', '0 0 auto']
       }}>
       {error ? (
         <Text variant="error" role="textbox" aria-label="Error message">
@@ -32,6 +34,12 @@ export default function KpiCardList({ data, error }: KpiCardListProps) {
             title={kpi.title}
             value={kpi.value}
             change={kpi.change}
+            sx={{
+              border: 'none',
+              padding: 0,
+              flex: ['1 1 100%', '1 1 auto', '0 0 auto', '0 0 auto'],
+              alignItems: ['center', 'center', 'center', 'start']
+            }}
           />
         ))
       )}
