@@ -80,6 +80,34 @@ export default function DelegatesWeightChart() {
                     pointStyle: 'circle',
                     color: colorMode === 'light' ? '#231536' : '#F1F1F1'
                   }
+                  // onClick: function (e, legendItem) {
+                  //   const index = legendItem.datasetIndex;
+                  //   const ci = this.chart;
+
+                  //   const alreadyHidden =
+                  //     ci.getDatasetMeta(index ?? 0).hidden === null
+                  //       ? false
+                  //       : ci.getDatasetMeta(index ?? 0).hidden;
+
+                  //   ci.data.datasets.forEach(function (e, i) {
+                  //     // Type of meta.hidden is wrong, it needs to be boolean | null but it's defined as boolean
+                  //     // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                  //     const meta: any = ci.getDatasetMeta(i);
+
+                  //     if (i !== index) {
+                  //       if (!alreadyHidden) {
+                  //         meta.hidden =
+                  //           meta.hidden === null ? !meta.hidden : null;
+                  //       } else if (meta.hidden === null) {
+                  //         meta.hidden = true;
+                  //       }
+                  //     } else if (i === index) {
+                  //       meta.hidden = null;
+                  //     }
+                  //   });
+
+                  //   ci.update();
+                  // }
                 },
                 title: {
                   display: false

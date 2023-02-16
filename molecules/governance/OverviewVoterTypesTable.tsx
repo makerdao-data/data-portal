@@ -36,7 +36,7 @@ export default function OverviewVoterTypesTable({
         {
           voterType: VoterType.shadow,
           votingMkr: intl.formatNumber(data.mkr_locked_in_chief_by_shadow, {
-            minimumIntegerDigits: 2
+            maximumFractionDigits: 2
           }),
           uniqueAddress: intl.formatNumber(data.unique_shadow, {
             maximumFractionDigits: 2
@@ -47,7 +47,7 @@ export default function OverviewVoterTypesTable({
         {
           voterType: VoterType.recognized,
           votingMkr: intl.formatNumber(data.mkr_locked_in_chief_by_recognized, {
-            minimumIntegerDigits: 2
+            maximumFractionDigits: 2
           }),
           uniqueAddress: intl.formatNumber(data.unique_recognized, {
             maximumFractionDigits: 2
@@ -56,9 +56,9 @@ export default function OverviewVoterTypesTable({
           total: data.total_mkr_locked_in_cheif
         },
         {
-          voterType: VoterType.shadow,
-          votingMkr: intl.formatNumber(data.mkr_locked_in_chief_by_shadow, {
-            minimumIntegerDigits: 2
+          voterType: VoterType.other,
+          votingMkr: intl.formatNumber(data.mkr_locked_in_chief_by_regular, {
+            maximumFractionDigits: 2
           }),
           uniqueAddress: intl.formatNumber(data.unique_regular, {
             maximumFractionDigits: 2
