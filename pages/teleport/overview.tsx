@@ -95,6 +95,7 @@ export default function Overview() {
     return null;
   }, [data, lastEthBlockData]);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const downloadDaiSupplyData = useCallback(() => {
     const headers = [
       { label: 'Domain', key: 'domain' },
@@ -157,7 +158,6 @@ export default function Overview() {
           }
           lastRefreshData={lastEthRefresh}
           error={error}
-          exportMethod={downloadDaiSupplyData}
         />
 
         <Card title="Teleport" sx={{ flex: '1 1 0%' }}>
