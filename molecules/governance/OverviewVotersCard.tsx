@@ -17,6 +17,7 @@ export default function OverviewVotersCard() {
 
   const { data, error } = useSwr<Voter[], Error>('voters', votersFetcher);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const downloadVotersData = useCallback(() => {
     const headers = [
       { label: 'Address', key: 'voter_address' },

@@ -7,7 +7,6 @@ import { useIntl } from 'next-intl';
 import { RefreshData } from '../../hooks/refresh-data';
 import { Domains } from '../../types/teleport';
 import { NETWORK_SCANNERS_URLS } from '../../constants';
-import { CsvData } from '../../components/CsvExport';
 import Card from '../../components/Card';
 import DeltaChange from '../../components/DeltaChange';
 
@@ -18,7 +17,6 @@ type MainKpiCardProps = {
   change: number | undefined;
   lastRefreshData: RefreshData | null;
   error: Error | undefined;
-  exportMethod?: () => CsvData;
 };
 
 export default function MainKpiCard({
@@ -27,8 +25,7 @@ export default function MainKpiCard({
   value,
   change,
   lastRefreshData,
-  error,
-  exportMethod
+  error
 }: MainKpiCardProps) {
   const intl = useIntl();
 
