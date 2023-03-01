@@ -1,10 +1,12 @@
 import { Flex } from 'theme-ui';
-import KpiCard from '../../components/KpiCard';
+import Kpi from '../../components/Kpi';
 import { Text } from '@makerdao-dicu/makerdao-ui';
+import DeltaChange from '../../components/DeltaChange';
 
 type KpiData = {
   title: string;
   value: string | number | undefined;
+  unit?: string;
   change: number | undefined;
 };
 
@@ -29,11 +31,12 @@ export default function KpiCardList({ data, error }: KpiCardListProps) {
         </Text>
       ) : (
         data.map((kpi) => (
-          <KpiCard
+          <Kpi
             key={kpi.title}
             title={kpi.title}
-            value={kpi.value}
-            change={kpi.change}
+            value={kpi.value || null}
+            unit={kpi.unit}
+            delta={<DeltaChange change={kpi.change || 0} label={kpi.title} />}
             sx={{
               border: 'none',
               padding: 0,
