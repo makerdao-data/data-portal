@@ -48,10 +48,10 @@ test.describe('Overview page test', () => {
   test('DAI supply card', async ({ page }) => {
     await expect(
       page.getByRole('textbox', { name: 'DAI Supply value' })
-    ).toContainText('122,544,793.03');
+    ).toContainText('122.5M');
 
     await expect(
-      page.getByRole('textbox', { name: 'DAI Supply change' })
+      page.getByRole('textbox', { name: 'DAI Supply delta' })
     ).toContainText('-2.18%');
 
     await expect(
@@ -170,18 +170,18 @@ test.describe('Overview page test', () => {
   test('Weekly kpis', async ({ page }) => {
     await expect(
       page.getByRole('textbox', { name: 'DAI Weekly transfer volume value' })
-    ).toContainText('420,770,255.18');
+    ).toContainText('420.8M');
 
     await expect(
-      page.getByRole('textbox', { name: 'DAI Weekly transfer volume change' })
+      page.getByRole('textbox', { name: 'DAI Weekly transfer volume delta' })
     ).toContainText('-32.27%');
 
     await expect(
       page.getByRole('textbox', { name: 'Weekly transfers value' })
-    ).toContainText('366,223');
+    ).toContainText('366.2K');
 
     await expect(
-      page.getByRole('textbox', { name: 'Weekly transfers change' })
+      page.getByRole('textbox', { name: 'Weekly transfers delta' })
     ).toContainText('-14.80%');
   });
 

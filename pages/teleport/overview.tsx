@@ -43,11 +43,8 @@ export default function Overview() {
         title: 'DAI Weekly transfer volume',
         value: data
           ? intl.formatNumber(data.l2_weekly_transfers_volume.total, {
-              maximumFractionDigits: 2,
-              notation:
-                data.l2_weekly_transfers_volume.total > 999999999
-                  ? 'compact'
-                  : 'standard'
+              maximumFractionDigits: 1,
+              notation: 'compact'
             })
           : undefined,
         change:
@@ -60,11 +57,8 @@ export default function Overview() {
         title: 'Weekly transfers',
         value: data
           ? intl.formatNumber(data.l2_weekly_transfers_count.total, {
-              maximumFractionDigits: 2,
-              notation:
-                data.l2_weekly_transfers_count.total > 999999999
-                  ? 'compact'
-                  : 'standard'
+              maximumFractionDigits: 1,
+              notation: 'compact'
             })
           : undefined,
         change:
@@ -101,6 +95,7 @@ export default function Overview() {
     return null;
   }, [data, lastEthBlockData]);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const downloadDaiSupplyData = useCallback(() => {
     const headers = [
       { label: 'Domain', key: 'domain' },
@@ -149,8 +144,9 @@ export default function Overview() {
           domain={Domains.ETHEREUM}
           value={
             data
-              ? intl.formatNumber(data?.supply_circulating.total, {
-                  maximumFractionDigits: 2
+              ? intl.formatNumber(data.supply_circulating.total, {
+                  maximumFractionDigits: 1,
+                  notation: 'compact'
                 })
               : undefined
           }
@@ -162,7 +158,6 @@ export default function Overview() {
           }
           lastRefreshData={lastEthRefresh}
           error={error}
-          exportMethod={downloadDaiSupplyData}
         />
 
         <Card title="Teleport" sx={{ flex: '1 1 0%' }}>

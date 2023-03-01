@@ -8,7 +8,7 @@ import {
 import { dataApiClient } from '../../data/dataApiClient';
 import { useIntl } from 'next-intl';
 import OverviewVoterTypesTable from '../../molecules/governance/OverviewVoterTypesTable';
-import KpiCard from '../../components/KpiCard';
+import Kpi from '../../components/Kpi';
 import DelegatesWeightChart from '../../molecules/governance/DelegatesWeightChart';
 import Card from '../../components/Card';
 import GoverningExecutiveCard from '../../molecules/governance/GoverningExecutiveCard';
@@ -40,20 +40,20 @@ export default function Overview() {
           </Text>
         ) : (
           <Card sx={{ padding: '8px' }}>
-            <KpiCard
+            <Kpi
               title="Staked MKR in Chief"
               value={
                 governanceData
                   ? intl.formatNumber(
                       governanceData.total_mkr_locked_in_cheif,
                       {
-                        maximumFractionDigits: 2
+                        maximumFractionDigits: 1,
+                        notation: 'compact'
                       }
                     )
-                  : undefined
+                  : null
               }
-              change={0}
-              // exportMethod={downloadVotersData}
+              unit="MKR"
               sx={{ border: 'none' }}
             />
           </Card>

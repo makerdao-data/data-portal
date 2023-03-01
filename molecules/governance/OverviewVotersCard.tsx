@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import useSwr, { Fetcher } from 'swr';
 import { Flex } from 'theme-ui';
 import Card from '../../components/Card';
-import KpiCard from '../../components/KpiCard';
+import Kpi from '../../components/Kpi';
 import { dataApiClient } from '../../data/dataApiClient';
 import { Voter, RequestParams } from '../../__generated__/dataAPI';
 import VotersTable from './VotersTable';
@@ -17,6 +17,7 @@ export default function OverviewVotersCard() {
 
   const { data, error } = useSwr<Voter[], Error>('voters', votersFetcher);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const downloadVotersData = useCallback(() => {
     const headers = [
       { label: 'Address', key: 'voter_address' },
@@ -62,17 +63,15 @@ export default function OverviewVotersCard() {
   return (
     <Card>
       <Flex sx={{ gap: 24, flexWrap: ['wrap', 'wrap', 'wrap', 'nowrap'] }}>
-        <KpiCard
-          noChangeInfo
+        <Kpi
           title="Total voters"
           value={
             data
               ? intl.formatNumber(data.length, {
                   maximumFractionDigits: 0
                 })
-              : undefined
+              : null
           }
-          exportMethod={downloadVotersData}
           sx={{ border: 'none', minWidth: 145, padding: 0 }}
         />
 

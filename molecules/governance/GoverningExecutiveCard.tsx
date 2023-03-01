@@ -1,7 +1,7 @@
 import { useIntl } from 'next-intl';
 import { Flex, useColorMode } from 'theme-ui';
 import Card from '../../components/Card';
-import KpiCard from '../../components/KpiCard';
+import Kpi from '../../components/Kpi';
 import { Overview } from '../../__generated__/dataAPI';
 import {
   Chart as ChartJS,
@@ -72,15 +72,14 @@ export default function GoverningExecutiveCard({
         </Text>
       ) : (
         <Flex sx={{ gap: 2, flexWrap: ['wrap', 'wrap', 'wrap', 'nowrap'] }}>
-          <KpiCard
-            noChangeInfo
+          <Kpi
             title="Governing Executive (Hat)"
             value={
               data
                 ? intl.formatNumber(data.mkr_locked_in_governing_executive, {
                     maximumFractionDigits: 0
                   })
-                : undefined
+                : null
             }
             sx={{ border: 'none', flexBasis: '20%' }}
           />

@@ -52,10 +52,10 @@ test.describe('Arbitrum page test', () => {
 
     await expect(
       page.getByRole('textbox', { name: 'L2 Dai Supply value' })
-    ).toContainText('64,265,056.2');
+    ).toContainText('64.3M');
 
     await expect(
-      page.getByRole('textbox', { name: 'L2 Dai Supply change' })
+      page.getByRole('textbox', { name: 'L2 Dai Supply delta' })
     ).toContainText('7d Change +6.85%');
 
     await expect(
@@ -91,10 +91,10 @@ test.describe('Arbitrum page test', () => {
 
     await expect(
       page.getByRole('textbox', { name: 'Unique DAI Holders value' })
-    ).toContainText('73,361');
+    ).toContainText('73.4K');
 
     await expect(
-      page.getByRole('textbox', { name: 'Unique DAI Holders change' })
+      page.getByRole('textbox', { name: 'Unique DAI Holders delta' })
     ).toContainText('+0.94%');
 
     await expect(
@@ -103,10 +103,10 @@ test.describe('Arbitrum page test', () => {
 
     await expect(
       page.getByRole('textbox', { name: 'Avg. DAI ownership/holding value' })
-    ).toContainText('876.01');
+    ).toContainText('876');
 
     await expect(
-      page.getByRole('textbox', { name: 'Avg. DAI ownership/holding change' })
+      page.getByRole('textbox', { name: 'Avg. DAI ownership/holding delta' })
     ).toContainText('+5.86%');
   });
 
@@ -141,10 +141,10 @@ test.describe('Arbitrum page test', () => {
 
     await expect(
       page.getByRole('textbox', { name: '7d. Inflow value' })
-    ).toContainText('4,183,951.9');
+    ).toContainText('4.2M');
 
     await expect(
-      page.getByRole('textbox', { name: '7d. Inflow change' })
+      page.getByRole('textbox', { name: '7d. Inflow delta' })
     ).toContainText('7d Change +228.84%');
 
     await expect(
@@ -153,10 +153,10 @@ test.describe('Arbitrum page test', () => {
 
     await expect(
       page.getByRole('textbox', { name: '7d. Outfow value' })
-    ).toContainText('65,502.7');
+    ).toContainText('65.5K');
 
     await expect(
-      page.getByRole('textbox', { name: '7d. Outfow change' })
+      page.getByRole('textbox', { name: '7d. Outfow delta' })
     ).toContainText('-93.48%');
 
     await expect(
@@ -168,7 +168,7 @@ test.describe('Arbitrum page test', () => {
     ).toContainText('0');
 
     await expect(
-      page.getByRole('textbox', { name: '7d. Fast Withdrawal Share change' })
+      page.getByRole('textbox', { name: '7d. Fast Withdrawal Share delta' })
     ).toContainText('0.00%');
   });
 

@@ -1,5 +1,5 @@
 import { Flex, Link } from 'theme-ui';
-import KpiCard from '../../components/KpiCard';
+import Kpi from '../../components/Kpi';
 import { Text } from '@makerdao-dicu/makerdao-ui';
 import { Fragment } from 'react';
 import Skeleton from 'react-loading-skeleton';
@@ -7,8 +7,8 @@ import { useIntl } from 'next-intl';
 import { RefreshData } from '../../hooks/refresh-data';
 import { Domains } from '../../types/teleport';
 import { NETWORK_SCANNERS_URLS } from '../../constants';
-import { CsvData } from '../../components/CsvExport';
 import Card from '../../components/Card';
+import DeltaChange from '../../components/DeltaChange';
 
 type MainKpiCardProps = {
   title: string;
@@ -17,7 +17,6 @@ type MainKpiCardProps = {
   change: number | undefined;
   lastRefreshData: RefreshData | null;
   error: Error | undefined;
-  exportMethod?: () => CsvData;
 };
 
 export default function MainKpiCard({
@@ -26,8 +25,7 @@ export default function MainKpiCard({
   value,
   change,
   lastRefreshData,
-  error,
-  exportMethod
+  error
 }: MainKpiCardProps) {
   const intl = useIntl();
 
@@ -51,11 +49,50 @@ export default function MainKpiCard({
             justifyContent: 'space-between',
             height: '100%'
           }}>
-          <KpiCard
+          <Kpi
             title={title}
-            value={value}
-            change={change}
-            exportMethod={exportMethod}
+            value={value || null}
+            unit="DAI"
+            delta={<DeltaChange change={change || 0} label={title} />}
+            footer={
+              <Flex sx={{ flexDirection: ['row', 'row', 'column'] }}>
+                <Fragment>
+                  {lastRefreshData ? (
+                    <Text
+                      role="textbox"
+                      aria-label="Last processed block text"
+                      variant="muted">
+                      Last update: block{' '}
+                      <Link
+                        role="link"
+                        aria-label="Block link"
+                        target="_blank"
+                        href={`${NETWORK_SCANNERS_URLS[domain]}/block/${lastRefreshData.latestProcessedBlock}`}>
+                        {lastRefreshData.latestProcessedBlock}
+                      </Link>{' '}
+                      ({lastRefreshData.blocksDistance} blocks)
+                    </Text>
+                  ) : (
+                    <Text variant="muted">
+                      <Skeleton />
+                    </Text>
+                  )}
+                  <Text
+                    role="textbox"
+                    aria-label="Last refresh date"
+                    variant="muted">
+                    {lastRefreshData ? (
+                      `${intl.formatDateTime(lastRefreshData.date, {
+                        dateStyle: 'medium',
+                        timeStyle: 'short'
+                      })} LT (${lastRefreshData.timeDistance})`
+                    ) : (
+                      <Skeleton />
+                    )}
+                  </Text>
+                </Fragment>
+              </Flex>
+            }
             sx={{
               border: 'none',
               padding: 0,
@@ -66,44 +103,6 @@ export default function MainKpiCard({
                 : {}
             }}
           />
-
-          <Flex sx={{ flexDirection: ['row', 'row', 'column'] }}>
-            <Fragment>
-              {lastRefreshData ? (
-                <Text
-                  role="textbox"
-                  aria-label="Last processed block text"
-                  variant="muted">
-                  Last update: block{' '}
-                  <Link
-                    role="link"
-                    aria-label="Block link"
-                    target="_blank"
-                    href={`${NETWORK_SCANNERS_URLS[domain]}/block/${lastRefreshData.latestProcessedBlock}`}>
-                    {lastRefreshData.latestProcessedBlock}
-                  </Link>{' '}
-                  ({lastRefreshData.blocksDistance} blocks)
-                </Text>
-              ) : (
-                <Text variant="muted">
-                  <Skeleton />
-                </Text>
-              )}
-              <Text
-                role="textbox"
-                aria-label="Last refresh date"
-                variant="muted">
-                {lastRefreshData ? (
-                  `${intl.formatDateTime(lastRefreshData.date, {
-                    dateStyle: 'medium',
-                    timeStyle: 'short'
-                  })} LT (${lastRefreshData.timeDistance})`
-                ) : (
-                  <Skeleton />
-                )}
-              </Text>
-            </Fragment>
-          </Flex>
         </Flex>
       )}
     </Card>

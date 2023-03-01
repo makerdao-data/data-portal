@@ -1,7 +1,7 @@
 import { useIntl } from 'next-intl';
 import { Box, Flex, useColorMode } from 'theme-ui';
 import Card from '../../components/Card';
-import KpiCard from '../../components/KpiCard';
+import Kpi from '../../components/Kpi';
 import { Overview } from '../../__generated__/dataAPI';
 import {
   Chart as ChartJS,
@@ -109,15 +109,14 @@ export default function AvgVotersInPollCard({
         </Text>
       ) : (
         <Flex sx={{ gap: 2, flexWrap: ['wrap', 'wrap', 'wrap', 'nowrap'] }}>
-          <KpiCard
-            noChangeInfo
+          <Kpi
             title="Average voters in polls"
             value={
               data
                 ? intl.formatNumber(data.avg_voters_count_in_polls, {
                     maximumFractionDigits: 0
                   })
-                : undefined
+                : null
             }
             sx={{ border: 'none', flexBasis: '20%' }}
           />

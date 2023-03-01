@@ -38,7 +38,8 @@ export default function Overview() {
         title: 'Unique DAI Holders',
         value: data
           ? intl.formatNumber(data.unique_holders, {
-              maximumFractionDigits: 2
+              maximumFractionDigits: 1,
+              notation: 'compact'
             })
           : undefined,
         change:
@@ -50,9 +51,11 @@ export default function Overview() {
         title: 'Avg. DAI ownership/holding',
         value: data
           ? intl.formatNumber(data.average_dai_ownership, {
-              maximumFractionDigits: 2
+              maximumFractionDigits: 1,
+              notation: 'compact'
             })
           : undefined,
+        unit: 'DAI',
         change:
           ((Number(data?.average_dai_ownership_7) -
             Number(data?.average_dai_ownership)) /
@@ -69,7 +72,8 @@ export default function Overview() {
         title: '7d. Inflow',
         value: data
           ? intl.formatNumber(data.l2_weekly_inflows, {
-              maximumFractionDigits: 2
+              maximumFractionDigits: 1,
+              notation: 'compact'
             })
           : undefined,
         change:
@@ -82,7 +86,8 @@ export default function Overview() {
         title: '7d. Outfow',
         value: data
           ? intl.formatNumber(data.l2_weekly_outflows, {
-              maximumFractionDigits: 2
+              maximumFractionDigits: 1,
+              notation: 'compact'
             })
           : undefined,
         change:
@@ -95,7 +100,8 @@ export default function Overview() {
         title: '7d. Fast Withdrawal Share',
         value: data
           ? intl.formatNumber(data.weekly_teleport_share, {
-              maximumFractionDigits: 2
+              maximumFractionDigits: 1,
+              notation: 'compact'
             })
           : undefined,
         change:
@@ -170,9 +176,8 @@ export default function Overview() {
           value={
             data
               ? intl.formatNumber(data.supply_circulating, {
-                  maximumFractionDigits: 2,
-                  notation:
-                    data.supply_circulating > 999999999 ? 'compact' : 'standard'
+                  maximumFractionDigits: 1,
+                  notation: 'compact'
                 })
               : undefined
           }
