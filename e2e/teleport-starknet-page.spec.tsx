@@ -52,10 +52,10 @@ test.describe('Starknet page test', () => {
 
     await expect(
       page.getByRole('textbox', { name: 'L2 Dai Supply value' })
-    ).toContainText('235,868.26');
+    ).toContainText('235.9K');
 
     await expect(
-      page.getByRole('textbox', { name: 'L2 Dai Supply change' })
+      page.getByRole('textbox', { name: 'L2 Dai Supply delta' })
     ).toContainText('7d Change +9.52%');
 
     await expect(
@@ -91,10 +91,10 @@ test.describe('Starknet page test', () => {
 
     await expect(
       page.getByRole('textbox', { name: 'Unique DAI Holders value' })
-    ).toContainText('14,062');
+    ).toContainText('14.1K');
 
     await expect(
-      page.getByRole('textbox', { name: 'Unique DAI Holders change' })
+      page.getByRole('textbox', { name: 'Unique DAI Holders delta' })
     ).toContainText('+2.39%');
 
     await expect(
@@ -103,10 +103,10 @@ test.describe('Starknet page test', () => {
 
     await expect(
       page.getByRole('textbox', { name: 'Avg. DAI ownership/holding value' })
-    ).toContainText('16.77');
+    ).toContainText('16.8');
 
     await expect(
-      page.getByRole('textbox', { name: 'Avg. DAI ownership/holding change' })
+      page.getByRole('textbox', { name: 'Avg. DAI ownership/holding delta' })
     ).toContainText('+6.96%');
   });
 
@@ -141,10 +141,10 @@ test.describe('Starknet page test', () => {
 
     await expect(
       page.getByRole('textbox', { name: '7d. Inflow value' })
-    ).toContainText('21,122.43');
+    ).toContainText('21.1K');
 
     await expect(
-      page.getByRole('textbox', { name: '7d. Inflow change' })
+      page.getByRole('textbox', { name: '7d. Inflow delta' })
     ).toContainText('7d Change +15.74%');
 
     await expect(
@@ -153,10 +153,10 @@ test.describe('Starknet page test', () => {
 
     await expect(
       page.getByRole('textbox', { name: '7d. Outfow value' })
-    ).toContainText('622.65');
+    ).toContainText('622.7');
 
     await expect(
-      page.getByRole('textbox', { name: '7d. Outfow change' })
+      page.getByRole('textbox', { name: '7d. Outfow delta' })
     ).toContainText('-88.31%');
 
     await expect(
@@ -168,7 +168,7 @@ test.describe('Starknet page test', () => {
     ).toContainText('0');
 
     await expect(
-      page.getByRole('textbox', { name: '7d. Fast Withdrawal Share change' })
+      page.getByRole('textbox', { name: '7d. Fast Withdrawal Share delta' })
     ).toContainText('0.00%');
   });
 

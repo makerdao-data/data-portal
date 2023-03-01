@@ -52,10 +52,10 @@ test.describe('Optimism page test', () => {
 
     await expect(
       page.getByRole('textbox', { name: 'L2 Dai Supply value' })
-    ).toContainText('51,429,737.82');
+    ).toContainText('51.4M');
 
     await expect(
-      page.getByRole('textbox', { name: 'L2 Dai Supply change' })
+      page.getByRole('textbox', { name: 'L2 Dai Supply delta' })
     ).toContainText('7d Change +11.08%');
 
     await expect(
@@ -91,10 +91,10 @@ test.describe('Optimism page test', () => {
 
     await expect(
       page.getByRole('textbox', { name: 'Unique DAI Holders value' })
-    ).toContainText('99,814');
+    ).toContainText('99.8K');
 
     await expect(
-      page.getByRole('textbox', { name: 'Unique DAI Holders change' })
+      page.getByRole('textbox', { name: 'Unique DAI Holders delta' })
     ).toContainText('+5.32%');
 
     await expect(
@@ -103,10 +103,10 @@ test.describe('Optimism page test', () => {
 
     await expect(
       page.getByRole('textbox', { name: 'Avg. DAI ownership/holding value' })
-    ).toContainText('515.26');
+    ).toContainText('515.3');
 
     await expect(
-      page.getByRole('textbox', { name: 'Avg. DAI ownership/holding change' })
+      page.getByRole('textbox', { name: 'Avg. DAI ownership/holding delta' })
     ).toContainText('+5.47%');
   });
 
@@ -141,10 +141,10 @@ test.describe('Optimism page test', () => {
 
     await expect(
       page.getByRole('textbox', { name: '7d. Inflow value' })
-    ).toContainText('5,212,391.95');
+    ).toContainText('5.2M');
 
     await expect(
-      page.getByRole('textbox', { name: '7d. Inflow change' })
+      page.getByRole('textbox', { name: '7d. Inflow delta' })
     ).toContainText('7d Change +10,865.06%');
 
     await expect(
@@ -153,10 +153,10 @@ test.describe('Optimism page test', () => {
 
     await expect(
       page.getByRole('textbox', { name: '7d. Outfow value' })
-    ).toContainText('81,305.24');
+    ).toContainText('81.3K');
 
     await expect(
-      page.getByRole('textbox', { name: '7d. Outfow change' })
+      page.getByRole('textbox', { name: '7d. Outfow delta' })
     ).toContainText('7d Change +394.84%');
 
     await expect(
@@ -168,7 +168,7 @@ test.describe('Optimism page test', () => {
     ).toContainText('0');
 
     await expect(
-      page.getByRole('textbox', { name: '7d. Fast Withdrawal Share change' })
+      page.getByRole('textbox', { name: '7d. Fast Withdrawal Share delta' })
     ).toContainText('7d Change 0.00%');
   });
 

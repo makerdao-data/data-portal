@@ -150,7 +150,7 @@ export default function DelegatesWeightChart() {
                   },
                   ticks: {
                     color: colorMode === 'light' ? '#231536' : '#F1F1F1',
-                    format: { maximumFractionDigits: 0, notation: 'compact' }
+                    format: { notation: 'compact' }
                   }
                 }
               },

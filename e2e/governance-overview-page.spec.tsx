@@ -42,11 +42,7 @@ test.describe('Voters page test', () => {
 
     await expect(
       page.getByRole('textbox', { name: 'Staked MKR in Chief value' })
-    ).toContainText('196,163.57');
-
-    await expect(
-      page.getByRole('textbox', { name: 'Staked MKR in Chief change' })
-    ).toContainText('7d Change 0.00%');
+    ).toContainText('196.2K');
   });
 
   test('Voters type table', async ({ page }) => {
