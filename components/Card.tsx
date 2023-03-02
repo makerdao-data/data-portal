@@ -2,13 +2,18 @@ import { ReactNode } from 'react';
 import { Box, Flex, ThemeUIStyleObject } from 'theme-ui';
 import { Text } from '@makerdao-dicu/makerdao-ui';
 
+type Header = {
+  title: string;
+  actions?: ReactNode[];
+};
+
 type CardProps = {
-  title?: string;
+  header?: Header;
   sx?: ThemeUIStyleObject;
   children: ReactNode;
 };
 
-export default function Card({ title, sx, children }: CardProps) {
+export default function Card({ header, sx, children }: CardProps) {
   return (
     <Flex
       sx={{
@@ -19,13 +24,28 @@ export default function Card({ title, sx, children }: CardProps) {
         backgroundColor: 'surface',
         ...sx
       }}>
-      {title ? (
-        <Text
-          variant="smallHeading"
-          role="textbox"
-          aria-label="Delegate voting power title">
-          {title}
-        </Text>
+      {header ? (
+        <Flex
+          sx={{
+            justifyContent: 'space-between',
+            flexWrap: 'nowrap',
+            borderBottom: '1px solid',
+            borderColor: 'secondary',
+            paddingBottom: '14px'
+          }}>
+          <Text
+            variant="smallHeading"
+            role="textbox"
+            aria-label={header.title + ' title'}>
+            {header.title}
+          </Text>
+
+          {header.actions ? (
+            <Flex sx={{ gap: '8px' }}>
+              {header.actions.map((action) => action)}
+            </Flex>
+          ) : null}
+        </Flex>
       ) : null}
 
       <Box sx={{ flexBasis: '100%' }}>{children}</Box>

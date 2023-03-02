@@ -160,7 +160,7 @@ export default function Overview() {
           error={error}
         />
 
-        <Card title="Teleport" sx={{ flex: '1 1 0%' }}>
+        <Card header={{ title: 'Teleport' }} sx={{ flex: '1 1 0%' }}>
           <TeleportTable data={data} error={error} />
         </Card>
       </Flex>

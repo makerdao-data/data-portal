@@ -58,7 +58,7 @@ const CsvExport = ({
           const newCsvData = await exportMethod();
           setCsvData(newCsvData);
         }}
-        sx={{ cursor: 'pointer', ...sx?.container }}>
+        sx={{ cursor: 'pointer', height: '24px', ...sx?.container }}>
         {children ?? <DownloadIcon {...icon} />}
       </Box>
 

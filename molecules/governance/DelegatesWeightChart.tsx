@@ -17,6 +17,7 @@ import Skeleton from 'react-loading-skeleton';
 import 'chartjs-adapter-date-fns';
 import useDelegatesWeightChartData from './hooks/delegates-weight-chart-data';
 import Card from '../../components/Card';
+import CsvExport from '../../components/CsvExport';
 
 const spacingPlugin = {
   id: 'increase-legend-spacing',
@@ -54,7 +55,19 @@ export default function DelegatesWeightChart() {
     useDelegatesWeightChartData();
 
   return (
-    <Card title="Recognized delegate voting power">
+    <Card
+      header={{
+        title: 'Recognized delegate voting power',
+        actions: [
+          <CsvExport
+            key="export-voters"
+            exportMethod={() => ({
+              data: []
+            })}
+            icon={{ width: 24, height: 24 }}
+          />
+        ]
+      }}>
       {error ? (
         <Text variant="error" role="textbox" aria-label="Error message">
           {'Delegate voting power data is not available at the moment.'}
