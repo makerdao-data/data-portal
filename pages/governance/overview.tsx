@@ -62,15 +62,15 @@ export default function Overview() {
 
         <Card
           header={{
-            title: 'Voters',
-            actions: [
-              <CsvExport
-                key="export-voters"
-                exportMethod={() => ({
-                  data: []
-                })}
-              />
-            ]
+            title: 'Voters'
+            // actions: [
+            //   <CsvExport
+            //     key="export-voters"
+            //     exportMethod={() => ({
+            //       data: []
+            //     })}
+            //   />
+            // ]
           }}
           sx={{ flex: '1 1 0%' }}>
           <OverviewVoterTypesTable

@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Box, Flex, ThemeUIStyleObject } from 'theme-ui';
+import { Box, Flex, ThemeUIStyleObject, useColorMode } from 'theme-ui';
 import { Text } from '@makerdao-dicu/makerdao-ui';
 
 type Header = {
@@ -14,6 +14,8 @@ type CardProps = {
 };
 
 export default function Card({ header, sx, children }: CardProps) {
+  const [colorMode] = useColorMode();
+
   return (
     <Flex
       sx={{
@@ -30,7 +32,8 @@ export default function Card({ header, sx, children }: CardProps) {
             justifyContent: 'space-between',
             flexWrap: 'nowrap',
             borderBottom: '1px solid',
-            borderColor: 'secondary',
+            // TODO: Update with color variable once https://dicu.atlassian.net/browse/DICU-388 is done
+            borderColor: colorMode === 'light' ? '#D1DEE6' : '#405361',
             paddingBottom: '14px'
           }}>
           <Text
