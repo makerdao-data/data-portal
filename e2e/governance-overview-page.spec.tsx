@@ -59,11 +59,11 @@ test.describe('Voters page test', () => {
 
   test('Governing Executive (Hat) Kpi', async ({ page }) => {
     await expect(
-      page.getByRole('heading', { name: 'Governing Executive (Hat) title' })
-    ).toContainText('Governing Executive (Hat)');
+      page.getByRole('heading', { name: 'MKR in Hat title' })
+    ).toContainText('MKR in Hat');
 
     await expect(
-      page.getByRole('textbox', { name: 'Governing Executive (Hat) value' })
+      page.getByRole('textbox', { name: 'MKR in Hat value' })
     ).toContainText('89,263');
   });
 
@@ -87,16 +87,6 @@ test.describe('Voters page test', () => {
     await expect(
       page.getByRole('figure', { name: 'MKR used for polls chart' })
     ).toBeVisible();
-  });
-
-  test('Total voters Kpi', async ({ page }) => {
-    await expect(
-      page.getByRole('heading', { name: 'Total voters title' })
-    ).toContainText('Total voters');
-
-    await expect(
-      page.getByRole('textbox', { name: 'Total voters value' })
-    ).toContainText('59');
   });
 
   test('Voters table initial content', async ({ page }) => {
