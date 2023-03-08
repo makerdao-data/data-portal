@@ -1,9 +1,7 @@
 import { useIntl } from 'next-intl';
 import { useCallback } from 'react';
 import useSwr, { Fetcher } from 'swr';
-import { Flex } from 'theme-ui';
 import Card from '../../components/Card';
-import Kpi from '../../components/Kpi';
 import { dataApiClient } from '../../data/dataApiClient';
 import { Voter, RequestParams } from '../../__generated__/dataAPI';
 import VotersTable from './VotersTable';
