@@ -102,7 +102,7 @@ export default function AvgVotersInPollCard({
   }, [data]);
 
   return (
-    <Card>
+    <Card header={{ title: 'Governance Polls' }}>
       {error ? (
         <Text variant="error" role="textbox" aria-label="Error message">
           {'Voters in polls data is not available at the moment.'}
@@ -123,18 +123,10 @@ export default function AvgVotersInPollCard({
 
           <Box
             sx={{
-              flexDirection: 'column',
               height: '400px',
               padding: '8px',
               flex: ['1 1 100%', '1 1 100%', '1 1 100%', '1 1 0%']
             }}>
-            <Text
-              variant="smallHeading"
-              role="textbox"
-              aria-label="MKR in polls chart title">
-              Total MKR used for polls
-            </Text>
-
             {data !== undefined ? (
               <Chart
                 type="bar"

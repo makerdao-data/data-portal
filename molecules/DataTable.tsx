@@ -75,7 +75,7 @@ export default function DataTable<T extends object>({
             variant="smallHeading"
             role="textbox"
             aria-label={title + ' table title'}
-            sx={{ alignSelf: 'start' }}>
+            sx={{ alignSelf: 'center' }}>
             {title}
           </Text>
         ) : null}

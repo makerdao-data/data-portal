@@ -14,7 +14,7 @@ import Card from '../../components/Card';
 import GoverningExecutiveCard from '../../molecules/governance/GoverningExecutiveCard';
 import OverviewVotersCard from '../../molecules/governance/OverviewVotersCard';
 import AvgVotersInPollCard from '../../molecules/governance/AvgVotersInPollCard';
-import CsvExport from '../../components/CsvExport';
+// import CsvExport from '../../components/CsvExport';
 
 export default function Overview() {
   const intl = useIntl();

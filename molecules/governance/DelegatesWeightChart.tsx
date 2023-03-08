@@ -17,7 +17,7 @@ import Skeleton from 'react-loading-skeleton';
 import 'chartjs-adapter-date-fns';
 import useDelegatesWeightChartData from './hooks/delegates-weight-chart-data';
 import Card from '../../components/Card';
-import CsvExport from '../../components/CsvExport';
+// import CsvExport from '../../components/CsvExport';
 
 const spacingPlugin = {
   id: 'increase-legend-spacing',
