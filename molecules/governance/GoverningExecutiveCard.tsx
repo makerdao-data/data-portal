@@ -1,5 +1,5 @@
 import { useIntl } from 'next-intl';
-import { Flex, useColorMode } from 'theme-ui';
+import { Box, Flex, useColorMode } from 'theme-ui';
 import Card from '../../components/Card';
 import Kpi from '../../components/Kpi';
 import { Overview } from '../../__generated__/dataAPI';
@@ -65,7 +65,7 @@ export default function GoverningExecutiveCard({
   }, [data]);
 
   return (
-    <Card sx={{ padding: '8px' }}>
+    <Card header={{ title: 'Executive Votes' }}>
       {error ? (
         <Text variant="error" role="textbox" aria-label="Error message">
           {'Governing Executive data is not available at the moment.'}
@@ -73,7 +73,7 @@ export default function GoverningExecutiveCard({
       ) : (
         <Flex sx={{ gap: 2, flexWrap: ['wrap', 'wrap', 'wrap', 'nowrap'] }}>
           <Kpi
-            title="Governing Executive (Hat)"
+            title="MKR in Hat"
             value={
               data
                 ? intl.formatNumber(data.mkr_locked_in_governing_executive, {
@@ -84,20 +84,12 @@ export default function GoverningExecutiveCard({
             sx={{ border: 'none', flexBasis: '20%' }}
           />
 
-          <Flex
+          <Box
             sx={{
-              flexDirection: 'column',
               height: '400px',
               padding: '8px',
               flex: ['1 1 100%', '1 1 100%', '1 1 100%', '1 1 0%']
             }}>
-            <Text
-              variant="smallHeading"
-              role="textbox"
-              aria-label="Governing Executive chart title">
-              Executives by month
-            </Text>
-
             {data !== undefined ? (
               <Bar
                 role="figure"
@@ -150,7 +142,7 @@ export default function GoverningExecutiveCard({
             ) : (
               <Skeleton height={400} />
             )}
-          </Flex>
+          </Box>
         </Flex>
       )}
     </Card>

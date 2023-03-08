@@ -14,6 +14,7 @@ import Card from '../../components/Card';
 import GoverningExecutiveCard from '../../molecules/governance/GoverningExecutiveCard';
 import OverviewVotersCard from '../../molecules/governance/OverviewVotersCard';
 import AvgVotersInPollCard from '../../molecules/governance/AvgVotersInPollCard';
+// import CsvExport from '../../components/CsvExport';
 
 export default function Overview() {
   const intl = useIntl();
@@ -59,7 +60,19 @@ export default function Overview() {
           </Card>
         )}
 
-        <Card title="Voters" sx={{ flex: '1 1 0%' }}>
+        <Card
+          header={{
+            title: 'Voters'
+            // actions: [
+            //   <CsvExport
+            //     key="export-voters"
+            //     exportMethod={() => ({
+            //       data: []
+            //     })}
+            //   />
+            // ]
+          }}
+          sx={{ flex: '1 1 0%' }}>
           <OverviewVoterTypesTable
             data={governanceData}
             error={governanceOverviewError}

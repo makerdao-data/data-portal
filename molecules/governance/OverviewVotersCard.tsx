@@ -1,9 +1,7 @@
 import { useIntl } from 'next-intl';
 import { useCallback } from 'react';
 import useSwr, { Fetcher } from 'swr';
-import { Flex } from 'theme-ui';
 import Card from '../../components/Card';
-import Kpi from '../../components/Kpi';
 import { dataApiClient } from '../../data/dataApiClient';
 import { Voter, RequestParams } from '../../__generated__/dataAPI';
 import VotersTable from './VotersTable';
@@ -62,27 +60,22 @@ export default function OverviewVotersCard() {
 
   return (
     <Card>
-      <Flex sx={{ gap: 24, flexWrap: ['wrap', 'wrap', 'wrap', 'nowrap'] }}>
-        <Kpi
-          title="Total voters"
-          value={
+      {error ? (
+        <Text variant="error" role="textbox" aria-label="Error message">
+          {'Voters data is not available at the moment.'}
+        </Text>
+      ) : (
+        <VotersTable
+          title={`Total Governance Voters (${
             data
               ? intl.formatNumber(data.length, {
                   maximumFractionDigits: 0
                 })
-              : null
-          }
-          sx={{ border: 'none', minWidth: 145, padding: 0 }}
+              : '–'
+          })`}
+          data={data}
         />
-
-        {error ? (
-          <Text variant="error" role="textbox" aria-label="Error message">
-            {'Voters data is not available at the moment.'}
-          </Text>
-        ) : (
-          <VotersTable title="List of voters" data={data} />
-        )}
-      </Flex>
+      )}
     </Card>
   );
 }

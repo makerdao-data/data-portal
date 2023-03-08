@@ -44,7 +44,7 @@ export default function MobileNavbar({
         sx={{
           gap: '0.3rem'
         }}>
-        <MakerIcon color={theme.colors?.primary as string} />
+        <MakerIcon color={theme.colors?.['primary-500'] as string} />
 
         <Text
           variant="microHeading"
