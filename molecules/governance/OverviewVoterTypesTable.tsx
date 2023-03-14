@@ -42,7 +42,7 @@ export default function OverviewVoterTypesTable({
             maximumFractionDigits: 2
           }),
           stakedInHat: data.mkr_locked_in_hat_from_shadow,
-          total: data.total_mkr_locked_in_cheif
+          total: data.mkr_locked_in_chief_by_shadow
         },
         {
           voterType: VoterType.recognized,
@@ -53,7 +53,7 @@ export default function OverviewVoterTypesTable({
             maximumFractionDigits: 2
           }),
           stakedInHat: data.mkr_locked_in_hat_from_recognized,
-          total: data.total_mkr_locked_in_cheif
+          total: data.mkr_locked_in_chief_by_recognized
         },
         {
           voterType: VoterType.other,
@@ -64,7 +64,7 @@ export default function OverviewVoterTypesTable({
             maximumFractionDigits: 2
           }),
           stakedInHat: data.mkr_locked_in_hat_from_regular,
-          total: data.total_mkr_locked_in_cheif
+          total: data.mkr_locked_in_chief_by_regular
         }
       ];
     }
