@@ -1,10 +1,10 @@
 export default function chartsRgbColorPallete(alpha?: number) {
   const colors = [
-    'rgba(250, 220, 189, 1)',
-    'rgba(39, 180, 189, 1)',
-    'rgba(134, 209, 252, 1)',
-    'rgba(210, 81, 224, 1)',
-    'rgba(246, 114, 138, 1)',
+    'rgba(252, 216, 163, 1)',
+    'rgba(242, 184, 97, 1)',
+    'rgba(240, 214, 84, 1)',
+    'rgba(90, 201, 182, 1)',
+    'rgba(196, 223, 240, 1)',
     'rgba(242, 244, 126, 1)',
     'rgba(137, 137, 224, 1)',
     'rgba(232, 151, 125, 1)',

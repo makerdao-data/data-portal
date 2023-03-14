@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import randomColor from 'randomcolor';
 import { useMemo } from 'react';
 import useSwr, { Fetcher } from 'swr';
 import { dataApiClient } from '../../../data/dataApiClient';
@@ -24,45 +23,44 @@ export default function useDelegatesWeightChartData(): DelegatesWeightChartData 
   const delegatesSupportFetcher: Fetcher<Support[]> =
     dataApiClient.v1.readDelegatesSupportV1GovernanceDelegatesSupportGet;
 
-  const { data: recognizedDelegatesSupport, error } = useSwr<Support[], Error>(
-    'recognizedDelegatesSupport',
+  const { data: allDelegatesSupport, error } = useSwr<Support[], Error>(
+    'allDelegatesSupport',
     () => {
       const fromDate = new Date(
         new Date().setFullYear(new Date().getFullYear() - 1)
       );
       return delegatesSupportFetcher({
-        from_date: `${fromDate.getFullYear()}-${fromDate.getMonth()}-${fromDate.getDate()}`,
-        type: 'recognized'
+        from_date: `${fromDate.getFullYear()}-${fromDate.getMonth()}-${fromDate.getDate()}`
       });
     }
   );
 
   const loading = useMemo(() => {
-    return recognizedDelegatesSupport === undefined && error === undefined;
-  }, [recognizedDelegatesSupport, error]);
+    return allDelegatesSupport === undefined && error === undefined;
+  }, [allDelegatesSupport, error]);
 
-  const recognizedDelegateNames = useMemo(() => {
+  const allDelegateNames = useMemo(() => {
     const delegateNames = Array.from(
-      new Set(recognizedDelegatesSupport?.map(({ delegate }) => delegate))
+      new Set(allDelegatesSupport?.map(({ delegate }) => delegate))
     );
 
     return delegateNames;
-  }, [recognizedDelegatesSupport]);
+  }, [allDelegatesSupport]);
 
-  const colors = chartsRgbColorPallete(0.5);
+  const colors = chartsRgbColorPallete();
 
   const delegatatesWithSupportChartDataSets = useMemo(() => {
-    if (recognizedDelegatesSupport) {
-      const recognizedDelegateSupportByDelegate = _.groupBy(
-        recognizedDelegatesSupport,
+    if (allDelegatesSupport) {
+      const allDelegateSupportByDelegate = _.groupBy(
+        allDelegatesSupport,
         'delegate'
       );
 
       const delegateMonthlySupport: ChartDataSet = Object.keys(
-        recognizedDelegateSupportByDelegate
+        allDelegateSupportByDelegate
       ).reduce((memo, delegate) => {
         const groupedSupport: Record<string, Support[]> = _.groupBy(
-          recognizedDelegateSupportByDelegate[delegate],
+          allDelegateSupportByDelegate[delegate],
           (support) => {
             const date = new Date(support.date);
             return `${date.getFullYear()}/${date.getMonth() + 1}`;
@@ -71,7 +69,7 @@ export default function useDelegatesWeightChartData(): DelegatesWeightChartData 
 
         const lastSupportPerMonth = Object.keys(groupedSupport).reduce(
           (memo, month) => {
-            const maxDelegateSupportDate = Math.min(
+            const minDelegateSupportDate = Math.min(
               ...groupedSupport[month].map(({ date }) =>
                 new Date(date).getTime()
               )
@@ -81,7 +79,7 @@ export default function useDelegatesWeightChartData(): DelegatesWeightChartData 
               ...memo,
               [month]: groupedSupport[month].filter(
                 ({ date }) =>
-                  new Date(date).getTime() === maxDelegateSupportDate
+                  new Date(date).getTime() === minDelegateSupportDate
               )[0]
             };
           },
@@ -94,30 +92,125 @@ export default function useDelegatesWeightChartData(): DelegatesWeightChartData 
         };
       }, {});
 
-      const dataSetList = recognizedDelegateNames.map((delegate, index) => {
-        const delegateSupport = delegateMonthlySupport[delegate];
+      const dataSetList = allDelegateNames
+        .map((delegate, index) => {
+          const delegateSupport: Record<string, Support> =
+            delegateMonthlySupport[delegate];
 
-        const dataSet = {
-          fill: true,
-          label: delegate,
-          borderColor: colors[index] ?? randomColor({ hue: 'orange' }),
-          backgroundColor: colors[index] ?? randomColor({ hue: 'orange' }),
-          data: Object.keys(delegateSupport).map((month) => ({
-            x: delegateSupport[month].date,
-            y: delegateSupport[month].support
-          }))
-        };
+          const dataSet = {
+            fill: true,
+            label: delegate,
+            borderColor: colors[index],
+            backgroundColor: colors[index],
+            data: Object.keys(delegateSupport).map((month) => ({
+              x: delegateSupport[month].date,
+              y: delegateSupport[month].support,
+              type: delegateSupport[month].type,
+              month
+            }))
+          };
 
-        return dataSet;
-      });
+          return dataSet;
+        })
+        .sort(
+          (a, b) => b.data[b.data.length - 1].y - a.data[a.data.length - 1].y
+        );
+
+      const top5Recognized = dataSetList
+        .filter(({ data }) => data[0].type === 'recognized')
+        .slice(0, 5)
+        .map((dataSet, index) => ({
+          ...dataSet,
+          borderColor: colors[index],
+          backgroundColor: colors[index]
+        }));
+
+      const othersRecognized = dataSetList
+        .filter(({ data }) => data[0].type === 'recognized')
+        .slice(5)
+        .reduce(
+          (memo, dataSet) => {
+            dataSet.data.forEach((currentDataSet) => {
+              const currentValue = memo.data.find(
+                (values) => values.month === currentDataSet.month
+              );
+
+              if (currentValue) {
+                const newValue = {
+                  ...currentValue,
+                  y: currentValue.y + currentDataSet.y
+                };
+
+                memo.data.map((value) =>
+                  value.month === currentDataSet.month ? newValue : value
+                );
+
+                return;
+              }
+
+              memo.data.push(currentDataSet);
+            });
+
+            memo.data.sort(
+              (a, b) => new Date(a.x).getTime() - new Date(b.x).getTime()
+            );
+            return memo;
+          },
+          {
+            fill: true,
+            label: 'Others (Recognized)',
+            borderColor: '#BEA5EA',
+            backgroundColor: '#BEA5EA',
+            data: []
+          }
+        );
+
+      const othersShadow = dataSetList
+        .filter(({ data }) => data[0].type === 'shadow')
+        .reduce(
+          (memo, dataSet) => {
+            dataSet.data.forEach((currentDataSet) => {
+              const currentValue = memo.data.find(
+                (values) => values.month === currentDataSet.month
+              );
+
+              if (currentValue) {
+                const newValue = {
+                  ...currentValue,
+                  y: currentValue.y + currentDataSet.y
+                };
+
+                memo.data.map((value) =>
+                  value.month === currentDataSet.month ? newValue : value
+                );
+
+                return;
+              }
+
+              memo.data.push(currentDataSet);
+            });
+
+            memo.data.sort(
+              (a, b) => new Date(a.x).getTime() - new Date(b.x).getTime()
+            );
+            return memo;
+          },
+          {
+            fill: true,
+            label: 'Others (Shadow)',
+            borderColor: '#5BA8E1',
+            backgroundColor: '#5BA8E1',
+            data: []
+          }
+        );
 
       return {
-        datasets: dataSetList
+        datasets: [...top5Recognized, othersRecognized, othersShadow]
       };
     }
 
     return { datasets: [] };
-  }, [colors, recognizedDelegatesSupport, recognizedDelegateNames]);
+  }, [colors, allDelegatesSupport, allDelegateNames]);
 
   return [delegatatesWithSupportChartDataSets, loading, error];
 }
