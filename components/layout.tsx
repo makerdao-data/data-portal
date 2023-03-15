@@ -5,6 +5,7 @@ import { Box, Flex } from 'theme-ui';
 import MobileNavbar from '../molecules/MobileNavbar';
 import { useToggle } from '../hooks';
 import 'react-loading-skeleton/dist/skeleton.css';
+import Footer from './Footer';
 
 type LayoutProps = {
   children: ReactNode;
@@ -40,6 +41,7 @@ export default function Layout({ children }: LayoutProps) {
           flex: '1 1 0%',
           margin: ['6rem 1rem', '3rem 3rem 3rem 210px'],
           isolation: 'isolate',
+          gap: 20,
           ['& > div']: {
             margin: '0 auto',
             width: '100%',
@@ -47,6 +49,8 @@ export default function Layout({ children }: LayoutProps) {
           }
         }}>
         {children}
+
+        <Footer />
       </Flex>
     </Box>
   );
