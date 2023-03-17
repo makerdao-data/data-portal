@@ -26,6 +26,14 @@ export default function Footer() {
       Token Flow
     </Link>
   );
+  const nansenQueryLink = (
+    <Link
+      role="link"
+      aria-label="Nansen Query link"
+      href="https://www.nansen.ai/query">
+      Nansen Query & NaaS
+    </Link>
+  );
 
   return (
     <Flex
@@ -39,11 +47,11 @@ export default function Footer() {
         height: 71
       }}>
       <Text sx={{ textAlign: 'center' }}>
-        © 2023 DAI Foundation ・ AGPL-3.0 license ・ API ( {reDocLink} |{' '}
-        {swaggerUiLink}) ・Powered by {tokenFlowLink} ・ Nansen Query & NaaS
+        DAI Foundation ・ AGPL-3.0 license ・ Data API ( {reDocLink} |{' '}
+        {swaggerUiLink})
       </Text>
       <Text sx={{ textAlign: 'center' }}>
-        Brought to you by Data Insights Core Unit
+        Powered by {tokenFlowLink} ・ {nansenQueryLink}
       </Text>
     </Flex>
   );

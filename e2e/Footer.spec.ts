@@ -16,7 +16,7 @@ test.describe('layout footer test', () => {
         .locator('span')
         .first()
     ).toContainText(
-      '© 2023 DAI Foundation ・ AGPL-3.0 license ・ API ( ReDoc | Swagger UI) ・Powered by Token Flow ・ Nansen Query & NaaS'
+      'DAI Foundation ・ AGPL-3.0 license ・ Data API ( ReDoc | Swagger UI)'
     );
 
     await expect(
@@ -24,7 +24,7 @@ test.describe('layout footer test', () => {
         .getByRole('contentinfo', { name: 'Layout footer' })
         .locator('span')
         .nth(1)
-    ).toContainText('Brought to you by Data Insights Core Unit');
+    ).toContainText('Powered by Token Flow ・ Nansen Query & NaaS');
   });
 
   test('links', async ({ page }) => {
@@ -39,5 +39,9 @@ test.describe('layout footer test', () => {
     await expect(
       page.getByRole('link', { name: 'Token Flow link' })
     ).toHaveAttribute('href', 'https://tokenflow.live/');
+
+    await expect(
+      page.getByRole('link', { name: 'Nansen Query link' })
+    ).toHaveAttribute('href', 'https://www.nansen.ai/query');
   });
 });
