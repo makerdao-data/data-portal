@@ -294,10 +294,10 @@
   resolved "https://registry.yarnpkg.com/@kurkle/color/-/color-0.3.2.tgz#5acd38242e8bde4f9986e7913c8fdf49d3aa199f"
   integrity sha512-fuscdXJ9G1qb7W8VdHi+IwRqij3lBkosAm4ydQtEmbY58OzHXqQhvlxqEkoz0yssNVn38bcpRWgA9PP+OGoisw==
 
-"@makerdao-dicu/makerdao-ui@^0.0.32":
-  version "0.0.32"
-  resolved "https://registry.yarnpkg.com/@makerdao-dicu/makerdao-ui/-/makerdao-ui-0.0.32.tgz#a3ffeca422232fbe06194ba264d51e372893fb7d"
-  integrity sha512-AHL6GM6I4AvYjXYivcazKdMl55pO1E+jIlLcL5PVTna8oiFXT2AjUdaY3FAU71BSqKznIUYQ7E6b8RBuEOsl0g==
+"@makerdao-dicu/makerdao-ui@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@makerdao-dicu/makerdao-ui/-/makerdao-ui-0.1.2.tgz#17f31454e11d1fa1e2d86baa9b76660362f273af"
+  integrity sha512-6Tr6KhFfJobDXZkANFP+hhgtaBNLzVhf9P/yukyBJ6Va3gl0JYGi3L+NzEfCSbjLJP7KguDhir8DfIf0PMzUUQ==
   dependencies:
     "@emotion/react" "^11.10.4"
     "@emotion/styled" "^11.10.4"

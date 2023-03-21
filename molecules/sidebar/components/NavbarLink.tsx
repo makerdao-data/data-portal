@@ -25,13 +25,13 @@ export function NavbarLink({ href, text, sx, disabled }: NavbarLinkProps) {
         borderRadius: '6px',
         paddingLeft: 'calc(15px + 0.5rem)',
         [':hover']: {
-          backgroundColor: active ? 'primary' : 'secondary',
+          backgroundColor: active ? 'primary' : 'surface',
           ['&>a']: {
-            color: 'text'
+            color: active ? 'onPrimary' : 'onsurface'
           }
         },
         ['a']: {
-          color: active ? 'text' : 'textMuted',
+          color: active ? 'onPrimary' : 'muted',
           textDecoration: 'none',
           fontSize: 4,
 
