@@ -40,7 +40,7 @@ export default function Overview() {
             {'Staked MKR data is not available at the moment.'}
           </Text>
         ) : (
-          <Card sx={{ padding: '8px', flex: '1 1 20%' }}>
+          <Card sx={{ padding: '8px', flex: '1 1 30%' }}>
             <Kpi
               title="Staked MKR in Chief"
               value={
@@ -72,7 +72,7 @@ export default function Overview() {
             //   />
             // ]
           }}
-          sx={{ flex: '1 1 80%' }}>
+          sx={{ flex: '1 1 70%' }}>
           <OverviewVoterTypesTable
             data={governanceData}
             error={governanceOverviewError}
