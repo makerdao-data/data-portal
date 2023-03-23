@@ -20,7 +20,7 @@ export default function Table({ children, sx, ...rest }: TableProps) {
         alignSelf: 'flex-start',
         flex: ['1 1 100%', '1 1 0%', '1 1 0%'],
         border: '1px solid',
-        borderColor: 'tableStructure',
+        borderColor: 'onsurface',
         borderRadius: '6px',
 
         ...sx?.tableSuperContainer
@@ -41,7 +41,7 @@ export default function Table({ children, sx, ...rest }: TableProps) {
               whiteSpace: 'nowrap',
               backgroundColor: 'surface',
               borderBottom: '1px solid',
-              borderColor: 'tableStructure'
+              borderColor: 'onsurface'
             },
 
             ...sx?.table

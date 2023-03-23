@@ -13,6 +13,7 @@ import {
   RequestParams,
   Overview as TOverview
 } from '../../__generated__/dataAPI';
+import TopDelegatesTable from '../../molecules/governance/TopDelegatesTable';
 
 function useGetDelegatesData() {
   const delegatesBalancesFetcher: Fetcher<DelegatesSupport[]> =
@@ -47,12 +48,12 @@ export default function Delegates() {
     governanceOverviewError
   } = useGetDelegatesData();
 
-  const delegatedKpiData = useMemo(() => {
-    const delegatedMKR = delegatesBalances?.reduce(
-      (memo, { amount }) => memo + amount,
-      0
-    );
+  const delegatedMKR = useMemo(
+    () => delegatesBalances?.reduce((memo, { amount }) => memo + amount, 0),
+    [delegatesBalances]
+  );
 
+  const delegatedKpiData = useMemo(() => {
     const mkrInHat =
       governanceOverviewData && delegatedMKR
         ? governanceOverviewData?.mkr_locked_in_hat_from_recognized /
@@ -73,7 +74,7 @@ export default function Delegates() {
           })
         : mkrInHat
     };
-  }, [delegatesBalances, governanceOverviewData, intl]);
+  }, [delegatedMKR, governanceOverviewData, intl]);
 
   if (delegatesBalancesError || governanceOverviewError) {
     console.error(delegatesBalancesError);
@@ -103,7 +104,11 @@ export default function Delegates() {
         </Card>
 
         <Card header={{ title: 'Top Delegates' }} sx={{ flex: '1 1 70%' }}>
-          Top delegates table here
+          <TopDelegatesTable
+            data={delegatesBalances}
+            totalDelegated={delegatedMKR}
+            error={delegatesBalancesError}
+          />
         </Card>
       </FlexRow>
 

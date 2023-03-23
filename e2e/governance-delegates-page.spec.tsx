@@ -49,6 +49,20 @@ test.describe('Delegates page test', () => {
       page.getByRole('figure', { name: 'Delegate voting power chart' })
     ).toBeVisible();
   });
+
+  test('Top Delegates table', async ({ page }) => {
+    await expect(
+      page.getByRole('table', { name: 'Top Delegates table' })
+    ).toBeVisible();
+
+    await expect(
+      await page
+        .getByRole('table', { name: 'Top Delegates table' })
+        .locator('tbody')
+        .locator('tr')
+        .count()
+    ).toBe(5);
+  });
 });
 
 test.describe('API errors', () => {
