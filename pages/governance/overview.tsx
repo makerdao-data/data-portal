@@ -80,7 +80,12 @@ export default function Overview() {
         </Card>
       </Flex>
 
-      <DelegatesWeightChart />
+      <Card
+        header={{
+          title: 'Recognized delegate voting power'
+        }}>
+        <DelegatesWeightChart />
+      </Card>
 
       <GoverningExecutiveCard
         data={governanceData}

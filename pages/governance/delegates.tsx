@@ -1,21 +1,84 @@
 import { useIntl } from 'next-intl';
-import { ReactNode } from 'react';
-import { Flex } from 'theme-ui';
+import { useMemo } from 'react';
+import { Text } from '@makerdao-dicu/makerdao-ui';
+import useSwr, { Fetcher } from 'swr';
 import Card from '../../components/Card';
-import DeltaChange from '../../components/DeltaChange';
+import FlexRow from '../../components/grid/FlexRow';
 import Kpi from '../../components/Kpi';
+import { dataApiClient } from '../../data/dataApiClient';
+import DelegatesWeightChart from '../../molecules/governance/DelegatesWeightChart';
 import FlexPage from '../../molecules/Page';
+import {
+  DelegatesSupport,
+  RequestParams,
+  Overview as TOverview
+} from '../../__generated__/dataAPI';
 
-function FlexRow({ children }: { children: ReactNode }) {
-  return (
-    <Flex sx={{ gap: 24, flexWrap: ['wrap', 'wrap', 'nowrap'] }}>
-      {children}
-    </Flex>
+function useGetDelegatesData() {
+  const delegatesBalancesFetcher: Fetcher<DelegatesSupport[]> =
+    dataApiClient.v1.readDelegatesBalancesV1GovernanceDelegatesBalancesGet;
+  const governanceOverviewFetcher: Fetcher<TOverview, RequestParams> =
+    dataApiClient.v1.readGovernanceOverviewV1GovernanceOverviewGet;
+
+  const { data: delegatesBalances, error: delegatesBalancesError } = useSwr<
+    DelegatesSupport[],
+    Error
+  >('delegatesBalances', () =>
+    delegatesBalancesFetcher({ type: 'recognized' })
   );
+
+  const { data: governanceOverviewData, error: governanceOverviewError } =
+    useSwr<TOverview, Error>('governanceOverview', governanceOverviewFetcher);
+
+  return {
+    delegatesBalances,
+    governanceOverviewData,
+    delegatesBalancesError,
+    governanceOverviewError
+  };
 }
 
 export default function Delegates() {
   const intl = useIntl();
+  const {
+    delegatesBalances,
+    governanceOverviewData,
+    delegatesBalancesError,
+    governanceOverviewError
+  } = useGetDelegatesData();
+
+  const delegatedKpiData = useMemo(() => {
+    const delegatedMKR = delegatesBalances?.reduce(
+      (memo, { amount }) => memo + amount,
+      0
+    );
+
+    const mkrInHat =
+      governanceOverviewData && delegatedMKR
+        ? governanceOverviewData?.mkr_locked_in_hat_from_recognized /
+          delegatedMKR
+        : null;
+
+    return {
+      delegatedMKR: delegatedMKR
+        ? intl.formatNumber(delegatedMKR, {
+            maximumFractionDigits: 1,
+            notation: 'compact'
+          })
+        : 0,
+      mkrInHat: mkrInHat
+        ? intl.formatNumber(mkrInHat, {
+            style: 'percent',
+            maximumFractionDigits: 0
+          })
+        : mkrInHat
+    };
+  }, [delegatesBalances, governanceOverviewData, intl]);
+
+  if (delegatesBalancesError || governanceOverviewError) {
+    console.error(delegatesBalancesError);
+    console.error(governanceOverviewError);
+  }
 
   return (
     <FlexPage title="Governance Delegates">
@@ -23,12 +86,18 @@ export default function Delegates() {
         <Card sx={{ padding: '8px', flex: '1 1 30%' }}>
           <Kpi
             title="Delegated MKR"
-            value={intl.formatNumber(16774428, {
-              maximumFractionDigits: 1,
-              notation: 'compact'
-            })}
+            value={delegatedKpiData.delegatedMKR}
+            error={delegatesBalancesError}
             unit="MKR"
-            delta={<DeltaChange change={0.4} label="MKR in hat" />}
+            delta={
+              <Text
+                role="textbox"
+                aria-label="MKR in Hat"
+                variant="muted"
+                sx={{ color: 'success' }}>
+                {`MKR in Hat ${delegatedKpiData.mkrInHat}`}
+              </Text>
+            }
             sx={{ border: 'none' }}
           />
         </Card>
@@ -48,7 +117,7 @@ export default function Delegates() {
         <Card
           header={{ title: 'Voting Power Distribution YoY' }}
           sx={{ flex: '1 1 50%' }}>
-          Stream chart here
+          <DelegatesWeightChart onlyRecognized />
         </Card>
       </FlexRow>
 
