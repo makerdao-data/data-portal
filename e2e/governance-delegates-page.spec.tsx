@@ -44,6 +44,12 @@ test.describe('Delegates page test', () => {
     ).toContainText('71.1K');
   });
 
+  test('Latest Delegate voting power chart', async ({ page }) => {
+    await expect(
+      page.getByRole('figure', { name: 'Today Delegate voting power chart' })
+    ).toBeVisible();
+  });
+
   test('Delegate voting power chart', async ({ page }) => {
     await expect(
       page.getByRole('figure', { name: 'Delegate voting power chart' })

@@ -78,6 +78,9 @@ export default function DelegatesWeightChart({
               responsive: true,
               maintainAspectRatio: false,
               plugins: {
+                datalabels: {
+                  display: false
+                },
                 legend: {
                   display: true,
                   position: 'top' as const,

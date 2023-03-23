@@ -33,7 +33,9 @@ export default function useDelegatesWeightChartData(
       );
       return delegatesSupportFetcher({
         type: onlyRecognized ? 'recognized' : undefined,
-        from_date: `${fromDate.getFullYear()}-${fromDate.getMonth()}-${fromDate.getDate()}`
+        from_date: `${fromDate.getFullYear()}-${
+          fromDate.getMonth() + 1
+        }-${fromDate.getDate()}`
       });
     }
   );

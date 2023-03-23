@@ -14,6 +14,7 @@ import {
   Overview as TOverview
 } from '../../__generated__/dataAPI';
 import TopDelegatesTable from '../../molecules/governance/TopDelegatesTable';
+import DelegatesWeightDoughnutChart from '../../molecules/governance/DelegatesWeightDoughnutChart';
 
 function useGetDelegatesData() {
   const delegatesBalancesFetcher: Fetcher<DelegatesSupport[]> =
@@ -114,9 +115,17 @@ export default function Delegates() {
 
       <FlexRow>
         <Card
-          header={{ title: 'Voting Power Distribution <dd-mmm>' }}
-          sx={{ flex: '1 1 50%' }}>
-          Pie Chart here
+          header={{
+            title: `Voting Power Distribution ${intl.formatDateTime(
+              new Date(),
+              {
+                dateStyle: 'medium'
+              }
+            )}`
+          }}
+          label="Today Voting Power Distribution title"
+          sx={{ flex: '1 1 50%', gap: 0 }}>
+          <DelegatesWeightDoughnutChart />
         </Card>
 
         <Card
