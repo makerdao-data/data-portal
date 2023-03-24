@@ -135,7 +135,6 @@ export default function DelegatesWeightDoughnutChart() {
                             lines.push(label.substring(i * 12, i * 12 + 12));
                           }
 
-                          console.log(lines);
                           return lines;
                         }
 
