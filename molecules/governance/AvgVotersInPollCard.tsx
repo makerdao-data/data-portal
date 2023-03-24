@@ -142,6 +142,9 @@ export default function AvgVotersInPollCard({
                     }
                   },
                   plugins: {
+                    datalabels: {
+                      display: false
+                    },
                     legend: {
                       display: true,
                       labels: {

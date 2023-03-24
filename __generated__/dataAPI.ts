@@ -327,6 +327,24 @@ export interface Bridge {
   weekly_teleport_share_7: number;
 }
 
+/** CurrentDelegates */
+export interface CurrentDelegates {
+  /** Name */
+  name?: string;
+  /** Type */
+  type: string;
+  /** Delegated Mkr */
+  delegated_mkr: number;
+  /** Percent */
+  percent: number;
+  /** Delegators */
+  delegators: number;
+  /** Latest Compensation */
+  latest_compensation?: number;
+  /** Active Contract */
+  active_contract: string;
+}
+
 /** Delegate */
 export interface Delegate {
   /** Block */
@@ -357,6 +375,14 @@ export enum DelegateType {
   Shadow = 'shadow'
 }
 
+/** DelegatesMonthlyCompensation */
+export interface DelegatesMonthlyCompensation {
+  /** Date */
+  date: string;
+  /** Amount */
+  amount: number;
+}
+
 /** DelegatesSupport */
 export interface DelegatesSupport {
   /** Vote Delegate */
@@ -372,6 +398,20 @@ export interface DelegatesSupport {
    * @format date-time
    */
   last_timestamp: string;
+}
+
+/** DelegationSummary */
+export interface DelegationSummary {
+  /** Delegator */
+  delegator: string;
+  /** Vote Delegate */
+  vote_delegate: string;
+  /** Delegate */
+  delegate?: string;
+  /** Type */
+  type: string;
+  /** Delegated Mkr */
+  delegated_mkr: number;
 }
 
 /** Delegations */
@@ -2786,13 +2826,13 @@ export class Api<
         /**
          * From Date
          * @format date
-         * @default "2023-03-16"
+         * @default "2023-03-22"
          */
         from_date?: string;
         /**
          * To Date
          * @format date
-         * @default "2023-03-16"
+         * @default "2023-03-22"
          */
         to_date?: string;
         /** An enumeration. */
@@ -3304,6 +3344,79 @@ export class Api<
     ) =>
       this.request<DelegatesSupport[], HTTPValidationError>({
         path: `/v1/governance/delegates_balances`,
+        method: 'GET',
+        query: query,
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * @description Get delegates monthly compensation.
+     *
+     * @tags governance
+     * @name ReadDelegatesMonthlyCompensationV1GovernanceDelegatesMonthlyCompensationGet
+     * @summary Read Delegates Monthly Compensation
+     * @request GET:/v1/governance/delegates_monthly_compensation
+     * @secure
+     */
+    readDelegatesMonthlyCompensationV1GovernanceDelegatesMonthlyCompensationGet:
+      (params: RequestParams = {}) =>
+        this.request<DelegatesMonthlyCompensation[], any>({
+          path: `/v1/governance/delegates_monthly_compensation`,
+          method: 'GET',
+          secure: true,
+          format: 'json',
+          ...params
+        }),
+
+    /**
+     * @description Get current delegates status.
+     *
+     * @tags governance
+     * @name ReadCurrentDelegatesV1GovernanceCurrentDelegatesGet
+     * @summary Read Current Delegates
+     * @request GET:/v1/governance/current_delegates
+     * @secure
+     */
+    readCurrentDelegatesV1GovernanceCurrentDelegatesGet: (
+      query?: {
+        /** An enumeration. */
+        type?: DelegateType;
+      },
+      params: RequestParams = {}
+    ) =>
+      this.request<CurrentDelegates[], HTTPValidationError>({
+        path: `/v1/governance/current_delegates`,
+        method: 'GET',
+        query: query,
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * @description Get delegation summary.
+     *
+     * @tags governance
+     * @name ReadDelegationSummaryV1GovernanceDelegationSummaryGet
+     * @summary Read Delegation Summary
+     * @request GET:/v1/governance/delegation_summary
+     * @secure
+     */
+    readDelegationSummaryV1GovernanceDelegationSummaryGet: (
+      query?: {
+        /** An enumeration. */
+        type?: DelegateType;
+        /** Delegate */
+        delegate?: string;
+        /** Delegator */
+        delegator?: string;
+      },
+      params: RequestParams = {}
+    ) =>
+      this.request<DelegationSummary[], HTTPValidationError>({
+        path: `/v1/governance/delegation_summary`,
         method: 'GET',
         query: query,
         secure: true,

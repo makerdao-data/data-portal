@@ -104,6 +104,9 @@ export default function GoverningExecutiveCard({
                     }
                   },
                   plugins: {
+                    datalabels: {
+                      display: false
+                    },
                     legend: {
                       display: false
                     }

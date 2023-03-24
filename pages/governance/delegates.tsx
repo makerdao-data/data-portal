@@ -15,6 +15,12 @@ import {
 } from '../../__generated__/dataAPI';
 import TopDelegatesTable from '../../molecules/governance/TopDelegatesTable';
 import DelegatesWeightDoughnutChart from '../../molecules/governance/DelegatesWeightDoughnutChart';
+import dynamic from 'next/dynamic';
+
+const DelegatesFlowSankeyChart = dynamic(
+  () => import('../../molecules/governance/DelegatesFlowSankeyChart'),
+  { ssr: false }
+);
 
 function useGetDelegatesData() {
   const delegatesBalancesFetcher: Fetcher<DelegatesSupport[]> =
@@ -136,7 +142,7 @@ export default function Delegates() {
       </FlexRow>
 
       <Card header={{ title: 'Delegation Flow' }} sx={{ flex: '1 1 100%' }}>
-        Sankey chart here
+        <DelegatesFlowSankeyChart />
       </Card>
 
       <Card
