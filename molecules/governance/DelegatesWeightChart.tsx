@@ -145,7 +145,7 @@ export default function DelegatesWeightChart({
           />
         </Box>
       ) : (
-        <Skeleton height={220} style={{ borderRadius: '8px', top: '-4px' }} />
+        <Skeleton height={400} style={{ borderRadius: '8px', top: '-4px' }} />
       )}
     </Fragment>
   );

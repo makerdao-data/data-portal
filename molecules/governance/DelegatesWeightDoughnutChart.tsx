@@ -159,7 +159,7 @@ export default function DelegatesWeightDoughnutChart() {
         </Box>
       ) : (
         <Skeleton
-          height={220}
+          height={400}
           style={{ marginTop: 24, borderRadius: '8px', top: '-4px' }}
         />
       )}
