@@ -23,9 +23,8 @@ import {
 } from '@makerdao-dicu/makerdao-ui';
 import { TableStyles } from '../components/table/Table';
 import TableSkeleton from '../components/TableSkeleton';
-
 interface TableData<T extends object> {
-  columns: Column<T>[];
+  columns: ({ width?: string } & Column<T>)[];
   data: T[];
 }
 
@@ -117,13 +116,16 @@ export default function DataTable<T extends object>({
                     sx={
                       index === 0
                         ? {
-                            width: columnsWidths[index],
+                            width: column.width ?? columnsWidths[index],
                             minWidth: ['100px', '100px', '240px'],
                             maxWidth: ['100px', '100px', '240px'],
                             left: '0px',
                             position: 'sticky'
                           }
-                        : { width: columnsWidths[index], textAlign: 'right' }
+                        : {
+                            width: column.width ?? columnsWidths[index],
+                            textAlign: 'right'
+                          }
                     }>
                     {column.render('Header')}
                     <span>
@@ -154,9 +156,6 @@ export default function DataTable<T extends object>({
                           sx={
                             index === 0
                               ? {
-                                  width: columnsWidths[index],
-                                  minWidth: ['100px', '100px', '240px'],
-                                  maxWidth: ['100px', '100px', '240px'],
                                   left: '0px',
                                   position: 'sticky',
                                   backgroundColor: 'background',
@@ -164,7 +163,7 @@ export default function DataTable<T extends object>({
                                   textOverflow: 'ellipsis'
                                 }
                               : {
-                                  width: columnsWidths[index],
+                                  // width: columnsWidths[index],
                                   textAlign: 'right',
                                   overflow: 'hidden',
                                   textOverflow: 'ellipsis'

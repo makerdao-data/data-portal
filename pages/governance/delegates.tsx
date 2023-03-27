@@ -9,13 +9,14 @@ import { dataApiClient } from '../../data/dataApiClient';
 import DelegatesWeightChart from '../../molecules/governance/DelegatesWeightChart';
 import FlexPage from '../../molecules/Page';
 import {
-  DelegatesSupport,
   RequestParams,
-  Overview as TOverview
+  Overview as TOverview,
+  CurrentDelegates
 } from '../../__generated__/dataAPI';
 import TopDelegatesTable from '../../molecules/governance/TopDelegatesTable';
 import DelegatesWeightDoughnutChart from '../../molecules/governance/DelegatesWeightDoughnutChart';
 import dynamic from 'next/dynamic';
+import DelegatesTable from '../../molecules/governance/DelegatesTable';
 
 const DelegatesFlowSankeyChart = dynamic(
   () => import('../../molecules/governance/DelegatesFlowSankeyChart'),
@@ -23,25 +24,23 @@ const DelegatesFlowSankeyChart = dynamic(
 );
 
 function useGetDelegatesData() {
-  const delegatesBalancesFetcher: Fetcher<DelegatesSupport[]> =
-    dataApiClient.v1.readDelegatesBalancesV1GovernanceDelegatesBalancesGet;
+  const currentDelegatesFetcher: Fetcher<CurrentDelegates[]> =
+    dataApiClient.v1.readCurrentDelegatesV1GovernanceCurrentDelegatesGet;
   const governanceOverviewFetcher: Fetcher<TOverview, RequestParams> =
     dataApiClient.v1.readGovernanceOverviewV1GovernanceOverviewGet;
 
-  const { data: delegatesBalances, error: delegatesBalancesError } = useSwr<
-    DelegatesSupport[],
+  const { data: currentDelegates, error: currentDelegatesError } = useSwr<
+    CurrentDelegates[],
     Error
-  >('delegatesBalances', () =>
-    delegatesBalancesFetcher({ type: 'recognized' })
-  );
+  >('currentDelegates', () => currentDelegatesFetcher({ type: 'recognized' }));
 
   const { data: governanceOverviewData, error: governanceOverviewError } =
     useSwr<TOverview, Error>('governanceOverview', governanceOverviewFetcher);
 
   return {
-    delegatesBalances,
+    currentDelegates,
     governanceOverviewData,
-    delegatesBalancesError,
+    currentDelegatesError,
     governanceOverviewError
   };
 }
@@ -49,15 +48,19 @@ function useGetDelegatesData() {
 export default function Delegates() {
   const intl = useIntl();
   const {
-    delegatesBalances,
+    currentDelegates,
     governanceOverviewData,
-    delegatesBalancesError,
+    currentDelegatesError,
     governanceOverviewError
   } = useGetDelegatesData();
 
   const delegatedMKR = useMemo(
-    () => delegatesBalances?.reduce((memo, { amount }) => memo + amount, 0),
-    [delegatesBalances]
+    () =>
+      currentDelegates?.reduce(
+        (memo, { delegated_mkr }) => memo + delegated_mkr,
+        0
+      ),
+    [currentDelegates]
   );
 
   const delegatedKpiData = useMemo(() => {
@@ -83,8 +86,8 @@ export default function Delegates() {
     };
   }, [delegatedMKR, governanceOverviewData, intl]);
 
-  if (delegatesBalancesError || governanceOverviewError) {
-    console.error(delegatesBalancesError);
+  if (currentDelegatesError || governanceOverviewError) {
+    console.error(currentDelegatesError);
     console.error(governanceOverviewError);
   }
 
@@ -95,7 +98,7 @@ export default function Delegates() {
           <Kpi
             title="Delegated MKR"
             value={delegatedKpiData.delegatedMKR}
-            error={delegatesBalancesError}
+            error={currentDelegatesError}
             unit="MKR"
             delta={
               <Text
@@ -112,9 +115,8 @@ export default function Delegates() {
 
         <Card header={{ title: 'Top Delegates' }} sx={{ flex: '1 1 70%' }}>
           <TopDelegatesTable
-            data={delegatesBalances}
-            totalDelegated={delegatedMKR}
-            error={delegatesBalancesError}
+            data={currentDelegates}
+            error={currentDelegatesError}
           />
         </Card>
       </FlexRow>
@@ -151,7 +153,9 @@ export default function Delegates() {
         Bar Chart here
       </Card>
 
-      <Card sx={{ flex: '1 1 100%' }}>Total Delegates table here</Card>
+      <Card sx={{ flex: '1 1 100%' }}>
+        <DelegatesTable data={currentDelegates} error={currentDelegatesError} />
+      </Card>
     </FlexPage>
   );
 }

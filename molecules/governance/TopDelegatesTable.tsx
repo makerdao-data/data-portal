@@ -1,7 +1,7 @@
 import { Text } from '@makerdao-dicu/makerdao-ui';
 import { useIntl } from 'next-intl';
 import { useMemo } from 'react';
-import { DelegatesSupport } from '../../__generated__/dataAPI';
+import { CurrentDelegates } from '../../__generated__/dataAPI';
 import TableSkeleton from '../../components/TableSkeleton';
 import {
   Table,
@@ -15,38 +15,43 @@ import { addressShortener } from '../../utils/block-chain-utils';
 import { Link } from 'theme-ui';
 
 type TopDelegatesTableProps = {
-  data: DelegatesSupport[] | undefined;
-  totalDelegated: number | undefined;
+  data: CurrentDelegates[] | undefined;
   error: Error | undefined;
 };
 
 export default function TopDelegatesTable({
   data,
-  totalDelegated,
   error
 }: TopDelegatesTableProps) {
   const intl = useIntl();
 
   const formattedData = useMemo(() => {
-    if (data && totalDelegated) {
-      const top5 = data.sort((a, b) => b.amount - a.amount).slice(0, 5);
+    if (data) {
+      const top5 = data
+        .sort((a, b) => b.delegated_mkr - a.delegated_mkr)
+        .slice(0, 5);
 
-      return top5.map(({ delegate, amount, vote_delegate }) => ({
-        name: delegate,
-        amount: intl.formatNumber(amount, {
-          notation: 'compact',
-          maximumFractionDigits: 0
-        }),
-        percentOfDelegated: intl.formatNumber(amount / totalDelegated, {
-          style: 'percent',
-          maximumFractionDigits: 0
-        }),
-        contract: vote_delegate
-      }));
+      return top5.map(
+        ({ name, delegated_mkr, percent, delegators, active_contract }) => ({
+          name,
+          amount: intl.formatNumber(delegated_mkr, {
+            notation: 'compact',
+            maximumFractionDigits: 0
+          }),
+          percentOfDelegated: intl.formatNumber(percent / 100, {
+            style: 'percent',
+            maximumFractionDigits: 0
+          }),
+          delegators: intl.formatNumber(delegators, {
+            maximumFractionDigits: 0
+          }),
+          contract: active_contract
+        })
+      );
     }
 
     return [];
-  }, [data, intl, totalDelegated]);
+  }, [data, intl]);
 
   if (error) {
     console.error(error);
@@ -84,9 +89,9 @@ export default function TopDelegatesTable({
         <TRow>
           <THeader
             sx={{
-              width: ['150px', '150px', '150px'],
-              minWidth: ['150px', '150px', '150px'],
-              maxWidth: ['150px', '150px', '150px'],
+              width: ['180px', '180px', '180px'],
+              minWidth: ['180px', '180px', '180px'],
+              maxWidth: ['180px', '180px', '180px'],
               left: '0px',
               position: 'sticky'
             }}>
@@ -95,8 +100,11 @@ export default function TopDelegatesTable({
           <THeader sx={{ width: '100px', textAlign: 'right' }}>
             Delegated MKR
           </THeader>
-          <THeader sx={{ width: '140px', textAlign: 'right' }}>% MKR</THeader>
-          <THeader sx={{ width: '180px', textAlign: 'right' }}>
+          <THeader sx={{ width: '100px', textAlign: 'right' }}>% MKR</THeader>
+          <THeader sx={{ width: '100px', textAlign: 'right' }}>
+            Delegators
+          </THeader>
+          <THeader sx={{ width: '100px', textAlign: 'right' }}>
             Contract
           </THeader>
         </TRow>
@@ -116,7 +124,7 @@ export default function TopDelegatesTable({
         <TBody>
           {formattedData.length > 0 ? (
             formattedData.map(
-              ({ name, amount, contract, percentOfDelegated }) => {
+              ({ name, amount, contract, percentOfDelegated, delegators }) => {
                 return (
                   <TRow key={name} aria-label={name + ' table row'}>
                     <TCell
@@ -142,6 +150,12 @@ export default function TopDelegatesTable({
                       aria-label={name + ' %MKR cell'}
                       sx={{ textAlign: 'right' }}>
                       <Text>{percentOfDelegated}</Text>
+                    </TCell>
+
+                    <TCell
+                      aria-label={name + ' delegators cell'}
+                      sx={{ textAlign: 'right' }}>
+                      <Text>{delegators}</Text>
                     </TCell>
 
                     <TCell
