@@ -1,0 +1,177 @@
+[
+  {
+    "vote_delegate": "0xaa19f47e6acb02df88efa9f023f2a38412069902",
+    "delegate": "mhonkasalo & teemulau",
+    "amount": 9099.840902878881,
+    "last_block": 16888465,
+    "last_timestamp": "2023-03-23T06:28:11"
+  },
+  {
+    "vote_delegate": "0x7ddb50a5b15aea7e7cf9ac8e55a7f9fd9d05ecc6",
+    "delegate": "Penn Blockchain",
+    "amount": 6676.58674852,
+    "last_block": 16888465,
+    "last_timestamp": "2023-03-23T06:28:11"
+  },
+  {
+    "vote_delegate": "0xf1792852bf860b4ef84a2869df1550bc80ec0ab7",
+    "delegate": "London Business School",
+    "amount": 1000.0,
+    "last_block": 16888466,
+    "last_timestamp": "2023-03-23T06:28:23"
+  },
+  {
+    "vote_delegate": "0xb8df77c3bd57761bd0c55d2f873d3aa89b3da8b7",
+    "delegate": "Blockchain@Columbia",
+    "amount": 1000.00978217,
+    "last_block": 16888467,
+    "last_timestamp": "2023-03-23T06:28:35"
+  },
+  {
+    "vote_delegate": "0x2c511d932c5a6fe4071262d49bfc018cfbaaa1f5",
+    "delegate": "Chris Blec",
+    "amount": 10.06269611103489,
+    "last_block": 16888467,
+    "last_timestamp": "2023-03-23T06:28:35"
+  },
+  {
+    "vote_delegate": "0x797d63cb6709c79b9eca99d9585ea613da205156",
+    "delegate": "ChicagoDAO",
+    "amount": 1500.001704112794,
+    "last_block": 16888469,
+    "last_timestamp": "2023-03-23T06:28:59"
+  },
+  {
+    "vote_delegate": "0x4e314eba76c3062140ad196e4ffd34485e33c5f5",
+    "delegate": "Governance House",
+    "amount": 0.5559837076778197,
+    "last_block": 16888474,
+    "last_timestamp": "2023-03-23T06:29:59"
+  },
+  {
+    "vote_delegate": "0x92e1ca8b69a44bb17afa92838da68fc41f12250a",
+    "delegate": "Feedblack Loops LLC",
+    "amount": 8103.35028380744,
+    "last_block": 16888478,
+    "last_timestamp": "2023-03-23T06:30:47"
+  },
+  {
+    "vote_delegate": "0xb4b82978fce6d26a22dea7e653bb9ce8e14f8056",
+    "delegate": "ultraschuppi",
+    "amount": 10636.244006592038,
+    "last_block": 16888478,
+    "last_timestamp": "2023-03-23T06:30:47"
+  },
+  {
+    "vote_delegate": "0x0f4be9f208c552a6b04d9a1222f385785f95beaa",
+    "delegate": "Flip Flop Flap Delegate LLC",
+    "amount": 16111.982243904009,
+    "last_block": 16888478,
+    "last_timestamp": "2023-03-23T06:30:47"
+  },
+  {
+    "vote_delegate": "0xd9d00c42bed99a6d3a0f2902c640bccceecf6c29",
+    "delegate": "pvl",
+    "amount": 0.29482996,
+    "last_block": 16888482,
+    "last_timestamp": "2023-03-23T06:31:35"
+  },
+  {
+    "vote_delegate": "0xd1fc89e0c3828f50b650e1309e30cb4fcf2bdbe3",
+    "delegate": "Jason Yanowitz",
+    "amount": 1001.39714989,
+    "last_block": 16888482,
+    "last_timestamp": "2023-03-23T06:31:35"
+  },
+  {
+    "vote_delegate": "0x316090e23cc44e70245ba9846404413aca2df16f",
+    "delegate": "Frontier Research LLC",
+    "amount": 521.2341359112628,
+    "last_block": 16888483,
+    "last_timestamp": "2023-03-23T06:31:47"
+  },
+  {
+    "vote_delegate": "0xb056e45fd47d962f4ef25714714abc7a79886064",
+    "delegate": "monetsupply",
+    "amount": 7.30069437770525,
+    "last_block": 16888483,
+    "last_timestamp": "2023-03-23T06:31:47"
+  },
+  {
+    "vote_delegate": "0xe89f973a19cd76c3e5e236062668e43042176638",
+    "delegate": "CodeKnight",
+    "amount": 5.11550795,
+    "last_block": 16888483,
+    "last_timestamp": "2023-03-23T06:31:47"
+  },
+  {
+    "vote_delegate": "0x9301f3bb7a71ab4d46b17bd1f8254142fa8f26ad",
+    "delegate": "ONESTONE",
+    "amount": 9.006641180206381,
+    "last_block": 16888484,
+    "last_timestamp": "2023-03-23T06:31:59"
+  },
+  {
+    "vote_delegate": "0x40f784b16b2d405efd4e9eb7d0663398d7d886fb",
+    "delegate": "ConsenSys",
+    "amount": 2.2758443403479927,
+    "last_block": 16888484,
+    "last_timestamp": "2023-03-23T06:31:59"
+  },
+  {
+    "vote_delegate": "0xd0df93fc03a7291e31947f5cc6ef526f5b67b0ea",
+    "delegate": "RiskDAO",
+    "amount": 0.0001,
+    "last_block": 16888485,
+    "last_timestamp": "2023-03-23T06:32:11"
+  },
+  {
+    "vote_delegate": "0x4e324f2327fa3e567d802ddcf655f7188eb62754",
+    "delegate": "JustinCase",
+    "amount": 575.777181492715,
+    "last_block": 16888486,
+    "last_timestamp": "2023-03-23T06:32:23"
+  },
+  {
+    "vote_delegate": "0x869147940842bb1aa4c40e60c5e583f4911f2e02",
+    "delegate": "GFX Labs",
+    "amount": 12532.425491840102,
+    "last_block": 16888486,
+    "last_timestamp": "2023-03-23T06:32:23"
+  },
+  {
+    "vote_delegate": "0x06e8dedf9e1adb1eba32f36ea9223770ba378b77",
+    "delegate": "ACREinvest",
+    "amount": 0.10197966591877035,
+    "last_block": 16888488,
+    "last_timestamp": "2023-03-23T06:32:47"
+  },
+  {
+    "vote_delegate": "0x925016c2367802632cabdf13b5fc2c1bdc2c301a",
+    "delegate": "HKUST EPI Blockchain",
+    "amount": 2008.4094037952696,
+    "last_block": 16888492,
+    "last_timestamp": "2023-03-23T06:33:35"
+  },
+  {
+    "vote_delegate": "0x4c28d8402ac01e5d623e4a5438535369770fe407",
+    "delegate": "Doo",
+    "amount": 330.5001,
+    "last_block": 16888495,
+    "last_timestamp": "2023-03-23T06:34:11"
+  },
+  {
+    "vote_delegate": "0x222d46d1229036c7bb6ea3f453406792ca3c3ea2",
+    "delegate": "Flipside Crypto",
+    "amount": 6.4561378423261235,
+    "last_block": 16888497,
+    "last_timestamp": "2023-03-23T06:34:35"
+  },
+  {
+    "vote_delegate": "0xe3e9649aea634f8995e14c7a3a6a04938d4b66df",
+    "delegate": "Penn Blockchain",
+    "amount": 0.1,
+    "last_block": 16888500,
+    "last_timestamp": "2023-03-23T06:35:11"
+  }
+]

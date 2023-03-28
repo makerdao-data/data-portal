@@ -3,7 +3,7 @@ import votersFixture from './fixtures/voters.json';
 import delegatesSupportFixture from './fixtures/delegatesSupport.json';
 import governanceOverviewFixture from './fixtures/governanceOverview.json';
 
-test.describe('Voters page test', () => {
+test.describe('Governance overview page test', () => {
   test.beforeEach(async ({ page }) => {
     await page.route(
       'https://data-api.makerdao.network/v1/governance/overview',

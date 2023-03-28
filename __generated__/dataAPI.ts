@@ -327,6 +327,24 @@ export interface Bridge {
   weekly_teleport_share_7: number;
 }
 
+/** CurrentDelegates */
+export interface CurrentDelegates {
+  /** Name */
+  name?: string;
+  /** Type */
+  type: string;
+  /** Delegated Mkr */
+  delegated_mkr: number;
+  /** Percent */
+  percent: number;
+  /** Delegators */
+  delegators: number;
+  /** Latest Compensation */
+  latest_compensation?: number;
+  /** Active Contract */
+  active_contract: string;
+}
+
 /** Delegate */
 export interface Delegate {
   /** Block */
@@ -355,6 +373,76 @@ export interface Delegate {
 export enum DelegateType {
   Recognized = 'recognized',
   Shadow = 'shadow'
+}
+
+/** DelegatesMonthlyCompensation */
+export interface DelegatesMonthlyCompensation {
+  /** Date */
+  date: string;
+  /** Amount */
+  amount: number;
+}
+
+/** DelegatesSupport */
+export interface DelegatesSupport {
+  /** Vote Delegate */
+  vote_delegate: string;
+  /** Delegate */
+  delegate?: string;
+  /** Amount */
+  amount: number;
+  /** Last Block */
+  last_block: number;
+  /**
+   * Last Timestamp
+   * @format date-time
+   */
+  last_timestamp: string;
+}
+
+/** DelegationSummary */
+export interface DelegationSummary {
+  /** Delegator */
+  delegator: string;
+  /** Vote Delegate */
+  vote_delegate: string;
+  /** Delegate */
+  delegate?: string;
+  /** Type */
+  type: string;
+  /** Delegated Mkr */
+  delegated_mkr: number;
+}
+
+/** Delegations */
+export interface Delegations {
+  /** Block */
+  block: number;
+  /**
+   * Timestamp
+   * @format date-time
+   */
+  timestamp: string;
+  /** Tx Hash */
+  tx_hash: string;
+  /** Log Index */
+  log_index: number;
+  /** Transaction Index */
+  transaction_index: number;
+  /** Vote Delegate */
+  vote_delegate: string;
+  /** Delegate */
+  delegate?: string;
+  /** Delegator */
+  delegator: string;
+  /** Operation */
+  operation: string;
+  /** Raw Amount */
+  raw_amount: number;
+  /** Amount */
+  amount: number;
+  /** Order Index */
+  order_index: string;
 }
 
 /** Domains */
@@ -753,6 +841,35 @@ export interface Flap {
   to_address: string;
 }
 
+/** GovDAITransfers */
+export interface GovDAITransfers {
+  /** Block */
+  block: string;
+  /**
+   * Timestamp
+   * @format date-time
+   */
+  timestamp: string;
+  /** Tx Hash */
+  tx_hash: string;
+  /** Token */
+  token: string;
+  /** Sender */
+  sender: string;
+  /** Receiver */
+  receiver: string;
+  /** Amount */
+  amount: number;
+  /** Label */
+  label: string;
+  /** Code */
+  code: string;
+  /** Type */
+  type: string;
+  /** Flow */
+  flow: string;
+}
+
 /** HTTPValidationError */
 export interface HTTPValidationError {
   /** Detail */
@@ -790,6 +907,29 @@ export interface LastTime {
    * @example "2022-01-14T16:34:50"
    */
   last_time: string;
+}
+
+/** MultisigEvent */
+export interface MultisigEvent {
+  /** Block */
+  block: number;
+  /**
+   * Timestamp
+   * @format date-time
+   */
+  timestamp: string;
+  /** Tx Hash */
+  tx_hash: string;
+  /** Event Name */
+  event_name: string;
+  /** Event Signature */
+  event_signature: string;
+  /** Contract Address */
+  contract_address: string;
+  /** Parameters */
+  parameters: Record<string, any>[];
+  /** Label */
+  label: string;
 }
 
 /**
@@ -943,6 +1083,37 @@ export interface ParticipationCost {
   tx_fee_eth?: number;
   /** Tx Fee Usd */
   tx_fee_usd?: number;
+}
+
+/** PauseProxyTransfers */
+export interface PauseProxyTransfers {
+  /** Block */
+  block: string;
+  /**
+   * Timestamp
+   * @format date-time
+   */
+  timestamp: string;
+  /** Tx Hash */
+  tx_hash: string;
+  /** Log Index */
+  log_index: number;
+  /** Tx Index */
+  tx_index: number;
+  /** Token */
+  token: string;
+  /** Sender */
+  sender: string;
+  /** Receiver */
+  receiver: string;
+  /** Amount Raw */
+  amount_raw: number;
+  /** Amount */
+  amount: number;
+  /** Order Index */
+  order_index: string;
+  /** Flow */
+  flow: string;
 }
 
 /** Proxy */
@@ -1346,6 +1517,357 @@ export interface VaultState {
    * @example "2021-10-25T12:17:41"
    */
   time_created: string;
+}
+
+/** VestBlow */
+export interface VestBlow {
+  /**
+   * Block
+   * block id
+   * @example 13656651
+   */
+  block: number;
+  /**
+   * Timestamp
+   * @format date-time
+   * @example "2021-11-21T06:49:05"
+   */
+  timestamp: string;
+  /**
+   * Tx Hash
+   * transaction hash/id
+   * @example "0x339560202349c62cd7695dbf3da70c1f3beb102b027e75f40fbe6bf4290adb2c"
+   */
+  tx_hash: string;
+  /**
+   * Token
+   * abbreviated token name
+   * @example "DAI"
+   */
+  token: string;
+  /**
+   * Sender
+   * wallet returning funds, in most cases: CUs oprational wallet
+   * @example "0x7327aed0ddf75391098e8753512d8aec8d740a1f"
+   */
+  sender: string;
+  /**
+   * Receiver
+   * address of DssBlow contract
+   * @example "0x0048fc4357db3c0f45adea433a07a20769ddb0cf"
+   */
+  receiver: string;
+  /**
+   * Amount
+   * amount of returned funds
+   * @example 28640.09
+   */
+  amount: number;
+}
+
+/** VestClaim */
+export interface VestClaim {
+  /**
+   * Block
+   * block id
+   * @example 13656651
+   */
+  block: number;
+  /**
+   * Timestamp
+   * @format date-time
+   * @example "2021-11-21T06:49:05"
+   */
+  timestamp: string;
+  /**
+   * Tx Hash
+   * transaction hash/id
+   * @example "0x339560202349c62cd7695dbf3da70c1f3beb102b027e75f40fbe6bf4290adb2c"
+   */
+  tx_hash: string;
+  /**
+   * Contract Address
+   * token vesting smart contract
+   * @example "0x2cc583c0aacdac9e23cb601fda8f1a0c56cdcb71"
+   */
+  contract_address: string;
+  /**
+   * Id
+   * id of the vesting plan
+   * @example 1
+   */
+  id: number;
+  /**
+   * Receiver
+   * vesting plan beneficiary/recipient
+   * @example "0x7327aed0ddf75391098e8753512d8aec8d740a1f"
+   */
+  receiver: string;
+  /**
+   * Token
+   * abbreviated token name
+   * @example "DAI"
+   */
+  token: string;
+  /**
+   * Raw Amount
+   * token reward
+   * @example 1
+   */
+  raw_amount: string;
+  /**
+   * Amount
+   * token reward
+   * @example 1
+   */
+  amount: number;
+  /**
+   * Executor
+   * address that executed action
+   * @example "0x7327aed0ddf75391098e8753512d8aec8d740a1f"
+   */
+  executor: string;
+}
+
+/** VestInit */
+export interface VestInit {
+  /**
+   * Block
+   * block id
+   * @example 13656651
+   */
+  block: number;
+  /**
+   * Timestamp
+   * @format date-time
+   * @example "2021-11-21T06:49:05"
+   */
+  timestamp: string;
+  /**
+   * Tx Hash
+   * transaction hash/id
+   * @example "0x339560202349c62cd7695dbf3da70c1f3beb102b027e75f40fbe6bf4290adb2c"
+   */
+  tx_hash: string;
+  /**
+   * Contract Address
+   * token vesting smart contract
+   * @example "0x2cc583c0aacdac9e23cb601fda8f1a0c56cdcb71"
+   */
+  contract_address: string;
+  /**
+   * Id
+   * id of the vesting plan
+   * @example 1
+   */
+  id: number;
+  /**
+   * Receiver
+   * vesting plan beneficiary/recipient
+   * @example "0x7327aed0ddf75391098e8753512d8aec8d740a1f"
+   */
+  receiver: string;
+  /**
+   * Vest Start
+   * vesting plan start date
+   * @format date-time
+   * @example "2022-11-01 22:00:00"
+   */
+  vest_start: string;
+  /**
+   * Cliff
+   * end of cliff period, in which tokens are accrued but not payable
+   * @format date-time
+   * @example "2022-11-01 22:00:00"
+   */
+  cliff: string;
+  /**
+   * Vest End
+   * end of vesting plan
+   * @format date-time
+   * @example "2022-11-01 22:00:00"
+   */
+  vest_end: string;
+  /**
+   * Token
+   * abbreviated token name
+   * @example "DAI"
+   */
+  token: string;
+  /**
+   * Manager
+   * address of an authorized manager (this address has permission to remove the vesting plan when the contributor leaves the project)
+   * @example "0x7327aed0ddf75391098e8753512d8aec8d740a1f"
+   */
+  manager: string;
+  /**
+   * Restricted
+   * vesting restricted to the owner only
+   * @example 0
+   */
+  restricted: boolean;
+  /**
+   * Reward Amount
+   * token reward
+   * @example 1
+   */
+  reward_amount: number;
+  /**
+   * Vest Claimed
+   * tokens paid out of the vesting plan
+   * @example 1
+   */
+  vest_claimed: number;
+  /**
+   * Accrued
+   * claimable tokens to be paid ouf of the vesting plan
+   * @example 1
+   */
+  accrued: number;
+  /**
+   * Unpaid
+   * amount of accrued, vested, unpaid tokens
+   * @example 1
+   */
+  unpaid: number;
+  /**
+   * Valid
+   * vesting plan is valid and has not been claimed or yanked before the cliff
+   * @example 1
+   */
+  valid: boolean;
+  /**
+   * Details
+   * full set of vesting details
+   */
+  details: Record<string, any>;
+}
+
+/** VestYank */
+export interface VestYank {
+  /**
+   * Block
+   * block id
+   * @example 13656651
+   */
+  block: number;
+  /**
+   * Timestamp
+   * @format date-time
+   * @example "2021-11-21T06:49:05"
+   */
+  timestamp: string;
+  /**
+   * Tx Hash
+   * transaction hash/id
+   * @example "0x339560202349c62cd7695dbf3da70c1f3beb102b027e75f40fbe6bf4290adb2c"
+   */
+  tx_hash: string;
+  /**
+   * Contract Address
+   * token vesting smart contract
+   * @example "0x2cc583c0aacdac9e23cb601fda8f1a0c56cdcb71"
+   */
+  contract_address: string;
+  /**
+   * Id
+   * id of the vesting plan
+   * @example 1
+   */
+  id: number;
+  /**
+   * Receiver
+   * vesting plan beneficiary/recipient
+   * @example "0x7327aed0ddf75391098e8753512d8aec8d740a1f"
+   */
+  receiver: string;
+  /**
+   * Vest Start
+   * vesting plan start date
+   * @format date-time
+   * @example "2022-11-01 22:00:00"
+   */
+  vest_start: string;
+  /**
+   * Cliff
+   * end of cliff period, in which tokens are accrued but not payable
+   * @format date-time
+   * @example "2022-11-01 22:00:00"
+   */
+  cliff: string;
+  /**
+   * Vest End
+   * end of vesting plan
+   * @format date-time
+   * @example "2022-11-01 22:00:00"
+   */
+  vest_end: string;
+  /**
+   * Token
+   * abbreviated token name
+   * @example "DAI"
+   */
+  token: string;
+  /**
+   * Manager
+   * address of an authorized manager (this address has permission to remove the vesting plan when the contributor leaves the project)
+   * @example "0x7327aed0ddf75391098e8753512d8aec8d740a1f"
+   */
+  manager: string;
+  /**
+   * Restricted
+   * vesting restricted to the owner only
+   * @example 0
+   */
+  restricted: boolean;
+  /**
+   * Reward Amount
+   * token reward
+   * @example 1
+   */
+  reward_amount: number;
+  /**
+   * Vest Claimed
+   * tokens paid out of the vesting plan
+   * @example 1
+   */
+  vest_claimed: number;
+  /**
+   * Accrued
+   * claimable tokens to be paid ouf of the vesting plan
+   * @example 1
+   */
+  accrued: number;
+  /**
+   * Unpaid
+   * amount of accrued, vested, unpaid tokens
+   * @example 1
+   */
+  unpaid: number;
+  /**
+   * Yanked
+   * vesting plan cancellation datetime
+   * @format date-time
+   * @example "2022-11-01 22:00:00"
+   */
+  yanked: string;
+  /**
+   * Valid
+   * vesting plan is valid and has not been claimed or yanked before the cliff
+   * @example 1
+   */
+  valid: boolean;
+  /**
+   * Executor
+   * address that executed action
+   * @example "0x7327aed0ddf75391098e8753512d8aec8d740a1f"
+   */
+  executor: string;
+  /**
+   * Details
+   * full set of vesting details
+   */
+  details: Record<string, any>;
 }
 
 /** Vote */
@@ -2304,13 +2826,13 @@ export class Api<
         /**
          * From Date
          * @format date
-         * @default "2023-02-14"
+         * @default "2023-03-22"
          */
         from_date?: string;
         /**
          * To Date
          * @format date
-         * @default "2023-02-14"
+         * @default "2023-03-22"
          */
         to_date?: string;
         /** An enumeration. */
@@ -2499,6 +3021,404 @@ export class Api<
       this.request<Overview, any>({
         path: `/v1/governance/overview`,
         method: 'GET',
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * No description
+     *
+     * @tags governance
+     * @name ReadVestInitsV1GovernanceVestInitsGet
+     * @summary Read Vest Inits
+     * @request GET:/v1/governance/vest_inits
+     * @secure
+     */
+    readVestInitsV1GovernanceVestInitsGet: (
+      query?: {
+        /**
+         * Contract Address
+         * token vesting smart contract or leave blank for all vesting contracts
+         * @minLength 42
+         * @maxLength 42
+         * @pattern ^0x[a-zA-z0-9]{40}$
+         * @example "0x2cc583c0aacdac9e23cb601fda8f1a0c56cdcb71"
+         */
+        contract_address?: string;
+        /**
+         * Id
+         * id of the vesting plan or leave blank for all plams
+         * @example 1
+         */
+        id?: number;
+        /**
+         * Skip
+         * ignore first object(s) returned
+         * @min 0
+         * @default 0
+         */
+        skip?: number;
+        /**
+         * Limit
+         * limit amount of objects returned
+         * @min 1
+         * @max 100
+         * @default 100
+         */
+        limit?: number;
+      },
+      params: RequestParams = {}
+    ) =>
+      this.request<VestInit[], HTTPValidationError>({
+        path: `/v1/governance/vest_inits`,
+        method: 'GET',
+        query: query,
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * No description
+     *
+     * @tags governance
+     * @name ReadVestClaimsV1GovernanceVestClaimsGet
+     * @summary Read Vest Claims
+     * @request GET:/v1/governance/vest_claims
+     * @secure
+     */
+    readVestClaimsV1GovernanceVestClaimsGet: (
+      query?: {
+        /**
+         * Contract Address
+         * token vesting smart contract or leave blank for all vesting contracts
+         * @minLength 42
+         * @maxLength 42
+         * @pattern ^0x[a-zA-z0-9]{40}$
+         * @example "0x2cc583c0aacdac9e23cb601fda8f1a0c56cdcb71"
+         */
+        contract_address?: string;
+        /**
+         * Id
+         * id of the vesting plan or leave blank for all plams
+         * @example 1
+         */
+        id?: number;
+        /**
+         * Skip
+         * ignore first object(s) returned
+         * @min 0
+         * @default 0
+         */
+        skip?: number;
+        /**
+         * Limit
+         * limit amount of objects returned
+         * @min 1
+         * @max 100
+         * @default 100
+         */
+        limit?: number;
+      },
+      params: RequestParams = {}
+    ) =>
+      this.request<VestClaim[], HTTPValidationError>({
+        path: `/v1/governance/vest_claims`,
+        method: 'GET',
+        query: query,
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * No description
+     *
+     * @tags governance
+     * @name ReadVestYanksV1GovernanceVestYanksGet
+     * @summary Read Vest Yanks
+     * @request GET:/v1/governance/vest_yanks
+     * @secure
+     */
+    readVestYanksV1GovernanceVestYanksGet: (
+      query?: {
+        /**
+         * Contract Address
+         * token vesting smart contract or leave blank for all vesting contracts
+         * @minLength 42
+         * @maxLength 42
+         * @pattern ^0x[a-zA-z0-9]{40}$
+         * @example "0x2cc583c0aacdac9e23cb601fda8f1a0c56cdcb71"
+         */
+        contract_address?: string;
+        /**
+         * Id
+         * id of the vesting plan or leave blank for all plams
+         * @example 1
+         */
+        id?: number;
+        /**
+         * Skip
+         * ignore first object(s) returned
+         * @min 0
+         * @default 0
+         */
+        skip?: number;
+        /**
+         * Limit
+         * limit amount of objects returned
+         * @min 1
+         * @max 100
+         * @default 100
+         */
+        limit?: number;
+      },
+      params: RequestParams = {}
+    ) =>
+      this.request<VestYank[], HTTPValidationError>({
+        path: `/v1/governance/vest_yanks`,
+        method: 'GET',
+        query: query,
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * No description
+     *
+     * @tags governance
+     * @name ReadVestBlowsV1GovernanceVestBlowsGet
+     * @summary Read Vest Blows
+     * @request GET:/v1/governance/vest_blows
+     * @secure
+     */
+    readVestBlowsV1GovernanceVestBlowsGet: (
+      query?: {
+        /**
+         * Skip
+         * ignore first object(s) returned
+         * @min 0
+         * @default 0
+         */
+        skip?: number;
+        /**
+         * Limit
+         * limit amount of objects returned
+         * @min 1
+         * @max 100
+         * @default 100
+         */
+        limit?: number;
+      },
+      params: RequestParams = {}
+    ) =>
+      this.request<VestBlow[], HTTPValidationError>({
+        path: `/v1/governance/vest_blows`,
+        method: 'GET',
+        query: query,
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * @description Retrieve ERC-20 transfers sent to and from DSPauseProxy (0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB) contract.
+     *
+     * @tags governance
+     * @name ReadPauseProxyTransfersV1GovernanceTransfersPauseProxyGet
+     * @summary Read Pause Proxy Transfers
+     * @request GET:/v1/governance/transfers/pause_proxy
+     * @secure
+     */
+    readPauseProxyTransfersV1GovernanceTransfersPauseProxyGet: (
+      query?: {
+        /** Token */
+        token?: string;
+        /** To Address */
+        to_address?: string;
+        /** From Address */
+        from_address?: string;
+        /**
+         * Skip
+         * ignore first object(s) returned
+         * @min 0
+         * @default 0
+         */
+        skip?: number;
+        /**
+         * Limit
+         * limit amount of objects returned
+         * @min 1
+         * @max 100
+         * @default 100
+         */
+        limit?: number;
+      },
+      params: RequestParams = {}
+    ) =>
+      this.request<PauseProxyTransfers[], HTTPValidationError>({
+        path: `/v1/governance/transfers/pause_proxy`,
+        method: 'GET',
+        query: query,
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * @description Get history of delegations.
+     *
+     * @tags governance
+     * @name ReadDelegationsV1GovernanceDelegationsGet
+     * @summary Read Delegations
+     * @request GET:/v1/governance/delegations
+     * @secure
+     */
+    readDelegationsV1GovernanceDelegationsGet: (
+      query?: {
+        /** Vote Delegate */
+        vote_delegate?: string;
+        /** Delegator */
+        delegator?: string;
+        /**
+         * Skip
+         * ignore first object(s) returned
+         * @min 0
+         * @default 0
+         */
+        skip?: number;
+        /**
+         * Limit
+         * limit amount of objects returned
+         * @min 1
+         * @max 100
+         * @default 100
+         */
+        limit?: number;
+      },
+      params: RequestParams = {}
+    ) =>
+      this.request<Delegations[], HTTPValidationError>({
+        path: `/v1/governance/delegations`,
+        method: 'GET',
+        query: query,
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * @description Get delegates balances.
+     *
+     * @tags governance
+     * @name ReadDelegatesBalancesV1GovernanceDelegatesBalancesGet
+     * @summary Read Delegates Balances
+     * @request GET:/v1/governance/delegates_balances
+     * @secure
+     */
+    readDelegatesBalancesV1GovernanceDelegatesBalancesGet: (
+      query?: {
+        /** An enumeration. */
+        type?: DelegateType;
+        /** Vote Delegate */
+        vote_delegate?: string;
+        /**
+         * Skip
+         * ignore first object(s) returned
+         * @min 0
+         * @default 0
+         */
+        skip?: number;
+        /**
+         * Limit
+         * limit amount of objects returned
+         * @min 1
+         * @max 100
+         * @default 100
+         */
+        limit?: number;
+      },
+      params: RequestParams = {}
+    ) =>
+      this.request<DelegatesSupport[], HTTPValidationError>({
+        path: `/v1/governance/delegates_balances`,
+        method: 'GET',
+        query: query,
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * @description Get delegates monthly compensation.
+     *
+     * @tags governance
+     * @name ReadDelegatesMonthlyCompensationV1GovernanceDelegatesMonthlyCompensationGet
+     * @summary Read Delegates Monthly Compensation
+     * @request GET:/v1/governance/delegates_monthly_compensation
+     * @secure
+     */
+    readDelegatesMonthlyCompensationV1GovernanceDelegatesMonthlyCompensationGet:
+      (params: RequestParams = {}) =>
+        this.request<DelegatesMonthlyCompensation[], any>({
+          path: `/v1/governance/delegates_monthly_compensation`,
+          method: 'GET',
+          secure: true,
+          format: 'json',
+          ...params
+        }),
+
+    /**
+     * @description Get current delegates status.
+     *
+     * @tags governance
+     * @name ReadCurrentDelegatesV1GovernanceCurrentDelegatesGet
+     * @summary Read Current Delegates
+     * @request GET:/v1/governance/current_delegates
+     * @secure
+     */
+    readCurrentDelegatesV1GovernanceCurrentDelegatesGet: (
+      query?: {
+        /** An enumeration. */
+        type?: DelegateType;
+      },
+      params: RequestParams = {}
+    ) =>
+      this.request<CurrentDelegates[], HTTPValidationError>({
+        path: `/v1/governance/current_delegates`,
+        method: 'GET',
+        query: query,
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * @description Get delegation summary.
+     *
+     * @tags governance
+     * @name ReadDelegationSummaryV1GovernanceDelegationSummaryGet
+     * @summary Read Delegation Summary
+     * @request GET:/v1/governance/delegation_summary
+     * @secure
+     */
+    readDelegationSummaryV1GovernanceDelegationSummaryGet: (
+      query?: {
+        /** An enumeration. */
+        type?: DelegateType;
+        /** Delegate */
+        delegate?: string;
+        /** Delegator */
+        delegator?: string;
+      },
+      params: RequestParams = {}
+    ) =>
+      this.request<DelegationSummary[], HTTPValidationError>({
+        path: `/v1/governance/delegation_summary`,
+        method: 'GET',
+        query: query,
         secure: true,
         format: 'json',
         ...params
@@ -3621,6 +4541,95 @@ export class Api<
     ) =>
       this.request<Flap[], HTTPValidationError>({
         path: `/v1/auctions/flaps`,
+        method: 'GET',
+        query: query,
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * @description Retrieve DAI transfers to and from listed MakerDAO related actors.
+     *
+     * @tags core units
+     * @name ReadGovTransfersV1CoreUnitsTransfersGet
+     * @summary Read Gov Transfers
+     * @request GET:/v1/core_units/transfers
+     * @secure
+     */
+    readGovTransfersV1CoreUnitsTransfersGet: (
+      query?: {
+        /**
+         * Token
+         * @default "DAI"
+         */
+        token?: string;
+        /** To Address */
+        to_address?: string;
+        /** From Address */
+        from_address?: string;
+        /**
+         * Skip
+         * ignore first object(s) returned
+         * @min 0
+         * @default 0
+         */
+        skip?: number;
+        /**
+         * Limit
+         * limit amount of objects returned
+         * @min 1
+         * @max 100
+         * @default 100
+         */
+        limit?: number;
+      },
+      params: RequestParams = {}
+    ) =>
+      this.request<GovDAITransfers[], HTTPValidationError>({
+        path: `/v1/core_units/transfers`,
+        method: 'GET',
+        query: query,
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * @description Retrieve DAI transfers to and from listed MakerDAO related actors.
+     *
+     * @tags core units
+     * @name ReadMultisigsEventsV1CoreUnitsMultisigsEventsGet
+     * @summary Read Multisigs Events
+     * @request GET:/v1/core_units/multisigs_events
+     * @secure
+     */
+    readMultisigsEventsV1CoreUnitsMultisigsEventsGet: (
+      query?: {
+        /** Contract Address */
+        contract_address?: string;
+        /** Label */
+        label?: string;
+        /**
+         * Skip
+         * ignore first object(s) returned
+         * @min 0
+         * @default 0
+         */
+        skip?: number;
+        /**
+         * Limit
+         * limit amount of objects returned
+         * @min 1
+         * @max 100
+         * @default 100
+         */
+        limit?: number;
+      },
+      params: RequestParams = {}
+    ) =>
+      this.request<MultisigEvent[], HTTPValidationError>({
+        path: `/v1/core_units/multisigs_events`,
         method: 'GET',
         query: query,
         secure: true,

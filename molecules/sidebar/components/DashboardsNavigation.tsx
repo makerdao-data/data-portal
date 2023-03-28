@@ -85,7 +85,7 @@ const governanceLinks: Link[] = [
     disabled: true
   },
   { href: '/governance/poll-votes', text: 'Poll votes', disabled: true },
-  { href: '/governance/delegates', text: 'Delegates', disabled: true },
+  { href: '/governance/delegates', text: 'Delegates' },
   { href: '/governance/voters', text: 'Voters', disabled: true },
   {
     href: '/governance/protocol-parameters',

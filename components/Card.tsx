@@ -9,11 +9,12 @@ type Header = {
 
 type CardProps = {
   header?: Header;
+  label?: string;
   sx?: ThemeUIStyleObject;
   children: ReactNode;
 };
 
-export default function Card({ header, sx, children }: CardProps) {
+export default function Card({ header, label, sx, children }: CardProps) {
   const [colorMode] = useColorMode();
 
   return (
@@ -39,7 +40,7 @@ export default function Card({ header, sx, children }: CardProps) {
           <Text
             variant="smallHeading"
             role="textbox"
-            aria-label={header.title + ' title'}>
+            aria-label={label ? label : header.title + ' title'}>
             {header.title}
           </Text>
 

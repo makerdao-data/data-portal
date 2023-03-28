@@ -1,0 +1,227 @@
+[
+  {
+    "name": "Acreinvest",
+    "type": "recognized",
+    "delegated_mkr": 0.10197966591877035,
+    "percent": 5.542725173150793e-5,
+    "delegators": 1,
+    "latest_compensation": 4568.0,
+    "active_contract": "0x06e8dedf9e1adb1eba32f36ea9223770ba378b77"
+  },
+  {
+    "name": "Blockchain@Columbia",
+    "type": "recognized",
+    "delegated_mkr": 1000.00978217,
+    "percent": 0.543518096778791,
+    "delegators": 2,
+    "latest_compensation": 1656.0,
+    "active_contract": "0xb8df77c3bd57761bd0c55d2f873d3aa89b3da8b7"
+  },
+  {
+    "name": "Chicagodao",
+    "type": "recognized",
+    "delegated_mkr": 1500.001704112794,
+    "percent": 0.8152700962736512,
+    "delegators": 3,
+    "latest_compensation": null,
+    "active_contract": "0x797d63cb6709c79b9eca99d9585ea613da205156"
+  },
+  {
+    "name": "Chris Blec",
+    "type": "recognized",
+    "delegated_mkr": 10.06269611103489,
+    "percent": 0.0054692039380503385,
+    "delegators": 7,
+    "latest_compensation": 951.0,
+    "active_contract": "0x2c511d932c5a6fe4071262d49bfc018cfbaaa1f5"
+  },
+  {
+    "name": "Codeknight",
+    "type": "recognized",
+    "delegated_mkr": 5.11550795,
+    "percent": 0.002780343947243624,
+    "delegators": 2,
+    "latest_compensation": 939.0,
+    "active_contract": "0xe89f973a19cd76c3e5e236062668e43042176638"
+  },
+  {
+    "name": "Coldiron.Eth",
+    "type": "recognized",
+    "delegated_mkr": 10636.304006592038,
+    "percent": 5.78096716002001,
+    "delegators": 19,
+    "latest_compensation": 12000.0,
+    "active_contract": "0xb4b82978fce6d26a22dea7e653bb9ce8e14f8056"
+  },
+  {
+    "name": "Consensys",
+    "type": "recognized",
+    "delegated_mkr": 2.2758443403479927,
+    "percent": 0.0012369504843708042,
+    "delegators": 4,
+    "latest_compensation": 181.0,
+    "active_contract": "0x40f784b16b2d405efd4e9eb7d0663398d7d886fb"
+  },
+  {
+    "name": "Doo",
+    "type": "recognized",
+    "delegated_mkr": 330.5001,
+    "percent": 0.1796310281559454,
+    "delegators": 3,
+    "latest_compensation": 12000.0,
+    "active_contract": "0x4c28d8402ac01e5d623e4a5438535369770fe407"
+  },
+  {
+    "name": "Feedblack Loops Llc",
+    "type": "recognized",
+    "delegated_mkr": 8103.35028380744,
+    "percent": 4.404274440425593,
+    "delegators": 8,
+    "latest_compensation": 10802.0,
+    "active_contract": "0x92e1ca8b69a44bb17afa92838da68fc41f12250a"
+  },
+  {
+    "name": "Flip Flop Flap Delegate Llc",
+    "type": "recognized",
+    "delegated_mkr": 16111.982243904009,
+    "percent": 8.757068261409946,
+    "delegators": 22,
+    "latest_compensation": 12000.0,
+    "active_contract": "0x0f4be9f208c552a6b04d9a1222f385785f95beaa"
+  },
+  {
+    "name": "Flipside Crypto",
+    "type": "recognized",
+    "delegated_mkr": 6.4561378423261235,
+    "percent": 0.0035089934270323927,
+    "delegators": 5,
+    "latest_compensation": 10347.0,
+    "active_contract": "0x222d46d1229036c7bb6ea3f453406792ca3c3ea2"
+  },
+  {
+    "name": "Frontier Research Llc",
+    "type": "recognized",
+    "delegated_mkr": 521.2341359112628,
+    "percent": 0.28329741426316035,
+    "delegators": 6,
+    "latest_compensation": 2455.0,
+    "active_contract": "0x316090e23cc44e70245ba9846404413aca2df16f"
+  },
+  {
+    "name": "Gfx Labs",
+    "type": "recognized",
+    "delegated_mkr": 12532.425491840102,
+    "percent": 6.811533419769063,
+    "delegators": 13,
+    "latest_compensation": 12000.0,
+    "active_contract": "0x869147940842bb1aa4c40e60c5e583f4911f2e02"
+  },
+  {
+    "name": "Governance House",
+    "type": "recognized",
+    "delegated_mkr": 0.5559837076778197,
+    "percent": 0.0003021842506193534,
+    "delegators": 6,
+    "latest_compensation": 127.0,
+    "active_contract": "0x4e314eba76c3062140ad196e4ffd34485e33c5f5"
+  },
+  {
+    "name": "Hkust Epi Blockchain",
+    "type": "recognized",
+    "delegated_mkr": 2008.4094037952696,
+    "percent": 1.0915961785240416,
+    "delegators": 2,
+    "latest_compensation": 348.0,
+    "active_contract": "0x925016c2367802632cabdf13b5fc2c1bdc2c301a"
+  },
+  {
+    "name": "Jason Yanowitz",
+    "type": "recognized",
+    "delegated_mkr": 4765.39714989,
+    "percent": 2.5900542529522763,
+    "delegators": 3,
+    "latest_compensation": null,
+    "active_contract": "0xd1fc89e0c3828f50b650e1309e30cb4fcf2bdbe3"
+  },
+  {
+    "name": "Justincase",
+    "type": "recognized",
+    "delegated_mkr": 575.777181492715,
+    "percent": 0.31294225659922276,
+    "delegators": 4,
+    "latest_compensation": 8680.0,
+    "active_contract": "0x4e324f2327fa3e567d802ddcf655f7188eb62754"
+  },
+  {
+    "name": "London Business School",
+    "type": "recognized",
+    "delegated_mkr": 1000.0,
+    "percent": 0.5435127800443794,
+    "delegators": 1,
+    "latest_compensation": 3126.0,
+    "active_contract": "0xf1792852bf860b4ef84a2869df1550bc80ec0ab7"
+  },
+  {
+    "name": "Mhonkasalo & Teemulau",
+    "type": "recognized",
+    "delegated_mkr": 8099.84090287888,
+    "percent": 4.402367047040877,
+    "delegators": 8,
+    "latest_compensation": 11447.0,
+    "active_contract": "0xaa19f47e6acb02df88efa9f023f2a38412069902"
+  },
+  {
+    "name": "Monetsupply",
+    "type": "recognized",
+    "delegated_mkr": 7.30069437770525,
+    "percent": 0.003968020697480951,
+    "delegators": 3,
+    "latest_compensation": 6275.0,
+    "active_contract": "0xb056e45fd47d962f4ef25714714abc7a79886064"
+  },
+  {
+    "name": "Onestone",
+    "type": "recognized",
+    "delegated_mkr": 9.006641180206381,
+    "percent": 0.004895224586716161,
+    "delegators": 2,
+    "latest_compensation": 360.0,
+    "active_contract": "0x9301f3bb7a71ab4d46b17bd1f8254142fa8f26ad"
+  },
+  {
+    "name": "Penn Blockchain",
+    "type": "recognized",
+    "delegated_mkr": 6676.58674852,
+    "percent": 3.6288102248955694,
+    "delegators": 7,
+    "latest_compensation": 11178.0,
+    "active_contract": "0x7ddb50a5b15aea7e7cf9ac8e55a7f9fd9d05ecc6"
+  },
+  {
+    "name": "Penn Blockchain",
+    "type": "recognized",
+    "delegated_mkr": 2000.4488,
+    "percent": 1.0872694886244427,
+    "delegators": 2,
+    "latest_compensation": 11178.0,
+    "active_contract": "0xe3e9649aea634f8995e14c7a3a6a04938d4b66df"
+  },
+  {
+    "name": "Pvl",
+    "type": "recognized",
+    "delegated_mkr": 0.29482996,
+    "percent": 0.0001602438511999732,
+    "delegators": 1,
+    "latest_compensation": 35.0,
+    "active_contract": "0xd9d00c42bed99a6d3a0f2902c640bccceecf6c29"
+  },
+  {
+    "name": "Riskdao",
+    "type": "recognized",
+    "delegated_mkr": 0.0001,
+    "percent": 5.435127800443795e-8,
+    "delegators": 1,
+    "latest_compensation": null,
+    "active_contract": "0xd0df93fc03a7291e31947f5cc6ef526f5b67b0ea"
+  }
+]

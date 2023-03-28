@@ -1,0 +1,940 @@
+[
+  {
+    "delegator": "0x18191aeeb1847da6e2e91365bbe547e87a1c365f",
+    "vote_delegate": "0x06e8dedf9e1adb1eba32f36ea9223770ba378b77",
+    "delegate": "Acreinvest",
+    "type": "recognized",
+    "delegated_mkr": 0.10197966591877035
+  },
+  {
+    "delegator": "0x5cb82187b65a7a1daa887e48370e43ac24d43077",
+    "vote_delegate": "0xb8df77c3bd57761bd0c55d2f873d3aa89b3da8b7",
+    "delegate": "Blockchain@Columbia",
+    "type": "recognized",
+    "delegated_mkr": 0.00978217
+  },
+  {
+    "delegator": "0x6186ff3058150604b98af5a8521c96599a1ebfc1",
+    "vote_delegate": "0xb8df77c3bd57761bd0c55d2f873d3aa89b3da8b7",
+    "delegate": "Blockchain@Columbia",
+    "type": "recognized",
+    "delegated_mkr": 1000.0
+  },
+  {
+    "delegator": "0x05e793ce0c6027323ac150f6d45c2344d28b6019",
+    "vote_delegate": "0x797d63cb6709c79b9eca99d9585ea613da205156",
+    "delegate": "Chicagodao",
+    "type": "recognized",
+    "delegated_mkr": 1000.0
+  },
+  {
+    "delegator": "0xa24e442861783447da9edc91f728f1c6cd9bc930",
+    "vote_delegate": "0x797d63cb6709c79b9eca99d9585ea613da205156",
+    "delegate": "Chicagodao",
+    "type": "recognized",
+    "delegated_mkr": 0.001704112793945103
+  },
+  {
+    "delegator": "0x83a368edef036580f1db032519835722e3c7c239",
+    "vote_delegate": "0x797d63cb6709c79b9eca99d9585ea613da205156",
+    "delegate": "Chicagodao",
+    "type": "recognized",
+    "delegated_mkr": 500.0
+  },
+  {
+    "delegator": "0x349e7c22cd2a12d42073443c633d2478a419b578",
+    "vote_delegate": "0x2c511d932c5a6fe4071262d49bfc018cfbaaa1f5",
+    "delegate": "Chris Blec",
+    "type": "recognized",
+    "delegated_mkr": 0.050012758023991966
+  },
+  {
+    "delegator": "0xdfc384e697a4a6d46aac7c11dfa4b544dc6012b5",
+    "vote_delegate": "0x2c511d932c5a6fe4071262d49bfc018cfbaaa1f5",
+    "delegate": "Chris Blec",
+    "type": "recognized",
+    "delegated_mkr": 3.065266618119e-6
+  },
+  {
+    "delegator": "0xd1015efa96441d2326f8194e7b1f5fe8425b84f8",
+    "vote_delegate": "0x2c511d932c5a6fe4071262d49bfc018cfbaaa1f5",
+    "delegate": "Chris Blec",
+    "type": "recognized",
+    "delegated_mkr": 5e-18
+  },
+  {
+    "delegator": "0x197a78fe1bd3bbb64c1325c027bde8f67bac1770",
+    "vote_delegate": "0x2c511d932c5a6fe4071262d49bfc018cfbaaa1f5",
+    "delegate": "Chris Blec",
+    "type": "recognized",
+    "delegated_mkr": 3.6423308073411373
+  },
+  {
+    "delegator": "0x955993df48b0458a01cfb5fd7df5f5dca6443550",
+    "vote_delegate": "0x2c511d932c5a6fe4071262d49bfc018cfbaaa1f5",
+    "delegate": "Chris Blec",
+    "type": "recognized",
+    "delegated_mkr": 0.1
+  },
+  {
+    "delegator": "0xd668da18ead5e1f5d738a7b444d41975ca03a373",
+    "vote_delegate": "0x2c511d932c5a6fe4071262d49bfc018cfbaaa1f5",
+    "delegate": "Chris Blec",
+    "type": "recognized",
+    "delegated_mkr": 4.758262220403143
+  },
+  {
+    "delegator": "0xa7f47d14f781c3768ef69060ee458b711650a42c",
+    "vote_delegate": "0x2c511d932c5a6fe4071262d49bfc018cfbaaa1f5",
+    "delegate": "Chris Blec",
+    "type": "recognized",
+    "delegated_mkr": 1.51208726
+  },
+  {
+    "delegator": "0x6c3d5596b086eb83db15248fb8710120d9f19d03",
+    "vote_delegate": "0xe89f973a19cd76c3e5e236062668e43042176638",
+    "delegate": "Codeknight",
+    "type": "recognized",
+    "delegated_mkr": 5.01550795
+  },
+  {
+    "delegator": "0x955993df48b0458a01cfb5fd7df5f5dca6443550",
+    "vote_delegate": "0xe89f973a19cd76c3e5e236062668e43042176638",
+    "delegate": "Codeknight",
+    "type": "recognized",
+    "delegated_mkr": 0.1
+  },
+  {
+    "delegator": "0x05e793ce0c6027323ac150f6d45c2344d28b6019",
+    "vote_delegate": "0xb4b82978fce6d26a22dea7e653bb9ce8e14f8056",
+    "delegate": "Coldiron.Eth",
+    "type": "recognized",
+    "delegated_mkr": 1000.0
+  },
+  {
+    "delegator": "0x49d43f74988c31e2df1e751e5f0ee160ecdbc5cf",
+    "vote_delegate": "0xb4b82978fce6d26a22dea7e653bb9ce8e14f8056",
+    "delegate": "Coldiron.Eth",
+    "type": "recognized",
+    "delegated_mkr": 0.004574960017778289
+  },
+  {
+    "delegator": "0x5b2ed2ef8f480cc165a600ac451d9d9ebf521e94",
+    "vote_delegate": "0xb4b82978fce6d26a22dea7e653bb9ce8e14f8056",
+    "delegate": "Coldiron.Eth",
+    "type": "recognized",
+    "delegated_mkr": 0.44079241092672244
+  },
+  {
+    "delegator": "0xab56e186c1469f9de03051b1f73f4c7d7594b613",
+    "vote_delegate": "0xb4b82978fce6d26a22dea7e653bb9ce8e14f8056",
+    "delegate": "Coldiron.Eth",
+    "type": "recognized",
+    "delegated_mkr": 90.0
+  },
+  {
+    "delegator": "0x955993df48b0458a01cfb5fd7df5f5dca6443550",
+    "vote_delegate": "0xb4b82978fce6d26a22dea7e653bb9ce8e14f8056",
+    "delegate": "Coldiron.Eth",
+    "type": "recognized",
+    "delegated_mkr": 0.20087459849679462
+  },
+  {
+    "delegator": "0x6634e3555dbf4b149c5aec99d579a2469015aeca",
+    "vote_delegate": "0xb4b82978fce6d26a22dea7e653bb9ce8e14f8056",
+    "delegate": "Coldiron.Eth",
+    "type": "recognized",
+    "delegated_mkr": 38.542290685370574
+  },
+  {
+    "delegator": "0x9179107e3d45d841179729f02dba57c3342d7fdf",
+    "vote_delegate": "0xb4b82978fce6d26a22dea7e653bb9ce8e14f8056",
+    "delegate": "Coldiron.Eth",
+    "type": "recognized",
+    "delegated_mkr": 0.003956706767198365
+  },
+  {
+    "delegator": "0xf65475e74c1ed6d004d5240b06e3088724dfda5d",
+    "vote_delegate": "0xb4b82978fce6d26a22dea7e653bb9ce8e14f8056",
+    "delegate": "Coldiron.Eth",
+    "type": "recognized",
+    "delegated_mkr": 8625.0
+  },
+  {
+    "delegator": "0xc3386bf8681e20402fb51727085a2f39905bf291",
+    "vote_delegate": "0xb4b82978fce6d26a22dea7e653bb9ce8e14f8056",
+    "delegate": "Coldiron.Eth",
+    "type": "recognized",
+    "delegated_mkr": 76.6537
+  },
+  {
+    "delegator": "0x24394a4758dbdcf6fcbc14dc35af64ac0d9a450a",
+    "vote_delegate": "0xb4b82978fce6d26a22dea7e653bb9ce8e14f8056",
+    "delegate": "Coldiron.Eth",
+    "type": "recognized",
+    "delegated_mkr": 200.00020480643104
+  },
+  {
+    "delegator": "0x36dbc13a62d3a649944203e206668ec38dd69971",
+    "vote_delegate": "0xb4b82978fce6d26a22dea7e653bb9ce8e14f8056",
+    "delegate": "Coldiron.Eth",
+    "type": "recognized",
+    "delegated_mkr": 392.54
+  },
+  {
+    "delegator": "0xefae9f448db2e18e07b529892e700f10cfd0ba22",
+    "vote_delegate": "0xb4b82978fce6d26a22dea7e653bb9ce8e14f8056",
+    "delegate": "Coldiron.Eth",
+    "type": "recognized",
+    "delegated_mkr": 0.001082619037038757
+  },
+  {
+    "delegator": "0x2169b5deed138e7828cf69d3d8e4fd54c469cdfb",
+    "vote_delegate": "0xb4b82978fce6d26a22dea7e653bb9ce8e14f8056",
+    "delegate": "Coldiron.Eth",
+    "type": "recognized",
+    "delegated_mkr": 0.016398080513222748
+  },
+  {
+    "delegator": "0xcea0b7f22aaf244e16298f309cb61c91aabbcfd5",
+    "vote_delegate": "0xb4b82978fce6d26a22dea7e653bb9ce8e14f8056",
+    "delegate": "Coldiron.Eth",
+    "type": "recognized",
+    "delegated_mkr": 0.11464528898349642
+  },
+  {
+    "delegator": "0xcbdfb7f6dab3d57cd295cd962c37b0855334530e",
+    "vote_delegate": "0xb4b82978fce6d26a22dea7e653bb9ce8e14f8056",
+    "delegate": "Coldiron.Eth",
+    "type": "recognized",
+    "delegated_mkr": 0.03
+  },
+  {
+    "delegator": "0x84af69b785f244dc65b2d34dee19c76ec2d519ac",
+    "vote_delegate": "0xb4b82978fce6d26a22dea7e653bb9ce8e14f8056",
+    "delegate": "Coldiron.Eth",
+    "type": "recognized",
+    "delegated_mkr": 5.0
+  },
+  {
+    "delegator": "0x96cb56965a33e02f6c561f4261c383563859f4e2",
+    "vote_delegate": "0xb4b82978fce6d26a22dea7e653bb9ce8e14f8056",
+    "delegate": "Coldiron.Eth",
+    "type": "recognized",
+    "delegated_mkr": 200.0
+  },
+  {
+    "delegator": "0xec49cfe453a7efe07fe1996fab9169bf9ed302dc",
+    "vote_delegate": "0xb4b82978fce6d26a22dea7e653bb9ce8e14f8056",
+    "delegate": "Coldiron.Eth",
+    "type": "recognized",
+    "delegated_mkr": 7.695486435494796
+  },
+  {
+    "delegator": "0x905eb230bf0f26519722fb351c34b750db00b19c",
+    "vote_delegate": "0x40f784b16b2d405efd4e9eb7d0663398d7d886fb",
+    "delegate": "Consensys",
+    "type": "recognized",
+    "delegated_mkr": 0.007990709660219733
+  },
+  {
+    "delegator": "0x39760bb1cd8ea91eca977f0971a4eafbe985fbd7",
+    "vote_delegate": "0x40f784b16b2d405efd4e9eb7d0663398d7d886fb",
+    "delegate": "Consensys",
+    "type": "recognized",
+    "delegated_mkr": 2.2
+  },
+  {
+    "delegator": "0xc02771315d0958f23a64140160e78ecb9bb8614e",
+    "vote_delegate": "0x40f784b16b2d405efd4e9eb7d0663398d7d886fb",
+    "delegate": "Consensys",
+    "type": "recognized",
+    "delegated_mkr": 0.05
+  },
+  {
+    "delegator": "0x275dca1b2425b185b769f70a263a2a5d3d377182",
+    "vote_delegate": "0x40f784b16b2d405efd4e9eb7d0663398d7d886fb",
+    "delegate": "Consensys",
+    "type": "recognized",
+    "delegated_mkr": 0.01785363068777295
+  },
+  {
+    "delegator": "0x73064f6c1c5dad8d917782aec16ab564feb3c011",
+    "vote_delegate": "0x4c28d8402ac01e5d623e4a5438535369770fe407",
+    "delegate": "Doo",
+    "type": "recognized",
+    "delegated_mkr": 0.0011
+  },
+  {
+    "delegator": "0x0f8c58edf65cbd972d175bfe481bc16fa8deee45",
+    "vote_delegate": "0x4c28d8402ac01e5d623e4a5438535369770fe407",
+    "delegate": "Doo",
+    "type": "recognized",
+    "delegated_mkr": 318.5
+  },
+  {
+    "delegator": "0xbde65cf2352ed1dde959f290e973d0fc5cedfd08",
+    "vote_delegate": "0x4c28d8402ac01e5d623e4a5438535369770fe407",
+    "delegate": "Doo",
+    "type": "recognized",
+    "delegated_mkr": 11.999
+  },
+  {
+    "delegator": "0x05e793ce0c6027323ac150f6d45c2344d28b6019",
+    "vote_delegate": "0x92e1ca8b69a44bb17afa92838da68fc41f12250a",
+    "delegate": "Feedblack Loops Llc",
+    "type": "recognized",
+    "delegated_mkr": 1000.0
+  },
+  {
+    "delegator": "0x604b4dacb4c89ad08f5fb592d6b559b8da28bc72",
+    "vote_delegate": "0x92e1ca8b69a44bb17afa92838da68fc41f12250a",
+    "delegate": "Feedblack Loops Llc",
+    "type": "recognized",
+    "delegated_mkr": 0.001
+  },
+  {
+    "delegator": "0x108eb0d7e8cdc8a8d835c828c6b7d8cd348ddb38",
+    "vote_delegate": "0x92e1ca8b69a44bb17afa92838da68fc41f12250a",
+    "delegate": "Feedblack Loops Llc",
+    "type": "recognized",
+    "delegated_mkr": 89.80407401907553
+  },
+  {
+    "delegator": "0xf65475e74c1ed6d004d5240b06e3088724dfda5d",
+    "vote_delegate": "0x92e1ca8b69a44bb17afa92838da68fc41f12250a",
+    "delegate": "Feedblack Loops Llc",
+    "type": "recognized",
+    "delegated_mkr": 7000.0
+  },
+  {
+    "delegator": "0x9ad4b5a114628b4aed9be603670fb996b1792430",
+    "vote_delegate": "0x92e1ca8b69a44bb17afa92838da68fc41f12250a",
+    "delegate": "Feedblack Loops Llc",
+    "type": "recognized",
+    "delegated_mkr": 0.01107601406337472
+  },
+  {
+    "delegator": "0x4d342d8d71ccdbec46ae43bf795256c2a56b05ce",
+    "vote_delegate": "0x92e1ca8b69a44bb17afa92838da68fc41f12250a",
+    "delegate": "Feedblack Loops Llc",
+    "type": "recognized",
+    "delegated_mkr": 10.0
+  },
+  {
+    "delegator": "0xac2e80f93d507ab5ef326b38b8c7363e02bd2cfd",
+    "vote_delegate": "0x92e1ca8b69a44bb17afa92838da68fc41f12250a",
+    "delegate": "Feedblack Loops Llc",
+    "type": "recognized",
+    "delegated_mkr": 0.005
+  },
+  {
+    "delegator": "0x68d36dcbdd7bbf206e27134f28103abe7cf972df",
+    "vote_delegate": "0x92e1ca8b69a44bb17afa92838da68fc41f12250a",
+    "delegate": "Feedblack Loops Llc",
+    "type": "recognized",
+    "delegated_mkr": 3.5291337743006808
+  },
+  {
+    "delegator": "0x688d508f3a6b0a377e266405a1583b3316f9a2b3",
+    "vote_delegate": "0x0f4be9f208c552a6b04d9a1222f385785f95beaa",
+    "delegate": "Flip Flop Flap Delegate Llc",
+    "type": "recognized",
+    "delegated_mkr": 10.047031441201916
+  },
+  {
+    "delegator": "0xc48985dbca3bfa841467ead54732bfa5f8a7c9ae",
+    "vote_delegate": "0x0f4be9f208c552a6b04d9a1222f385785f95beaa",
+    "delegate": "Flip Flop Flap Delegate Llc",
+    "type": "recognized",
+    "delegated_mkr": 5.021448656900012
+  },
+  {
+    "delegator": "0xb1bf6a2a83daf026d8dbd089c2d0c75649fef3da",
+    "vote_delegate": "0x0f4be9f208c552a6b04d9a1222f385785f95beaa",
+    "delegate": "Flip Flop Flap Delegate Llc",
+    "type": "recognized",
+    "delegated_mkr": 700.4666075052744
+  },
+  {
+    "delegator": "0x32f2e3852a9c2831d233038f1dc637810ca25c2a",
+    "vote_delegate": "0x0f4be9f208c552a6b04d9a1222f385785f95beaa",
+    "delegate": "Flip Flop Flap Delegate Llc",
+    "type": "recognized",
+    "delegated_mkr": 5.9928
+  },
+  {
+    "delegator": "0xd790a1516f78e3fb52338084b5c5931a75bb19cf",
+    "vote_delegate": "0x0f4be9f208c552a6b04d9a1222f385785f95beaa",
+    "delegate": "Flip Flop Flap Delegate Llc",
+    "type": "recognized",
+    "delegated_mkr": 50.0
+  },
+  {
+    "delegator": "0x9ce91fec8421881b3643a2cb3fbd5b705bc40273",
+    "vote_delegate": "0x0f4be9f208c552a6b04d9a1222f385785f95beaa",
+    "delegate": "Flip Flop Flap Delegate Llc",
+    "type": "recognized",
+    "delegated_mkr": 0.10328168417710482
+  },
+  {
+    "delegator": "0xb1096fc1f6c5a73f66ea8d00dcc8f08d640d4bf4",
+    "vote_delegate": "0x0f4be9f208c552a6b04d9a1222f385785f95beaa",
+    "delegate": "Flip Flop Flap Delegate Llc",
+    "type": "recognized",
+    "delegated_mkr": 0.15744175
+  },
+  {
+    "delegator": "0xd353bbf69d0dfb2cd6798dfff40bb31ae565ccc2",
+    "vote_delegate": "0x0f4be9f208c552a6b04d9a1222f385785f95beaa",
+    "delegate": "Flip Flop Flap Delegate Llc",
+    "type": "recognized",
+    "delegated_mkr": 2.041372
+  },
+  {
+    "delegator": "0xeb6a2e36933abda9bf9e83a73b7bf2462e9b7afc",
+    "vote_delegate": "0x0f4be9f208c552a6b04d9a1222f385785f95beaa",
+    "delegate": "Flip Flop Flap Delegate Llc",
+    "type": "recognized",
+    "delegated_mkr": 0.03
+  },
+  {
+    "delegator": "0x113d0d16744e165ce6a2338ea162afb6ee6fbada",
+    "vote_delegate": "0x0f4be9f208c552a6b04d9a1222f385785f95beaa",
+    "delegate": "Flip Flop Flap Delegate Llc",
+    "type": "recognized",
+    "delegated_mkr": 0.01278047556288929
+  },
+  {
+    "delegator": "0x88f659b4b6d5614b991c6404b34f821e10390ec0",
+    "vote_delegate": "0x0f4be9f208c552a6b04d9a1222f385785f95beaa",
+    "delegate": "Flip Flop Flap Delegate Llc",
+    "type": "recognized",
+    "delegated_mkr": 0.0001
+  },
+  {
+    "delegator": "0x20eaba9ba56fc674f9c0c42c00c734e28ad8bd31",
+    "vote_delegate": "0x0f4be9f208c552a6b04d9a1222f385785f95beaa",
+    "delegate": "Flip Flop Flap Delegate Llc",
+    "type": "recognized",
+    "delegated_mkr": 0.00070989736266754
+  },
+  {
+    "delegator": "0xb8b6b985f9893350545af34f86f10ace10fed32b",
+    "vote_delegate": "0x0f4be9f208c552a6b04d9a1222f385785f95beaa",
+    "delegate": "Flip Flop Flap Delegate Llc",
+    "type": "recognized",
+    "delegated_mkr": 14.0
+  },
+  {
+    "delegator": "0x67d6140fda661346ad4785f35412aa43fa3224b1",
+    "vote_delegate": "0x0f4be9f208c552a6b04d9a1222f385785f95beaa",
+    "delegate": "Flip Flop Flap Delegate Llc",
+    "type": "recognized",
+    "delegated_mkr": 0.01832429653518788
+  },
+  {
+    "delegator": "0xc67e0e424952d614d6c96baf543ddd6f6694a977",
+    "vote_delegate": "0x0f4be9f208c552a6b04d9a1222f385785f95beaa",
+    "delegate": "Flip Flop Flap Delegate Llc",
+    "type": "recognized",
+    "delegated_mkr": 0.007912960640495695
+  },
+  {
+    "delegator": "0xa5890ccd2359dc38f649158abdc24b62602dec68",
+    "vote_delegate": "0x0f4be9f208c552a6b04d9a1222f385785f95beaa",
+    "delegate": "Flip Flop Flap Delegate Llc",
+    "type": "recognized",
+    "delegated_mkr": 4665.0
+  },
+  {
+    "delegator": "0x4d342d8d71ccdbec46ae43bf795256c2a56b05ce",
+    "vote_delegate": "0x0f4be9f208c552a6b04d9a1222f385785f95beaa",
+    "delegate": "Flip Flop Flap Delegate Llc",
+    "type": "recognized",
+    "delegated_mkr": 37.90771
+  },
+  {
+    "delegator": "0x381a17eb78501498fa183c81648b4165826e1af7",
+    "vote_delegate": "0x0f4be9f208c552a6b04d9a1222f385785f95beaa",
+    "delegate": "Flip Flop Flap Delegate Llc",
+    "type": "recognized",
+    "delegated_mkr": 0.06457
+  },
+  {
+    "delegator": "0x904aba31d5a802074a9716bec859054ed39691ea",
+    "vote_delegate": "0x0f4be9f208c552a6b04d9a1222f385785f95beaa",
+    "delegate": "Flip Flop Flap Delegate Llc",
+    "type": "recognized",
+    "delegated_mkr": 595.0003469670604
+  },
+  {
+    "delegator": "0x4a25a2a97e263913eb681979421de7857261d3ea",
+    "vote_delegate": "0x0f4be9f208c552a6b04d9a1222f385785f95beaa",
+    "delegate": "Flip Flop Flap Delegate Llc",
+    "type": "recognized",
+    "delegated_mkr": 0.1
+  },
+  {
+    "delegator": "0xf65475e74c1ed6d004d5240b06e3088724dfda5d",
+    "vote_delegate": "0x0f4be9f208c552a6b04d9a1222f385785f95beaa",
+    "delegate": "Flip Flop Flap Delegate Llc",
+    "type": "recognized",
+    "delegated_mkr": 10000.0
+  },
+  {
+    "delegator": "0xbf7fbcd1792354c69f64d32c88a3f3658763798f",
+    "vote_delegate": "0x0f4be9f208c552a6b04d9a1222f385785f95beaa",
+    "delegate": "Flip Flop Flap Delegate Llc",
+    "type": "recognized",
+    "delegated_mkr": 26.009806269293495
+  },
+  {
+    "delegator": "0xb5d903a991ca161b35543b158bf75413b0e54f31",
+    "vote_delegate": "0x222d46d1229036c7bb6ea3f453406792ca3c3ea2",
+    "delegate": "Flipside Crypto",
+    "type": "recognized",
+    "delegated_mkr": 0.366
+  },
+  {
+    "delegator": "0x1ef753934c40a72a60eab12a68b6f8854439aa78",
+    "vote_delegate": "0x222d46d1229036c7bb6ea3f453406792ca3c3ea2",
+    "delegate": "Flipside Crypto",
+    "type": "recognized",
+    "delegated_mkr": 4.992137842326123
+  },
+  {
+    "delegator": "0xe767ced14722dd6a9ed0824611bc7ed24754833d",
+    "vote_delegate": "0x222d46d1229036c7bb6ea3f453406792ca3c3ea2",
+    "delegate": "Flipside Crypto",
+    "type": "recognized",
+    "delegated_mkr": 0.366
+  },
+  {
+    "delegator": "0x9fa166468a23e69a237177253bbdd211d165dc2d",
+    "vote_delegate": "0x222d46d1229036c7bb6ea3f453406792ca3c3ea2",
+    "delegate": "Flipside Crypto",
+    "type": "recognized",
+    "delegated_mkr": 0.366
+  },
+  {
+    "delegator": "0xb5e0da89b975d1f611d5e1ce1c4ecfe625b233ea",
+    "vote_delegate": "0x222d46d1229036c7bb6ea3f453406792ca3c3ea2",
+    "delegate": "Flipside Crypto",
+    "type": "recognized",
+    "delegated_mkr": 0.366
+  },
+  {
+    "delegator": "0xbc7fd5aa2016c3e2c8f0dbf4e919485c6bbb59e2",
+    "vote_delegate": "0x316090e23cc44e70245ba9846404413aca2df16f",
+    "delegate": "Frontier Research Llc",
+    "type": "recognized",
+    "delegated_mkr": 80.0
+  },
+  {
+    "delegator": "0x919bfbc7c9984127e9333779de0ea8536aeb6942",
+    "vote_delegate": "0x316090e23cc44e70245ba9846404413aca2df16f",
+    "delegate": "Frontier Research Llc",
+    "type": "recognized",
+    "delegated_mkr": 430.05775275827904
+  },
+  {
+    "delegator": "0x2869c2bc6e8f7f6bda72cda2446b68753e67af0e",
+    "vote_delegate": "0x316090e23cc44e70245ba9846404413aca2df16f",
+    "delegate": "Frontier Research Llc",
+    "type": "recognized",
+    "delegated_mkr": 0.17638288696595436
+  },
+  {
+    "delegator": "0x31c01e90edcf8602c1a18b2ae4e5a72d8dce76bd",
+    "vote_delegate": "0x316090e23cc44e70245ba9846404413aca2df16f",
+    "delegate": "Frontier Research Llc",
+    "type": "recognized",
+    "delegated_mkr": 2.6601784266e-7
+  },
+  {
+    "delegator": "0x4d342d8d71ccdbec46ae43bf795256c2a56b05ce",
+    "vote_delegate": "0x316090e23cc44e70245ba9846404413aca2df16f",
+    "delegate": "Frontier Research Llc",
+    "type": "recognized",
+    "delegated_mkr": 5.0
+  },
+  {
+    "delegator": "0xa2d55b89654079987cf3985aeff5a7bd44da15a8",
+    "vote_delegate": "0x316090e23cc44e70245ba9846404413aca2df16f",
+    "delegate": "Frontier Research Llc",
+    "type": "recognized",
+    "delegated_mkr": 6.0
+  },
+  {
+    "delegator": "0x9b68c14e936104e9a7a24c712beecdc220002984",
+    "vote_delegate": "0x869147940842bb1aa4c40e60c5e583f4911f2e02",
+    "delegate": "Gfx Labs",
+    "type": "recognized",
+    "delegated_mkr": 19.4242
+  },
+  {
+    "delegator": "0xf977bf5f5ccb1bfd868bd95d563294494f0d5d89",
+    "vote_delegate": "0x869147940842bb1aa4c40e60c5e583f4911f2e02",
+    "delegate": "Gfx Labs",
+    "type": "recognized",
+    "delegated_mkr": 0.26770047979222317
+  },
+  {
+    "delegator": "0xfbb73bbe8e55796623ea23d4fbcf496d2f08a912",
+    "vote_delegate": "0x869147940842bb1aa4c40e60c5e583f4911f2e02",
+    "delegate": "Gfx Labs",
+    "type": "recognized",
+    "delegated_mkr": 7.047524683795e-5
+  },
+  {
+    "delegator": "0x851dd80570c43a62742ed78b2cf7e3293ba9d108",
+    "vote_delegate": "0x869147940842bb1aa4c40e60c5e583f4911f2e02",
+    "delegate": "Gfx Labs",
+    "type": "recognized",
+    "delegated_mkr": 0.21892646962216236
+  },
+  {
+    "delegator": "0x236884bb674067c96fcbcc5dff728141e05be99d",
+    "vote_delegate": "0x869147940842bb1aa4c40e60c5e583f4911f2e02",
+    "delegate": "Gfx Labs",
+    "type": "recognized",
+    "delegated_mkr": 0.33336015879625835
+  },
+  {
+    "delegator": "0x0988e41c02915fe1befa78c556f946e5f20ffbd3",
+    "vote_delegate": "0x869147940842bb1aa4c40e60c5e583f4911f2e02",
+    "delegate": "Gfx Labs",
+    "type": "recognized",
+    "delegated_mkr": 11.505224666990452
+  },
+  {
+    "delegator": "0xf84c58dc674b8f29f3d5b56f561817e3920f9a63",
+    "vote_delegate": "0x869147940842bb1aa4c40e60c5e583f4911f2e02",
+    "delegate": "Gfx Labs",
+    "type": "recognized",
+    "delegated_mkr": 0.006399080414684985
+  },
+  {
+    "delegator": "0x4a25a2a97e263913eb681979421de7857261d3ea",
+    "vote_delegate": "0x869147940842bb1aa4c40e60c5e583f4911f2e02",
+    "delegate": "Gfx Labs",
+    "type": "recognized",
+    "delegated_mkr": 0.25
+  },
+  {
+    "delegator": "0x13fcb7b29f135d3740ca8c6e3f775df6994a3d8e",
+    "vote_delegate": "0x869147940842bb1aa4c40e60c5e583f4911f2e02",
+    "delegate": "Gfx Labs",
+    "type": "recognized",
+    "delegated_mkr": 0.10013997897363465
+  },
+  {
+    "delegator": "0x76a45e6a43353bb15ba6c7ccc68e009ec07c5d60",
+    "vote_delegate": "0x869147940842bb1aa4c40e60c5e583f4911f2e02",
+    "delegate": "Gfx Labs",
+    "type": "recognized",
+    "delegated_mkr": 0.10220309242310721
+  },
+  {
+    "delegator": "0xe1d1c5f48f708aa038aa6a9976308cd1d19d951a",
+    "vote_delegate": "0x869147940842bb1aa4c40e60c5e583f4911f2e02",
+    "delegate": "Gfx Labs",
+    "type": "recognized",
+    "delegated_mkr": 0.17463221170524915
+  },
+  {
+    "delegator": "0x4655b7ad0b5f5bacb9cf960bbffceb3f0e51f363",
+    "vote_delegate": "0x869147940842bb1aa4c40e60c5e583f4911f2e02",
+    "delegate": "Gfx Labs",
+    "type": "recognized",
+    "delegated_mkr": 12500.016765526136
+  },
+  {
+    "delegator": "0x0bc9de17bbc3c39d1a046b4fbe20daa8de5b78dc",
+    "vote_delegate": "0x869147940842bb1aa4c40e60c5e583f4911f2e02",
+    "delegate": "Gfx Labs",
+    "type": "recognized",
+    "delegated_mkr": 0.0258697
+  },
+  {
+    "delegator": "0x448fda59cda7c93d8e4476acf0847f27e9e2c605",
+    "vote_delegate": "0x4e314eba76c3062140ad196e4ffd34485e33c5f5",
+    "delegate": "Governance House",
+    "type": "recognized",
+    "delegated_mkr": 0.0003
+  },
+  {
+    "delegator": "0x8bf1e340055c7de62f11229a149d3a1918de3d74",
+    "vote_delegate": "0x4e314eba76c3062140ad196e4ffd34485e33c5f5",
+    "delegate": "Governance House",
+    "type": "recognized",
+    "delegated_mkr": 0.5396837076778197
+  },
+  {
+    "delegator": "0x69b5b2b2cd11db8c7ea7f9f042f39423497b8efa",
+    "vote_delegate": "0x4e314eba76c3062140ad196e4ffd34485e33c5f5",
+    "delegate": "Governance House",
+    "type": "recognized",
+    "delegated_mkr": 0.002
+  },
+  {
+    "delegator": "0x33231c4171e4d6a864c05b6db61467ec2424efa5",
+    "vote_delegate": "0x4e314eba76c3062140ad196e4ffd34485e33c5f5",
+    "delegate": "Governance House",
+    "type": "recognized",
+    "delegated_mkr": 0.01
+  },
+  {
+    "delegator": "0xf818e21d802ed0c5ccd7147d7b63a7466af84925",
+    "vote_delegate": "0x4e314eba76c3062140ad196e4ffd34485e33c5f5",
+    "delegate": "Governance House",
+    "type": "recognized",
+    "delegated_mkr": 0.002
+  },
+  {
+    "delegator": "0x58c442b9c0906d6d13173a24c2981b543188b346",
+    "vote_delegate": "0x4e314eba76c3062140ad196e4ffd34485e33c5f5",
+    "delegate": "Governance House",
+    "type": "recognized",
+    "delegated_mkr": 0.002
+  },
+  {
+    "delegator": "0xd60d9c57f4f6e574b6028a26d06b655b6692887d",
+    "vote_delegate": "0x925016c2367802632cabdf13b5fc2c1bdc2c301a",
+    "delegate": "Hkust Epi Blockchain",
+    "type": "recognized",
+    "delegated_mkr": 2008.1984135
+  },
+  {
+    "delegator": "0x2da0d746938efa28c7dc093b1da286b3d8bac34a",
+    "vote_delegate": "0x925016c2367802632cabdf13b5fc2c1bdc2c301a",
+    "delegate": "Hkust Epi Blockchain",
+    "type": "recognized",
+    "delegated_mkr": 0.21099029526947213
+  },
+  {
+    "delegator": "0x5d2815e07ed95aea5e4e154c13e0bf89815167a3",
+    "vote_delegate": "0xd1fc89e0c3828f50b650e1309e30cb4fcf2bdbe3",
+    "delegate": "Jason Yanowitz",
+    "type": "recognized",
+    "delegated_mkr": 0.39714989
+  },
+  {
+    "delegator": "0x1086327d32f6461425d1167cdfcdccc3a65ff635",
+    "vote_delegate": "0xd1fc89e0c3828f50b650e1309e30cb4fcf2bdbe3",
+    "delegate": "Jason Yanowitz",
+    "type": "recognized",
+    "delegated_mkr": 1.0
+  },
+  {
+    "delegator": "0xf65475e74c1ed6d004d5240b06e3088724dfda5d",
+    "vote_delegate": "0xd1fc89e0c3828f50b650e1309e30cb4fcf2bdbe3",
+    "delegate": "Jason Yanowitz",
+    "type": "recognized",
+    "delegated_mkr": 1000.0
+  },
+  {
+    "delegator": "0x26404746cd2228018f86c98f580e5030b06ff3c8",
+    "vote_delegate": "0x4e324f2327fa3e567d802ddcf655f7188eb62754",
+    "delegate": "Justincase",
+    "type": "recognized",
+    "delegated_mkr": 0.10413886796774438
+  },
+  {
+    "delegator": "0x7e3dc9f40e7ff9db80c3c7a1847cb95f861b3aef",
+    "vote_delegate": "0x4e324f2327fa3e567d802ddcf655f7188eb62754",
+    "delegate": "Justincase",
+    "type": "recognized",
+    "delegated_mkr": 5.664439853930057
+  },
+  {
+    "delegator": "0x3617e7e5f5fbf18ce45ad40a2e7ee7ac1405daeb",
+    "vote_delegate": "0x4e324f2327fa3e567d802ddcf655f7188eb62754",
+    "delegate": "Justincase",
+    "type": "recognized",
+    "delegated_mkr": 550.0
+  },
+  {
+    "delegator": "0xc26ef72f8b009c0a462bcf7ab6550bfae56548a4",
+    "vote_delegate": "0x4e324f2327fa3e567d802ddcf655f7188eb62754",
+    "delegate": "Justincase",
+    "type": "recognized",
+    "delegated_mkr": 20.008602770817166
+  },
+  {
+    "delegator": "0x05e793ce0c6027323ac150f6d45c2344d28b6019",
+    "vote_delegate": "0xf1792852bf860b4ef84a2869df1550bc80ec0ab7",
+    "delegate": "London Business School",
+    "type": "recognized",
+    "delegated_mkr": 1000.0
+  },
+  {
+    "delegator": "0x98110005c9f024ea0f48da4dd85e5f05832497f6",
+    "vote_delegate": "0xaa19f47e6acb02df88efa9f023f2a38412069902",
+    "delegate": "Mhonkasalo & Teemulau",
+    "type": "recognized",
+    "delegated_mkr": 20.000385569070378
+  },
+  {
+    "delegator": "0x6892b5b29d94874e915c5e4469194ff5cd2fdeb0",
+    "vote_delegate": "0xaa19f47e6acb02df88efa9f023f2a38412069902",
+    "delegate": "Mhonkasalo & Teemulau",
+    "type": "recognized",
+    "delegated_mkr": 0.003435282625314798
+  },
+  {
+    "delegator": "0x5f40189a2349544d4a60e2d433b07db14f67bf79",
+    "vote_delegate": "0xaa19f47e6acb02df88efa9f023f2a38412069902",
+    "delegate": "Mhonkasalo & Teemulau",
+    "type": "recognized",
+    "delegated_mkr": 29.73
+  },
+  {
+    "delegator": "0x4655b7ad0b5f5bacb9cf960bbffceb3f0e51f363",
+    "vote_delegate": "0xaa19f47e6acb02df88efa9f023f2a38412069902",
+    "delegate": "Mhonkasalo & Teemulau",
+    "type": "recognized",
+    "delegated_mkr": 5000.0
+  },
+  {
+    "delegator": "0x9a7951bcb4104d025e26d7800886254218890eb3",
+    "vote_delegate": "0xaa19f47e6acb02df88efa9f023f2a38412069902",
+    "delegate": "Mhonkasalo & Teemulau",
+    "type": "recognized",
+    "delegated_mkr": 49.999999999303284
+  },
+  {
+    "delegator": "0xcbe3b686c1c8037892211b37f51d1d04d1bebb51",
+    "vote_delegate": "0xaa19f47e6acb02df88efa9f023f2a38412069902",
+    "delegate": "Mhonkasalo & Teemulau",
+    "type": "recognized",
+    "delegated_mkr": 0.10408202788097237
+  },
+  {
+    "delegator": "0x05e793ce0c6027323ac150f6d45c2344d28b6019",
+    "vote_delegate": "0xaa19f47e6acb02df88efa9f023f2a38412069902",
+    "delegate": "Mhonkasalo & Teemulau",
+    "type": "recognized",
+    "delegated_mkr": 3000.0
+  },
+  {
+    "delegator": "0xf65475e74c1ed6d004d5240b06e3088724dfda5d",
+    "vote_delegate": "0xaa19f47e6acb02df88efa9f023f2a38412069902",
+    "delegate": "Mhonkasalo & Teemulau",
+    "type": "recognized",
+    "delegated_mkr": 1000.0
+  },
+  {
+    "delegator": "0xdd0b39261ec7fb9a12793276285263f0e5747a09",
+    "vote_delegate": "0xaa19f47e6acb02df88efa9f023f2a38412069902",
+    "delegate": "Mhonkasalo & Teemulau",
+    "type": "recognized",
+    "delegated_mkr": 0.003
+  },
+  {
+    "delegator": "0x963883f00116d0581652772dc7299b188bd82348",
+    "vote_delegate": "0xb056e45fd47d962f4ef25714714abc7a79886064",
+    "delegate": "Monetsupply",
+    "type": "recognized",
+    "delegated_mkr": 5.5070648777052496
+  },
+  {
+    "delegator": "0x8a591e12b71a8ca156f79529c7e4a3c4997af982",
+    "vote_delegate": "0xb056e45fd47d962f4ef25714714abc7a79886064",
+    "delegate": "Monetsupply",
+    "type": "recognized",
+    "delegated_mkr": 1.6936295
+  },
+  {
+    "delegator": "0x955993df48b0458a01cfb5fd7df5f5dca6443550",
+    "vote_delegate": "0xb056e45fd47d962f4ef25714714abc7a79886064",
+    "delegate": "Monetsupply",
+    "type": "recognized",
+    "delegated_mkr": 0.1
+  },
+  {
+    "delegator": "0xac07a8e2722fd1b17e6fbdbe9bd494b6abc425cc",
+    "vote_delegate": "0x9301f3bb7a71ab4d46b17bd1f8254142fa8f26ad",
+    "delegate": "Onestone",
+    "type": "recognized",
+    "delegated_mkr": 3.9901688437044487
+  },
+  {
+    "delegator": "0x4efb12d515801ecfa3be456b5f348d3cd68f9e8a",
+    "vote_delegate": "0x9301f3bb7a71ab4d46b17bd1f8254142fa8f26ad",
+    "delegate": "Onestone",
+    "type": "recognized",
+    "delegated_mkr": 5.016472336501933
+  },
+  {
+    "delegator": "0xf65475e74c1ed6d004d5240b06e3088724dfda5d",
+    "vote_delegate": "0x7ddb50a5b15aea7e7cf9ac8e55a7f9fd9d05ecc6",
+    "delegate": "Penn Blockchain",
+    "type": "recognized",
+    "delegated_mkr": 5000.0
+  },
+  {
+    "delegator": "0xa7bc700691fe4b3a05a318c6eb4a4f85b8f7aede",
+    "vote_delegate": "0x7ddb50a5b15aea7e7cf9ac8e55a7f9fd9d05ecc6",
+    "delegate": "Penn Blockchain",
+    "type": "recognized",
+    "delegated_mkr": 500.0
+  },
+  {
+    "delegator": "0x070341aa5ed571f0fb2c4a5641409b1a46b4961b",
+    "vote_delegate": "0xe3e9649aea634f8995e14c7a3a6a04938d4b66df",
+    "delegate": "Penn Blockchain",
+    "type": "recognized",
+    "delegated_mkr": 0.1
+  },
+  {
+    "delegator": "0xe80eb035ddf4ee6ec8ac3be7bb5a1f1b6a0fda38",
+    "vote_delegate": "0x7ddb50a5b15aea7e7cf9ac8e55a7f9fd9d05ecc6",
+    "delegate": "Penn Blockchain",
+    "type": "recognized",
+    "delegated_mkr": 2.5
+  },
+  {
+    "delegator": "0xb8b9977a5b8920ad74ff3eea8d0267d09cb86926",
+    "vote_delegate": "0x7ddb50a5b15aea7e7cf9ac8e55a7f9fd9d05ecc6",
+    "delegate": "Penn Blockchain",
+    "type": "recognized",
+    "delegated_mkr": 174.056
+  },
+  {
+    "delegator": "0x6186ff3058150604b98af5a8521c96599a1ebfc1",
+    "vote_delegate": "0x7ddb50a5b15aea7e7cf9ac8e55a7f9fd9d05ecc6",
+    "delegate": "Penn Blockchain",
+    "type": "recognized",
+    "delegated_mkr": 1000.0
+  },
+  {
+    "delegator": "0xe420255dbe71c8df04b4b236879ac909e74e7008",
+    "vote_delegate": "0x7ddb50a5b15aea7e7cf9ac8e55a7f9fd9d05ecc6",
+    "delegate": "Penn Blockchain",
+    "type": "recognized",
+    "delegated_mkr": 0.00074852
+  },
+  {
+    "delegator": "0x41662c7e14c8e782b8913761c34f573d3ca2e772",
+    "vote_delegate": "0x7ddb50a5b15aea7e7cf9ac8e55a7f9fd9d05ecc6",
+    "delegate": "Penn Blockchain",
+    "type": "recognized",
+    "delegated_mkr": 0.03
+  },
+  {
+    "delegator": "0x5ac7061e9d44cd111aeca8db507347850e8346b1",
+    "vote_delegate": "0xd9d00c42bed99a6d3a0f2902c640bccceecf6c29",
+    "delegate": "Pvl",
+    "type": "recognized",
+    "delegated_mkr": 0.29482996
+  },
+  {
+    "delegator": "0x6a20b9a3e284657abc8da34465fe6f34aefd6b3d",
+    "vote_delegate": "0xd0df93fc03a7291e31947f5cc6ef526f5b67b0ea",
+    "delegate": "Riskdao",
+    "type": "recognized",
+    "delegated_mkr": 0.0001
+  }
+]

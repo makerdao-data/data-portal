@@ -19,7 +19,9 @@ type DelegatesWeightChartData = [
   Error | undefined
 ];
 
-export default function useDelegatesWeightChartData(): DelegatesWeightChartData {
+export default function useDelegatesWeightChartData(
+  onlyRecognized?: boolean
+): DelegatesWeightChartData {
   const delegatesSupportFetcher: Fetcher<Support[]> =
     dataApiClient.v1.readDelegatesSupportV1GovernanceDelegatesSupportGet;
 
@@ -30,7 +32,10 @@ export default function useDelegatesWeightChartData(): DelegatesWeightChartData 
         new Date().setFullYear(new Date().getFullYear() - 1)
       );
       return delegatesSupportFetcher({
-        from_date: `${fromDate.getFullYear()}-${fromDate.getMonth()}-${fromDate.getDate()}`
+        type: onlyRecognized ? 'recognized' : undefined,
+        from_date: `${fromDate.getFullYear()}-${
+          fromDate.getMonth() + 1
+        }-${fromDate.getDate()}`
       });
     }
   );
@@ -158,59 +163,65 @@ export default function useDelegatesWeightChartData(): DelegatesWeightChartData 
           },
           {
             fill: true,
-            label: 'Others (Recognized)',
+            label: onlyRecognized ? 'Others' : 'Others (Recognized)',
             borderColor: '#BEA5EA',
             backgroundColor: '#BEA5EA',
             data: []
           }
         );
 
-      const othersShadow = dataSetList
-        .filter(({ data }) => data[0].type === 'shadow')
-        .reduce(
-          (memo, dataSet) => {
-            dataSet.data.forEach((currentDataSet) => {
-              const currentValue = memo.data.find(
-                (values) => values.month === currentDataSet.month
-              );
-
-              if (currentValue) {
-                const newValue = {
-                  ...currentValue,
-                  y: currentValue.y + currentDataSet.y
-                };
-
-                memo.data.map((value) =>
-                  value.month === currentDataSet.month ? newValue : value
+      if (!onlyRecognized) {
+        const othersShadow = dataSetList
+          .filter(({ data }) => data[0].type === 'shadow')
+          .reduce(
+            (memo, dataSet) => {
+              dataSet.data.forEach((currentDataSet) => {
+                const currentValue = memo.data.find(
+                  (values) => values.month === currentDataSet.month
                 );
 
-                return;
-              }
+                if (currentValue) {
+                  const newValue = {
+                    ...currentValue,
+                    y: currentValue.y + currentDataSet.y
+                  };
 
-              memo.data.push(currentDataSet);
-            });
+                  memo.data.map((value) =>
+                    value.month === currentDataSet.month ? newValue : value
+                  );
 
-            memo.data.sort(
-              (a, b) => new Date(a.x).getTime() - new Date(b.x).getTime()
-            );
-            return memo;
-          },
-          {
-            fill: true,
-            label: 'Others (Shadow)',
-            borderColor: '#5BA8E1',
-            backgroundColor: '#5BA8E1',
-            data: []
-          }
-        );
+                  return;
+                }
+
+                memo.data.push(currentDataSet);
+              });
+
+              memo.data.sort(
+                (a, b) => new Date(a.x).getTime() - new Date(b.x).getTime()
+              );
+              return memo;
+            },
+            {
+              fill: true,
+              label: 'Others (Shadow)',
+              borderColor: '#5BA8E1',
+              backgroundColor: '#5BA8E1',
+              data: []
+            }
+          );
+
+        return {
+          datasets: [...top5Recognized, othersRecognized, othersShadow]
+        };
+      }
 
       return {
-        datasets: [...top5Recognized, othersRecognized, othersShadow]
+        datasets: [...top5Recognized, othersRecognized]
       };
     }
 
     return { datasets: [] };
-  }, [colors, allDelegatesSupport, allDelegateNames]);
+  }, [allDelegatesSupport, allDelegateNames, onlyRecognized, colors]);
 
   return [delegatatesWithSupportChartDataSets, loading, error];
 }

@@ -16,7 +16,7 @@ import { Text } from '@makerdao-dicu/makerdao-ui';
 import Skeleton from 'react-loading-skeleton';
 import 'chartjs-adapter-date-fns';
 import useDelegatesWeightChartData from './hooks/delegates-weight-chart-data';
-import Card from '../../components/Card';
+import { Fragment } from 'react';
 // import CsvExport from '../../components/CsvExport';
 
 const spacingPlugin = {
@@ -49,24 +49,19 @@ ChartJS.register(
   spacingPlugin
 );
 
-export default function DelegatesWeightChart() {
+type DelegatesWeightChartProps = {
+  onlyRecognized?: boolean;
+};
+
+export default function DelegatesWeightChart({
+  onlyRecognized
+}: DelegatesWeightChartProps) {
   const [colorMode] = useColorMode();
   const [delegatatesWithSupportChartDataSets, loading, error] =
-    useDelegatesWeightChartData();
+    useDelegatesWeightChartData(onlyRecognized);
 
   return (
-    <Card
-      header={{
-        title: 'Recognized delegate voting power'
-        // actions: [
-        //   <CsvExport
-        //     key="export-voters"
-        //     exportMethod={() => ({
-        //       data: []
-        //     })}
-        //   />
-        // ]
-      }}>
+    <Fragment>
       {error ? (
         <Text variant="error" role="textbox" aria-label="Error message">
           {'Delegate voting power data is not available at the moment.'}
@@ -83,6 +78,9 @@ export default function DelegatesWeightChart() {
               responsive: true,
               maintainAspectRatio: false,
               plugins: {
+                datalabels: {
+                  display: false
+                },
                 legend: {
                   display: true,
                   position: 'top' as const,
@@ -147,8 +145,8 @@ export default function DelegatesWeightChart() {
           />
         </Box>
       ) : (
-        <Skeleton height={220} style={{ borderRadius: '8px', top: '-4px' }} />
+        <Skeleton height={400} style={{ borderRadius: '8px', top: '-4px' }} />
       )}
-    </Card>
+    </Fragment>
   );
 }
