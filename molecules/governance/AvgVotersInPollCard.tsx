@@ -16,6 +16,7 @@ import { Chart } from 'react-chartjs-2';
 import { useMemo } from 'react';
 import { Text } from '@makerdao-dicu/makerdao-ui';
 import Skeleton from 'react-loading-skeleton';
+import adjustForTimezone from '../../utils/adjustDateOffset';
 
 ChartJS.register(
   CategoryScale,
@@ -46,8 +47,8 @@ export default function AvgVotersInPollCard({
           .slice(-12)
       ]);
 
-      const labels = Object.keys(lastYearData).map(
-        (yearMonth) => new Date(yearMonth + '-01')
+      const labels = Object.keys(lastYearData).map((yearMonth) =>
+        adjustForTimezone(new Date(yearMonth + '-01'))
       );
 
       return {

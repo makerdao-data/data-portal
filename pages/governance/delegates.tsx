@@ -11,47 +11,29 @@ import FlexPage from '../../molecules/Page';
 import {
   RequestParams,
   Overview as TOverview,
-  CurrentDelegates
+  CurrentDelegates,
+  DelegatesMonthlyCompensation
 } from '../../__generated__/dataAPI';
 import TopDelegatesTable from '../../molecules/governance/TopDelegatesTable';
 import DelegatesWeightDoughnutChart from '../../molecules/governance/DelegatesWeightDoughnutChart';
 import dynamic from 'next/dynamic';
 import DelegatesTable from '../../molecules/governance/DelegatesTable';
+import DelegateCompensationChart from '../../molecules/governance/DelegateCompensationChart';
 
 const DelegatesFlowSankeyChart = dynamic(
   () => import('../../molecules/governance/DelegatesFlowSankeyChart'),
   { ssr: false }
 );
 
-function useGetDelegatesData() {
-  const currentDelegatesFetcher: Fetcher<CurrentDelegates[]> =
-    dataApiClient.v1.readCurrentDelegatesV1GovernanceCurrentDelegatesGet;
-  const governanceOverviewFetcher: Fetcher<TOverview, RequestParams> =
-    dataApiClient.v1.readGovernanceOverviewV1GovernanceOverviewGet;
-
-  const { data: currentDelegates, error: currentDelegatesError } = useSwr<
-    CurrentDelegates[],
-    Error
-  >('currentDelegates', () => currentDelegatesFetcher({ type: 'recognized' }));
-
-  const { data: governanceOverviewData, error: governanceOverviewError } =
-    useSwr<TOverview, Error>('governanceOverview', governanceOverviewFetcher);
-
-  return {
-    currentDelegates,
-    governanceOverviewData,
-    currentDelegatesError,
-    governanceOverviewError
-  };
-}
-
 export default function Delegates() {
   const intl = useIntl();
   const {
     currentDelegates,
     governanceOverviewData,
+    delegatesMonthlyCompensationData,
     currentDelegatesError,
-    governanceOverviewError
+    governanceOverviewError,
+    delegatesMonthlyCompensationError
   } = useGetDelegatesData();
 
   const delegatedMKR = useMemo(
@@ -86,7 +68,38 @@ export default function Delegates() {
     };
   }, [delegatedMKR, governanceOverviewData, intl]);
 
-  if (currentDelegatesError || governanceOverviewError) {
+  const delegateCompensationKPIData = useMemo(() => {
+    if (delegatesMonthlyCompensationData) {
+      const sortedComensations = delegatesMonthlyCompensationData.sort(
+        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+      );
+
+      const differenceWithLastMonth =
+        sortedComensations[0].amount / sortedComensations[1].amount;
+
+      return {
+        currentMonthCompensation: intl.formatNumber(
+          sortedComensations[0].amount,
+          { notation: 'compact', maximumFractionDigits: 2 }
+        ),
+        change: intl.formatNumber((1 - differenceWithLastMonth) * -1, {
+          style: 'percent',
+          maximumFractionDigits: 0
+        })
+      };
+    }
+
+    return {
+      currentMonthCompensation: null,
+      change: 0
+    };
+  }, [delegatesMonthlyCompensationData, intl]);
+
+  if (
+    currentDelegatesError ||
+    governanceOverviewError ||
+    delegatesMonthlyCompensationError
+  ) {
     console.error(currentDelegatesError);
     console.error(governanceOverviewError);
   }
@@ -150,7 +163,29 @@ export default function Delegates() {
       <Card
         header={{ title: 'Delegate Compensation' }}
         sx={{ flex: '1 1 100%' }}>
-        Bar Chart here
+        <FlexRow>
+          <Kpi
+            title="Latest monthly payment"
+            value={delegateCompensationKPIData.currentMonthCompensation}
+            error={currentDelegatesError}
+            unit="DAI"
+            delta={
+              <Text
+                role="textbox"
+                aria-label="Delegate compensation 30d Change"
+                variant="muted"
+                sx={{ color: 'primary' }}>
+                {`30d Change ${delegateCompensationKPIData.change}`}
+              </Text>
+            }
+            sx={{ border: 'none' }}
+          />
+
+          <DelegateCompensationChart
+            data={delegatesMonthlyCompensationData}
+            error={delegatesMonthlyCompensationError}
+          />
+        </FlexRow>
       </Card>
 
       <Card sx={{ flex: '1 1 100%' }}>
@@ -158,4 +193,41 @@ export default function Delegates() {
       </Card>
     </FlexPage>
   );
+}
+
+function useGetDelegatesData() {
+  const currentDelegatesFetcher: Fetcher<CurrentDelegates[]> =
+    dataApiClient.v1.readCurrentDelegatesV1GovernanceCurrentDelegatesGet;
+  const governanceOverviewFetcher: Fetcher<TOverview, RequestParams> =
+    dataApiClient.v1.readGovernanceOverviewV1GovernanceOverviewGet;
+  const delegatesMonthlyCompensationFetcher: Fetcher<
+    DelegatesMonthlyCompensation[]
+  > =
+    dataApiClient.v1
+      .readDelegatesMonthlyCompensationV1GovernanceDelegatesMonthlyCompensationGet;
+
+  const { data: currentDelegates, error: currentDelegatesError } = useSwr<
+    CurrentDelegates[],
+    Error
+  >('currentDelegates', () => currentDelegatesFetcher({ type: 'recognized' }));
+
+  const { data: governanceOverviewData, error: governanceOverviewError } =
+    useSwr<TOverview, Error>('governanceOverview', governanceOverviewFetcher);
+
+  const {
+    data: delegatesMonthlyCompensationData,
+    error: delegatesMonthlyCompensationError
+  } = useSwr<DelegatesMonthlyCompensation[], Error>(
+    'delegatesMonthlyCompensation',
+    delegatesMonthlyCompensationFetcher
+  );
+
+  return {
+    currentDelegates,
+    governanceOverviewData,
+    delegatesMonthlyCompensationData,
+    currentDelegatesError,
+    governanceOverviewError,
+    delegatesMonthlyCompensationError
+  };
 }

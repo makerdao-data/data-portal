@@ -3,6 +3,7 @@ import governanceOverviewFixture from './fixtures/governanceOverview.json';
 import currentDelegatesFixture from './fixtures/currentDelegates.json';
 import delegationSummaryFixture from './fixtures/delegationSummary.json';
 import delegatesSupportFixture from './fixtures/delegatesSupport.json';
+import delegateCompensationFixture from './fixtures/delegateCompensation.json';
 
 test.describe('Delegates page test', () => {
   test.beforeEach(async ({ page }) => {
@@ -39,6 +40,15 @@ test.describe('Delegates page test', () => {
         await route.fulfill({
           status: 200,
           body: JSON.stringify(delegationSummaryFixture)
+        })
+    );
+
+    await page.route(
+      'https://data-api.makerdao.network/v1/governance/delegates_monthly_compensation',
+      async (route) =>
+        await route.fulfill({
+          status: 200,
+          body: JSON.stringify(delegateCompensationFixture)
         })
     );
 
@@ -84,6 +94,26 @@ test.describe('Delegates page test', () => {
   test('Delegation flow chart', async ({ page }) => {
     await expect(
       page.getByRole('figure', { name: 'Delegation flow chart' })
+    ).toBeVisible();
+  });
+
+  test('Delegate compensation Kpi', async ({ page }) => {
+    await expect(
+      page.getByRole('heading', { name: 'Latest monthly payment title' })
+    ).toContainText('Latest monthly payment');
+
+    await expect(
+      page.getByRole('textbox', { name: 'Latest monthly payment value' })
+    ).toContainText('97.12K');
+
+    await expect(
+      page.getByRole('textbox', { name: 'Delegate compensation 30d Change' })
+    ).toContainText('30d Change -11%');
+  });
+
+  test('Delegate Compensation chart', async ({ page }) => {
+    await expect(
+      page.getByRole('figure', { name: 'Delegate Compensation chart' })
     ).toBeVisible();
   });
 
@@ -295,6 +325,11 @@ test.describe('API errors', () => {
       async (route) => await route.abort()
     );
 
+    await page.route(
+      'https://data-api.makerdao.network/v1/governance/delegates_monthly_compensation',
+      async (route) => await route.abort()
+    );
+
     await page.goto(`http://localhost:3000/governance/delegates`);
 
     await expect(
@@ -305,6 +340,7 @@ test.describe('API errors', () => {
       'Delegate voting power data is not available at the moment.',
       'Delegate voting power data is not available at the moment.',
       'Something went wrogn trying to load the data.',
+      'Latest monthly payment data is not available at the moment.',
       'Delegates data is not available at the moment.'
     ]);
   });
