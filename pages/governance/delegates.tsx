@@ -75,14 +75,15 @@ export default function Delegates() {
       );
 
       const differenceWithLastMonth =
-        sortedComensations[0].amount / sortedComensations[1].amount;
+        (sortedComensations[0].amount - sortedComensations[1].amount) /
+        sortedComensations[0].amount;
 
       return {
         currentMonthCompensation: intl.formatNumber(
           sortedComensations[0].amount,
           { notation: 'compact', maximumFractionDigits: 2 }
         ),
-        change: intl.formatNumber((1 - differenceWithLastMonth) * -1, {
+        change: intl.formatNumber(differenceWithLastMonth, {
           style: 'percent',
           maximumFractionDigits: 0
         })
