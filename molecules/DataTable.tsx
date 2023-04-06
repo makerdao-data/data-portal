@@ -177,7 +177,7 @@ export default function DataTable<T extends object>({
                 );
               })
             ) : (
-              <TableSkeleton rows={3} cols={5} />
+              <TableSkeleton rows={3} cols={headerGroups[0].headers.length} />
             )}
           </TBody>
         </Table>
@@ -216,7 +216,7 @@ function Pagination<T extends object>({
         onClick={() => gotoPage(0)}
         disabled={!canPreviousPage}
         aria-disabled={!canPreviousPage}
-        sx={{ lineHeight: 0, height: 30 }}
+        sx={{ lineHeight: 0, height: 30, color: 'muted' }}
         aria-label="First page button">
         First
       </Button>{' '}
@@ -225,7 +225,7 @@ function Pagination<T extends object>({
         onClick={() => previousPage()}
         disabled={!canPreviousPage}
         aria-disabled={!canPreviousPage}
-        sx={{ lineHeight: 0 }}
+        sx={{ lineHeight: 0, color: 'muted' }}
         aria-label="Previous page button">
         <ChevronLeftIcon height={12} width={12} />
       </Button>{' '}
@@ -234,7 +234,7 @@ function Pagination<T extends object>({
         onClick={() => nextPage()}
         disabled={!canNextPage}
         aria-disabled={!canNextPage}
-        sx={{ lineHeight: 0 }}
+        sx={{ lineHeight: 0, color: 'muted' }}
         aria-label="Next page button">
         <ChevronRightIcon height={12} width={12} />
       </Button>{' '}
@@ -243,7 +243,7 @@ function Pagination<T extends object>({
         onClick={() => gotoPage(pageCount - 1)}
         disabled={!canNextPage}
         aria-disabled={!canNextPage}
-        sx={{ lineHeight: 0, height: 30 }}
+        sx={{ lineHeight: 0, height: 30, color: 'muted' }}
         aria-label="Last page button">
         Last
       </Button>{' '}

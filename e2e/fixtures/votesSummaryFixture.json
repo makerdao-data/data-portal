@@ -1,0 +1,310 @@
+[
+  {
+    "date": "2019-08",
+    "regular": 216945.44764139832,
+    "shadow": 0,
+    "recognized": 0,
+    "unique_voters": 140
+  },
+  {
+    "date": "2019-09",
+    "regular": 218108.85044548303,
+    "shadow": 0,
+    "recognized": 0,
+    "unique_voters": 72
+  },
+  {
+    "date": "2019-10",
+    "regular": 196549.407348,
+    "shadow": 0,
+    "recognized": 0,
+    "unique_voters": 72
+  },
+  {
+    "date": "2019-11",
+    "regular": 193438.9672514383,
+    "shadow": 0,
+    "recognized": 0,
+    "unique_voters": 98
+  },
+  {
+    "date": "2019-12",
+    "regular": 395702.9539482982,
+    "shadow": 0,
+    "recognized": 0,
+    "unique_voters": 98
+  },
+  {
+    "date": "2020-01",
+    "regular": 609128.1069122227,
+    "shadow": 0,
+    "recognized": 0,
+    "unique_voters": 83
+  },
+  {
+    "date": "2020-02",
+    "regular": 579919.1915559681,
+    "shadow": 0,
+    "recognized": 0,
+    "unique_voters": 84
+  },
+  {
+    "date": "2020-03",
+    "regular": 434685.53430426394,
+    "shadow": 0,
+    "recognized": 0,
+    "unique_voters": 72
+  },
+  {
+    "date": "2020-04",
+    "regular": 1098109.6330400223,
+    "shadow": 0,
+    "recognized": 0,
+    "unique_voters": 138
+  },
+  {
+    "date": "2020-05",
+    "regular": 463300.4047066042,
+    "shadow": 0,
+    "recognized": 0,
+    "unique_voters": 113
+  },
+  {
+    "date": "2020-06",
+    "regular": 958370.6459848441,
+    "shadow": 0,
+    "recognized": 0,
+    "unique_voters": 106
+  },
+  {
+    "date": "2020-07",
+    "regular": 880517.579692951,
+    "shadow": 0,
+    "recognized": 0,
+    "unique_voters": 118
+  },
+  {
+    "date": "2020-08",
+    "regular": 1062139.5892895148,
+    "shadow": 0,
+    "recognized": 0,
+    "unique_voters": 118
+  },
+  {
+    "date": "2020-09",
+    "regular": 836376.3540659619,
+    "shadow": 0,
+    "recognized": 0,
+    "unique_voters": 59
+  },
+  {
+    "date": "2020-10",
+    "regular": 1341530.873678118,
+    "shadow": 0,
+    "recognized": 0,
+    "unique_voters": 85
+  },
+  {
+    "date": "2020-11",
+    "regular": 1431801.6910625233,
+    "shadow": 0,
+    "recognized": 0,
+    "unique_voters": 175
+  },
+  {
+    "date": "2020-12",
+    "regular": 878698.6956699468,
+    "shadow": 0,
+    "recognized": 0,
+    "unique_voters": 68
+  },
+  {
+    "date": "2021-01",
+    "regular": 1523437.9504271334,
+    "shadow": 0,
+    "recognized": 0,
+    "unique_voters": 65
+  },
+  {
+    "date": "2021-02",
+    "regular": 1603617.6194743507,
+    "shadow": 0,
+    "recognized": 0,
+    "unique_voters": 66
+  },
+  {
+    "date": "2021-03",
+    "regular": 1324517.7709959107,
+    "shadow": 0,
+    "recognized": 0,
+    "unique_voters": 237
+  },
+  {
+    "date": "2021-04",
+    "regular": 539264.5299048603,
+    "shadow": 0,
+    "recognized": 0,
+    "unique_voters": 75
+  },
+  {
+    "date": "2021-05",
+    "regular": 791950.0365428685,
+    "shadow": 0,
+    "recognized": 0,
+    "unique_voters": 104
+  },
+  {
+    "date": "2021-06",
+    "regular": 662221.0292372219,
+    "shadow": 0,
+    "recognized": 0,
+    "unique_voters": 59
+  },
+  {
+    "date": "2021-07",
+    "regular": 638853.948991055,
+    "shadow": 8.8,
+    "recognized": 0,
+    "unique_voters": 80
+  },
+  {
+    "date": "2021-08",
+    "regular": 217712.35805139065,
+    "shadow": 137480.7,
+    "recognized": 107859.479031,
+    "unique_voters": 58
+  },
+  {
+    "date": "2021-09",
+    "regular": 232493.42503634,
+    "shadow": 496197.775021,
+    "recognized": 546983.480296,
+    "unique_voters": 38
+  },
+  {
+    "date": "2021-10",
+    "regular": 146794.62774685962,
+    "shadow": 480916.575242,
+    "recognized": 824418.353478,
+    "unique_voters": 46
+  },
+  {
+    "date": "2021-11",
+    "regular": 279921.3161917538,
+    "shadow": 64744.68488,
+    "recognized": 2164423.515935,
+    "unique_voters": 38
+  },
+  {
+    "date": "2021-12",
+    "regular": 16356.468546365199,
+    "shadow": 147.69999999999996,
+    "recognized": 1053886.19396,
+    "unique_voters": 17
+  },
+  {
+    "date": "2022-01",
+    "regular": 104949.94723589408,
+    "shadow": 201838.7496,
+    "recognized": 1725510.127913,
+    "unique_voters": 26
+  },
+  {
+    "date": "2022-02",
+    "regular": 27401.551864,
+    "shadow": 9595.6,
+    "recognized": 1237102.596637,
+    "unique_voters": 18
+  },
+  {
+    "date": "2022-03",
+    "regular": 91318.19268025394,
+    "shadow": 55888.59244,
+    "recognized": 1563267.537525,
+    "unique_voters": 52
+  },
+  {
+    "date": "2022-04",
+    "regular": 44257.31476026006,
+    "shadow": 182.3999999999999,
+    "recognized": 1624163.074636,
+    "unique_voters": 33
+  },
+  {
+    "date": "2022-05",
+    "regular": 173854.2916735395,
+    "shadow": 6139.3974800000005,
+    "recognized": 1440733.250037,
+    "unique_voters": 130
+  },
+  {
+    "date": "2022-06",
+    "regular": 753800.4745626097,
+    "shadow": 484996.97928699997,
+    "recognized": 1977579.7358839998,
+    "unique_voters": 265
+  },
+  {
+    "date": "2022-07",
+    "regular": 65455.12233745343,
+    "shadow": 70.81653399999996,
+    "recognized": 857230.3598389999,
+    "unique_voters": 239
+  },
+  {
+    "date": "2022-08",
+    "regular": 60838.257448494696,
+    "shadow": 7.101664999999999,
+    "recognized": 1565883.1318060001,
+    "unique_voters": 292
+  },
+  {
+    "date": "2022-09",
+    "regular": 13062.86785091501,
+    "shadow": 85305.898951,
+    "recognized": 1517908.04558,
+    "unique_voters": 192
+  },
+  {
+    "date": "2022-10",
+    "regular": 46530.92016639241,
+    "shadow": 272072.027276,
+    "recognized": 1502183.361761,
+    "unique_voters": 261
+  },
+  {
+    "date": "2022-11",
+    "regular": 23099.56266803176,
+    "shadow": 654.7586570000001,
+    "recognized": 1720402.899197,
+    "unique_voters": 155
+  },
+  {
+    "date": "2022-12",
+    "regular": 334.3578865388119,
+    "shadow": 0.34986,
+    "recognized": 650948.817155,
+    "unique_voters": 166
+  },
+  {
+    "date": "2023-01",
+    "regular": 7025.78344666842,
+    "shadow": 175818.43366500002,
+    "recognized": 2047517.7191080002,
+    "unique_voters": 94
+  },
+  {
+    "date": "2023-02",
+    "regular": 534.6265151952288,
+    "shadow": 25550.383286,
+    "recognized": 831817.0491150001,
+    "unique_voters": 86
+  },
+  {
+    "date": "2023-03",
+    "regular": 27561.4805485896,
+    "shadow": 458665.319181,
+    "recognized": 2342128.8462290005,
+    "unique_voters": 87
+  }
+]
