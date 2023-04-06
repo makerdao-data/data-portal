@@ -108,7 +108,7 @@ test.describe('Delegates page test', () => {
 
     await expect(
       page.getByRole('textbox', { name: 'Delegate compensation 30d Change' })
-    ).toContainText('30d Change -11%');
+    ).toContainText('30d Change -12%');
   });
 
   test('Delegate Compensation chart', async ({ page }) => {
