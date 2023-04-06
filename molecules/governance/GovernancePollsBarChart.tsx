@@ -1,4 +1,3 @@
-import { useIntl } from 'next-intl';
 import { Box, useColorMode } from 'theme-ui';
 import { Overview } from '../../__generated__/dataAPI';
 import {
