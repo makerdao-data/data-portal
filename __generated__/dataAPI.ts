@@ -1116,6 +1116,44 @@ export interface PauseProxyTransfers {
   flow: string;
 }
 
+/** Poll */
+export interface Poll {
+  /** Poll Id */
+  poll_id: number;
+  /** Title */
+  title: string;
+  /** Block Created */
+  block_created: number;
+  /**
+   * Start Timestamp
+   * @format date-time
+   */
+  start_timestamp: string;
+  /** Block Ended */
+  block_ended?: number;
+  /**
+   * End Timestamp
+   * @format date-time
+   */
+  end_timestamp: string;
+  /** Options */
+  options: Record<string, any>;
+  /** Results */
+  results?: Record<string, any>;
+  /** Winning Option */
+  winning_option?: string;
+  /** Winning Option Approval */
+  winning_option_approval?: number;
+  /** Winning Option Approval Percent */
+  winning_option_approval_percent?: number;
+  /** Discussion Link */
+  discussion_link?: string;
+  /** Victory Conditions */
+  victory_conditions: any[];
+  /** Slug */
+  slug: string;
+}
+
 /** Proxy */
 export interface Proxy {
   /** Block */
@@ -1893,6 +1931,37 @@ export interface Vote {
   operation: string;
 }
 
+/** Vote2 */
+export interface Vote2 {
+  /**
+   * Timestamp
+   * @format date-time
+   */
+  timestamp: string;
+  /** Tx Hash */
+  tx_hash: string;
+  /** Network */
+  network: string;
+  /** Voter */
+  voter: string;
+  /** Proxy */
+  proxy?: string;
+  /** Delegate */
+  delegate?: string;
+  /** Type */
+  type?: string;
+  /** Name */
+  name?: string;
+  /** Poll Id */
+  poll_id: number;
+  /** Option */
+  option: string;
+  /** Operation */
+  operation: string;
+  /** Approval */
+  approval: number;
+}
+
 /** Voter */
 export interface Voter {
   /** Voter Address */
@@ -1915,6 +1984,29 @@ export interface Voter {
    * @format date-time
    */
   last: string;
+}
+
+/** VotesSummary */
+export interface VotesSummary {
+  /** Date */
+  date: string;
+  /**
+   * Regular
+   * @default 0
+   */
+  regular?: number;
+  /**
+   * Shadow
+   * @default 0
+   */
+  shadow?: number;
+  /**
+   * Recognized
+   * @default 0
+   */
+  recognized?: number;
+  /** Unique Voters */
+  unique_voters: number;
 }
 
 /**
@@ -2653,6 +2745,62 @@ export class Api<
       }),
 
     /**
+     * @description Retrieve updated poll voting activity.
+     *
+     * @tags governance
+     * @name ReadPolls2V1GovernancePolls2Get
+     * @summary Read Polls 2
+     * @request GET:/v1/governance/polls_2
+     * @secure
+     */
+    readPolls2V1GovernancePolls2Get: (
+      query?: {
+        /** Poll Id */
+        poll_id?: number;
+        /** An enumeration. */
+        type?: DelegateType;
+        /**
+         * greater than
+         * returns objects greater than the specified datetime
+         * @format date-time
+         * @example "2021-11-14T14:23:02.232Z"
+         */
+        timestamp_gt?: string;
+        /**
+         * less or equal than
+         * returns objects less than or equal to the specified datetime
+         * @format date-time
+         * @example "2021-11-14T14:23:02.232Z"
+         */
+        timestamp_lte?: string;
+        /**
+         * Skip
+         * ignore first object(s) returned
+         * @min 0
+         * @default 0
+         */
+        skip?: number;
+        /**
+         * Limit
+         * limit amount of objects returned
+         * @min 1
+         * @max 100
+         * @default 100
+         */
+        limit?: number;
+      },
+      params: RequestParams = {}
+    ) =>
+      this.request<Vote2[], HTTPValidationError>({
+        path: `/v1/governance/polls_2`,
+        method: 'GET',
+        query: query,
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
      * @description Retrieve creating and braking vote proxy events.
      *
      * @tags governance
@@ -2826,13 +2974,13 @@ export class Api<
         /**
          * From Date
          * @format date
-         * @default "2023-03-22"
+         * @default "2023-04-04"
          */
         from_date?: string;
         /**
          * To Date
          * @format date
-         * @default "2023-03-22"
+         * @default "2023-04-04"
          */
         to_date?: string;
         /** An enumeration. */
@@ -3419,6 +3567,42 @@ export class Api<
         path: `/v1/governance/delegation_summary`,
         method: 'GET',
         query: query,
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * @description Get full polls information.
+     *
+     * @tags governance
+     * @name ReadPollsDetailsV1GovernancePollsSummaryGet
+     * @summary Read Polls Details
+     * @request GET:/v1/governance/polls_summary
+     * @secure
+     */
+    readPollsDetailsV1GovernancePollsSummaryGet: (params: RequestParams = {}) =>
+      this.request<Poll[], any>({
+        path: `/v1/governance/polls_summary`,
+        method: 'GET',
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * @description Get aggregated votes summary.
+     *
+     * @tags governance
+     * @name ReadVotesSummaryV1GovernanceVotesSummaryGet
+     * @summary Read Votes Summary
+     * @request GET:/v1/governance/votes_summary
+     * @secure
+     */
+    readVotesSummaryV1GovernanceVotesSummaryGet: (params: RequestParams = {}) =>
+      this.request<VotesSummary[], any>({
+        path: `/v1/governance/votes_summary`,
+        method: 'GET',
         secure: true,
         format: 'json',
         ...params
