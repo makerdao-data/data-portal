@@ -26,11 +26,12 @@ export default function PollVotes() {
     votesSummaryError,
     governanceOverviewData,
     governanceOverviewError
-  } = useGetDelegatesData();
+  } = useGetPollVotesData();
 
-  if (pollsSummaryError || votesSummaryError) {
-    console.error(pollsSummaryError);
-    console.error(votesSummaryError);
+  if (pollsSummaryError || votesSummaryError || governanceOverviewError) {
+    console.error(
+      pollsSummaryError || votesSummaryError || governanceOverviewError
+    );
   }
 
   const kpisData = useMemo(() => {
@@ -160,7 +161,7 @@ export default function PollVotes() {
   );
 }
 
-function useGetDelegatesData() {
+function useGetPollVotesData() {
   const pollsSummaryFetcher: Fetcher<Poll[]> =
     dataApiClient.v1.readPollsDetailsV1GovernancePollsSummaryGet;
   const votesSummaryFetcher: Fetcher<VotesSummary[]> =

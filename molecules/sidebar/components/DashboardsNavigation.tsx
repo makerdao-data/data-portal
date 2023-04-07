@@ -81,8 +81,7 @@ const governanceLinks: Link[] = [
   { href: '/governance/overview', text: 'Overview' },
   {
     href: '/governance/executive-votes',
-    text: 'Executive votes',
-    disabled: true
+    text: 'Executive votes'
   },
   { href: '/governance/poll-votes', text: 'Poll votes' },
   { href: '/governance/delegates', text: 'Delegates' },
