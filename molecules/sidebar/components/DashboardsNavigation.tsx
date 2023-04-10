@@ -1,14 +1,4 @@
-import {
-  StatsIcon,
-  VaultIcon,
-  PressIcon,
-  Text,
-  DaiIcon,
-  DepositIcon,
-  ExchangeIcon,
-  EyeIcon,
-  CollateralIcon
-} from '@makerdao-dicu/makerdao-ui';
+import { StatsIcon, PressIcon } from '@makerdao-dicu/makerdao-ui';
 import { Flex } from 'theme-ui';
 import NavigationMenu, { Link } from './NavigationMenu';
 
@@ -24,7 +14,7 @@ export default function DashboardsNavigation() {
         justifyContent: 'flex-start',
         gap: '0.3rem'
       }}>
-      <Text variant="muted">Dashboards</Text>
+      {/* <Text variant="muted">Dashboards</Text> */}
 
       <NavigationMenu
         title="Governance"
@@ -32,7 +22,8 @@ export default function DashboardsNavigation() {
         icon={<PressIcon width={15} height={15} />}
       />
 
-      <NavigationMenu
+      {/* Hidding menu items until they are ready to ship */}
+      {/* <NavigationMenu
         title="Dai"
         links={daiLinks}
         icon={<DaiIcon width={15} height={15} />}
@@ -60,7 +51,7 @@ export default function DashboardsNavigation() {
         title="RWAs"
         links={rwasLinks}
         icon={<CollateralIcon width={15} height={15} />}
-      />
+      /> */}
 
       <NavigationMenu
         title="Teleport"
@@ -68,11 +59,11 @@ export default function DashboardsNavigation() {
         icon={<StatsIcon width={15} height={15} />}
       />
 
-      <NavigationMenu
+      {/* <NavigationMenu
         title="Oracles"
         links={oraclesLinks}
         icon={<EyeIcon width={15} height={15} />}
-      />
+      /> */}
     </Flex>
   );
 }
@@ -94,41 +85,41 @@ const governanceLinks: Link[] = [
   }
 ];
 
-const daiLinks: Link[] = [
-  { href: '/dai/overview', text: 'Overview', disabled: true },
-  {
-    href: '/dai/balance-and-transfers',
-    text: 'Balance & transfers',
-    disabled: true
-  },
-  { href: '/dai/dsr', text: 'DSR', disabled: true }
-];
+// const daiLinks: Link[] = [
+//   { href: '/dai/overview', text: 'Overview', disabled: true },
+//   {
+//     href: '/dai/balance-and-transfers',
+//     text: 'Balance & transfers',
+//     disabled: true
+//   },
+//   { href: '/dai/dsr', text: 'DSR', disabled: true }
+// ];
 
-const vaultsLinks: Link[] = [
-  { href: '/vaults/overview', text: 'Overview', disabled: true },
-  {
-    href: '/vaults/balance-and-transfers',
-    text: 'Balance & transfers',
-    disabled: true
-  }
-];
+// const vaultsLinks: Link[] = [
+//   { href: '/vaults/overview', text: 'Overview', disabled: true },
+//   {
+//     href: '/vaults/balance-and-transfers',
+//     text: 'Balance & transfers',
+//     disabled: true
+//   }
+// ];
 
-const d3mLinks: Link[] = [
-  { href: '/d3m/overview', text: 'Overview', disabled: true },
-  {
-    href: '/d3m/balance-and-transfers',
-    text: 'Balance & transfers',
-    disabled: true
-  }
-];
+// const d3mLinks: Link[] = [
+//   { href: '/d3m/overview', text: 'Overview', disabled: true },
+//   {
+//     href: '/d3m/balance-and-transfers',
+//     text: 'Balance & transfers',
+//     disabled: true
+//   }
+// ];
 
-const psmLinks: Link[] = [
-  { href: '/psm/overview', text: 'Overview', disabled: true }
-];
+// const psmLinks: Link[] = [
+//   { href: '/psm/overview', text: 'Overview', disabled: true }
+// ];
 
-const rwasLinks: Link[] = [
-  { href: '/rwas/overview', text: 'Overview', disabled: true }
-];
+// const rwasLinks: Link[] = [
+//   { href: '/rwas/overview', text: 'Overview', disabled: true }
+// ];
 
 const teleportLinks: Link[] = [
   { href: '/teleport/overview', text: 'Overview' },
@@ -143,13 +134,13 @@ const teleportLinks: Link[] = [
   { href: '/teleport/system-status', text: 'System status', disabled: true }
 ];
 
-const oraclesLinks: Link[] = [
-  { href: '/oracles/overview', text: 'Overview', disabled: true },
-  {
-    href: '/oracles/pricing',
-    text: 'Pricing',
-    disabled: true
-  },
-  { href: '/oracles/p2p-network', text: 'P2P Network', disabled: true },
-  { href: '/oracles/attestations', text: 'Attestations', disabled: true }
-];
+// const oraclesLinks: Link[] = [
+//   { href: '/oracles/overview', text: 'Overview', disabled: true },
+//   {
+//     href: '/oracles/pricing',
+//     text: 'Pricing',
+//     disabled: true
+//   },
+//   { href: '/oracles/p2p-network', text: 'P2P Network', disabled: true },
+//   { href: '/oracles/attestations', text: 'Attestations', disabled: true }
+// ];
