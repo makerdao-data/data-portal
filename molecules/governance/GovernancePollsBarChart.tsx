@@ -54,8 +54,6 @@ export default function GovernancePollsBarChart({
         .map((yearMonth) => adjustForTimezone(new Date(yearMonth + '-01')))
         .sort((a, b) => a.getTime() - b.getTime());
 
-      console.log({ lastYearData });
-
       return {
         labels,
         datasets: [

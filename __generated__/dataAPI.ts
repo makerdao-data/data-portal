@@ -549,6 +549,41 @@ export interface ExecutivesList {
   impact?: number;
 }
 
+/** ExecutivesSummary */
+export interface ExecutivesSummary {
+  /** Dssspell */
+  dssspell: string;
+  /** Title */
+  title: string;
+  /** Approval */
+  approval?: number;
+  /**
+   * Hat Prospect Timestamp
+   * @format date-time
+   */
+  hat_prospect_timestamp?: string;
+  /** Hat Prospect Block */
+  hat_prospect_block?: number;
+  /**
+   * Lift Timestamp
+   * @format date-time
+   */
+  lift_timestamp?: string;
+  /** Lift Block */
+  lift_block?: number;
+  /** Lift Tx Hash */
+  lift_tx_hash?: string;
+  /**
+   * Cast Timestamp
+   * @format date-time
+   */
+  cast_timestamp?: string;
+  /** Cast Block */
+  cast_block?: number;
+  /** Cast Tx Hash */
+  cast_tx_hash?: string;
+}
+
 /** ExperimentalCurrentVault */
 export interface ExperimentalCurrentVault {
   /**
@@ -2974,13 +3009,13 @@ export class Api<
         /**
          * From Date
          * @format date
-         * @default "2023-04-04"
+         * @default "2023-04-06"
          */
         from_date?: string;
         /**
          * To Date
          * @format date
-         * @default "2023-04-04"
+         * @default "2023-04-06"
          */
         to_date?: string;
         /** An enumeration. */
@@ -3602,6 +3637,26 @@ export class Api<
     readVotesSummaryV1GovernanceVotesSummaryGet: (params: RequestParams = {}) =>
       this.request<VotesSummary[], any>({
         path: `/v1/governance/votes_summary`,
+        method: 'GET',
+        secure: true,
+        format: 'json',
+        ...params
+      }),
+
+    /**
+     * @description Get full executives summary.
+     *
+     * @tags governance
+     * @name ReadExecutivesSummaryV1GovernanceExecutivesSummaryGet
+     * @summary Read Executives Summary
+     * @request GET:/v1/governance/executives_summary
+     * @secure
+     */
+    readExecutivesSummaryV1GovernanceExecutivesSummaryGet: (
+      params: RequestParams = {}
+    ) =>
+      this.request<ExecutivesSummary[], any>({
+        path: `/v1/governance/executives_summary`,
         method: 'GET',
         secure: true,
         format: 'json',
