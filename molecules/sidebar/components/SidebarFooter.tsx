@@ -7,7 +7,6 @@ import {
   Text
 } from '@makerdao-dicu/makerdao-ui';
 import { Flex, Link, NavLink } from 'theme-ui';
-import { NavbarExternalLink } from './NavbarLink';
 
 export default function SidebarFooter() {
   return (
@@ -15,10 +14,11 @@ export default function SidebarFooter() {
       role="contentinfo"
       aria-label="Sidebar footer"
       sx={{ flexDirection: 'column', gap: '0.3rem' }}>
-      <Text variant="muted">Tools</Text>
+      {/* Hidding tools links at the moment (https://dicu.atlassian.net/browse/DICU-409) */}
+      {/* <Text variant="muted">Tools</Text>
       {toolLinks.map(({ url, title }) => (
         <NavbarExternalLink key={title} href={url} text={title} />
-      ))}
+      ))} */}
 
       <Text variant="muted" sx={{ marginTop: 2 }}>
         MakerDAO Community
@@ -97,30 +97,30 @@ export default function SidebarFooter() {
   );
 }
 
-const toolLinks = [
-  {
-    url: 'https://makerdao.statuspage.io/',
-    title: 'Service Status'
-  },
+// const toolLinks = [
+//   {
+//     url: 'https://makerdao.statuspage.io/',
+//     title: 'Service Status'
+//   },
 
-  {
-    url: 'https://auctions.makerdao.network/',
-    title: 'Auctions Dashboard'
-  },
-  {
-    url: 'https://migrate.makerdao.com/',
-    title: 'Migrate Dashboard'
-  },
-  {
-    url: 'https://makerburn.com/',
-    title: 'MakerBurn'
-  },
-  {
-    url: 'https://daistats.com/',
-    title: 'DAI Stats'
-  },
-  {
-    url: 'https://vote.makerdao.com/terms',
-    title: 'Terms'
-  }
-];
+//   {
+//     url: 'https://auctions.makerdao.network/',
+//     title: 'Auctions Dashboard'
+//   },
+//   {
+//     url: 'https://migrate.makerdao.com/',
+//     title: 'Migrate Dashboard'
+//   },
+//   {
+//     url: 'https://makerburn.com/',
+//     title: 'MakerBurn'
+//   },
+//   {
+//     url: 'https://daistats.com/',
+//     title: 'DAI Stats'
+//   },
+//   {
+//     url: 'https://vote.makerdao.com/terms',
+//     title: 'Terms'
+//   }
+// ];
