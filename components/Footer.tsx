@@ -31,7 +31,15 @@ export default function Footer() {
       role="link"
       aria-label="Nansen Query link"
       href="https://www.nansen.ai/query">
-      Nansen Query & NaaS
+      Nansen Query
+    </Link>
+  );
+  const nassQueryLink = (
+    <Link
+      role="link"
+      aria-label="Nass Query link"
+      href="https://ethereum.org/en/developers/docs/nodes-and-clients/nodes-as-a-service/">
+      NaaS
     </Link>
   );
 
@@ -47,11 +55,11 @@ export default function Footer() {
         height: 71
       }}>
       <Text sx={{ textAlign: 'center' }}>
-        DAI Foundation ・ AGPL-3.0 license ・ Data API ( {reDocLink} |{' '}
+        © 2023 Dai Foundation ・ AGPL-3.0 license ・ Data API ( {reDocLink} |{' '}
         {swaggerUiLink})
       </Text>
       <Text sx={{ textAlign: 'center' }}>
-        Powered by {tokenFlowLink} ・ {nansenQueryLink}
+        Powered by {tokenFlowLink} ・ {nansenQueryLink} ・ {nassQueryLink}
       </Text>
     </Flex>
   );
